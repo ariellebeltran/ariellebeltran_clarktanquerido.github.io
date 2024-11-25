@@ -1,11 +1,13 @@
-.container{
+body{
+    margin: 40px;
+}
+
+/* NAVIGATION ======================================================================================================== */
+
+.container-nav{
     display: flex; /* Enables flexbox */
     justify-content: space-between; /* Distribute items to the edges */
     align-items: center; /* Center vertically */
-}
-
-body{
-    margin: 20px;
 }
 
 nav{
@@ -21,4 +23,31 @@ a:hover{
 a, a:visited {
     text-decoration: none;
     color:black;
+}
+
+/* HEADER =============================================================================================================== */
+
+.container-webtitle{
+    width: 60vw;
+    margin: 50px 0px;
+}
+
+.container-content{
+    margin: 50px 0px;
+}
+
+/* CONTENT =============================================================================================================== */
+
+p{
+    width: 75vw;
+}
+
+/* TEAM MEMBERS ======================================================================================================== */
+
+.team-members{
+    display: flex;
+
+    div{
+        padding-right: 20px;
+    }
 }
