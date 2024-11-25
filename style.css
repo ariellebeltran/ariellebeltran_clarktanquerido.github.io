@@ -1,0 +1,24 @@
+.container{
+    display: flex; /* Enables flexbox */
+    justify-content: space-between; /* Distribute items to the edges */
+    align-items: center; /* Center vertically */
+}
+
+body{
+    margin: 20px;
+}
+
+nav{
+    a{
+        padding-left: 20px;
+    }
+}
+
+a:hover{
+    font-weight: bold;
+}
+
+a, a:visited {
+    text-decoration: none;
+    color:black;
+}
