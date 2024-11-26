@@ -83,10 +83,23 @@ p, li{
         "wdth" 100;
 }
 
+figcaption{
+    font-family: "Barlow Semi Condensed", serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+#scroll-caption{
+    padding-top: 5px;
+}
+
 /* DATASET IMAGES ====================================================================================================== */
 
 .container-datasetimgs{
     display: grid;
+    gap: 20px 0px;
+    margin: 0px -40px;
+    
 }
 
 .item-dataset1{
@@ -98,6 +111,45 @@ p, li{
     grid-column-start: 2;
     grid-column-end: 2;
     grid-row-start:1;
+}
+
+/* General styling for scrollable containers */
+.scroll-container {
+    grid-column-start: 1;
+    grid-row-start: 2;
+    width: 42vw; /* Set container width */
+    height: 300px; /* Set container height */
+    overflow: auto; /* Allow scrollbars to appear if needed */
+    border: 1px solid #000000; /* Optional: Add a border */
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  */
+}
+
+/* Dataset4 positioning */
+.item-dataset4 {
+    grid-column-start: 2;
+    grid-column-end: 2;
+}
+
+/* Ensure the image respects the container size */
+.scroll-container img {
+    width: 40vw; /* Keep the natural width */
+    height: auto; /* Keep the natural height */
+    display: block; /* Avoid inline spacing issues */
+}
+
+.item-dataset5{
+    grid-column-start: 1;
+    grid-row: 3;
+}
+
+.item-dataset6{
+    grid-column-start: 1;
+    grid-row:4;
+}
+
+.item-dataset7{
+    grid-column-start: 2;
+    grid-row: 3/5;
 }
 
 /* TEAM MEMBERS ======================================================================================================== */
