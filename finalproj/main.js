@@ -1,3 +1,4 @@
+// VISUALIZATION 01 ===========================================================================================================
 async function loadDataAndCreateSpotifyChart() {
     // Load the CSV file (adjust the path as necessary)
     const data = await d3.csv("../datasets/spotify_demog_2013_2023 - Sheet1.csv");
@@ -55,6 +56,8 @@ async function loadDataAndCreateSpotifyChart() {
 // Call the function to load data and create the chart
 loadDataAndCreateSpotifyChart();
 
+// VISUALIZATION 02 ===========================================================================================================
+
 async function loadSpotifyGenresOverTimeChart() {
     // Load the CSV file (adjust the path as necessary)
     const data = await d3.csv("../datasets/top_10_genres_2010_2023 - top_10_genres_2010_2023@1.csv");
@@ -104,3 +107,5 @@ async function loadSpotifyGenresOverTimeChart() {
 
 // Call the function to load data and create the chart
 loadSpotifyGenresOverTimeChart();
+
+// VISUALIZATION 00 ===========================================================================================================
