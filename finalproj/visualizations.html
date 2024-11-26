@@ -12,6 +12,12 @@
     <script src="https://cdn.jsdelivr.net/npm/vega@5.23.1"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.6.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.21.0"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5.21.0"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.21.0"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6.19.0"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5.23.0"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.7.0"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6.20.0"></script>
 
 </head>
 <body>
@@ -36,8 +42,8 @@
         <p>These visualizations will narrate a story that unpacks the trends from the past decade regarding the changing preferences in music. Data from Spotify and Billboard Hot 100s will be used to create visualizations that tell the story of how music tastes have changed or stayed similar each year, and what contributing factors are present, specifically focusing on the user demographics of Spotify. Data such as music streams for songs and artists, user demographics, and song/artist ranking will be cross-referenced with the same data retrieved from the Billboard Hot 100s to examine for similarities or differences in the top ranking music genres, songs, and artists for each year from 2014 to 2023. </p>
         <div class="container-datasetimgs">
             <figure class="item item-dataset1">
-                <img src="/images/dataset1.png" alt="A table dataset for the top 5 Spotify artists by streams per year from 2014 to 2023">
-                <figcaption>Data set used for the top 5 Spotify artists each year within the past decade (2014 to 2023).</figcaption>
+              <img src="/images/dataset1.png" alt="A table dataset for the top 5 Spotify artists by streams per year from 2014 to 2023">
+              <figcaption>Data set used for the top 5 Spotify artists each year within the past decade (2014 to 2023).</figcaption>
             </figure>
             
             <figure class="item item-dataset2">
@@ -262,7 +268,7 @@
         </p>
     </div>
 
-    <div id="vis4_spotify_top_10"></div>
+    <div class="container-datasetimgs" id="vis4_spotify_top_10"></div>
     <script>
         // Vega-Lite specification for your chart
         const vegaLiteSpec = {
@@ -619,7 +625,358 @@
         }).catch(console.error);
     </script>
 
+    <div class="container-datasetimgs" id="vis4_billboard_top_10"></div>
+    <script type="text/javascript">
+      var vg_1 = {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "vconcat": [
+          {
+            "data": {
+              "values": [
+                {"year": 2023, "rank": 1, "song": "Last Night", "artist": "Morgan Wallen"},
+                {"year": 2023, "rank": 2, "song": "Flowers", "artist": "Miley Cyrus"},
+                {"year": 2023, "rank": 3, "song": "Kill Bill", "artist": "SZA"},
+                {"year": 2023, "rank": 4, "song": "Anti-Hero", "artist": "Taylor Swift"},
+                {"year": 2023, "rank": 5, "song": "Creepin'", "artist": "Metro Boomin, The Weeknd, 21 Savage"},
+                {"year": 2023, "rank": 6, "song": "Calm Down", "artist": "Rema, Selena Gomez"},
+                {"year": 2023, "rank": 7, "song": "Die for You", "artist": "The Weeknd, Ariana Grande"},
+                {"year": 2023, "rank": 8, "song": "Fast Car", "artist": "Luke Combs"},
+                {"year": 2023, "rank": 9, "song": "Snooze", "artist": "SZA"},
+                {"year": 2023, "rank": 10, "song": "I'm Good (Blue)", "artist": "David Guetta, Bebe Rexha"}
+              ]
+            },
+            "title": "Top 10 Most Streamed Songs on Billboard Hot 100 in 2023",
+            "mark": "bar",
+            "encoding": {
+              "y": {"field": "song", "type": "nominal", "sort": "-x", "title": "Song"},
+              "x": {
+                "field": "rank", 
+                "type": "quantitative", 
+                "title": "Rank", 
+                "scale": {"domain": [0, 10], "nice": true}, 
+                "axis": {"grid": true}
+              },
+              "color": {"field": "artist", "type": "nominal", "title": "Artist", "legend": {"columns": 1}},
+              "tooltip": [
+                {"field": "song", "type": "nominal", "title": "Song"},
+                {"field": "artist", "type": "nominal", "title": "Artist"},
+                {"field": "rank", "type": "quantitative", "title": "Rank"}
+              ]
+            }
+          },
+          {
+      "data": {
+        "values": [
+          {"year": 2022, "rank": 1, "song": "Heat Waves", "artist": "Glass Animals"},
+          {"year": 2022, "rank": 2, "song": "As It Was", "artist": "Harry Styles"},
+          {"year": 2022, "rank": 3, "song": "Stay", "artist": "The Kid Laroi, Justin Bieber"},
+          {"year": 2022, "rank": 4, "song": "Easy on Me", "artist": "Adele"},
+          {"year": 2022, "rank": 5, "song": "Shivers", "artist": "Ed Sheeran"},
+          {"year": 2022, "rank": 6, "song": "First Class", "artist": "Jack Harlow"},
+          {"year": 2022, "rank": 7, "song": "Big Energy", "artist": "Latto"},
+          {"year": 2022, "rank": 8, "song": "Ghost", "artist": "Justin Bieber"},
+          {"year": 2022, "rank": 9, "song": "Super Gremlin", "artist": "Kodak Black"},
+          {"year": 2022, "rank": 10, "song": "Cold Heart (Pnau Remix)", "artist": "Elton John, Dua Lipa"}
+        ]
+      },
+      "title": "Top 10 Most Streamed Songs on Billboard Hot 100 in 2022",
+      "mark": "bar",
+      "encoding": {
+        "y": {"field": "song", "type": "nominal", "sort": "-x", "title": "Song"},
+        "x": {
+          "field": "rank", 
+          "type": "quantitative", 
+          "title": "Rank", 
+          "scale": {"domain": [0, 10], "nice": true}, 
+          "axis": {"grid": true}
+        },
+        "color": {"field": "artist", "type": "nominal", "title": "Artist"},
+        "tooltip": [
+          {"field": "song", "type": "nominal", "title": "Song"},
+          {"field": "artist", "type": "nominal", "title": "Artist"},
+          {"field": "rank", "type": "quantitative", "title": "Rank"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"year": 2021, "rank": 1, "song": "Levitating", "artist": "Dua Lipa"},
+          {"year": 2021, "rank": 2, "song": "Save Your Tears", "artist": "The Weeknd, Ariana Grande"},
+          {"year": 2021, "rank": 3, "song": "Blinding Lights", "artist": "The Weeknd"},
+          {"year": 2021, "rank": 4, "song": "Mood", "artist": "24kGoldn feat. Iann Dior"},
+          {"year": 2021, "rank": 5, "song": "Good 4 U", "artist": "Olivia Rodrigo"},
+          {"year": 2021, "rank": 6, "song": "Kiss Me More", "artist": "Doja Cat feat. SZA"},
+          {"year": 2021, "rank": 7, "song": "Leave the Door Open", "artist": "Silk Sonic (Bruno Mars, Anderson .Paak)"},
+          {"year": 2021, "rank": 8, "song": "Drivers License", "artist": "Olivia Rodrigo"},
+          {"year": 2021, "rank": 9, "song": "Montero (Call Me By Your Name)", "artist": "Lil Nas X"},
+          {"year": 2021, "rank": 10, "song": "Peaches", "artist": "Justin Bieber feat. Daniel Caesar, Giveon"}
+        ]
+      },
+      "title": "Top 10 Most Streamed Songs on Billboard Hot 100 in 2021",
+      "mark": "bar",
+      "encoding": {
+        "y": {"field": "song", "type": "nominal", "sort": "-x", "title": "Song"},
+        "x": {
+          "field": "rank", 
+          "type": "quantitative", 
+          "title": "Rank", 
+          "scale": {"domain": [0, 10], "nice": true}, 
+          "axis": {"grid": true}
+        },
+        "color": {"field": "artist", "type": "nominal", "title": "Artist"},
+        "tooltip": [
+          {"field": "song", "type": "nominal", "title": "Song"},
+          {"field": "artist", "type": "nominal", "title": "Artist"},
+          {"field": "rank", "type": "quantitative", "title": "Rank"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"year": 2020, "rank": 1, "song": "Blinding Lights", "artist": "The Weeknd"},
+          {"year": 2020, "rank": 2, "song": "Circles", "artist": "Post Malone"},
+          {"year": 2020, "rank": 3, "song": "The Box", "artist": "Roddy Ricch"},
+          {"year": 2020, "rank": 4, "song": "Don't Start Now", "artist": "Dua Lipa"},
+          {"year": 2020, "rank": 5, "song": "Rockstar", "artist": "DaBaby feat. Roddy Ricch"},
+          {"year": 2020, "rank": 6, "song": "Adore You", "artist": "Harry Styles"},
+          {"year": 2020, "rank": 7, "song": "Life Is Good", "artist": "Future feat. Drake"},
+          {"year": 2020, "rank": 8, "song": "Memories", "artist": "Maroon 5"},
+          {"year": 2020, "rank": 9, "song": "The Bones", "artist": "Maren Morris"},
+          {"year": 2020, "rank": 10, "song": "Someone You Loved", "artist": "Lewis Capaldi"}
+        ]
+      },
+      "title": "Top 10 Most Streamed Songs on Billboard Hot 100 in 2020",
+      "mark": "bar",
+      "encoding": {
+        "y": {"field": "song", "type": "nominal", "sort": "-x", "title": "Song"},
+        "x": {
+          "field": "rank", 
+          "type": "quantitative", 
+          "title": "Rank", 
+          "scale": {"domain": [0, 10], "nice": true}, 
+          "axis": {"grid": true}
+        },
+        "color": {"field": "artist", "type": "nominal", "title": "Artist"},
+        "tooltip": [
+          {"field": "song", "type": "nominal", "title": "Song"},
+          {"field": "artist", "type": "nominal", "title": "Artist"},
+          {"field": "rank", "type": "quantitative", "title": "Rank"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"year": 2019, "rank": 1, "song": "Old Town Road", "artist": "Lil Nas X feat. Billy Ray Cyrus"},
+          {"year": 2019, "rank": 2, "song": "Sunflower (Spider-Man: Into the Spider-Verse)", "artist": "Post Malone, Swae Lee"},
+          {"year": 2019, "rank": 3, "song": "Without Me", "artist": "Halsey"},
+          {"year": 2019, "rank": 4, "song": "Bad Guy", "artist": "Billie Eilish"},
+          {"year": 2019, "rank": 5, "song": "Wow.", "artist": "Post Malone"},
+          {"year": 2019, "rank": 6, "song": "Happier", "artist": "Marshmello, Bastille"},
+          {"year": 2019, "rank": 7, "song": "7 Rings", "artist": "Ariana Grande"},
+          {"year": 2019, "rank": 8, "song": "Talk", "artist": "Khalid"},
+          {"year": 2019, "rank": 9, "song": "Sicko Mode", "artist": "Travis Scott"},
+          {"year": 2019, "rank": 10, "song": "Sucker", "artist": "Jonas Brothers"}
+        ]
+      },
+      "title": "Top 10 Most Streamed Songs on Billboard Hot 100 in 2019",
+      "mark": "bar",
+      "encoding": {
+        "y": {"field": "song", "type": "nominal", "sort": "-x", "title": "Song"},
+        "x": {
+          "field": "rank", 
+          "type": "quantitative", 
+          "title": "Rank", 
+          "scale": {"domain": [0, 10], "nice": true}, 
+          "axis": {"grid": true}
+        },
+        "color": {"field": "artist", "type": "nominal", "title": "Artist"},
+        "tooltip": [
+          {"field": "song", "type": "nominal", "title": "Song"},
+          {"field": "artist", "type": "nominal", "title": "Artist"},
+          {"field": "rank", "type": "quantitative", "title": "Rank"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"year": 2018, "rank": 1, "song": "God's Plan", "artist": "Drake"},
+          {"year": 2018, "rank": 2, "song": "Perfect", "artist": "Ed Sheeran"},
+          {"year": 2018, "rank": 3, "song": "Meant to Be", "artist": "Bebe Rexha, Florida Georgia Line"},
+          {"year": 2018, "rank": 4, "song": "Havana", "artist": "Camila Cabello feat. Young Thug"},
+          {"year": 2018, "rank": 5, "song": "Rockstar", "artist": "Post Malone feat. 21 Savage"},
+          {"year": 2018, "rank": 6, "song": "Psycho", "artist": "Post Malone feat. Ty Dolla $ign"},
+          {"year": 2018, "rank": 7, "song": "I Like It", "artist": "Cardi B, Bad Bunny, J Balvin"},
+          {"year": 2018, "rank": 8, "song": "The Middle", "artist": "Zedd, Maren Morris, Grey"},
+          {"year": 2018, "rank": 9, "song": "In My Feelings", "artist": "Drake"},
+          {"year": 2018, "rank": 10, "song": "Girls Like You", "artist": "Maroon 5 feat. Cardi B"}
+        ]
+      },
+      "title": "Top 10 Most Streamed Songs on Billboard Hot 100 in 2018",
+      "mark": "bar",
+      "encoding": {
+        "y": {"field": "song", "type": "nominal", "sort": "-x", "title": "Song"},
+        "x": {
+          "field": "rank", 
+          "type": "quantitative", 
+          "title": "Rank", 
+          "scale": {"domain": [0, 10], "nice": true}, 
+          "axis": {"grid": true}
+        },
+        "color": {"field": "artist", "type": "nominal", "title": "Artist"},
+        "tooltip": [
+          {"field": "song", "type": "nominal", "title": "Song"},
+          {"field": "artist", "type": "nominal", "title": "Artist"},
+          {"field": "rank", "type": "quantitative", "title": "Rank"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"year": 2017, "rank": 1, "song": "Shape of You", "artist": "Ed Sheeran"},
+          {"year": 2017, "rank": 2, "song": "Despacito", "artist": "Luis Fonsi, Daddy Yankee feat. Justin Bieber"},
+          {"year": 2017, "rank": 3, "song": "That's What I Like", "artist": "Bruno Mars"},
+          {"year": 2017, "rank": 4, "song": "Humble", "artist": "Kendrick Lamar"},
+          {"year": 2017, "rank": 5, "song": "Something Just Like This", "artist": "The Chainsmokers, Coldplay"},
+          {"year": 2017, "rank": 6, "song": "Bad and Boujee", "artist": "Migos feat. Lil Uzi Vert"},
+          {"year": 2017, "rank": 7, "song": "Closer", "artist": "The Chainsmokers feat. Halsey"},
+          {"year": 2017, "rank": 8, "song": "Body Like a Back Road", "artist": "Sam Hunt"},
+          {"year": 2017, "rank": 9, "song": "Believer", "artist": "Imagine Dragons"},
+          {"year": 2017, "rank": 10, "song": "Congratulations", "artist": "Post Malone feat. Quavo"}
+        ]
+      },
+      "title": "Top 10 Most Streamed Songs on Billboard Hot 100 in 2017",
+      "mark": "bar",
+      "encoding": {
+        "y": {"field": "song", "type": "nominal", "sort": "-x", "title": "Song"},
+        "x": {
+          "field": "rank", 
+          "type": "quantitative", 
+          "title": "Rank", 
+          "scale": {"domain": [0, 10], "nice": true}, 
+          "axis": {"grid": true}
+        },
+        "color": {"field": "artist", "type": "nominal", "title": "Artist"},
+        "tooltip": [
+          {"field": "song", "type": "nominal", "title": "Song"},
+          {"field": "artist", "type": "nominal", "title": "Artist"},
+          {"field": "rank", "type": "quantitative", "title": "Rank"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"year": 2016, "rank": 1, "song": "Love Yourself", "artist": "Justin Bieber"},
+          {"year": 2016, "rank": 2, "song": "Sorry", "artist": "Justin Bieber"},
+          {"year": 2016, "rank": 3, "song": "One Dance", "artist": "Drake feat. Wizkid, Kyla"},
+          {"year": 2016, "rank": 4, "song": "Work", "artist": "Rihanna feat. Drake"},
+          {"year": 2016, "rank": 5, "song": "Stressed Out", "artist": "Twenty One Pilots"},
+          {"year": 2016, "rank": 6, "song": "Panda", "artist": "Desiigner"},
+          {"year": 2016, "rank": 7, "song": "Hello", "artist": "Adele"},
+          {"year": 2016, "rank": 8, "song": "Don't Let Me Down", "artist": "The Chainsmokers feat. Daya"},
+          {"year": 2016, "rank": 9, "song": "Can't Stop the Feeling!", "artist": "Justin Timberlake"},
+          {"year": 2016, "rank": 10, "song": "Closer", "artist": "The Chainsmokers feat. Halsey"}
+        ]
+      },
+      "title": "Top 10 Most Streamed Songs on Billboard Hot 100 in 2016",
+      "mark": "bar",
+      "encoding": {
+        "y": {"field": "song", "type": "nominal", "sort": "-x", "title": "Song"},
+        "x": {
+          "field": "rank", 
+          "type": "quantitative", 
+          "title": "Rank", 
+          "scale": {"domain": [0, 10], "nice": true}, 
+          "axis": {"grid": true}
+        },
+        "color": {"field": "artist", "type": "nominal", "title": "Artist"},
+        "tooltip": [
+          {"field": "song", "type": "nominal", "title": "Song"},
+          {"field": "artist", "type": "nominal", "title": "Artist"},
+          {"field": "rank", "type": "quantitative", "title": "Rank"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"year": 2015, "rank": 1, "song": "Uptown Funk", "artist": "Mark Ronson feat. Bruno Mars"},
+          {"year": 2015, "rank": 2, "song": "Thinking Out Loud", "artist": "Ed Sheeran"},
+          {"year": 2015, "rank": 3, "song": "See You Again", "artist": "Wiz Khalifa feat. Charlie Puth"},
+          {"year": 2015, "rank": 4, "song": "Can't Feel My Face", "artist": "The Weeknd"},
+          {"year": 2015, "rank": 5, "song": "Bad Blood", "artist": "Taylor Swift feat. Kendrick Lamar"},
+          {"year": 2015, "rank": 6, "song": "Hello", "artist": "Adele"},
+          {"year": 2015, "rank": 7, "song": "Take Me to Church", "artist": "Hozier"},
+          {"year": 2015, "rank": 8, "song": "Sugar", "artist": "Maroon 5"},
+          {"year": 2015, "rank": 9, "song": "Cheerleader", "artist": "OMI"},
+          {"year": 2015, "rank": 10, "song": "Lean On", "artist": "Major Lazer & DJ Snake feat. MØ"}
+        ]
+      },
+      "title": "Top 10 Most Streamed Songs on Billboard Hot 100 in 2015",
+      "mark": "bar",
+      "encoding": {
+        "y": {"field": "song", "type": "nominal", "sort": "-x", "title": "Song"},
+        "x": {
+          "field": "rank", 
+          "type": "quantitative", 
+          "title": "Rank", 
+          "scale": {"domain": [0, 10], "nice": true}, 
+          "axis": {"grid": true}
+        },
+        "color": {"field": "artist", "type": "nominal", "title": "Artist"},
+        "tooltip": [
+          {"field": "song", "type": "nominal", "title": "Song"},
+          {"field": "artist", "type": "nominal", "title": "Artist"},
+          {"field": "rank", "type": "quantitative", "title": "Rank"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "values": [
+          {"year": 2014, "rank": 1, "song": "Happy", "artist": "Pharrell Williams"},
+          {"year": 2014, "rank": 2, "song": "All About That Bass", "artist": "Meghan Trainor"},
+          {"year": 2014, "rank": 3, "song": "Shake It Off", "artist": "Taylor Swift"},
+          {"year": 2014, "rank": 4, "song": "All of Me", "artist": "John Legend"},
+          {"year": 2014, "rank": 5, "song": "Stay with Me", "artist": "Sam Smith"},
+          {"year": 2014, "rank": 6, "song": "Rude", "artist": "Magic!"},
+          {"year": 2014, "rank": 7, "song": "Fancy", "artist": "Iggy Azalea feat. Charli XCX"},
+          {"year": 2014, "rank": 8, "song": "Bang Bang", "artist": "Jessie J, Ariana Grande, Nicki Minaj"},
+          {"year": 2014, "rank": 9, "song": "Problem", "artist": "Ariana Grande feat. Iggy Azalea"},
+          {"year": 2014, "rank": 10, "song": "Turn Down for What", "artist": "DJ Snake, Lil Jon"}
+        ]
+      },
+      "title": "Top 10 Most Streamed Songs on Billboard Hot 100 in 2014",
+      "mark": "bar",
+      "encoding": {
+        "y": {"field": "song", "type": "nominal", "sort": "-x", "title": "Song"},
+        "x": {
+          "field": "rank", 
+          "type": "quantitative", 
+          "title": "Rank", 
+          "scale": {"domain": [0, 10], "nice": true}, 
+          "axis": {"grid": true}
+        },
+        "color": {"field": "artist", "type": "nominal", "title": "Artist"},
+        "tooltip": [
+          {"field": "song", "type": "nominal", "title": "Song"},
+          {"field": "artist", "type": "nominal", "title": "Artist"},
+          {"field": "rank", "type": "quantitative", "title": "Rank"}
+        ]
+      }
+    }
+        ]
+      };
 
-
+      vegaEmbed('#vis4_billboard_top_10', vg_1).then(function(result) {
+          console.log(result);
+      }).catch(console.error);
+  </script>
+    
 </body>
 </html>
