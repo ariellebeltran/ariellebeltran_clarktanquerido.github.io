@@ -99,7 +99,11 @@ figcaption{
     display: grid;
     gap: 20px 0px;
     margin: 0px -40px;
-    
+
+    img{
+        width: 40vw; /* Keep the natural width */
+        height: auto; /* Keep the natural height */
+    }
 }
 
 .item-dataset1{
@@ -117,7 +121,7 @@ figcaption{
 .scroll-container {
     grid-column-start: 1;
     grid-row-start: 2;
-    width: 42vw; /* Set container width */
+    width: 40vw; /* Set container width */
     height: 300px; /* Set container height */
     overflow: auto; /* Allow scrollbars to appear if needed */
     border: 1px solid #000000; /* Optional: Add a border */
@@ -132,14 +136,16 @@ figcaption{
 
 /* Ensure the image respects the container size */
 .scroll-container img {
-    width: 40vw; /* Keep the natural width */
+    width: 38vw; /* Keep the natural width */
     height: auto; /* Keep the natural height */
     display: block; /* Avoid inline spacing issues */
 }
 
-.item-dataset5{
+.item-dataset5 {
     grid-column-start: 1;
     grid-row: 3;
+    grid-template-columns: 50vw;
+    grid-template-rows: auto;
 }
 
 .item-dataset6{
@@ -151,6 +157,30 @@ figcaption{
     grid-column-start: 2;
     grid-row: 3/5;
 }
+
+/* DATASET =================================================================================================================*/
+/* 
+.content-vis1{ */
+    
+    /* display: none;
+    overflow: hidden;
+    background-color: #efefef; */
+    
+/* } */
+
+/* .vis1{ */
+    /* display: block;
+    flex-direction: column; */
+    /* justify-content: center; */
+    /* width: 100%;
+    height: auto; */
+/* } */
+
+
+/* #spotifyDemographicsChart{
+    width: 50vw;
+    height: 150vh;
+} */
 
 /* TEAM MEMBERS ======================================================================================================== */
 
