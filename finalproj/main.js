@@ -16,8 +16,9 @@ async function loadDataAndCreateSpotifyChart() {
         description: "Line chart showing Spotify user demographics over time.",
         data: { values: processedData }, // Use the processed data
         mark: "line", // Line chart
-        width: 600,  // Set the width of the chart
+        width: 690,  // Set the width of the chart
         height: 400, // Set the height of the chart
+        autosize: { type: "fit", contains: "padding" }, // Enables fitting to container
         encoding: {
             x: {
                 field: "Year",
@@ -67,8 +68,9 @@ async function loadSpotifyGenresOverTimeChart() {
             url: "../datasets/top_5_genres_2013_2023_by_streams.csv"
         },
         "mark": "line",
-        width: 600,  // Set the width of the chart
-        height: 400, // Set the height of the chart
+        width: 700,  // Set the width of the chart
+        height: 400, // Set the height of the chart,
+        autosize: { type: "fit", contains: "padding" }, // Enables fitting to container
         "layer": [
             {
                 "mark": { "type": "line", "strokeWidth": 2 },
@@ -163,8 +165,9 @@ async function loadBarCharts() {
                 { field: "Age Group", title: "Age Group" }
             ]
         },
-        width: 600,
-        height: 400
+        width: 665,
+        height: 500,
+        autosize: { type: "fit", contains: "padding" } // Enables fitting to container
     };
 
     // Embed bar chart for 2013 (both Millennials and Gen Z)
@@ -186,8 +189,9 @@ async function loadBarCharts() {
                 { field: "Age Group", title: "Age Group" }
             ]
         },
-        width: 600,
-        height: 400
+        width: 665,
+        height: 500,
+        autosize: { type: "fit", contains: "padding" } // Enables fitting to container
     };
 
     // Embed bar chart for 2023 (both Millennials and Gen Z)

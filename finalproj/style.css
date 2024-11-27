@@ -4,16 +4,19 @@
 
 /* BODY */
 
-body{
+body {
     margin: 40px;
 }
 
 /* NAVIGATION ========================================================================================================== */
 
-.container-nav{
-    display: flex; /* Enables flexbox */
-    justify-content: space-between; /* Distribute items to the edges */
-    align-items: center; /* Center vertically */
+.container-nav {
+    display: flex;
+    /* Enables flexbox */
+    justify-content: space-between;
+    /* Distribute items to the edges */
+    align-items: center;
+    /* Center vertically */
 
     font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;
@@ -23,33 +26,34 @@ body{
         "wdth" 100;
 }
 
-nav{
-    a{
+nav {
+    a {
         padding-left: 20px;
     }
 }
 
-a:hover{
+a:hover {
     font-weight: bold;
 }
 
-a, a:visited {
+a,
+a:visited {
     text-decoration: none;
-    color:black;
+    color: black;
 }
 
 /* HEADER =============================================================================================================== */
 
-.container-webtitle{
+.container-webtitle {
     width: 70vw;
     margin: 50px 0px;
 }
 
-.container-content{
+.container-content {
     margin: 50px 0px;
 }
 
-h1{
+h1 {
     font-family: "Antonio", serif;
     font-optical-sizing: auto;
     font-weight: 600;
@@ -57,15 +61,15 @@ h1{
     font-size: 50px;
 }
 
-h2{
-    
+h2 {
+
     font-family: "Ramabhadra", sans-serif;
     font-weight: 300;
     font-style: normal;
     /* text-transform: uppercase; */
 }
 
-h3{
+h3 {
     font-family: "Barlow Semi Condensed", serif;
     font-weight: 500;
     font-style: normal;
@@ -73,7 +77,8 @@ h3{
 
 /* CONTENT =============================================================================================================== */
 
-p, li{
+p,
+li {
     width: 75vw;
     font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;
@@ -83,48 +88,54 @@ p, li{
         "wdth" 100;
 }
 
-figcaption{
+figcaption {
     font-family: "Barlow Semi Condensed", serif;
     font-weight: 300;
     font-style: normal;
 }
 
-#scroll-caption{
+#scroll-caption {
     padding-top: 5px;
 }
 
 /* DATASET IMAGES ====================================================================================================== */
 
-.container-datasetimgs{
+.container-datasetimgs {
     display: grid;
     gap: 20px 0px;
     margin: 0px -40px;
 
-    img{
-        width: 40vw; /* Keep the natural width */
-        height: auto; /* Keep the natural height */
+    img {
+        width: 40vw;
+        /* Keep the natural width */
+        height: auto;
+        /* Keep the natural height */
     }
 }
 
-.item-dataset1{
+.item-dataset1 {
     grid-column-start: 1;
     grid-row-start: 1;
 }
 
-.item-dataset2{
+.item-dataset2 {
     grid-column-start: 2;
     grid-column-end: 2;
-    grid-row-start:1;
+    grid-row-start: 1;
 }
 
 /* General styling for scrollable containers */
 .scroll-container {
     grid-column-start: 1;
     grid-row-start: 2;
-    width: 40vw; /* Set container width */
-    height: 300px; /* Set container height */
-    overflow: auto; /* Allow scrollbars to appear if needed */
-    border: 1px solid #000000; /* Optional: Add a border */
+    width: 40vw;
+    /* Set container width */
+    height: 300px;
+    /* Set container height */
+    overflow: auto;
+    /* Allow scrollbars to appear if needed */
+    border: 1px solid #000000;
+    /* Optional: Add a border */
     /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  */
 }
 
@@ -136,9 +147,12 @@ figcaption{
 
 /* Ensure the image respects the container size */
 .scroll-container img {
-    width: 38vw; /* Keep the natural width */
-    height: auto; /* Keep the natural height */
-    display: block; /* Avoid inline spacing issues */
+    width: 38vw;
+    /* Keep the natural width */
+    height: auto;
+    /* Keep the natural height */
+    display: block;
+    /* Avoid inline spacing issues */
 }
 
 .item-dataset5 {
@@ -148,12 +162,12 @@ figcaption{
     grid-template-rows: auto;
 }
 
-.item-dataset6{
+.item-dataset6 {
     grid-column-start: 1;
-    grid-row:4;
+    grid-row: 4;
 }
 
-.item-dataset7{
+.item-dataset7 {
     grid-column-start: 2;
     grid-row: 3/5;
 }
@@ -161,18 +175,18 @@ figcaption{
 /* DATASET =================================================================================================================*/
 /* 
 .content-vis1{ */
-    
-    /* display: none;
+
+/* display: none;
     overflow: hidden;
     background-color: #efefef; */
-    
+
 /* } */
 
 /* .vis1{ */
-    /* display: block;
+/* display: block;
     flex-direction: column; */
-    /* justify-content: center; */
-    /* width: 100%;
+/* justify-content: center; */
+/* width: 100%;
     height: auto; */
 /* } */
 
@@ -182,27 +196,42 @@ figcaption{
     height: 150vh;
 } */
 
+#spotifyDemographicsChart, #spotifyGenresOverTimeChart, #barChart2013, #barChart2023 {
+    width: 90vw;
+    /* 90% of the viewport width */
+    height: auto;
+    /* Let Vega-Lite determine the height */
+    margin: 0 auto;
+    /* Center the chart */
+    padding: 0px;
+    /* Optional padding for styling */
+    resize: both;
+    /* Allows resizing if needed */
+    overflow: auto;
+    /* Prevents overflow when resizing */
+}
+
 /* TEAM MEMBERS ======================================================================================================== */
 
-.team-members{
+.team-members {
     display: flex;
 
-    div{
+    div {
         padding-right: 20px;
     }
 
-    font-family: "Open Sans", sans-serif;
+    font-family: "Open Sans",
+    sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    font-variation-settings:
-        "wdth" 100;
+    font-variation-settings: "wdth" 100;
 }
 
 /* IMAGE HOVER =========================================================================================================*/
 
- /* Styling for the word */
- .hover-word {
+/* Styling for the word */
+.hover-word {
     position: relative;
     cursor: pointer;
     text-decoration: none;
@@ -210,13 +239,17 @@ figcaption{
 
 /* Hidden image container */
 .hover-word .popup-image {
-    display: none; /* Hide by default */
+    display: none;
+    /* Hide by default */
     position: absolute;
-    top: 120%; /* Position below the word */
-    left: 100%; /* left align the image */
+    top: 120%;
+    /* Position below the word */
+    left: 100%;
+    /* left align the image */
     transform: translateX(-50%);
     z-index: 10;
-    width: 200px; /* Adjust image size */
+    width: 200px;
+    /* Adjust image size */
     border: 1px solid #ccc;
     background-color: #fff;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
