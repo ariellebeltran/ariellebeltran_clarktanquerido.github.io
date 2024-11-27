@@ -69,33 +69,46 @@ async function loadSpotifyGenresOverTimeChart() {
         "mark": "line",
         width: 600,  // Set the width of the chart
         height: 400, // Set the height of the chart
-        "encoding": {
-            "x": {
-                "field": "year",
-                "type": "ordinal",
-                "title": "Year"
-            },
-            "y": {
-                "field": "Streams",
-                "type": "quantitative",
-                "title": "Total Streams (in Billions)",
-                "axis": {
-                    "format": ".2s"  // This will format the numbers with SI units (e.g., 1.2B for billions, 1.2M for millions, etc.)
+        "layer": [
+            {
+                "mark": { "type": "line", "strokeWidth": 2 },
+                "encoding": {
+                    "x": {
+                        "field": "year",
+                        "type": "ordinal",
+                        "title": "Year",
+                        axis: {
+                            labelAngle: 0  // Rotate the labels by 45 degrees
+                        },
+                        
+                    },
+                    "y": {
+                        "field": "Streams",
+                        "type": "quantitative",
+                        "title": "Total Streams (in Billions)",
+                        "axis": { "format": ".2s" }
+                    },
+                    "color": {
+                        "field": "main_genre",
+                        "type": "nominal",
+                        "legend": { "title": "Main Genre" }
+                    }
                 }
             },
-            "color": {
-                "field": "main_genre",
-                "type": "nominal",
-                "legend": {
-                    "title": "Main Genre"
+            {
+                "mark": { "type": "line", "strokeWidth": 10, "opacity": 0 },
+                "encoding": {
+                    "x": { "field": "year", "type": "ordinal", "axis": {"format": "d"}},
+                    "y": { "field": "Streams", "type": "quantitative" },
+                    "color": { "field": "main_genre", "type": "nominal" },
+                    "tooltip": [
+                        { "field": "year", "title": "Year:", "axis": {"format": "d"}},
+                        { "field": "Streams", "title": "Streams:", "format": ".2s" },
+                        { "field": "main_genre", "title": "Genre:" }
+                    ]
                 }
-            },
-            "tooltip": [
-                { "field": "year", "title": "Year" },
-                { "field": "Streams", "title": "Streams" },
-                { "field": "main_genre", "title": "Genre" }
-            ]
-        },
+            }
+        ],
         config: {
             mark: {
                 strokeOpacity: 0.8
