@@ -123,4 +123,76 @@ async function loadSpotifyGenresOverTimeChart() {
 // Call the function to load the chart
 loadSpotifyGenresOverTimeChart();
 
-// VISUALIZATION 00 ===========================================================================================================
+// VISUALIZATION 2.5 ===========================================================================================================
+
+async function loadBarCharts() {
+    // Load the CSV data
+    const data = await d3.csv("../datasets/spotify_2013_2023 - Music_Genres_2013_2023.csv");
+
+    // Convert Percentage to numeric values (remove '%' symbol and divide by 100)
+    const formattedData = data.map(d => ({
+        ...d,
+        Percentage: parseFloat(d.Percentage.replace('%', '')) / 100, // Convert to numeric and divide by 100
+        Year: +d.Year // Ensure Year is treated as a number
+    }));
+
+    // Filter data for 2013 and 2023
+    const data2013 = formattedData.filter(d => d.Year === 2013);
+    const data2023 = formattedData.filter(d => d.Year === 2023);
+
+    // Sort data by percentage in descending order
+    const sortDataByPercentage = (data) => data.sort((a, b) => b.Percentage - a.Percentage);
+
+    // Sort the data for 2013 and 2023
+    const sortedData2013 = sortDataByPercentage(data2013);
+    const sortedData2023 = sortDataByPercentage(data2023);
+
+    // Prepare data for Bar Chart for 2013 (both Millennials and Gen Z)
+    const barChart2013 = {
+        $schema: "https://vega.github.io/schema/vega-lite/v5.json",
+        title: "Top Music Genres - 2013",
+        data: { values: sortedData2013 },
+        mark: "bar", // Bar chart mark
+        encoding: {
+            x: { field: "Top Music Genres", type: "nominal", title: "Genre", axis: { labelAngle: -45 } },
+            y: { field: "Percentage", type: "quantitative", title: "Percentage", axis: { format: ".1%" } },
+            color: { field: "Age Group", type: "nominal", legend: { title: "Age Group" } },
+            tooltip: [
+                { field: "Top Music Genres", title: "Genre" },
+                { field: "Percentage", title: "Percentage", type: "quantitative", format: ".1%" },
+                { field: "Age Group", title: "Age Group" }
+            ]
+        },
+        width: 600,
+        height: 400
+    };
+
+    // Embed bar chart for 2013 (both Millennials and Gen Z)
+    vegaEmbed("#barChart2013", barChart2013);
+
+    // Prepare data for Bar Chart for 2023 (both Millennials and Gen Z)
+    const barChart2023 = {
+        $schema: "https://vega.github.io/schema/vega-lite/v5.json",
+        title: "Top Music Genres - 2023",
+        data: { values: sortedData2023 },
+        mark: "bar", // Bar chart mark
+        encoding: {
+            x: { field: "Top Music Genres", type: "nominal", title: "Genre", axis: { labelAngle: -45 } },
+            y: { field: "Percentage", type: "quantitative", title: "Percentage", axis: { format: ".1%" } },
+            color: { field: "Age Group", type: "nominal", legend: { title: "Age Group" } },
+            tooltip: [
+                { field: "Top Music Genres", title: "Genre" },
+                { field: "Percentage", title: "Percentage", type: "quantitative", format: ".1%" },
+                { field: "Age Group", title: "Age Group" }
+            ]
+        },
+        width: 600,
+        height: 400
+    };
+
+    // Embed bar chart for 2023 (both Millennials and Gen Z)
+    vegaEmbed("#barChart2023", barChart2023);
+}
+
+// Call the function to load data and render the bar charts
+loadBarCharts();
