@@ -19,11 +19,11 @@ async function loadDataAndCreateSpotifyChart() {
         width: 600,  // Set the width of the chart
         height: 400, // Set the height of the chart
         encoding: {
-            x: { 
-                field: "Year", 
+            x: {
+                field: "Year",
                 type: "ordinal",  // Use ordinal scale for years
                 title: "Year",
-                axis: { 
+                axis: {
                     labelAngle: 0  // Rotate the labels by 0 degrees
                 }
             }, // x-axis for years
@@ -32,10 +32,10 @@ async function loadDataAndCreateSpotifyChart() {
                 type: "quantitative",
                 title: "Users in Age Groups (Millions)"
             }, // y-axis for user count
-            color: { 
-                field: "Age Group", 
-                type: "nominal", 
-                legend: { title: "Age Group" } 
+            color: {
+                field: "Age Group",
+                type: "nominal",
+                legend: { title: "Age Group" }
             }, // Color by age group
             tooltip: [
                 { field: "Year", type: "ordinal", title: "Year" },
@@ -59,15 +59,12 @@ loadDataAndCreateSpotifyChart();
 // VISUALIZATION 02 ===========================================================================================================
 
 async function loadSpotifyGenresOverTimeChart() {
-    // Load the CSV file (adjust the path as necessary)
-    const data = await d3.csv("../datasets/top_10_genres_2010_2023 - top_10_genres_2010_2023@1.csv");
-
     // Vega-Lite specification
-    const yourVlSpec = {
-        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-        "description": "Line chart for all genres over time",
-        "data": {
-            "values": data // Use the loaded data directly
+    const vlSpec = {
+        $schema: "https://vega.github.io/schema/vega-lite/v5.json",
+        description: "Line chart for all genres over time",
+        data: {
+            url: "../datasets/top_5_genres_2013_2023_by_streams.csv"
         },
         "mark": "line",
         width: 600,  // Set the width of the chart
@@ -76,15 +73,15 @@ async function loadSpotifyGenresOverTimeChart() {
             "x": {
                 "field": "year",
                 "type": "ordinal",
-                "title": "Year",
-                axis: { 
-                    labelAngle: 0  // Rotate the labels by 45 degrees
-                }
+                "title": "Year"
             },
             "y": {
-                "field": "count",
+                "field": "Streams",
                 "type": "quantitative",
-                "title": "Count"
+                "title": "Total Streams (in Billions)",
+                "axis": {
+                    "format": ".2s"  // This will format the numbers with SI units (e.g., 1.2B for billions, 1.2M for millions, etc.)
+                }
             },
             "color": {
                 "field": "main_genre",
@@ -94,18 +91,23 @@ async function loadSpotifyGenresOverTimeChart() {
                 }
             },
             "tooltip": [
-                {"field": "year", "title": "Year"},
-                {"field": "count", "title": "Count"},
-                {"field": "main_genre", "title": "Genre"}
+                { "field": "year", "title": "Year" },
+                { "field": "Streams", "title": "Streams" },
+                { "field": "main_genre", "title": "Genre" }
             ]
+        },
+        config: {
+            mark: {
+                strokeOpacity: 0.8
+            }
         }
     };
 
-    // Embed the Vega-Lite chart into the div with the ID 'spotifyGenresOverTimeChart'
-    vegaEmbed("#spotifyGenresOverTimeChart", yourVlSpec);
+    // Embed the Vega-Lite chart in the container
+    vegaEmbed("#spotifyGenresOverTimeChart", vlSpec).catch(console.error);
 }
 
-// Call the function to load data and create the chart
+// Call the function to load the chart
 loadSpotifyGenresOverTimeChart();
 
 // VISUALIZATION 00 ===========================================================================================================
