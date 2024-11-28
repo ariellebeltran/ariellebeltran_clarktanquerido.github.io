@@ -1,6 +1,6 @@
 /* FONT STYLES*/
 
-@import url('https://fonts.googleapis.com/css2?family=Anton&family=Anton+SC&family=Antonio:wght@100..700&family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans&family=Ramabhadra&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Anton+SC&family=Antonio:wght@100..700&family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Hind+Siliguri:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ramabhadra&display=swap');
 
 /* BODY */
 
@@ -12,6 +12,7 @@ body {
 
 .container-nav {
     display: flex;
+    
     /* Enables flexbox */
     justify-content: space-between;
     /* Distribute items to the edges */
@@ -24,16 +25,25 @@ body {
     font-style: normal;
     font-variation-settings:
         "wdth" 100;
+
 }
 
 nav {
     a {
         padding-left: 20px;
+        font-size: 14px;
     }
+    
 }
+
+/* #nav-nothighlighted{
+    font-size: 12px;
+} */
 
 a:hover {
     font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
 }
 
 a,
@@ -54,11 +64,26 @@ a:visited {
 }
 
 h1 {
-    font-family: "Antonio", serif;
+    font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
-    font-weight: 600;
+    font-weight: 800;
     font-style: normal;
-    font-size: 50px;
+
+    margin-bottom: 10px;
+    font-size: 70px;
+    text-transform: uppercase;
+    line-height: 95%;
+    width: 68vw;
+}
+
+#title-subheader {
+    font-family: "Barlow Semi Condensed", serif;
+    font-weight: 300;
+    font-style: normal;
+    margin: 0;
+    font-size: 40px;
+    line-height: 95%;
+    width: 60vw;
 }
 
 h2 {
@@ -79,7 +104,7 @@ h3 {
 
 p,
 li {
-    width: 75vw;
+    width: 60vw;
     font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
@@ -196,7 +221,10 @@ figcaption {
     height: 150vh;
 } */
 
-#spotifyDemographicsChart, #spotifyGenresOverTimeChart, #barChart2013, #barChart2023 {
+#spotifyDemographicsChart,
+#spotifyGenresOverTimeChart,
+#barChart2013,
+#barChart2023 {
     width: 90vw;
     /* 90% of the viewport width */
     height: auto;
