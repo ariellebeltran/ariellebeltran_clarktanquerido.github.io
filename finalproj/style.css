@@ -140,7 +140,7 @@ figcaption {
     margin: 0px -40px;
 
     img {
-        width: 40vw;
+        width: 43vw;
         /* Keep the natural width */
         height: auto;
         /* Keep the natural height */
@@ -162,7 +162,7 @@ figcaption {
 .scroll-container {
     grid-column-start: 1;
     grid-row-start: 2;
-    width: 40vw;
+    width: 43vw;
     /* Set container width */
     height: 300px;
     /* Set container height */
