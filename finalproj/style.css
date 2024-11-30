@@ -101,7 +101,7 @@ a:visited {
 }
 
 
-/* HEADER =============================================================================================================== */
+/* HEADER, H#s, FOOTER =============================================================================================================== */
 
 .container-webtitle {
     width: 70vw;
@@ -152,6 +152,28 @@ h3 {
     font-family: "Barlow Semi Condensed", serif;
     font-weight: 500;
     font-style: normal;
+}
+
+h4, h5{
+    font-family: "Barlow Semi Condensed", serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+footer{
+    color: #ccc;
+    font-family: "Barlow Semi Condensed", serif;
+    font-weight: 300;
+    font-style: normal;
+
+    text-align: center;
+
+    line-height: 20px;
+    padding-top: 50px;
+}
+
+#the-space{
+    padding:0px 10px;
 }
 
 /* CONTENT =============================================================================================================== */
