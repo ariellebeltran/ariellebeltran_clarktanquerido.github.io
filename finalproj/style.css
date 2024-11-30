@@ -12,7 +12,7 @@ body {
 
 .container-nav {
     display: flex;
-    
+
     /* Enables flexbox */
     justify-content: space-between;
     /* Distribute items to the edges */
@@ -33,10 +33,18 @@ nav {
         padding-left: 30px;
         font-size: 14px;
     }
-    
+
+    @media only screen and (max-width: 768px) {
+        padding: 20px;
+    }
+
+    @media only screen and (max-width: 480px) {
+        padding: 20px;
+    }
+
 }
 
-#nav-nothighlighted{
+#nav-nothighlighted {
     font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;
     font-weight: 200;
@@ -60,6 +68,20 @@ a:visited {
     text-decoration: none;
     color: black;
 }
+
+/* HOME BANNER */
+
+#home-banner{
+    /* padding:100px; */
+    background-image: url('https://ariellebeltran.github.io/with_clarktanquerido/images/spotify-banner.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 100%; 
+    height: 300px; 
+    /* background-size: cover;  */
+    background-position: center;
+}
+
 
 /* HEADER =============================================================================================================== */
 
