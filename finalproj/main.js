@@ -296,3 +296,69 @@ async function loadSpotifyAgeDemogHighlighted() {
 
 // Call the function to create the chart
 loadSpotifyAgeDemogHighlighted();
+
+// Function to load data and create the chart
+async function loadSpotifyUsersChart() {
+    // Load the CSV file (adjust the path as necessary)
+    const data = await d3.csv("../datasets/spotify_demog_2013_2023 - Sheet1.csv");
+
+    // Process the data
+    const processedData = data.map(d => ({
+        Year: parseInt(d.Year, 10),  // Convert 'Year' to an integer
+        "Age Group": d["Age Group"],
+        "Users in Age Groups (Millions)": +d["Users in Age Groups (Millions)"]
+    }));
+
+    // Vega-Lite specification for the faceted bar chart
+    const yourVlSpec = {
+        $schema: "https://vega.github.io/schema/vega-lite/v5.json",
+        description: "Bar chart showing Spotify user demographics over time, separated by year.",
+        data: { values: processedData }, // Use the processed data
+        mark: "bar", // Bar chart
+        width: 100,  // Set the width of each subplot
+        height: 300, // Set the height of each subplot
+        facet: {
+            field: "Year",  // Facet by year
+            columns: 5  // Number of columns for the faceted subplots
+        },
+        spec: {
+            encoding: {
+                x: {
+                    field: "Age Group",
+                    type: "nominal",
+                    title: "Age Group"
+                },
+                y: {
+                    field: "Users in Age Groups (Millions)",
+                    type: "quantitative",
+                    title: "Users in Age Groups (Millions)"
+                },
+                color: {
+                    field: "Age Group",
+                    type: "nominal",
+                    legend: { title: "Age Group" }
+                },
+                tooltip: [
+                    { field: "Year", type: "ordinal", title: "Year" },
+                    { field: "Age Group", type: "nominal", title: "Age Group" },
+                    {
+                        field: "Users in Age Groups (Millions)",
+                        type: "quantitative",
+                        title: "Users (Millions)"
+                    }
+                ] // Tooltip details
+            }
+        },
+        resolve: { 
+            scale: { 
+                y: "independent"  // Allows each subplot to have its own y-scale
+            }
+        }
+    };
+
+    // Embed the Vega-Lite chart
+    vegaEmbed("#spotifyUsersChart", yourVlSpec);
+}
+
+// Call the function to load data and create
+loadSpotifyUsersChart();
