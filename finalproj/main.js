@@ -248,3 +248,51 @@ async function loadSpotifyAgeDemog() {
 // Call the function to create the chart
 loadSpotifyAgeDemog();
 
+
+// Function to load data and create the chart
+async function loadSpotifyAgeDemogHighlighted() {
+    // Vega-Lite specification for the pie chart with highlighted age group
+    const yourVlSpec = {
+        $schema: "https://vega.github.io/schema/vega-lite/v5.json",
+        description: "Pie chart showing Spotify age demographics in 2023, highlighting the 25-34 age group.",
+        width: 400,
+        height: 400,
+        data: {
+            values: [
+                {"age": "18-24", "percentage": 26},
+                {"age": "25-34", "percentage": 29},
+                {"age": "35-44", "percentage": 16},
+                {"age": "45-54", "percentage": 11},
+                {"age": "55+", "percentage": 19}
+            ]
+        },
+        mark: {
+            type: "arc",
+            tooltip: true
+        },
+        encoding: {
+            theta: { field: "percentage", type: "quantitative" },
+            color: {
+                field: "age",
+                type: "nominal",
+                scale: {
+                    domain: ["18-24", "25-34", "35-44", "45-54", "55+"],
+                    range: ["#d3d3d3", "#ff6347", "#d3d3d3", "#d3d3d3", "#d3d3d3"] // Highlighting "25-34" with a distinct color
+                },
+                legend: { title: "Age Group" }
+            },
+            tooltip: [
+                { field: "age", type: "nominal", title: "Age Group" },
+                { field: "percentage", type: "quantitative", title: "Percentage (%)" }
+            ]
+        },
+        view: { stroke: null },
+        title: "Spotify Age Demographics (2023)"
+    };
+
+    // Embed the Vega-Lite chart
+    vegaEmbed('#spotifyDemographicsChartHighlighted', yourVlSpec);
+}
+
+// Call the function to create the chart
+loadSpotifyAgeDemogHighlighted();
