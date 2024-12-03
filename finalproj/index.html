@@ -48,36 +48,51 @@
         <h2 id="first-header">Spotify's User Demographics</h2>
         <!-- <h3>Who are the main users of the music streaming service?</h3> -->
         <p>Did you know that Millennials and Gen Zs are the top users of Spotify?</p>
-        <p>As of 2023, the main users of the streaming service are users aged 35 and below. Insert more text info
-            here...
+        <p>As of 2023, the main users of the streaming service are users aged 35 and below. With Gen Zs (18-24) at 26%
+            and
+            Millennials (25-44) at 44%.
+            This difference highlights the significant popularity of Spotify among younger age groups compared to older
+            age groups.
+
         </p>
 
-        <div class="content-vis1">
-            <!-- <h2>Visualization: Spotify User Demographics Over Time</h2> -->
-            <!-- <p>This line chart visualizes Spotify user demographics by age group from 2013 to 2023.</p> -->
-            <div class="vis1">
-                <div id="spotifyAgeDemographicsChart"></div>
+        <!--Slideshow Code from W3Schools-->
+        <div class="slideshow-container">
+            <div class="mySlides content-vis1">
+                <!-- <h2>Visualization: Spotify User Demographics Over Time</h2> -->
+                <!-- <p>This line chart visualizes Spotify user demographics by age group from 2013 to 2023.</p> -->
+                <div class="numbertext">1 / 2</div>
+                <div class="vis1">
+                    <div id="spotifyAgeDemographicsChart"></div>
+                    <figcaption>*Hover to view percentages</figcaption>
+                </div>
             </div>
-        </div>
 
-        <div class="content-vis1.5">
-            <!-- <h2>Visualization: Spotify User Demographics Over Time</h2> -->
-            <!-- <p>This line chart visualizes Spotify user demographics by age group from 2013 to 2023.</p> -->
-            <div class="vis1.5">
-                <div id="spotifyDemographicsChartHighlighted"></div>
+            <div class="mySlides content-vis1">
+                <div class="numbertext">2 / 2</div>
+                <div class="vis1">
+                    <div id="spotifyDemographicsChartHighlighted"></div>
+                    <figcaption>*Hover to view percentages</figcaption>
+                </div>
             </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
         </div>
+        <!-- <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+        </div> -->
     </div>
 
     <div class="container-content">
-        <h2 id="first-header">Spotify, A Platform Streaming Success</h2>
+        <h2 id="first-header">Platform Streaming Success</h2>
         <!-- <h3>Who are the main users of the music streaming service?</h3> -->
         <p>To highlight, the top main demographics of Spotify have increased exponentially in the past decade.
-            With Gen Zs having a 650% increase in users, growing from 20 million to 150 million 
+            With Gen Zs having a 650% increase in users, growing from 20 million to 150 million
             and Millennials having a 900% increase in users, growing from 18 million to 180 million from 2013 to 2023.
 
         </p>
-        
+
 
         <div class="content-vis2">
             <!-- <h2>Visualization: Spotify User Demographics Over Time</h2> -->
@@ -106,29 +121,23 @@
             </div> -->
             <!-- * IGNORE * -->
 
-            <h3>Millennials' Genres</h3>
-            <p>Insert text here...</p>
+            <!-- <h3>Pop & Hip-hop Popularity In The Past Decade</h3> -->
+            <p>Pop & Hip-Hop has maintained it's popularity in the past decade.</p>
 
             <div class="vis3">
                 <!-- insert updated vis here vvv  -->
-                <div id="">insert vis here</div>
+                 <div id="spotifyUserGenreChart"></div>
+                 <figcaption>*Hover to view age groups, percentages, and music genres.</figcaption>
+                <!-- <div id="spotify2013GenreChart">insert vis here</div> -->
             </div>
 
-            <h3>Gen Zs' Genres</h3>
-            <p>Insert text here...</p>
+            <!-- <h3>2023 Top Genres</h3>
+            <p>Insert text here...</p> -->
 
-            <div class="vis3">
+            <!-- <div class="vis3"> -->
                 <!-- insert updated vis here vvv  -->
-                <div id="">insert vis here</div>
-            </div>
-
-            <h3>Top Genres Globally</h3>
-            <p>Insert text here...</p>
-
-            <div class="vis3">
-                <!-- insert updated vis here vvv  -->
-                <div id="">insert vis here</div>
-            </div>
+                <!-- <div id="spotify2023GenreChart">insert vis here</div> -->
+            <!-- </div> -->
 
         </div>
 
@@ -148,7 +157,7 @@
                 <h3>Spotify Music Rankings</h3>
                 <p>Insert text here...</p>
                 <!-- insert updated vis here vvv  -->
-                <div id="">insert vis here</div>
+                <div id="topSpotifyGenresChart">insert vis here</div>
 
                 <h3>Billboard 100 Rankings</h3>
                 <p>Insert text here...</p>
