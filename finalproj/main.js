@@ -259,22 +259,29 @@ async function loadSpotifyAgeDemog() {
 loadSpotifyAgeDemog();
 
 
+// Custom colors
+const colors = {
+    "18-24 (Gen Zs)": "#b6c9de",
+    "25-44 (Millennials)": "#F58518",
+    "45-54 (Gen X)": "#f4bcbb",
+    "55+ (Majority Baby Boomers)": "#c7e2e0"
+};
+
 // Function to load data and create the chart
 async function loadSpotifyAgeDemogHighlighted() {
-    // Vega-Lite specification for the pie chart with highlighted age group
+    // Vega-Lite specification for the pie chart
     const yourVlSpec = {
         $schema: "https://vega.github.io/schema/vega-lite/v5.json",
-        description: "Pie chart showing Spotify age demographics in 2023, highlighting the 25-34 age group.",
+        description: "Pie chart showing Spotify age demographics in 2023.",
         width: 600,
         height: 600,
         data: {
-            values:
-                [
-                    { "age": "18-24", "percentage": 26 },
-                    { "age": "25-44", "percentage": 45 },
-                    { "age": "45-54", "percentage": 11 },
-                    { "age": "55+", "percentage": 19 }
-                ]
+            values: [
+                { "age": "18-24 (Gen Zs)", "percentage": 26 },
+                { "age": "25-44 (Millennials)", "percentage": 45 },
+                { "age": "45-54 (Gen X)", "percentage": 11 },
+                { "age": "55+ (Majority Baby Boomers)", "percentage": 19 }
+            ]
         },
         mark: {
             type: "arc",
@@ -285,11 +292,8 @@ async function loadSpotifyAgeDemogHighlighted() {
             color: {
                 field: "age",
                 type: "nominal",
-                scale: {
-                    domain: ["18-24", "25-44", "45-54", "55+"],
-                    range: ["#d3d3d3", "#F58518", "#d3d3d3", "#d3d3d3"] // Highlighting "25-34" with a distinct color
-                },
-                legend: { title: "Age Group" }
+                legend: { title: "Age Group" },
+                scale: { domain: Object.keys(colors), range: Object.values(colors) }
             },
             tooltip: [
                 { field: "age", type: "nominal", title: "Age Group" },
@@ -306,6 +310,7 @@ async function loadSpotifyAgeDemogHighlighted() {
 
 // Call the function to create the chart
 loadSpotifyAgeDemogHighlighted();
+
 
 async function loadSpotifyUsersChart() {
 
@@ -520,116 +525,6 @@ loadTopSpotifyGenresChart();
 
 // colour lightener https://mdigi.tools/lighten-color/#ffa07a
 
-// Function to load data and create the charts
-async function loadSpotifyUserGenreChart() {
-    // Data for 2013
-    const data2013 = [
-        { "Age Group": "Millennials", "Top Music Genres": "Pop", "Percentage": 35 },
-        { "Age Group": "Millennials", "Top Music Genres": "Hip-Hop/Rap", "Percentage": 25 },
-        { "Age Group": "Millennials", "Top Music Genres": "R&B", "Percentage": 20 },
-        { "Age Group": "Millennials", "Top Music Genres": "K-Pop/J-Pop", "Percentage": 5 },
-        { "Age Group": "Millennials", "Top Music Genres": "Regional Mexican, Bollywood, Spanish Contemporary", "Percentage": 10 },
-        { "Age Group": "Millennials", "Top Music Genres": "Other Genres (Latin, EDM, etc.)", "Percentage": 5 },
-        { "Age Group": "Gen Z", "Top Music Genres": "Pop", "Percentage": 40 },
-        { "Age Group": "Gen Z", "Top Music Genres": "Hip-Hop/Rap", "Percentage": 25 },
-        { "Age Group": "Gen Z", "Top Music Genres": "Electronic", "Percentage": 10 },
-        { "Age Group": "Gen Z", "Top Music Genres": "Indie/Alternative", "Percentage": 15 },
-        { "Age Group": "Gen Z", "Top Music Genres": "Other genres (Latin, EDM, etc.)", "Percentage": 10 }
-    ];
-
-    // Data for 2023
-    const data2023 = [
-        { "Age Group": "Millennials", "Top Music Genres": "Pop", "Percentage": 40 },
-        { "Age Group": "Millennials", "Top Music Genres": "Hip-Hop/Rap", "Percentage": 30 },
-        { "Age Group": "Millennials", "Top Music Genres": "Rock", "Percentage": 15 },
-        { "Age Group": "Millennials", "Top Music Genres": "Indie/Alternative", "Percentage": 10 },
-        { "Age Group": "Millennials", "Top Music Genres": "Other genres (Latin, EDM, etc.)", "Percentage": 5 },
-        { "Age Group": "Gen Z", "Top Music Genres": "Pop", "Percentage": 40 },
-        { "Age Group": "Gen Z", "Top Music Genres": "Afrobeats", "Percentage": 25 },
-        { "Age Group": "Gen Z", "Top Music Genres": "Alternative/Indie", "Percentage": 20 },
-        { "Age Group": "Gen Z", "Top Music Genres": "Hip-Hop/Rap", "Percentage": 10 },
-        { "Age Group": "Gen Z", "Top Music Genres": "Other genres (Latin, EDM, etc.)", "Percentage": 5 }
-    ];
-
-    // Custom colors
-    const colors = {
-        "Pop": "#4C78A8",
-        "Hip-Hop/Rap": "#F58518",
-        // colour lightener https://mdigi.tools/lighten-color/#ffa07a
-        "R&B": "#f4bcbb",
-        "K-Pop/J-Pop": "#c7e2e0",
-        "Regional Mexican, Bollywood, Spanish Contemporary": "#b8dcb4",
-        "Other Genres (Latin, EDM, etc.)": "#f8eab1",
-        "Electronic": "#e0c9da",
-        "Indie/Alternative": "#ffd8db",
-        "Rock": "#d8c8be",
-        "Afrobeats": "#e3dfde",
-        "Alternative/Indie": "#ffd9ca"
-    };
-
-    // Vega-Lite specification for the pie chart for 2013
-    const vlSpec2013 = {
-        $schema: "https://vega.github.io/schema/vega-lite/v5.json",
-        description: "Pie chart showing Spotify top music genres by age group in 2013.",
-        width: 600,
-        height: 600,
-        data: { values: data2013 },
-        mark: { type: "arc", tooltip: true },
-        encoding: {
-            theta: { field: "Percentage", type: "quantitative" },
-            color: {
-                field: "Top Music Genres",
-                type: "nominal",
-                legend: { title: "Top Music Genres" },
-                scale: { domain: Object.keys(colors), range: Object.values(colors) }
-            },
-            tooltip: [
-                { field: "Age Group", type: "nominal", title: "Age Group" },
-                { field: "Top Music Genres", type: "nominal", title: "Top Music Genres" },
-                { field: "Percentage", type: "quantitative", title: "Percentage (%)" }
-            ]
-        },
-        view: { stroke: null },
-        title: "Spotify Top Music Genres by Age Group (2013)"
-    };
-
-    // Vega-Lite specification for the pie chart for 2023
-    const vlSpec2023 = {
-        $schema: "https://vega.github.io/schema/vega-lite/v5.json",
-        description: "Pie chart showing Spotify top music genres by age group in 2023.",
-        width: 600,
-        height: 600,
-        data: { values: data2023 },
-        mark: { type: "arc", tooltip: true },
-        encoding: {
-            theta: { field: "Percentage", type: "quantitative" },
-            color: {
-                field: "Top Music Genres",
-                type: "nominal",
-                legend: { title: "Top Music Genres" },
-                scale: { domain: Object.keys(colors), range: Object.values(colors) }
-            },
-            detail: { field: "Age Group" }, 
-            tooltip: [
-                { field: "Year", type: "ordinal", title: "Year" }, 
-                { field: "Age Group", type: "nominal", title: "Age Group" }, 
-                { field: "Top Music Genres", type: "nominal", title: "Top Music Genres" }, 
-                { field: "Percentage", type: "quantitative", title: "Percentage (%)" }]
-        }, transform: [
-            { aggregate: [{ 
-                op: "sum", field: "Percentage", as: "Percentage" }], 
-                groupby: ["Year", "Top Music Genres", "Age Group"] }], 
-                view: { stroke: null }, title
-    };
-
-    // Embed the Vega-Lite charts
-    vegaEmbed('#spotify2013GenreChart', vlSpec2013);
-    vegaEmbed('#spotify2023GenreChart', vlSpec2023);
-}
-
-// Call the function to create the charts
-loadSpotifyUserGenreChart();
-
 // Function to load data and create the chart
 async function loadSpotifyUserGenreChart() {
     // Data for 2013 and 2023 combined
@@ -674,7 +569,19 @@ async function loadSpotifyUserGenreChart() {
 
     // Custom tooltip data for the specific point
     const customTooltipData = [
-        { "Year": "2023", "Age Group": "Millennials & Gen Z", "Top Music Genres": "Pop", "Percentage": 40 }
+        {
+            "Year": "2023",
+            "Age Group": "Millennials & Gen Zs",
+            "Top Music Genres": "Pop",
+            "Percentage": 40
+        },
+
+        {
+            "Year": "2013",
+            "Age Group": "Millennials & Gen Zs",
+            "Top Music Genres": "Hip-Hop/Rap",
+            "Percentage": 25
+        }
     ];
 
     // Combine the main data with the custom tooltip data
