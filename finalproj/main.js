@@ -1249,6 +1249,7 @@ async function loadBillboard100Charts() {
 
 // loadBillboard100Charts();
 
+// WORKING BILLBOARD 100 CHART ===============================================================================================
 async function loadBillboard100Charts() {
     const popArtists = [
         'Miley Cyrus', 'Taylor Swift', 'Taylor Swift feat. Kendrick Lamar', 'Dua Lipa', 'Olivia Rodrigo',
@@ -1453,6 +1454,9 @@ async function loadBillboard100Charts() {
   loadBillboard100Charts();
 
 
+// CLARK PUT UR CODE HERE ==================================================================================================
+
+// CLARK PUT UR CODE HERE ==================================================================================================
 
 // From W3Schools
 // MY SLIDES CODE ========================================================================================================
