@@ -1400,7 +1400,7 @@ async function loadBillboard100Charts() {
                       "field": "rank",
                       "type": "quantitative",
                       "title": "Rank",
-                      "scale": { "domain": [0, 10], "nice": true },
+                      "scale": { "domain": [0, 5], "nice": true },
                       "axis": { "grid": true, "format": "d" }
                   },
                   "color": {
