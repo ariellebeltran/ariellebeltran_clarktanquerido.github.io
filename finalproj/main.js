@@ -1456,9 +1456,9 @@ async function loadBillboard100Charts() {
 
 // CLARK PUT UR CODE HERE ==================================================================================================
 // Function to load data and create the chart
-async function loadReginalAppearncesInTop10() {
+async function loadRegionalAppearancesInTop10() {
     // Vega-Lite specification for the pie chart
-    const yourVlSpec = {
+    const vlSpec = {
         "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
         "description": "Accumulated appearances of songs from specific regions in Spotify's top 10 rankings over the past decade.",
         "width": 800,
@@ -1683,8 +1683,10 @@ async function loadReginalAppearncesInTop10() {
 
     };
     // Embed the Vega-Lite chart
-    vegaEmbed('#spotifyRegionAppearanceInTop10', yourVlSpec);
+    vegaEmbed('#spotifyRegionalAppearancesInTop10', vlSpec);
 }
+
+loadRegionalAppearancesInTop10();
 // CLARK PUT UR CODE HERE ==================================================================================================
 
 // From W3Schools
