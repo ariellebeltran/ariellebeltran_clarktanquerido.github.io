@@ -1029,7 +1029,7 @@ async function loadBillboard100Charts() {
 
     const layers = yearsData.map(yearData => ({
         "data": { "values": yearData.data },
-        "title": `Top 10 Most Streamed Songs on Billboard Hot 100 in ${yearData.year}`,
+        "title": `Top 5 Most Streamed Songs on Billboard Hot 100 in ${yearData.year}`,
         "mark": "bar",
         "encoding": {
             "y": { "field": "song", "type": "nominal", "sort": "-x", "title": "Song" },
@@ -1391,12 +1391,12 @@ async function loadBillboard100Charts() {
           const vlSpec = {
               "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
               "data": { "values": yearData.data },
-              "title": `Top 10 Most Streamed Songs on Billboard Hot 100 in ${yearData.year}`,
+              "title": `Top 5 Most Streamed Songs on Billboard Hot 100 in ${yearData.year}`,
               "mark": "bar",
               width: 600,
               height: 400,
               "encoding": {
-                  "y": { "field": "song", "type": "nominal", "sort": "-x", "title": "Song" },
+                  "y": { "field": "song", "type": "nominal", "sort": "x", "title": "Song" },
                   "x": {
                       "field": "rank",
                       "type": "quantitative",
