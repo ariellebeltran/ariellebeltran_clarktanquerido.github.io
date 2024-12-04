@@ -19,6 +19,9 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5.23.0"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.7.0"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6.20.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
 </head>
 
@@ -371,7 +374,7 @@
             <div id="">insert vis here</div>
 
             <h3>Relevancy In Different Regions</h3>
-            <p>Insert text here...</p>
+            <p>Looking at the top songs which appeared within the top 10 Spotify rankings at the end of each year from 2014 to 2023, it is clearly visible the difference in songs produced within the Western continents that appeared in the top 10 rankings compared to the rest of the world. Specifically look at North America, a total of 65 songs has appeared withi nthe top 10 over the past decade, compared to Asia and Australia which only has a total of 5 songs reach the top 10 (Asia with 2 and Australia with 3).</p>
 
             <!-- insert updated vis here vvv  -->
             <!-- <div id="">insert vis here</div> -->
@@ -381,6 +384,10 @@
                 <!-- The Billboard 100 charts will be appended here dynamically -->
             </div>
 
+            <!-- PLACEHOLDER VIS FOR NOW ( WITHIOUT THE SLIDER )-->
+            <div id="spotifyRegionalAppearancesInTop10">test</div>
+            <!-- CODE PLACEHOLDER FOR CLARK ===================================================-->
+
             <!-- Slider for selecting the year -->
             <input type="range" min="0" max="9" value="0" class="slider" id="yearSlider">
 
@@ -388,7 +395,6 @@
             <p id="currentYear">Year: 2014</p>
 
             <script src="https://cdn.jsdelivr.net/npm/vega-embed@5.20.0"></script>
-            <!-- CODE PLACEHOLDER FOR CLARK ===================================================-->
 
         </div>
 
