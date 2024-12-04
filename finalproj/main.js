@@ -648,6 +648,811 @@ async function loadSpotifyUserGenreChart() {
 loadSpotifyUserGenreChart();
 
 
+async function loadBillboard100LineChart() {
+    const vlSpec = {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        width: 600,
+        height: 400,
+        "data": {
+            "values": [
+                // 2023 data
+                { "year": 2023, "rank": 1, "song": "Last Night", "artist": "Morgan Wallen" },
+                { "year": 2023, "rank": 2, "song": "Flowers", "artist": "Miley Cyrus" },
+                { "year": 2023, "rank": 3, "song": "Kill Bill", "artist": "SZA" },
+                { "year": 2023, "rank": 4, "song": "Anti-Hero", "artist": "Taylor Swift" },
+                { "year": 2023, "rank": 5, "song": "Creepin'", "artist": "Metro Boomin, The Weeknd, 21 Savage" },
+                // { "year": 2023, "rank": 6, "song": "Calm Down", "artist": "Rema, Selena Gomez" },
+                // { "year": 2023, "rank": 7, "song": "Die for You", "artist": "The Weeknd, Ariana Grande" },
+                // { "year": 2023, "rank": 8, "song": "Fast Car", "artist": "Luke Combs" },
+                // { "year": 2023, "rank": 9, "song": "Snooze", "artist": "SZA" },
+                // { "year": 2023, "rank": 10, "song": "I'm Good (Blue)", "artist": "David Guetta, Bebe Rexha" },
+                // 2022 data
+                { "year": 2022, "rank": 1, "song": "Heat Waves", "artist": "Glass Animals" },
+                { "year": 2022, "rank": 2, "song": "As It Was", "artist": "Harry Styles" },
+                { "year": 2022, "rank": 3, "song": "Stay", "artist": "The Kid Laroi, Justin Bieber" },
+                { "year": 2022, "rank": 4, "song": "Easy on Me", "artist": "Adele" },
+                { "year": 2022, "rank": 5, "song": "Shivers", "artist": "Ed Sheeran" },
+                // { "year": 2022, "rank": 6, "song": "First Class", "artist": "Jack Harlow" },
+                // { "year": 2022, "rank": 7, "song": "Big Energy", "artist": "Latto" },
+                // { "year": 2022, "rank": 8, "song": "Ghost", "artist": "Justin Bieber" },
+                // { "year": 2022, "rank": 9, "song": "Super Gremlin", "artist": "Kodak Black" },
+                // { "year": 2022, "rank": 10, "song": "Cold Heart (Pnau Remix)", "artist": "Elton John, Dua Lipa" },
+                // 2021 data
+                { "year": 2021, "rank": 1, "song": "Levitating", "artist": "Dua Lipa" },
+                { "year": 2021, "rank": 2, "song": "Save Your Tears", "artist": "The Weeknd, Ariana Grande" },
+                { "year": 2021, "rank": 3, "song": "Blinding Lights", "artist": "The Weeknd" },
+                { "year": 2021, "rank": 4, "song": "Mood", "artist": "24kGoldn feat. Iann Dior" },
+                { "year": 2021, "rank": 5, "song": "Good 4 U", "artist": "Olivia Rodrigo" },
+                // { "year": 2021, "rank": 6, "song": "Kiss Me More", "artist": "Doja Cat feat. SZA" },
+                // { "year": 2021, "rank": 7, "song": "Leave the Door Open", "artist": "Silk Sonic (Bruno Mars, Anderson .Paak)" },
+                // { "year": 2021, "rank": 8, "song": "Drivers License", "artist": "Olivia Rodrigo" },
+                // { "year": 2021, "rank": 9, "song": "Montero (Call Me By Your Name)", "artist": "Lil Nas X" },
+                // { "year": 2021, "rank": 10, "song": "Peaches", "artist": "Justin Bieber feat. Daniel Caesar, Giveon" },
+                // // 2020 data
+                { "year": 2020, "rank": 1, "song": "Blinding Lights", "artist": "The Weeknd" },
+                { "year": 2020, "rank": 2, "song": "Circles", "artist": "Post Malone" },
+                { "year": 2020, "rank": 3, "song": "The Box", "artist": "Roddy Ricch" },
+                { "year": 2020, "rank": 4, "song": "Don't Start Now", "artist": "Dua Lipa" },
+                { "year": 2020, "rank": 5, "song": "Rockstar", "artist": "DaBaby feat. Roddy Ricch" },
+                // { "year": 2020, "rank": 6, "song": "Adore You", "artist": "Harry Styles" },
+                // { "year": 2020, "rank": 7, "song": "Life Is Good", "artist": "Future feat. Drake" },
+                // { "year": 2020, "rank": 8, "song": "Memories", "artist": "Maroon 5" },
+                // { "year": 2020, "rank": 9, "song": "The Bones", "artist": "Maren Morris" },
+                // { "year": 2020, "rank": 10, "song": "Someone You Loved", "artist": "Lewis Capaldi" },
+                // 2019 data
+                { "year": 2019, "rank": 1, "song": "Old Town Road", "artist": "Lil Nas X feat. Billy Ray Cyrus" },
+                { "year": 2019, "rank": 2, "song": "Sunflower (Spider-Man: Into the Spider-Verse)", "artist": "Post Malone, Swae Lee" },
+                { "year": 2019, "rank": 3, "song": "Without Me", "artist": "Halsey" },
+                { "year": 2019, "rank": 4, "song": "Bad Guy", "artist": "Billie Eilish" },
+                { "year": 2019, "rank": 5, "song": "Wow.", "artist": "Post Malone" },
+                // { "year": 2019, "rank": 6, "song": "Happier", "artist": "Marshmello, Bastille" },
+                // { "year": 2019, "rank": 7, "song": "7 Rings", "artist": "Ariana Grande" },
+                // { "year": 2019, "rank": 8, "song": "Talk", "artist": "Khalid" },
+                // { "year": 2019, "rank": 9, "song": "Sicko Mode", "artist": "Travis Scott" },
+                // { "year": 2019, "rank": 10, "song": "Sucker", "artist": "Jonas Brothers" },
+                // 2018 data
+                { "year": 2018, "rank": 1, "song": "God's Plan", "artist": "Drake" },
+                { "year": 2018, "rank": 2, "song": "Perfect", "artist": "Ed Sheeran" },
+                { "year": 2018, "rank": 3, "song": "Meant to Be", "artist": "Bebe Rexha, Florida Georgia Line" },
+                { "year": 2018, "rank": 4, "song": "Havana", "artist": "Camila Cabello feat. Young Thug" },
+                { "year": 2018, "rank": 5, "song": "Rockstar", "artist": "Post Malone feat. 21 Savage" },
+                // { "year": 2018, "rank": 6, "song": "Psycho", "artist": "Post Malone feat. Ty Dolla $ign" },
+                // { "year": 2018, "rank": 7, "song": "I Like It", "artist": "Cardi B, Bad Bunny, J Balvin" },
+                // { "year": 2018, "rank": 8, "song": "The Middle", "artist": "Zedd, Maren Morris, Grey" },
+                // { "year": 2018, "rank": 9, "song": "In My Feelings", "artist": "Drake" },
+                // { "year": 2018, "rank": 10, "song": "Girls Like You", "artist": "Maroon 5 feat. Cardi B" },
+                // 2017 data
+                { "year": 2017, "rank": 1, "song": "Shape of You", "artist": "Ed Sheeran" },
+                { "year": 2017, "rank": 2, "song": "Despacito", "artist": "Luis Fonsi, Daddy Yankee feat. Justin Bieber" },
+                { "year": 2017, "rank": 3, "song": "That's What I Like", "artist": "Bruno Mars" },
+                { "year": 2017, "rank": 4, "song": "Humble", "artist": "Kendrick Lamar" },
+                { "year": 2017, "rank": 5, "song": "Something Just Like This", "artist": "The Chainsmokers, Coldplay" },
+                // { "year": 2017, "rank": 6, "song": "Bad and Boujee", "artist": "Migos feat. Lil Uzi Vert" },
+                // { "year": 2017, "rank": 7, "song": "Closer", "artist": "The Chainsmokers feat. Halsey" },
+                // { "year": 2017, "rank": 8, "song": "Body Like a Back Road", "artist": "Sam Hunt" },
+                // { "year": 2017, "rank": 9, "song": "Believer", "artist": "Imagine Dragons" },
+                // { "year": 2017, "rank": 10, "song": "Congratulations", "artist": "Post Malone feat. Quavo" },
+                // 2016 data
+                { "year": 2016, "rank": 1, "song": "Love Yourself", "artist": "Justin Bieber" },
+                { "year": 2016, "rank": 2, "song": "Sorry", "artist": "Justin Bieber" },
+                { "year": 2016, "rank": 3, "song": "One Dance", "artist": "Drake feat. Wizkid, Kyla" },
+                { "year": 2016, "rank": 4, "song": "Work", "artist": "Rihanna feat. Drake" },
+                { "year": 2016, "rank": 5, "song": "Stressed Out", "artist": "Twenty One Pilots" },
+                // { "year": 2016, "rank": 6, "song": "Panda", "artist": "Desiigner" },
+                // { "year": 2016, "rank": 7, "song": "Hello", "artist": "Adele" },
+                // { "year": 2016, "rank": 8, "song": "Don't Let Me Down", "artist": "The Chainsmokers feat. Daya" },
+                // { "year": 2016, "rank": 9, "song": "Can't Stop the Feeling!", "artist": "Justin Timberlake" },
+                // { "year": 2016, "rank": 10, "song": "Closer", "artist": "The Chainsmokers feat. Halsey" },
+                // 2015 data
+                { "year": 2015, "rank": 1, "song": "Uptown Funk", "artist": "Mark Ronson feat. Bruno Mars" },
+                { "year": 2015, "rank": 2, "song": "Thinking Out Loud", "artist": "Ed Sheeran" },
+                { "year": 2015, "rank": 3, "song": "See You Again", "artist": "Wiz Khalifa feat. Charlie Puth" },
+                { "year": 2015, "rank": 4, "song": "Can't Feel My Face", "artist": "The Weeknd" },
+                { "year": 2015, "rank": 5, "song": "Bad Blood", "artist": "Taylor Swift feat. Kendrick Lamar" },
+                // { "year": 2015, "rank": 6, "song": "Hello", "artist": "Adele" },
+                // { "year": 2015, "rank": 7, "song": "Take Me to Church", "artist": "Hozier" },
+                // { "year": 2015, "rank": 8, "song": "Sugar", "artist": "Maroon 5" },
+                // { "year": 2015, "rank": 9, "song": "Cheerleader", "artist": "OMI" },
+                // { "year": 2015, "rank": 10, "song": "Lean On", "artist": "Major Lazer & DJ Snake feat. MØ" },
+                // 2014 data
+                { "year": 2014, "rank": 1, "song": "Happy", "artist": "Pharrell Williams" },
+                { "year": 2014, "rank": 2, "song": "All About That Bass", "artist": "Meghan Trainor" },
+                { "year": 2014, "rank": 3, "song": "Shake It Off", "artist": "Taylor Swift" },
+                { "year": 2014, "rank": 4, "song": "All of Me", "artist": "John Legend" },
+                { "year": 2014, "rank": 5, "song": "Stay with Me", "artist": "Sam Smith" },
+                // { "year": 2014, "rank": 6, "song": "Rude", "artist": "Magic!" },
+                // { "year": 2014, "rank": 7, "song": "Fancy", "artist": "Iggy Azalea feat. Charli XCX" },
+                // { "year": 2014, "rank": 8, "song": "Bang Bang", "artist": "Jessie J, Ariana Grande, Nicki Minaj" },
+                // { "year": 2014, "rank": 9, "song": "Problem", "artist": "Ariana Grande feat. Iggy Azalea" },
+                // { "year": 2014, "rank": 10, "song": "Turn Down for What", "artist": "DJ Snake, Lil Jon" }
+            ]
+        },
+        "mark": "bar",
+        "encoding": {
+            "y": {
+                "field": "song",
+                "type": "nominal",
+                "sort": "-x",
+                "title": "Song"
+            },
+            "x": {
+                "field": "rank",
+                "type": "quantitative",
+                "title": "Rank",
+                "scale": { "domain": [1, 5], "nice": true },
+                "axis": { "grid": true }
+            },
+            "color": {
+                "field": "artist",
+                "type": "nominal",
+                "title": "Artist"
+            },
+            "tooltip": [
+                { "field": "year", "type": "ordinal", "title": "Year" },
+                { "field": "song", "type": "nominal", "title": "Song" },
+                { "field": "artist", "type": "nominal", "title": "Artist" },
+                { "field": "rank", "type": "quantitative", "title": "Rank" }
+            ]
+        },
+        "facet": {
+            "field": "year",
+            "type": "ordinal",
+            "columns": 3, // Adjust number of columns based on your preference
+            "title": "Year"
+        },
+        "title": "Top 5 Billboard Hot 100 Songs (2014-2023)"
+    };
+
+    vegaEmbed('#billboard100Chart', vlSpec);
+}
+
+// loadBillboard100LineChart();
+
+async function loadBillboard100FacetedBarChart() {
+    const vlSpec = {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        width: 200,
+        height: 300,
+        "data": {
+            "values": [
+                { "year": 2023, "rank": 1, "song": "Last Night", "artist": "Morgan Wallen" },
+                { "year": 2023, "rank": 2, "song": "Flowers", "artist": "Miley Cyrus" },
+                { "year": 2023, "rank": 3, "song": "Kill Bill", "artist": "SZA" },
+                { "year": 2023, "rank": 4, "song": "Anti-Hero", "artist": "Taylor Swift" },
+                { "year": 2023, "rank": 5, "song": "Creepin'", "artist": "Metro Boomin, The Weeknd, 21 Savage" },
+                { "year": 2022, "rank": 1, "song": "Heat Waves", "artist": "Glass Animals" },
+                { "year": 2022, "rank": 2, "song": "As It Was", "artist": "Harry Styles" },
+                { "year": 2022, "rank": 3, "song": "Stay", "artist": "The Kid Laroi, Justin Bieber" },
+                { "year": 2022, "rank": 4, "song": "Easy on Me", "artist": "Adele" },
+                { "year": 2022, "rank": 5, "song": "Shivers", "artist": "Ed Sheeran" },
+                { "year": 2021, "rank": 1, "song": "Levitating", "artist": "Dua Lipa" },
+                { "year": 2021, "rank": 2, "song": "Save Your Tears", "artist": "The Weeknd, Ariana Grande" },
+                { "year": 2021, "rank": 3, "song": "Blinding Lights", "artist": "The Weeknd" },
+                { "year": 2021, "rank": 4, "song": "Mood", "artist": "24kGoldn feat. Iann Dior" },
+                { "year": 2021, "rank": 5, "song": "Good 4 U", "artist": "Olivia Rodrigo" },
+                { "year": 2020, "rank": 1, "song": "Blinding Lights", "artist": "The Weeknd" },
+                { "year": 2020, "rank": 2, "song": "Circles", "artist": "Post Malone" },
+                { "year": 2020, "rank": 3, "song": "The Box", "artist": "Roddy Ricch" },
+                { "year": 2020, "rank": 4, "song": "Don't Start Now", "artist": "Dua Lipa" },
+                { "year": 2020, "rank": 5, "song": "Rockstar", "artist": "DaBaby feat. Roddy Ricch" },
+                { "year": 2019, "rank": 1, "song": "Old Town Road", "artist": "Lil Nas X feat. Billy Ray Cyrus" },
+                { "year": 2019, "rank": 2, "song": "Sunflower (Spider-Man: Into the Spider-Verse)", "artist": "Post Malone, Swae Lee" },
+                { "year": 2019, "rank": 3, "song": "Without Me", "artist": "Halsey" },
+                { "year": 2019, "rank": 4, "song": "Bad Guy", "artist": "Billie Eilish" },
+                { "year": 2019, "rank": 5, "song": "Wow.", "artist": "Post Malone" },
+                { "year": 2018, "rank": 1, "song": "God's Plan", "artist": "Drake" },
+                { "year": 2018, "rank": 2, "song": "Perfect", "artist": "Ed Sheeran" },
+                { "year": 2018, "rank": 3, "song": "Meant to Be", "artist": "Bebe Rexha, Florida Georgia Line" },
+                { "year": 2018, "rank": 4, "song": "Havana", "artist": "Camila Cabello feat. Young Thug" },
+                { "year": 2018, "rank": 5, "song": "Rockstar", "artist": "Post Malone feat. 21 Savage" },
+                { "year": 2017, "rank": 1, "song": "Shape of You", "artist": "Ed Sheeran" },
+                { "year": 2017, "rank": 2, "song": "Despacito", "artist": "Luis Fonsi, Daddy Yankee feat. Justin Bieber" },
+                { "year": 2017, "rank": 3, "song": "That's What I Like", "artist": "Bruno Mars" },
+                { "year": 2017, "rank": 4, "song": "Humble", "artist": "Kendrick Lamar" },
+                { "year": 2017, "rank": 5, "song": "Something Just Like This", "artist": "The Chainsmokers, Coldplay" },
+                { "year": 2016, "rank": 1, "song": "Love Yourself", "artist": "Justin Bieber" },
+                { "year": 2016, "rank": 2, "song": "Sorry", "artist": "Justin Bieber" },
+                { "year": 2016, "rank": 3, "song": "One Dance", "artist": "Drake feat. Wizkid, Kyla" },
+                { "year": 2016, "rank": 4, "song": "Work", "artist": "Rihanna feat. Drake" },
+                { "year": 2016, "rank": 5, "song": "Stressed Out", "artist": "Twenty One Pilots" },
+                { "year": 2015, "rank": 1, "song": "Uptown Funk", "artist": "Mark Ronson feat. Bruno Mars" },
+                { "year": 2015, "rank": 2, "song": "Thinking Out Loud", "artist": "Ed Sheeran" },
+                { "year": 2015, "rank": 3, "song": "See You Again", "artist": "Wiz Khalifa feat. Charlie Puth" },
+                { "year": 2015, "rank": 4, "song": "Can't Feel My Face", "artist": "The Weeknd" },
+                { "year": 2015, "rank": 5, "song": "Bad Blood", "artist": "Taylor Swift feat. Kendrick Lamar" },
+                { "year": 2014, "rank": 1, "song": "Happy", "artist": "Pharrell Williams" },
+                { "year": 2014, "rank": 2, "song": "All About That Bass", "artist": "Meghan Trainor" },
+                { "year": 2014, "rank": 3, "song": "Shake It Off", "artist": "Taylor Swift" },
+                { "year": 2014, "rank": 4, "song": "All of Me", "artist": "John Legend" },
+                { "year": 2014, "rank": 5, "song": "Stay with Me", "artist": "Sam Smith" }
+            ]
+        },
+        "mark": "bar",
+        "encoding": {
+            "y": {
+                "field": "song",
+                "type": "nominal",
+                "sort": "-x",
+                "title": "Song"
+            },
+            "x": {
+                "field": "rank",
+                "type": "quantitative",
+                "title": "Rank",
+                "scale": { "domain": [1, 5], "nice": true },
+                "axis": { "grid": true }
+            },
+            "color": {
+                "field": "artist",
+                "type": "nominal",
+                "title": "Artist"
+            },
+            "tooltip": [
+                { "field": "year", "type": "ordinal", "title": "Year" },
+                { "field": "song", "type": "nominal", "title": "Song" },
+                { "field": "artist", "type": "nominal", "title": "Artist" },
+                { "field": "rank", "type": "quantitative", "title": "Rank" }
+            ]
+        },
+        "facet": {
+            "field": "year",
+            "type": "ordinal",
+            "columns": 3, // Adjust number of columns based on your preference
+            "title": "Year"
+        },
+        "title": "Top 5 Billboard Hot 100 Songs (2014-2023)"
+    };
+
+    vegaEmbed('#billboard100Chart', vlSpec);
+}
+
+// loadBillboard100FacetedBarChart();
+
+async function loadBillboard100Charts() {
+    const yearsData = [
+        {
+            year: 2023, data: [
+                { "rank": 1, "song": "Last Night", "artist": "Morgan Wallen" },
+                { "rank": 2, "song": "Flowers", "artist": "Miley Cyrus" },
+                { "rank": 3, "song": "Kill Bill", "artist": "SZA" },
+                { "rank": 4, "song": "Anti-Hero", "artist": "Taylor Swift" },
+                { "rank": 5, "song": "Creepin'", "artist": "Metro Boomin, The Weeknd, 21 Savage" },
+                // { "rank": 6, "song": "Calm Down", "artist": "Rema, Selena Gomez" },
+                // { "rank": 7, "song": "Die for You", "artist": "The Weeknd, Ariana Grande" },
+                // { "rank": 8, "song": "Fast Car", "artist": "Luke Combs" },
+                // { "rank": 9, "song": "Snooze", "artist": "SZA" },
+                // { "rank": 10, "song": "I'm Good (Blue)", "artist": "David Guetta, Bebe Rexha" }
+            ]
+        },
+        {
+            year: 2022, data: [
+                { "rank": 1, "song": "Heat Waves", "artist": "Glass Animals" },
+                { "rank": 2, "song": "As It Was", "artist": "Harry Styles" },
+                { "rank": 3, "song": "Stay", "artist": "The Kid Laroi, Justin Bieber" },
+                { "rank": 4, "song": "Easy on Me", "artist": "Adele" },
+                { "rank": 5, "song": "Shivers", "artist": "Ed Sheeran" },
+                // { "rank": 6, "song": "First Class", "artist": "Jack Harlow" },
+                // { "rank": 7, "song": "Big Energy", "artist": "Latto" },
+                // { "rank": 8, "song": "Ghost", "artist": "Justin Bieber" },
+                // { "rank": 9, "song": "Super Gremlin", "artist": "Kodak Black" },
+                // { "rank": 10, "song": "Cold Heart (Pnau Remix)", "artist": "Elton John, Dua Lipa" }
+            ]
+        },
+        {
+            year: 2021, data: [
+                { "rank": 1, "song": "Levitating", "artist": "Dua Lipa" },
+                { "rank": 2, "song": "Save Your Tears", "artist": "The Weeknd, Ariana Grande" },
+                { "rank": 3, "song": "Blinding Lights", "artist": "The Weeknd" },
+                { "rank": 4, "song": "Mood", "artist": "24kGoldn feat. Iann Dior" },
+                { "rank": 5, "song": "Good 4 U", "artist": "Olivia Rodrigo" },
+                // { "rank": 6, "song": "Kiss Me More", "artist": "Doja Cat feat. SZA" },
+                // { "rank": 7, "song": "Leave the Door Open", "artist": "Silk Sonic (Bruno Mars, Anderson .Paak)" },
+                // { "rank": 8, "song": "Drivers License", "artist": "Olivia Rodrigo" },
+                // { "rank": 9, "song": "Montero (Call Me By Your Name)", "artist": "Lil Nas X" },
+                // { "rank": 10, "song": "Peaches", "artist": "Justin Bieber feat. Daniel Caesar, Giveon" }
+            ]
+        },
+        {
+            year: 2020, data: [
+                { "rank": 1, "song": "Blinding Lights", "artist": "The Weeknd" },
+                { "rank": 2, "song": "Circles", "artist": "Post Malone" },
+                { "rank": 3, "song": "The Box", "artist": "Roddy Ricch" },
+                { "rank": 4, "song": "Don't Start Now", "artist": "Dua Lipa" },
+                { "rank": 5, "song": "Rockstar", "artist": "DaBaby feat. Roddy Ricch" },
+                // { "rank": 6, "song": "Adore You", "artist": "Harry Styles" },
+                // { "rank": 7, "song": "Life Is Good", "artist": "Future feat. Drake" },
+                // { "rank": 8, "song": "Memories", "artist": "Maroon 5" },
+                // { "rank": 9, "song": "The Bones", "artist": "Maren Morris" },
+                // { "rank": 10, "song": "Someone You Loved", "artist": "Lewis Capaldi" }
+            ]
+        },
+        {
+            year: 2019, data: [
+                { "rank": 1, "song": "Old Town Road", "artist": "Lil Nas X feat. Billy Ray Cyrus" },
+                { "rank": 2, "song": "Sunflower (Spider-Man: Into the Spider-Verse)", "artist": "Post Malone, Swae Lee" },
+                { "rank": 3, "song": "Without Me", "artist": "Halsey" },
+                { "rank": 4, "song": "Bad Guy", "artist": "Billie Eilish" },
+                { "rank": 5, "song": "Wow.", "artist": "Post Malone" },
+                // { "rank": 6, "song": "Happier", "artist": "Marshmello, Bastille" },
+                // { "rank": 7, "song": "7 Rings", "artist": "Ariana Grande" },
+                // { "rank": 8, "song": "Talk", "artist": "Khalid" },
+                // { "rank": 9, "song": "Sicko Mode", "artist": "Travis Scott" },
+                // { "rank": 10, "song": "Sucker", "artist": "Jonas Brothers" }
+            ]
+        },
+        {
+            year: 2018, data: [
+                { "rank": 1, "song": "God's Plan", "artist": "Drake" },
+                { "rank": 2, "song": "Perfect", "artist": "Ed Sheeran" },
+                { "rank": 3, "song": "Meant to Be", "artist": "Bebe Rexha, Florida Georgia Line" },
+                { "rank": 4, "song": "Havana", "artist": "Camila Cabello feat. Young Thug" },
+                { "rank": 5, "song": "Rockstar", "artist": "Post Malone feat. 21 Savage" },
+            ]
+        },
+        {
+            year: 2017, data: [
+                { "rank": 1, "song": "Shape of You", "artist": "Ed Sheeran" },
+                { "rank": 2, "song": "Despacito", "artist": "Luis Fonsi, Daddy Yankee feat. Justin Bieber" },
+                { "rank": 3, "song": "That's What I Like", "artist": "Bruno Mars" },
+                { "rank": 4, "song": "Humble", "artist": "Kendrick Lamar" },
+                { "rank": 5, "song": "Something Just Like This", "artist": "The Chainsmokers, Coldplay" }
+            ]
+        },
+        {
+            year: 2016, data: [
+                { "rank": 1, "song": "Love Yourself", "artist": "Justin Bieber" },
+                { "rank": 2, "song": "Sorry", "artist": "Justin Bieber" },
+                { "rank": 3, "song": "One Dance", "artist": "Drake feat. Wizkid, Kyla" },
+                { "rank": 4, "song": "Work", "artist": "Rihanna feat. Drake" },
+                { "rank": 5, "song": "Stressed Out", "artist": "Twenty One Pilots" },
+            ]
+        },
+        {
+            year: 2015, data: [
+                { "rank": 1, "song": "Uptown Funk", "artist": "Mark Ronson feat. Bruno Mars" },
+                { "rank": 2, "song": "Thinking Out Loud", "artist": "Ed Sheeran" },
+                { "rank": 3, "song": "See You Again", "artist": "Wiz Khalifa feat. Charlie Puth" },
+                { "rank": 4, "song": "Can't Feel My Face", "artist": "The Weeknd" },
+                { "rank": 5, "song": "Bad Blood", "artist": "Taylor Swift feat. Kendrick Lamar" },
+            ]
+        },
+        {
+            year: 2014, data: [
+                { "rank": 1, "song": "Happy", "artist": "Pharrell Williams" },
+                { "rank": 2, "song": "All About That Bass", "artist": "Meghan Trainor" },
+                { "rank": 3, "song": "Shake It Off", "artist": "Taylor Swift" },
+                { "rank": 4, "song": "All of Me", "artist": "John Legend" },
+                { "rank": 5, "song": "Stay with Me", "artist": "Sam Smith" }
+            ]
+        },
+    ];
+
+    const layers = yearsData.map(yearData => ({
+        "data": { "values": yearData.data },
+        "title": `Top 10 Most Streamed Songs on Billboard Hot 100 in ${yearData.year}`,
+        "mark": "bar",
+        "encoding": {
+            "y": { "field": "song", "type": "nominal", "sort": "-x", "title": "Song" },
+            "x": {
+                "field": "rank",
+                "type": "quantitative",
+                "title": "Rank",
+                "scale": { "domain": [0, 10], "nice": true },
+                "axis": { "grid": true, "format": "d" } // Ensure whole numbers (integers)
+            },
+            "color": { "field": "artist", "type": "nominal", "title": "Artist" },
+            "tooltip": [
+                { "field": "song", "type": "nominal", "title": "Song" },
+                { "field": "artist", "type": "nominal", "title": "Artist" },
+                { "field": "rank", "type": "quantitative", "title": "Rank" }
+            ]
+        }
+    }));
+
+    const vlSpec = {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "vconcat": layers,
+        "config": {
+            "view": {
+                "width": 600,
+                "height": 400
+            }
+        }
+    };
+
+    vegaEmbed('#billboard100Chart', vlSpec);
+}
+
+// loadBillboard100Charts();
+
+async function loadBillboard100Charts() {
+
+    const popArtists = [
+        'Miley Cyrus', 'Taylor Swift', 'Taylor Swift feat. Kendrick Lamar', 'Dua Lipa', 'Olivia Rodrigo',
+        'Ariana Grande', 'Ed Sheeran', 'Harry Styles', 'Billie Eilish',
+        'The Weeknd', 'Bruno Mars', 'Camila Cabello', 'Justin Bieber',
+        'Post Malone', 'Mark Ronson', 'Sam Smith', 'Meghan Trainor', 'Adele', 'Post Malone, Swae Lee'
+    ];
+
+    const yearsData = [
+        {
+            year: 2023, data: [
+                { "rank": 1, "song": "Last Night", "artist": "Morgan Wallen" },
+                { "rank": 2, "song": "Flowers", "artist": "Miley Cyrus" },
+                { "rank": 3, "song": "Kill Bill", "artist": "SZA" },
+                { "rank": 4, "song": "Anti-Hero", "artist": "Taylor Swift" },
+                { "rank": 5, "song": "Creepin'", "artist": "Metro Boomin, The Weeknd, 21 Savage" },
+                // { "rank": 6, "song": "Calm Down", "artist": "Rema, Selena Gomez" },
+                // { "rank": 7, "song": "Die for You", "artist": "The Weeknd, Ariana Grande" },
+                // { "rank": 8, "song": "Fast Car", "artist": "Luke Combs" },
+                // { "rank": 9, "song": "Snooze", "artist": "SZA" },
+                // { "rank": 10, "song": "I'm Good (Blue)", "artist": "David Guetta, Bebe Rexha" }
+            ]
+        },
+        {
+            year: 2022, data: [
+                { "rank": 1, "song": "Heat Waves", "artist": "Glass Animals" },
+                { "rank": 2, "song": "As It Was", "artist": "Harry Styles" },
+                { "rank": 3, "song": "Stay", "artist": "The Kid Laroi, Justin Bieber" },
+                { "rank": 4, "song": "Easy on Me", "artist": "Adele" },
+                { "rank": 5, "song": "Shivers", "artist": "Ed Sheeran" },
+                // { "rank": 6, "song": "First Class", "artist": "Jack Harlow" },
+                // { "rank": 7, "song": "Big Energy", "artist": "Latto" },
+                // { "rank": 8, "song": "Ghost", "artist": "Justin Bieber" },
+                // { "rank": 9, "song": "Super Gremlin", "artist": "Kodak Black" },
+                // { "rank": 10, "song": "Cold Heart (Pnau Remix)", "artist": "Elton John, Dua Lipa" }
+            ]
+        },
+        {
+            year: 2021, data: [
+                { "rank": 1, "song": "Levitating", "artist": "Dua Lipa" },
+                { "rank": 2, "song": "Save Your Tears", "artist": "The Weeknd, Ariana Grande" },
+                { "rank": 3, "song": "Blinding Lights", "artist": "The Weeknd" },
+                { "rank": 4, "song": "Mood", "artist": "24kGoldn feat. Iann Dior" },
+                { "rank": 5, "song": "Good 4 U", "artist": "Olivia Rodrigo" },
+                // { "rank": 6, "song": "Kiss Me More", "artist": "Doja Cat feat. SZA" },
+                // { "rank": 7, "song": "Leave the Door Open", "artist": "Silk Sonic (Bruno Mars, Anderson .Paak)" },
+                // { "rank": 8, "song": "Drivers License", "artist": "Olivia Rodrigo" },
+                // { "rank": 9, "song": "Montero (Call Me By Your Name)", "artist": "Lil Nas X" },
+                // { "rank": 10, "song": "Peaches", "artist": "Justin Bieber feat. Daniel Caesar, Giveon" }
+            ]
+        },
+        {
+            year: 2020, data: [
+                { "rank": 1, "song": "Blinding Lights", "artist": "The Weeknd" },
+                { "rank": 2, "song": "Circles", "artist": "Post Malone" },
+                { "rank": 3, "song": "The Box", "artist": "Roddy Ricch" },
+                { "rank": 4, "song": "Don't Start Now", "artist": "Dua Lipa" },
+                { "rank": 5, "song": "Rockstar", "artist": "DaBaby feat. Roddy Ricch" },
+                // { "rank": 6, "song": "Adore You", "artist": "Harry Styles" },
+                // { "rank": 7, "song": "Life Is Good", "artist": "Future feat. Drake" },
+                // { "rank": 8, "song": "Memories", "artist": "Maroon 5" },
+                // { "rank": 9, "song": "The Bones", "artist": "Maren Morris" },
+                // { "rank": 10, "song": "Someone You Loved", "artist": "Lewis Capaldi" }
+            ]
+        },
+        {
+            year: 2019, data: [
+                { "rank": 1, "song": "Old Town Road", "artist": "Lil Nas X feat. Billy Ray Cyrus" },
+                { "rank": 2, "song": "Sunflower (Spider-Man: Into the Spider-Verse)", "artist": "Post Malone, Swae Lee" },
+                { "rank": 3, "song": "Without Me", "artist": "Halsey" },
+                { "rank": 4, "song": "Bad Guy", "artist": "Billie Eilish" },
+                { "rank": 5, "song": "Wow.", "artist": "Post Malone" },
+                // { "rank": 6, "song": "Happier", "artist": "Marshmello, Bastille" },
+                // { "rank": 7, "song": "7 Rings", "artist": "Ariana Grande" },
+                // { "rank": 8, "song": "Talk", "artist": "Khalid" },
+                // { "rank": 9, "song": "Sicko Mode", "artist": "Travis Scott" },
+                // { "rank": 10, "song": "Sucker", "artist": "Jonas Brothers" }
+            ]
+        },
+        {
+            year: 2018, data: [
+                { "rank": 1, "song": "God's Plan", "artist": "Drake" },
+                { "rank": 2, "song": "Perfect", "artist": "Ed Sheeran" },
+                { "rank": 3, "song": "Meant to Be", "artist": "Bebe Rexha, Florida Georgia Line" },
+                { "rank": 4, "song": "Havana", "artist": "Camila Cabello feat. Young Thug" },
+                { "rank": 5, "song": "Rockstar", "artist": "Post Malone feat. 21 Savage" },
+            ]
+        },
+        {
+            year: 2017, data: [
+                { "rank": 1, "song": "Shape of You", "artist": "Ed Sheeran" },
+                { "rank": 2, "song": "Despacito", "artist": "Luis Fonsi, Daddy Yankee feat. Justin Bieber" },
+                { "rank": 3, "song": "That's What I Like", "artist": "Bruno Mars" },
+                { "rank": 4, "song": "Humble", "artist": "Kendrick Lamar" },
+                { "rank": 5, "song": "Something Just Like This", "artist": "The Chainsmokers, Coldplay" }
+            ]
+        },
+        {
+            year: 2016, data: [
+                { "rank": 1, "song": "Love Yourself", "artist": "Justin Bieber" },
+                { "rank": 2, "song": "Sorry", "artist": "Justin Bieber" },
+                { "rank": 3, "song": "One Dance", "artist": "Drake feat. Wizkid, Kyla" },
+                { "rank": 4, "song": "Work", "artist": "Rihanna feat. Drake" },
+                { "rank": 5, "song": "Stressed Out", "artist": "Twenty One Pilots" },
+            ]
+        },
+        {
+            year: 2015, data: [
+                { "rank": 1, "song": "Uptown Funk", "artist": "Mark Ronson feat. Bruno Mars" },
+                { "rank": 2, "song": "Thinking Out Loud", "artist": "Ed Sheeran" },
+                { "rank": 3, "song": "See You Again", "artist": "Wiz Khalifa feat. Charlie Puth" },
+                { "rank": 4, "song": "Can't Feel My Face", "artist": "The Weeknd" },
+                { "rank": 5, "song": "Bad Blood", "artist": "Taylor Swift feat. Kendrick Lamar" },
+            ]
+        },
+        {
+            year: 2014, data: [
+                { "rank": 1, "song": "Happy", "artist": "Pharrell Williams" },
+                { "rank": 2, "song": "All About That Bass", "artist": "Meghan Trainor" },
+                { "rank": 3, "song": "Shake It Off", "artist": "Taylor Swift" },
+                { "rank": 4, "song": "All of Me", "artist": "John Legend" },
+                { "rank": 5, "song": "Stay with Me", "artist": "Sam Smith" }
+            ]
+        },
+    ];
+
+    const layers = yearsData.map(yearData => {
+        yearData.data.forEach(song => {
+            // Add a 'pop' field to classify the song as pop or not
+            song.pop = popArtists.includes(song.artist);
+        });
+
+        return {
+            "data": { "values": yearData.data },
+            "title": `Top 10 Most Streamed Songs on Billboard Hot 100 in ${yearData.year}`,
+            "mark": "bar",
+            "encoding": {
+                "y": { "field": "song", "type": "nominal", "sort": "-x", "title": "Song" },
+                "x": {
+                    "field": "rank",
+                    "type": "quantitative",
+                    "title": "Rank",
+                    "scale": { "domain": [0, 5], "nice": true },
+                    "axis": { "grid": true, "format": "d" } // Ensure whole numbers (integers)
+                },
+                "color": {
+                    "field": "pop",
+                    "type": "nominal",
+                    "legend": {
+                        "title": "Song Type",
+                        "values": [true, false],  // This defines the order and presence of values in the legend
+                        "labelExpr": "datum.value ? 'Pop' : 'Other Genres'" // Custom text for true/false
+                    },
+                    "scale": {
+                        "domain": [true, false],  // true = Pop, false = Other Genres
+                        "range": ["#FF6347", "#B0C4DE"] // Pop = bright red, Other Genres = light grayish blue
+                    }
+                },
+                "tooltip": [
+                    { "field": "song", "type": "nominal", "title": "Song" },
+                    { "field": "artist", "type": "nominal", "title": "Artist" },
+                    { "field": "rank", "type": "quantitative", "title": "Rank" }
+                ]
+            }
+        };
+    });
+
+    const vlSpec = {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "vconcat": layers,
+        "config": {
+            "view": {
+                "width": 600,
+                "height": 400
+            }
+        }
+    };
+
+    vegaEmbed('#billboard100Chart', vlSpec);
+}
+
+// loadBillboard100Charts();
+
+async function loadBillboard100Charts() {
+    const popArtists = [
+        'Miley Cyrus', 'Taylor Swift', 'Taylor Swift feat. Kendrick Lamar', 'Dua Lipa', 'Olivia Rodrigo',
+        'Ariana Grande', 'Ed Sheeran', 'Harry Styles', 'Billie Eilish',
+        'The Weeknd', 'Bruno Mars', 'Camila Cabello', 'Justin Bieber',
+        'Post Malone', 'Mark Ronson', 'Sam Smith', 'Meghan Trainor', 'Adele', 'Post Malone, Swae Lee'
+    ];
+
+    const yearsData = [
+        {
+            year: 2023, data: [
+                { "rank": 1, "song": "Last Night", "artist": "Morgan Wallen" },
+                { "rank": 2, "song": "Flowers", "artist": "Miley Cyrus" },
+                { "rank": 3, "song": "Kill Bill", "artist": "SZA" },
+                { "rank": 4, "song": "Anti-Hero", "artist": "Taylor Swift" },
+                { "rank": 5, "song": "Creepin'", "artist": "Metro Boomin, The Weeknd, 21 Savage" },
+            ]
+            
+        },
+        {
+            year: 2022, data: [
+                { "rank": 1, "song": "Heat Waves", "artist": "Glass Animals" },
+                { "rank": 2, "song": "As It Was", "artist": "Harry Styles" },
+                { "rank": 3, "song": "Stay", "artist": "The Kid Laroi, Justin Bieber" },
+                { "rank": 4, "song": "Easy on Me", "artist": "Adele" },
+                { "rank": 5, "song": "Shivers", "artist": "Ed Sheeran" },
+                // { "rank": 6, "song": "First Class", "artist": "Jack Harlow" },
+                // { "rank": 7, "song": "Big Energy", "artist": "Latto" },
+                // { "rank": 8, "song": "Ghost", "artist": "Justin Bieber" },
+                // { "rank": 9, "song": "Super Gremlin", "artist": "Kodak Black" },
+                // { "rank": 10, "song": "Cold Heart (Pnau Remix)", "artist": "Elton John, Dua Lipa" }
+            ]
+        },
+        {
+            year: 2021, data: [
+                { "rank": 1, "song": "Levitating", "artist": "Dua Lipa" },
+                { "rank": 2, "song": "Save Your Tears", "artist": "The Weeknd, Ariana Grande" },
+                { "rank": 3, "song": "Blinding Lights", "artist": "The Weeknd" },
+                { "rank": 4, "song": "Mood", "artist": "24kGoldn feat. Iann Dior" },
+                { "rank": 5, "song": "Good 4 U", "artist": "Olivia Rodrigo" },
+                // { "rank": 6, "song": "Kiss Me More", "artist": "Doja Cat feat. SZA" },
+                // { "rank": 7, "song": "Leave the Door Open", "artist": "Silk Sonic (Bruno Mars, Anderson .Paak)" },
+                // { "rank": 8, "song": "Drivers License", "artist": "Olivia Rodrigo" },
+                // { "rank": 9, "song": "Montero (Call Me By Your Name)", "artist": "Lil Nas X" },
+                // { "rank": 10, "song": "Peaches", "artist": "Justin Bieber feat. Daniel Caesar, Giveon" }
+            ]
+        },
+        {
+            year: 2020, data: [
+                { "rank": 1, "song": "Blinding Lights", "artist": "The Weeknd" },
+                { "rank": 2, "song": "Circles", "artist": "Post Malone" },
+                { "rank": 3, "song": "The Box", "artist": "Roddy Ricch" },
+                { "rank": 4, "song": "Don't Start Now", "artist": "Dua Lipa" },
+                { "rank": 5, "song": "Rockstar", "artist": "DaBaby feat. Roddy Ricch" },
+                // { "rank": 6, "song": "Adore You", "artist": "Harry Styles" },
+                // { "rank": 7, "song": "Life Is Good", "artist": "Future feat. Drake" },
+                // { "rank": 8, "song": "Memories", "artist": "Maroon 5" },
+                // { "rank": 9, "song": "The Bones", "artist": "Maren Morris" },
+                // { "rank": 10, "song": "Someone You Loved", "artist": "Lewis Capaldi" }
+            ]
+        },
+        {
+            year: 2019, data: [
+                { "rank": 1, "song": "Old Town Road", "artist": "Lil Nas X feat. Billy Ray Cyrus" },
+                { "rank": 2, "song": "Sunflower (Spider-Man: Into the Spider-Verse)", "artist": "Post Malone, Swae Lee" },
+                { "rank": 3, "song": "Without Me", "artist": "Halsey" },
+                { "rank": 4, "song": "Bad Guy", "artist": "Billie Eilish" },
+                { "rank": 5, "song": "Wow.", "artist": "Post Malone" },
+                // { "rank": 6, "song": "Happier", "artist": "Marshmello, Bastille" },
+                // { "rank": 7, "song": "7 Rings", "artist": "Ariana Grande" },
+                // { "rank": 8, "song": "Talk", "artist": "Khalid" },
+                // { "rank": 9, "song": "Sicko Mode", "artist": "Travis Scott" },
+                // { "rank": 10, "song": "Sucker", "artist": "Jonas Brothers" }
+            ]
+        },
+        {
+            year: 2018, data: [
+                { "rank": 1, "song": "God's Plan", "artist": "Drake" },
+                { "rank": 2, "song": "Perfect", "artist": "Ed Sheeran" },
+                { "rank": 3, "song": "Meant to Be", "artist": "Bebe Rexha, Florida Georgia Line" },
+                { "rank": 4, "song": "Havana", "artist": "Camila Cabello feat. Young Thug" },
+                { "rank": 5, "song": "Rockstar", "artist": "Post Malone feat. 21 Savage" },
+            ]
+        },
+        {
+            year: 2017, data: [
+                { "rank": 1, "song": "Shape of You", "artist": "Ed Sheeran" },
+                { "rank": 2, "song": "Despacito", "artist": "Luis Fonsi, Daddy Yankee feat. Justin Bieber" },
+                { "rank": 3, "song": "That's What I Like", "artist": "Bruno Mars" },
+                { "rank": 4, "song": "Humble", "artist": "Kendrick Lamar" },
+                { "rank": 5, "song": "Something Just Like This", "artist": "The Chainsmokers, Coldplay" }
+            ]
+        },
+        {
+            year: 2016, data: [
+                { "rank": 1, "song": "Love Yourself", "artist": "Justin Bieber" },
+                { "rank": 2, "song": "Sorry", "artist": "Justin Bieber" },
+                { "rank": 3, "song": "One Dance", "artist": "Drake feat. Wizkid, Kyla" },
+                { "rank": 4, "song": "Work", "artist": "Rihanna feat. Drake" },
+                { "rank": 5, "song": "Stressed Out", "artist": "Twenty One Pilots" },
+            ]
+        },
+        {
+            year: 2015, data: [
+                { "rank": 1, "song": "Uptown Funk", "artist": "Mark Ronson feat. Bruno Mars" },
+                { "rank": 2, "song": "Thinking Out Loud", "artist": "Ed Sheeran" },
+                { "rank": 3, "song": "See You Again", "artist": "Wiz Khalifa feat. Charlie Puth" },
+                { "rank": 4, "song": "Can't Feel My Face", "artist": "The Weeknd" },
+                { "rank": 5, "song": "Bad Blood", "artist": "Taylor Swift feat. Kendrick Lamar" },
+            ]
+        },
+        {
+            year: 2014, data: [
+                { "rank": 1, "song": "Happy", "artist": "Pharrell Williams" },
+                { "rank": 2, "song": "All About That Bass", "artist": "Meghan Trainor" },
+                { "rank": 3, "song": "Shake It Off", "artist": "Taylor Swift" },
+                { "rank": 4, "song": "All of Me", "artist": "John Legend" },
+                { "rank": 5, "song": "Stay with Me", "artist": "Sam Smith" }
+            ]
+        }
+        // Add other year data similarly...
+    ];
+
+      // Create a container for the individual charts
+      const slideshowContainer = document.getElementById('slideshowContainer');
+    
+      // Initialize layers and chart divs
+      const layers = [];
+      yearsData.forEach((yearData, index) => {
+          yearData.data.forEach(song => {
+              song.pop = popArtists.includes(song.artist);
+          });
+  
+          const chartDiv = document.createElement('div');
+          chartDiv.classList.add('chart');
+          chartDiv.id = `chart-${yearData.year}`;
+          slideshowContainer.appendChild(chartDiv);
+  
+          const vlSpec = {
+              "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+              "data": { "values": yearData.data },
+              "title": `Top 10 Most Streamed Songs on Billboard Hot 100 in ${yearData.year}`,
+              "mark": "bar",
+              width: 600,
+              height: 400,
+              "encoding": {
+                  "y": { "field": "song", "type": "nominal", "sort": "-x", "title": "Song" },
+                  "x": {
+                      "field": "rank",
+                      "type": "quantitative",
+                      "title": "Rank",
+                      "scale": { "domain": [0, 10], "nice": true },
+                      "axis": { "grid": true, "format": "d" }
+                  },
+                  "color": {
+                      "field": "pop",
+                      "type": "nominal",
+                      "legend": {
+                        "title": "Song Type",
+                        "values": [true, false],  // This defines the order and presence of values in the legend
+                        "labelExpr": "datum.value ? 'Pop' : 'Other Genres'" // Custom text for true/false
+                    },
+                    "scale": {
+                        "domain": [true, false],  // true = Pop, false = Other Genres
+                        "range": ["#FF6347", "#B0C4DE"] // Pop = bright red, Other Genres = light grayish blue
+                    }
+                  },
+                  "tooltip": [
+                      { "field": "song", "type": "nominal", "title": "Song" },
+                      { "field": "artist", "type": "nominal", "title": "Artist" },
+                      { "field": "rank", "type": "quantitative", "title": "Rank" }
+                  ]
+              }
+          };
+  
+          vegaEmbed(`#chart-${yearData.year}`, vlSpec).then(() => {
+              // Initially hide all charts except the first one
+              if (index !== 0) {
+                  chartDiv.style.display = 'none';
+              }
+          }).catch(err => console.error(err)); // Handle any errors that occur during embedding
+      });
+  
+      // Handle the slider change event
+      const slider = document.getElementById('yearSlider');
+      const currentYearDisplay = document.getElementById('currentYear');
+  
+      slider.addEventListener('input', function () {
+          const selectedYearIndex = this.value;
+          const selectedYear = yearsData[selectedYearIndex].year;
+  
+          // Display the selected year
+          currentYearDisplay.textContent = `Year: ${selectedYear}`;
+  
+          // Hide all charts and show the selected year’s chart
+          const allCharts = document.querySelectorAll('.chart');
+          allCharts.forEach(chart => chart.style.display = 'none');
+          document.getElementById(`chart-${selectedYear}`).style.display = 'block';
+      });
+  }
+  
+  loadBillboard100Charts();
+
+
 
 // From W3Schools
 // MY SLIDES CODE ========================================================================================================

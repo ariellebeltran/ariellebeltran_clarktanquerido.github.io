@@ -122,7 +122,7 @@
             <!-- * IGNORE * -->
 
             <!-- <h3>Pop & Hip-hop Popularity In The Past Decade</h3> -->
-            <p>Pop & Hip-Hop has maintained it's popularity in the past decade. 
+            <p>Pop & Hip-Hop has maintained it's popularity in the past decade.
                 With Pop being the most popular genre being listended to between Millennials and Gen Zs at 40% in 2023
                 and Hip-Hop/Rap at 30% from Millennials. There is however a dip in Hip-Hop/Rap popularity for Gen Zs
                 as it's at 10% in 2023 compared to 2013 where it was at 25% alongside with Millennials.
@@ -130,8 +130,8 @@
 
             <div class="vis3">
                 <!-- insert updated vis here vvv  -->
-                 <div id="spotifyUserGenreChart"></div>
-                 <figcaption>*Hover to view age groups, percentages, and music genres.</figcaption>
+                <div id="spotifyUserGenreChart"></div>
+                <figcaption>*Hover to view age groups, percentages, and music genres.</figcaption>
                 <!-- <div id="spotify2013GenreChart">insert vis here</div> -->
             </div>
 
@@ -139,8 +139,8 @@
             <p>Insert text here...</p> -->
 
             <!-- <div class="vis3"> -->
-                <!-- insert updated vis here vvv  -->
-                <!-- <div id="spotify2023GenreChart">insert vis here</div> -->
+            <!-- insert updated vis here vvv  -->
+            <!-- <div id="spotify2023GenreChart">insert vis here</div> -->
             <!-- </div> -->
 
         </div>
@@ -154,22 +154,42 @@
             <div class="vis4">
                 <h3>Spotify Music Rankings</h3>
                 <p>
-                    From our comparitive analysis between the top age demographics of Spotify and determining what are the main music
-                    genres they listen to, we found that the overall music genre rankings have Pop & Hip-Hop as the top 2 most listended 
-                    to music genres as 2023. 
+                    From our comparitive analysis between the top age demographics of Spotify and determining what are
+                    the main music
+                    genres they listen to, we found that the overall music genre rankings have Pop & Hip-Hop as the top
+                    2 most listended
+                    to music genres as 2023.
                 </p>
-                <!-- insert updated vis here vvv  -->
+
                 <div id="topSpotifyGenresChart">insert vis here</div>
 
                 <h3>Billboard 100 Rankings</h3>
-                <p>Insert text here...</p>
+                <p>Similarly, in Billboard's Top 100, we found that about 1 to 3 songs ranked in the top 5 from each
+                    year
+                    are pop songs. Notice that for 2018, only 1 song belong to the pop genre while the rest are either
+                    hip-hop/rap or
+                    other genres like country, R&B, pop-rap.
+                </p>
 
-                <!-- insert updated vis here vvv  -->
-                <div id="">insert vis here</div>
+                <!-- <div id="billboard100Chart">insert vis here</div> -->
+
+                <div class="slideshow-container" id="slideshowContainer">
+                    <!-- The Billboard 100 charts will be appended here dynamically -->
+                </div>
+
+                <!-- Slider for selecting the year -->
+                <input type="range" min="0" max="9" value="0" class="slider" id="yearSlider">
+
+                <!-- Display the current year -->
+                <p id="currentYear">Year: 2014</p>
+
+                <script src="https://cdn.jsdelivr.net/npm/vega-embed@5.20.0"></script>
+
 
                 <h3>How Streaming Services Have Impacted Billboard 100's Rankings</h3>
                 <p>Insert text here...</p>
             </div>
+
 
             <!-- <script type="text/javascript">
             var spec = {
