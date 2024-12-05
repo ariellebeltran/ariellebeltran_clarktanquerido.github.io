@@ -1461,9 +1461,23 @@ async function loadRegionalAppearancesInTop10() {
     const vlSpec = {
         "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
         "description": "Accumulated appearances of songs from specific regions in Spotify's top 10 rankings over the past decade.",
+        "title": {
+            "text": "Spotify's Top 10 Song Rankings by Region (2014-2023)",
+            "fontsize": 18,
+            "anchor": "middle",
+        },
         "width": 800,
         "height": 400,
         "background": "skyblue",
+        "config": {
+            "view": {
+                "padding": 50
+            },
+            "title": {
+                "padding": 30,
+                "offset": 30
+            }
+        },
         "data": {
         "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
         "format": {
