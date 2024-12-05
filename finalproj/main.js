@@ -208,6 +208,14 @@
 // import * as d3 from 'd3';
 // import vegaEmbed from 'vega-embed';
 
+// Custom colors
+const colors = {
+    "18-24 (Gen Zs)": "#b6c9de",
+    "25-44 (Millennials)": "#1ed760",
+    "45-54 (Gen X)": "#E5E4E2",
+    "55+ (Majority Baby Boomers)": "#D3D3D3"
+};
+
 // Function to load data and create the chart
 async function loadSpotifyAgeDemog() {
     // Vega-Lite specification for the pie chart
@@ -243,8 +251,16 @@ async function loadSpotifyAgeDemog() {
         },
         encoding: {
             theta: { field: "percentage", type: "quantitative" },
-            color: { field: "age", type: "nominal", legend: { title: "Age Group", titleColor: "black", labelColor: "black" } },
-            color: { field: "age", type: "nominal", legend: { title: "Age Group", titleColor: "black", labelColor: "black" } },
+            color: {
+                field: "age",
+                type: "nominal",
+                legend: { title: "Age Group", titleColor: "black", labelColor: "black" },
+                scale: {
+                    domain: ["18-24 (Gen Zs)", "25-44 (Millennials)", "45-54 (Gen X)", "55+ (Majority Baby Boomers)"],
+                    range: ["#6082B6", "#1ed760", "#E5E4E2", "#D3D3D3"]
+
+                }
+            },
             tooltip: [
                 { field: "age", type: "nominal", title: "Age Group" },
                 { field: "percentage", type: "quantitative", title: "Percentage (%)" }
@@ -261,14 +277,6 @@ async function loadSpotifyAgeDemog() {
 // Call the function to create the chart
 loadSpotifyAgeDemog();
 
-
-// Custom colors
-const colors = {
-    "18-24 (Gen Zs)": "#b6c9de",
-    "25-44 (Millennials)": "#F58518",
-    "45-54 (Gen X)": "#f4bcbb",
-    "55+ (Majority Baby Boomers)": "#c7e2e0"
-};
 
 // Function to load data and create the chart
 async function loadSpotifyAgeDemogHighlighted() {
@@ -296,7 +304,6 @@ async function loadSpotifyAgeDemogHighlighted() {
             color: {
                 field: "age",
                 type: "nominal",
-                legend: { title: "Age Group", titleColor: "black", labelColor: "black" },
                 legend: { title: "Age Group", titleColor: "black", labelColor: "black" },
                 scale: { domain: Object.keys(colors), range: Object.values(colors) }
             },
@@ -1272,7 +1279,7 @@ async function loadBillboard100Charts() {
                 { "rank": 4, "song": "Anti-Hero", "artist": "Taylor Swift" },
                 { "rank": 5, "song": "Creepin'", "artist": "Metro Boomin, The Weeknd, 21 Savage" },
             ]
-            
+
         },
         {
             year: 2022, data: [
@@ -1378,41 +1385,41 @@ async function loadBillboard100Charts() {
         // Add other year data similarly...
     ];
 
-      // Create a container for the individual charts
-      const slideshowContainer = document.getElementById('slideshowContainer');
-    
-      // Initialize layers and chart divs
-      const layers = [];
-      yearsData.forEach((yearData, index) => {
-          yearData.data.forEach(song => {
-              song.pop = popArtists.includes(song.artist);
-          });
-  
-          const chartDiv = document.createElement('div');
-          chartDiv.classList.add('chart');
-          chartDiv.id = `chart-${yearData.year}`;
-          slideshowContainer.appendChild(chartDiv);
-  
-          const vlSpec = {
-              "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-              "data": { "values": yearData.data },
-              "title": `Top 5 Most Streamed Songs on Billboard Hot 100 in ${yearData.year}`,
-              "mark": "bar",
-              width: 600,
-              height: 400,
-              "encoding": {
-                  "y": { "field": "song", "type": "nominal", "sort": "x", "title": "Song" },
-                  "x": {
-                      "field": "rank",
-                      "type": "quantitative",
-                      "title": "Rank",
-                      "scale": { "domain": [0, 5], "nice": true },
-                      "axis": { "grid": true, "format": "d" }
-                  },
-                  "color": {
-                      "field": "pop",
-                      "type": "nominal",
-                      "legend": {
+    // Create a container for the individual charts
+    const slideshowContainer = document.getElementById('slideshowContainer');
+
+    // Initialize layers and chart divs
+    const layers = [];
+    yearsData.forEach((yearData, index) => {
+        yearData.data.forEach(song => {
+            song.pop = popArtists.includes(song.artist);
+        });
+
+        const chartDiv = document.createElement('div');
+        chartDiv.classList.add('chart');
+        chartDiv.id = `chart-${yearData.year}`;
+        slideshowContainer.appendChild(chartDiv);
+
+        const vlSpec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": { "values": yearData.data },
+            "title": `Top 5 Most Streamed Songs on Billboard Hot 100 in ${yearData.year}`,
+            "mark": "bar",
+            width: 600,
+            height: 400,
+            "encoding": {
+                "y": { "field": "song", "type": "nominal", "sort": "x", "title": "Song" },
+                "x": {
+                    "field": "rank",
+                    "type": "quantitative",
+                    "title": "Rank",
+                    "scale": { "domain": [0, 5], "nice": true },
+                    "axis": { "grid": true, "format": "d" }
+                },
+                "color": {
+                    "field": "pop",
+                    "type": "nominal",
+                    "legend": {
                         "title": "Song Type",
                         "values": [true, false],  // This defines the order and presence of values in the legend
                         "labelExpr": "datum.value ? 'Pop' : 'Other Genres'" // Custom text for true/false
@@ -1421,42 +1428,42 @@ async function loadBillboard100Charts() {
                         "domain": [true, false],  // true = Pop, false = Other Genres
                         "range": ["#FF6347", "#B0C4DE"] // Pop = bright red, Other Genres = light grayish blue
                     }
-                  },
-                  "tooltip": [
-                      { "field": "song", "type": "nominal", "title": "Song" },
-                      { "field": "artist", "type": "nominal", "title": "Artist" },
-                      { "field": "rank", "type": "quantitative", "title": "Rank" }
-                  ]
-              }
-          };
-  
-          vegaEmbed(`#chart-${yearData.year}`, vlSpec).then(() => {
-              // Initially hide all charts except the first one
-              if (index !== 0) {
-                  chartDiv.style.display = 'none';
-              }
-          }).catch(err => console.error(err)); // Handle any errors that occur during embedding
-      });
-  
-      // Handle the slider change event
-      const slider = document.getElementById('yearSlider');
-      const currentYearDisplay = document.getElementById('currentYear');
-  
-      slider.addEventListener('input', function () {
-          const selectedYearIndex = this.value;
-          const selectedYear = yearsData[selectedYearIndex].year;
-  
-          // Display the selected year
-          currentYearDisplay.textContent = `Year: ${selectedYear}`;
-  
-          // Hide all charts and show the selected year’s chart
-          const allCharts = document.querySelectorAll('.chart');
-          allCharts.forEach(chart => chart.style.display = 'none');
-          document.getElementById(`chart-${selectedYear}`).style.display = 'block';
-      });
-  }
-  
-  loadBillboard100Charts();
+                },
+                "tooltip": [
+                    { "field": "song", "type": "nominal", "title": "Song" },
+                    { "field": "artist", "type": "nominal", "title": "Artist" },
+                    { "field": "rank", "type": "quantitative", "title": "Rank" }
+                ]
+            }
+        };
+
+        vegaEmbed(`#chart-${yearData.year}`, vlSpec).then(() => {
+            // Initially hide all charts except the first one
+            if (index !== 0) {
+                chartDiv.style.display = 'none';
+            }
+        }).catch(err => console.error(err)); // Handle any errors that occur during embedding
+    });
+
+    // Handle the slider change event
+    const slider = document.getElementById('yearSlider');
+    const currentYearDisplay = document.getElementById('currentYear');
+
+    slider.addEventListener('input', function () {
+        const selectedYearIndex = this.value;
+        const selectedYear = yearsData[selectedYearIndex].year;
+
+        // Display the selected year
+        currentYearDisplay.textContent = `Year: ${selectedYear}`;
+
+        // Hide all charts and show the selected year’s chart
+        const allCharts = document.querySelectorAll('.chart');
+        allCharts.forEach(chart => chart.style.display = 'none');
+        document.getElementById(`chart-${selectedYear}`).style.display = 'block';
+    });
+}
+
+loadBillboard100Charts();
 
 
 // CLARK PUT UR CODE HERE ==================================================================================================
@@ -1486,226 +1493,226 @@ async function loadRegionalAppearancesInTop10() {
             }
         },
         "data": {
-        "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
-        "format": {
-        "type": "topojson",
-        "feature": "countries"
-        }
-        },
-        "transform": [
-        {
-        "lookup": "id",
-        "from": {
-        "data": {
-        "values": [
-            {"id": 434, "region": "Africa", "total_appearances": 0, "country": "Libya"},
-            {"id": 768, "region": "Africa", "total_appearances": 0, "country": "Togo"},
-            {"id": 562, "region": "Africa", "total_appearances": 0, "country": "Niger"},
-            {"id": 854, "region": "Africa", "total_appearances": 0, "country": "Burkina Faso"},
-            {"id": 12, "region": "Africa", "total_appearances": 0, "country": "Algeria"},
-            {"id": 24, "region": "Africa", "total_appearances": 0, "country": "Angola"},
-            {"id": 12, "region": "Africa", "total_appearances": 0, "country": "Algeria"},
-            {"id": 24, "region": "Africa", "total_appearances": 0, "country": "Angola"},
-            {"id": 72, "region": "Africa", "total_appearances": 0, "country": "Botswana"},
-            {"id": 108, "region": "Africa", "total_appearances": 0, "country": "Burundi"},
-            {"id": 120, "region": "Africa", "total_appearances": 0, "country": "Cameroon"},
-            {"id": 140, "region": "Africa", "total_appearances": 0, "country": "Central African Republic"},
-            {"id": 148, "region": "Africa", "total_appearances": 0, "country": "Chad"},
-            {"id": 178, "region": "Africa", "total_appearances": 0, "country": "Republic of the Congo"},
-            {"id": 180, "region": "Africa", "total_appearances": 0, "country": "Democratic Republic of the Congo"},
-            {"id": 204, "region": "Africa", "total_appearances": 0, "country": "Benin"},
-            {"id": 231, "region": "Africa", "total_appearances": 0, "country": "Ethiopia"},
-            {"id": 232, "region": "Africa", "total_appearances": 0, "country": "Eritrea"},
-            {"id": 262, "region": "Africa", "total_appearances": 0, "country": "Djibouti"},
-            {"id": 266, "region": "Africa", "total_appearances": 0, "country": "Gabon"},
-            {"id": 270, "region": "Africa", "total_appearances": 0, "country": "Gambia"},
-            {"id": 288, "region": "Africa", "total_appearances": 0, "country": "Ghana"},
-            {"id": 324, "region": "Africa", "total_appearances": 0, "country": "Guinea"},
-            {"id": 384, "region": "Africa", "total_appearances": 0, "country": "Ivory Coast"},
-            {"id": 404, "region": "Africa", "total_appearances": 0, "country": "Kenya"},
-            {"id": 426, "region": "Africa", "total_appearances": 0, "country": "Lesotho"},
-            {"id": 430, "region": "Africa", "total_appearances": 0, "country": "Liberia"},
-            {"id": 450, "region": "Africa", "total_appearances": 0, "country": "Madagascar"},
-            {"id": 454, "region": "Africa", "total_appearances": 0, "country": "Malawi"},
-            {"id": 466, "region": "Africa", "total_appearances": 0, "country": "Mali"},
-            {"id": 478, "region": "Africa", "total_appearances": 0, "country": "Mauritania"},
-            {"id": 508, "region": "Africa", "total_appearances": 0, "country": "Mozambique"},
-            {"id": 516, "region": "Africa", "total_appearances": 0, "country": "Namibia"},
-            {"id": 566, "region": "Africa", "total_appearances": 0, "country": "Nigeria"},
-            {"id": 646, "region": "Africa", "total_appearances": 0, "country": "Rwanda"},
-            {"id": 686, "region": "Africa", "total_appearances": 0, "country": "Senegal"},
-            {"id": 694, "region": "Africa", "total_appearances": 0, "country": "Sierra Leone"},
-            {"id": 706, "region": "Africa", "total_appearances": 0, "country": "Somalia"},
-            {"id": 710, "region": "Africa", "total_appearances": 0, "country": "South Africa"},
-            {"id": 716, "region": "Africa", "total_appearances": 0, "country": "Zimbabwe"},
-            {"id": 728, "region": "Africa", "total_appearances": 0, "country": "South Sudan"},
-            {"id": 729, "region": "Africa", "total_appearances": 0, "country": "Sudan"},
-            {"id": 732, "region": "Africa", "total_appearances": 0, "country": "Western Sahara"},
-            {"id": 800, "region": "Africa", "total_appearances": 0, "country": "Uganda"},
-            {"id": 834, "region": "Africa", "total_appearances": 0, "country": "Tanzania"},
-            {"id": 818, "region": "Africa", "total_appearances": 0, "country": "Egypt"},
-            {"id": 894, "region": "Africa", "total_appearances": 0, "country": "Zambia"},
-            {"id": 204, "region": "Africa", "total_appearances": 0, "country": "Benin"},
-            {"id": 840, "region": "North America", "total_appearances": 65, "country": "United States of America"},
-            {"id": 250, "region": "Europe", "total_appearances": 22, "country": "Europe"},
-            {"id": 156, "region": "Asia", "total_appearances": 2, "country": "Asia"},
-            {"id": 36, "region": "Australia", "total_appearances": 3, "country": "Australia"},
-            {"id": 124, "region": "North America", "total_appearances": 65, "country": "Canada"},
-            {"id": 32, "region": "South America", "total_appearances": 8, "country": "Argentina"},
-            {"id": 68, "region": "South America", "total_appearances": 8, "country": "Bolivia"},
-            {"id": 76, "region": "South America", "total_appearances": 8, "country": "Brazil"},
-            {"id": 152, "region": "South America", "total_appearances": 8, "country": "Chile"},
-            {"id": 170, "region": "South America", "total_appearances": 8, "country": "Colombia"},
-            {"id": 218, "region": "South America", "total_appearances": 8, "country": "Ecuador"},
-            {"id": 328, "region": "South America", "total_appearances": 8, "country": "Guyana"},
-            {"id": 600, "region": "South America", "total_appearances": 8, "country": "Paraguay"},
-            {"id": 604, "region": "South America", "total_appearances": 8, "country": "Peru"},
-            {"id": 740, "region": "South America", "total_appearances": 8, "country": "Suriname"},
-            {"id": 858, "region": "South America", "total_appearances": 8, "country": "Uruguay"},
-            {"id": 862, "region": "South America", "total_appearances": 8, "country": "Venezuela"},
-            {"id": 8, "region": "Europe", "total_appearances": 22, "country": "Albania"},
-            {"id": 20, "region": "Europe", "total_appearances": 22, "country": "Andorra"},
-            {"id": 51, "region": "Europe", "total_appearances": 22, "country": "Armenia"},
-            {"id": 40, "region": "Europe", "total_appearances": 22, "country": "Austria"},
-            {"id": 31, "region": "Europe", "total_appearances": 22, "country": "Azerbaijan"},
-            {"id": 112, "region": "Europe", "total_appearances": 22, "country": "Belarus"},
-            {"id": 56, "region": "Europe", "total_appearances": 22, "country": "Belgium"},
-            {"id": 70, "region": "Europe", "total_appearances": 22, "country": "Bosnia and Herzegovina"},
-            {"id": 100, "region": "Europe", "total_appearances": 22, "country": "Bulgaria"},
-            {"id": 191, "region": "Europe", "total_appearances": 22, "country": "Croatia"},
-            {"id": 196, "region": "Europe", "total_appearances": 22, "country": "Cyprus"},
-            {"id": 203, "region": "Europe", "total_appearances": 22, "country": "Czech Republic"},
-            {"id": 208, "region": "Europe", "total_appearances": 22, "country": "Denmark"},
-            {"id": 233, "region": "Europe", "total_appearances": 22, "country": "Estonia"},
-            {"id": 246, "region": "Europe", "total_appearances": 22, "country": "Finland"},
-            {"id": 250, "region": "Europe", "total_appearances": 22, "country": "France"},
-            {"id": 268, "region": "Europe", "total_appearances": 22, "country": "Georgia"},
-            {"id": 276, "region": "Europe", "total_appearances": 22, "country": "Germany"},
-            {"id": 300, "region": "Europe", "total_appearances": 22, "country": "Greece"},
-            {"id": 348, "region": "Europe", "total_appearances": 22, "country": "Hungary"},
-            {"id": 352, "region": "Europe", "total_appearances": 22, "country": "Iceland"},
-            {"id": 372, "region": "Europe", "total_appearances": 22, "country": "Ireland"},
-            {"id": 380, "region": "Europe", "total_appearances": 22, "country": "Italy"},
-            {"id": 398, "region": "Europe", "total_appearances": 22, "country": "Kazakhstan"},
-            {"id": 383, "region": "Europe", "total_appearances": 22, "country": "Kosovo"},
-            {"id": 428, "region": "Europe", "total_appearances": 22, "country": "Latvia"},
-            {"id": 440, "region": "Europe", "total_appearances": 22, "country": "Lithuania"},
-            {"id": 442, "region": "Europe", "total_appearances": 22, "country": "Luxembourg"},
-            {"id": 470, "region": "Europe", "total_appearances": 22, "country": "Malta"},
-            {"id": 498, "region": "Europe", "total_appearances": 22, "country": "Moldova"},
-            {"id": 492, "region": "Europe", "total_appearances": 22, "country": "Monaco"},
-            {"id": 499, "region": "Europe", "total_appearances": 22, "country": "Montenegro"},
-            {"id": 528, "region": "Europe", "total_appearances": 22, "country": "Netherlands"},
-            {"id": 807, "region": "Europe", "total_appearances": 22, "country": "North Macedonia"},
-            {"id": 578, "region": "Europe", "total_appearances": 22, "country": "Norway"},
-            {"id": 616, "region": "Europe", "total_appearances": 22, "country": "Poland"},
-            {"id": 620, "region": "Europe", "total_appearances": 22, "country": "Portugal"},
-            {"id": 642, "region": "Europe", "total_appearances": 22, "country": "Romania"},
-            {"id": 643, "region": "Europe", "total_appearances": 22, "country": "Russia"},
-            {"id": 674, "region": "Europe", "total_appearances": 22, "country": "San Marino"},
-            {"id": 688, "region": "Europe", "total_appearances": 22, "country": "Serbia"},
-            {"id": 703, "region": "Europe", "total_appearances": 22, "country": "Slovakia"},
-            {"id": 705, "region": "Europe", "total_appearances": 22, "country": "Slovenia"},
-            {"id": 724, "region": "Europe", "total_appearances": 22, "country": "Spain"},
-            {"id": 752, "region": "Europe", "total_appearances": 22, "country": "Sweden"},
-            {"id": 756, "region": "Europe", "total_appearances": 22, "country": "Switzerland"},
-            {"id": 792, "region": "Europe", "total_appearances": 22, "country": "Turkey"},
-            {"id": 804, "region": "Europe", "total_appearances": 22, "country": "Ukraine"},
-            {"id": 826, "region": "Europe", "total_appearances": 22, "country": ""},
-            {"id": 208, "region": "Europe", "total_appearances": 22, "country": "Denmark"},
-            {"id": 246, "region": "Europe", "total_appearances": 22, "country": "Finland"},
-            {"id": 352, "region": "Europe", "total_appearances": 22, "country": "Iceland"},
-            {"id": 578, "region": "Europe", "total_appearances": 22, "country": "Norway"},
-            {"id": 752, "region": "Europe", "total_appearances": 22, "country": "Sweden"},
-            {"id": 304, "region": "Europe", "total_appearances": 22, "country": "Greenland"},
-            {"id": 352, "region": "Europe", "total_appearances": 22, "country": "Iceland"},
-            {"id": 4, "region": "Asia", "total_appearances": 2, "country": "Afghanistan"},
-            {"id": 51, "region": "Asia", "total_appearances": 2, "country": "Armenia"},
-            {"id": 31, "region": "Asia", "total_appearances": 2, "country": "Azerbaijan"},
-            {"id": 48, "region": "Asia", "total_appearances": 2, "country": "Bahrain"},
-            {"id": 50, "region": "Asia", "total_appearances": 2, "country": "Bangladesh"},
-            {"id": 64, "region": "Asia", "total_appearances": 2, "country": "Bhutan"},
-            {"id": 70, "region": "Asia", "total_appearances": 2, "country": "Brunei"},
-            {"id": 116, "region": "Asia", "total_appearances": 2, "country": "Cambodia"},
-            {"id": 156, "region": "Asia", "total_appearances": 2, "country": "China"},
-            {"id": 196, "region": "Asia", "total_appearances": 2, "country": "Cyprus"},
-            {"id": 268, "region": "Asia", "total_appearances": 2, "country": "Georgia"},
-            {"id": 356, "region": "Asia", "total_appearances": 2, "country": "India"},
-            {"id": 360, "region": "Asia", "total_appearances": 2, "country": "Indonesia"},
-            {"id": 364, "region": "Asia", "total_appearances": 2, "country": "Iran"},
-            {"id": 368, "region": "Asia", "total_appearances": 2, "country": "Iraq"},
-            {"id": 376, "region": "Asia", "total_appearances": 2, "country": "Israel"},
-            {"id": 392, "region": "Asia", "total_appearances": 2, "country": "Japan"},
-            {"id": 400, "region": "Asia", "total_appearances": 2, "country": "Jordan"},
-            {"id": 398, "region": "Asia", "total_appearances": 2, "country": "Kazakhstan"},
-            {"id": 414, "region": "Asia", "total_appearances": 2, "country": "Kuwait"},
-            {"id": 417, "region": "Asia", "total_appearances": 2, "country": "Kyrgyzstan"},
-            {"id": 418, "region": "Asia", "total_appearances": 2, "country": "Laos"},
-            {"id": 422, "region": "Asia", "total_appearances": 2, "country": "Lebanon"},
-            {"id": 458, "region": "Asia", "total_appearances": 2, "country": "Malaysia"},
-            {"id": 462, "region": "Asia", "total_appearances": 2, "country": "Maldives"},
-            {"id": 496, "region": "Asia", "total_appearances": 2, "country": "Mongolia"},
-            {"id": 104, "region": "Asia", "total_appearances": 2, "country": "Myanmar"},
-            {"id": 524, "region": "Asia", "total_appearances": 2, "country": "Nepal"},
-            {"id": 408, "region": "Asia", "total_appearances": 2, "country": "North Korea"},
-            {"id": 512, "region": "Asia", "total_appearances": 2, "country": "Oman"},
-            {"id": 586, "region": "Asia", "total_appearances": 2, "country": "Pakistan"},
-            {"id": 275, "region": "Asia", "total_appearances": 2, "country": "Palestine"},
-            {"id": 608, "region": "Asia", "total_appearances": 2, "country": "Philippines"},
-            {"id": 634, "region": "Asia", "total_appearances": 2, "country": "Qatar"},
-            {"id": 643, "region": "Asia", "total_appearances": 2, "country": "Russia"},
-            {"id": 682, "region": "Asia", "total_appearances": 2, "country": "Saudi Arabia"},
-            {"id": 702, "region": "Asia", "total_appearances": 2, "country": "Singapore"},
-            {"id": 410, "region": "Asia", "total_appearances": 2, "country": "South Korea"},
-            {"id": 144, "region": "Asia", "total_appearances": 2, "country": "Sri Lanka"},
-            {"id": 760, "region": "Asia", "total_appearances": 2, "country": "Syria"},
-            {"id": 158, "region": "Asia", "total_appearances": 2, "country": "Taiwan"},
-            {"id": 762, "region": "Asia", "total_appearances": 2, "country": "Tajikistan"},
-            {"id": 764, "region": "Asia", "total_appearances": 2, "country": "Thailand"},
-            {"id": 626, "region": "Asia", "total_appearances": 2, "country": "Timor-este"},
-            {"id": 792, "region": "Asia", "total_appearances": 2, "country": "Turkey"},
-            {"id": 795, "region": "Asia", "total_appearances": 2, "country": "Turkmenistan"},
-            {"id": 784, "region": "Asia", "total_appearances": 2, "country": "United Arab Emirates"},
-            {"id": 860, "region": "Asia", "total_appearances": 2, "country": "Uzbekistan"},
-            {"id": 704, "region": "Asia", "total_appearances": 2, "country": "Vietnam"},
-            {"id": 887, "region": "Asia", "total_appearances": 2, "country": "Yemen"},
-            {"id": 554, "region": "Oceania", "total_appearances": 3, "country": "New Zealand"},
-            {"id": 598, "region": "Oceania", "total_appearances": 3, "country": "Papua New Guinea"}
-        ]
-        },
-        "key": "id",
-        "fields": ["region", "total_appearances", "country"]
-        }
-        }
-        ],
-        "projection": {
-        "type": "mercator"
-        },
-        "mark": {
-        "type": "geoshape",
-        "stroke": "black",
-        "strokeWidth": 0.3
-        },
-        "encoding": {
-        "color": {
-            "field": "total_appearances",
-            "type": "quantitative",
-            "scale": {
-                "domain": [0, 65],
-                "range": ["#fdfdfd", "darkgreen"]
-            },
-            "legend": {
-                "title": "Total Appearances",
-                "orient": "bottom",
-                "titleColor": "black",
-                "labelColor": "black"
+            "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
+            "format": {
+                "type": "topojson",
+                "feature": "countries"
             }
         },
-        "tooltip": [
-        {"field": "region", "type": "nominal", "title": "Region"},
-        {"field": "country", "type": "nominal", "title": "Country"},
-        {"field": "total_appearances", "type": "quantitative", "title": "Cummulative Regional Appearances [ 2014 - 2023 ]"}
-        ]
+        "transform": [
+            {
+                "lookup": "id",
+                "from": {
+                    "data": {
+                        "values": [
+                            { "id": 434, "region": "Africa", "total_appearances": 0, "country": "Libya" },
+                            { "id": 768, "region": "Africa", "total_appearances": 0, "country": "Togo" },
+                            { "id": 562, "region": "Africa", "total_appearances": 0, "country": "Niger" },
+                            { "id": 854, "region": "Africa", "total_appearances": 0, "country": "Burkina Faso" },
+                            { "id": 12, "region": "Africa", "total_appearances": 0, "country": "Algeria" },
+                            { "id": 24, "region": "Africa", "total_appearances": 0, "country": "Angola" },
+                            { "id": 12, "region": "Africa", "total_appearances": 0, "country": "Algeria" },
+                            { "id": 24, "region": "Africa", "total_appearances": 0, "country": "Angola" },
+                            { "id": 72, "region": "Africa", "total_appearances": 0, "country": "Botswana" },
+                            { "id": 108, "region": "Africa", "total_appearances": 0, "country": "Burundi" },
+                            { "id": 120, "region": "Africa", "total_appearances": 0, "country": "Cameroon" },
+                            { "id": 140, "region": "Africa", "total_appearances": 0, "country": "Central African Republic" },
+                            { "id": 148, "region": "Africa", "total_appearances": 0, "country": "Chad" },
+                            { "id": 178, "region": "Africa", "total_appearances": 0, "country": "Republic of the Congo" },
+                            { "id": 180, "region": "Africa", "total_appearances": 0, "country": "Democratic Republic of the Congo" },
+                            { "id": 204, "region": "Africa", "total_appearances": 0, "country": "Benin" },
+                            { "id": 231, "region": "Africa", "total_appearances": 0, "country": "Ethiopia" },
+                            { "id": 232, "region": "Africa", "total_appearances": 0, "country": "Eritrea" },
+                            { "id": 262, "region": "Africa", "total_appearances": 0, "country": "Djibouti" },
+                            { "id": 266, "region": "Africa", "total_appearances": 0, "country": "Gabon" },
+                            { "id": 270, "region": "Africa", "total_appearances": 0, "country": "Gambia" },
+                            { "id": 288, "region": "Africa", "total_appearances": 0, "country": "Ghana" },
+                            { "id": 324, "region": "Africa", "total_appearances": 0, "country": "Guinea" },
+                            { "id": 384, "region": "Africa", "total_appearances": 0, "country": "Ivory Coast" },
+                            { "id": 404, "region": "Africa", "total_appearances": 0, "country": "Kenya" },
+                            { "id": 426, "region": "Africa", "total_appearances": 0, "country": "Lesotho" },
+                            { "id": 430, "region": "Africa", "total_appearances": 0, "country": "Liberia" },
+                            { "id": 450, "region": "Africa", "total_appearances": 0, "country": "Madagascar" },
+                            { "id": 454, "region": "Africa", "total_appearances": 0, "country": "Malawi" },
+                            { "id": 466, "region": "Africa", "total_appearances": 0, "country": "Mali" },
+                            { "id": 478, "region": "Africa", "total_appearances": 0, "country": "Mauritania" },
+                            { "id": 508, "region": "Africa", "total_appearances": 0, "country": "Mozambique" },
+                            { "id": 516, "region": "Africa", "total_appearances": 0, "country": "Namibia" },
+                            { "id": 566, "region": "Africa", "total_appearances": 0, "country": "Nigeria" },
+                            { "id": 646, "region": "Africa", "total_appearances": 0, "country": "Rwanda" },
+                            { "id": 686, "region": "Africa", "total_appearances": 0, "country": "Senegal" },
+                            { "id": 694, "region": "Africa", "total_appearances": 0, "country": "Sierra Leone" },
+                            { "id": 706, "region": "Africa", "total_appearances": 0, "country": "Somalia" },
+                            { "id": 710, "region": "Africa", "total_appearances": 0, "country": "South Africa" },
+                            { "id": 716, "region": "Africa", "total_appearances": 0, "country": "Zimbabwe" },
+                            { "id": 728, "region": "Africa", "total_appearances": 0, "country": "South Sudan" },
+                            { "id": 729, "region": "Africa", "total_appearances": 0, "country": "Sudan" },
+                            { "id": 732, "region": "Africa", "total_appearances": 0, "country": "Western Sahara" },
+                            { "id": 800, "region": "Africa", "total_appearances": 0, "country": "Uganda" },
+                            { "id": 834, "region": "Africa", "total_appearances": 0, "country": "Tanzania" },
+                            { "id": 818, "region": "Africa", "total_appearances": 0, "country": "Egypt" },
+                            { "id": 894, "region": "Africa", "total_appearances": 0, "country": "Zambia" },
+                            { "id": 204, "region": "Africa", "total_appearances": 0, "country": "Benin" },
+                            { "id": 840, "region": "North America", "total_appearances": 65, "country": "United States of America" },
+                            { "id": 250, "region": "Europe", "total_appearances": 22, "country": "Europe" },
+                            { "id": 156, "region": "Asia", "total_appearances": 2, "country": "Asia" },
+                            { "id": 36, "region": "Australia", "total_appearances": 3, "country": "Australia" },
+                            { "id": 124, "region": "North America", "total_appearances": 65, "country": "Canada" },
+                            { "id": 32, "region": "South America", "total_appearances": 8, "country": "Argentina" },
+                            { "id": 68, "region": "South America", "total_appearances": 8, "country": "Bolivia" },
+                            { "id": 76, "region": "South America", "total_appearances": 8, "country": "Brazil" },
+                            { "id": 152, "region": "South America", "total_appearances": 8, "country": "Chile" },
+                            { "id": 170, "region": "South America", "total_appearances": 8, "country": "Colombia" },
+                            { "id": 218, "region": "South America", "total_appearances": 8, "country": "Ecuador" },
+                            { "id": 328, "region": "South America", "total_appearances": 8, "country": "Guyana" },
+                            { "id": 600, "region": "South America", "total_appearances": 8, "country": "Paraguay" },
+                            { "id": 604, "region": "South America", "total_appearances": 8, "country": "Peru" },
+                            { "id": 740, "region": "South America", "total_appearances": 8, "country": "Suriname" },
+                            { "id": 858, "region": "South America", "total_appearances": 8, "country": "Uruguay" },
+                            { "id": 862, "region": "South America", "total_appearances": 8, "country": "Venezuela" },
+                            { "id": 8, "region": "Europe", "total_appearances": 22, "country": "Albania" },
+                            { "id": 20, "region": "Europe", "total_appearances": 22, "country": "Andorra" },
+                            { "id": 51, "region": "Europe", "total_appearances": 22, "country": "Armenia" },
+                            { "id": 40, "region": "Europe", "total_appearances": 22, "country": "Austria" },
+                            { "id": 31, "region": "Europe", "total_appearances": 22, "country": "Azerbaijan" },
+                            { "id": 112, "region": "Europe", "total_appearances": 22, "country": "Belarus" },
+                            { "id": 56, "region": "Europe", "total_appearances": 22, "country": "Belgium" },
+                            { "id": 70, "region": "Europe", "total_appearances": 22, "country": "Bosnia and Herzegovina" },
+                            { "id": 100, "region": "Europe", "total_appearances": 22, "country": "Bulgaria" },
+                            { "id": 191, "region": "Europe", "total_appearances": 22, "country": "Croatia" },
+                            { "id": 196, "region": "Europe", "total_appearances": 22, "country": "Cyprus" },
+                            { "id": 203, "region": "Europe", "total_appearances": 22, "country": "Czech Republic" },
+                            { "id": 208, "region": "Europe", "total_appearances": 22, "country": "Denmark" },
+                            { "id": 233, "region": "Europe", "total_appearances": 22, "country": "Estonia" },
+                            { "id": 246, "region": "Europe", "total_appearances": 22, "country": "Finland" },
+                            { "id": 250, "region": "Europe", "total_appearances": 22, "country": "France" },
+                            { "id": 268, "region": "Europe", "total_appearances": 22, "country": "Georgia" },
+                            { "id": 276, "region": "Europe", "total_appearances": 22, "country": "Germany" },
+                            { "id": 300, "region": "Europe", "total_appearances": 22, "country": "Greece" },
+                            { "id": 348, "region": "Europe", "total_appearances": 22, "country": "Hungary" },
+                            { "id": 352, "region": "Europe", "total_appearances": 22, "country": "Iceland" },
+                            { "id": 372, "region": "Europe", "total_appearances": 22, "country": "Ireland" },
+                            { "id": 380, "region": "Europe", "total_appearances": 22, "country": "Italy" },
+                            { "id": 398, "region": "Europe", "total_appearances": 22, "country": "Kazakhstan" },
+                            { "id": 383, "region": "Europe", "total_appearances": 22, "country": "Kosovo" },
+                            { "id": 428, "region": "Europe", "total_appearances": 22, "country": "Latvia" },
+                            { "id": 440, "region": "Europe", "total_appearances": 22, "country": "Lithuania" },
+                            { "id": 442, "region": "Europe", "total_appearances": 22, "country": "Luxembourg" },
+                            { "id": 470, "region": "Europe", "total_appearances": 22, "country": "Malta" },
+                            { "id": 498, "region": "Europe", "total_appearances": 22, "country": "Moldova" },
+                            { "id": 492, "region": "Europe", "total_appearances": 22, "country": "Monaco" },
+                            { "id": 499, "region": "Europe", "total_appearances": 22, "country": "Montenegro" },
+                            { "id": 528, "region": "Europe", "total_appearances": 22, "country": "Netherlands" },
+                            { "id": 807, "region": "Europe", "total_appearances": 22, "country": "North Macedonia" },
+                            { "id": 578, "region": "Europe", "total_appearances": 22, "country": "Norway" },
+                            { "id": 616, "region": "Europe", "total_appearances": 22, "country": "Poland" },
+                            { "id": 620, "region": "Europe", "total_appearances": 22, "country": "Portugal" },
+                            { "id": 642, "region": "Europe", "total_appearances": 22, "country": "Romania" },
+                            { "id": 643, "region": "Europe", "total_appearances": 22, "country": "Russia" },
+                            { "id": 674, "region": "Europe", "total_appearances": 22, "country": "San Marino" },
+                            { "id": 688, "region": "Europe", "total_appearances": 22, "country": "Serbia" },
+                            { "id": 703, "region": "Europe", "total_appearances": 22, "country": "Slovakia" },
+                            { "id": 705, "region": "Europe", "total_appearances": 22, "country": "Slovenia" },
+                            { "id": 724, "region": "Europe", "total_appearances": 22, "country": "Spain" },
+                            { "id": 752, "region": "Europe", "total_appearances": 22, "country": "Sweden" },
+                            { "id": 756, "region": "Europe", "total_appearances": 22, "country": "Switzerland" },
+                            { "id": 792, "region": "Europe", "total_appearances": 22, "country": "Turkey" },
+                            { "id": 804, "region": "Europe", "total_appearances": 22, "country": "Ukraine" },
+                            { "id": 826, "region": "Europe", "total_appearances": 22, "country": "" },
+                            { "id": 208, "region": "Europe", "total_appearances": 22, "country": "Denmark" },
+                            { "id": 246, "region": "Europe", "total_appearances": 22, "country": "Finland" },
+                            { "id": 352, "region": "Europe", "total_appearances": 22, "country": "Iceland" },
+                            { "id": 578, "region": "Europe", "total_appearances": 22, "country": "Norway" },
+                            { "id": 752, "region": "Europe", "total_appearances": 22, "country": "Sweden" },
+                            { "id": 304, "region": "Europe", "total_appearances": 22, "country": "Greenland" },
+                            { "id": 352, "region": "Europe", "total_appearances": 22, "country": "Iceland" },
+                            { "id": 4, "region": "Asia", "total_appearances": 2, "country": "Afghanistan" },
+                            { "id": 51, "region": "Asia", "total_appearances": 2, "country": "Armenia" },
+                            { "id": 31, "region": "Asia", "total_appearances": 2, "country": "Azerbaijan" },
+                            { "id": 48, "region": "Asia", "total_appearances": 2, "country": "Bahrain" },
+                            { "id": 50, "region": "Asia", "total_appearances": 2, "country": "Bangladesh" },
+                            { "id": 64, "region": "Asia", "total_appearances": 2, "country": "Bhutan" },
+                            { "id": 70, "region": "Asia", "total_appearances": 2, "country": "Brunei" },
+                            { "id": 116, "region": "Asia", "total_appearances": 2, "country": "Cambodia" },
+                            { "id": 156, "region": "Asia", "total_appearances": 2, "country": "China" },
+                            { "id": 196, "region": "Asia", "total_appearances": 2, "country": "Cyprus" },
+                            { "id": 268, "region": "Asia", "total_appearances": 2, "country": "Georgia" },
+                            { "id": 356, "region": "Asia", "total_appearances": 2, "country": "India" },
+                            { "id": 360, "region": "Asia", "total_appearances": 2, "country": "Indonesia" },
+                            { "id": 364, "region": "Asia", "total_appearances": 2, "country": "Iran" },
+                            { "id": 368, "region": "Asia", "total_appearances": 2, "country": "Iraq" },
+                            { "id": 376, "region": "Asia", "total_appearances": 2, "country": "Israel" },
+                            { "id": 392, "region": "Asia", "total_appearances": 2, "country": "Japan" },
+                            { "id": 400, "region": "Asia", "total_appearances": 2, "country": "Jordan" },
+                            { "id": 398, "region": "Asia", "total_appearances": 2, "country": "Kazakhstan" },
+                            { "id": 414, "region": "Asia", "total_appearances": 2, "country": "Kuwait" },
+                            { "id": 417, "region": "Asia", "total_appearances": 2, "country": "Kyrgyzstan" },
+                            { "id": 418, "region": "Asia", "total_appearances": 2, "country": "Laos" },
+                            { "id": 422, "region": "Asia", "total_appearances": 2, "country": "Lebanon" },
+                            { "id": 458, "region": "Asia", "total_appearances": 2, "country": "Malaysia" },
+                            { "id": 462, "region": "Asia", "total_appearances": 2, "country": "Maldives" },
+                            { "id": 496, "region": "Asia", "total_appearances": 2, "country": "Mongolia" },
+                            { "id": 104, "region": "Asia", "total_appearances": 2, "country": "Myanmar" },
+                            { "id": 524, "region": "Asia", "total_appearances": 2, "country": "Nepal" },
+                            { "id": 408, "region": "Asia", "total_appearances": 2, "country": "North Korea" },
+                            { "id": 512, "region": "Asia", "total_appearances": 2, "country": "Oman" },
+                            { "id": 586, "region": "Asia", "total_appearances": 2, "country": "Pakistan" },
+                            { "id": 275, "region": "Asia", "total_appearances": 2, "country": "Palestine" },
+                            { "id": 608, "region": "Asia", "total_appearances": 2, "country": "Philippines" },
+                            { "id": 634, "region": "Asia", "total_appearances": 2, "country": "Qatar" },
+                            { "id": 643, "region": "Asia", "total_appearances": 2, "country": "Russia" },
+                            { "id": 682, "region": "Asia", "total_appearances": 2, "country": "Saudi Arabia" },
+                            { "id": 702, "region": "Asia", "total_appearances": 2, "country": "Singapore" },
+                            { "id": 410, "region": "Asia", "total_appearances": 2, "country": "South Korea" },
+                            { "id": 144, "region": "Asia", "total_appearances": 2, "country": "Sri Lanka" },
+                            { "id": 760, "region": "Asia", "total_appearances": 2, "country": "Syria" },
+                            { "id": 158, "region": "Asia", "total_appearances": 2, "country": "Taiwan" },
+                            { "id": 762, "region": "Asia", "total_appearances": 2, "country": "Tajikistan" },
+                            { "id": 764, "region": "Asia", "total_appearances": 2, "country": "Thailand" },
+                            { "id": 626, "region": "Asia", "total_appearances": 2, "country": "Timor-este" },
+                            { "id": 792, "region": "Asia", "total_appearances": 2, "country": "Turkey" },
+                            { "id": 795, "region": "Asia", "total_appearances": 2, "country": "Turkmenistan" },
+                            { "id": 784, "region": "Asia", "total_appearances": 2, "country": "United Arab Emirates" },
+                            { "id": 860, "region": "Asia", "total_appearances": 2, "country": "Uzbekistan" },
+                            { "id": 704, "region": "Asia", "total_appearances": 2, "country": "Vietnam" },
+                            { "id": 887, "region": "Asia", "total_appearances": 2, "country": "Yemen" },
+                            { "id": 554, "region": "Oceania", "total_appearances": 3, "country": "New Zealand" },
+                            { "id": 598, "region": "Oceania", "total_appearances": 3, "country": "Papua New Guinea" }
+                        ]
+                    },
+                    "key": "id",
+                    "fields": ["region", "total_appearances", "country"]
+                }
+            }
+        ],
+        "projection": {
+            "type": "mercator"
+        },
+        "mark": {
+            "type": "geoshape",
+            "stroke": "black",
+            "strokeWidth": 0.3
+        },
+        "encoding": {
+            "color": {
+                "field": "total_appearances",
+                "type": "quantitative",
+                "scale": {
+                    "domain": [0, 65],
+                    "range": ["#fdfdfd", "darkgreen"]
+                },
+                "legend": {
+                    "title": "Total Appearances",
+                    "orient": "bottom",
+                    "titleColor": "black",
+                    "labelColor": "black"
+                }
+            },
+            "tooltip": [
+                { "field": "region", "type": "nominal", "title": "Region" },
+                { "field": "country", "type": "nominal", "title": "Country" },
+                { "field": "total_appearances", "type": "quantitative", "title": "Cummulative Regional Appearances [ 2014 - 2023 ]" }
+            ]
         }
 
     };
