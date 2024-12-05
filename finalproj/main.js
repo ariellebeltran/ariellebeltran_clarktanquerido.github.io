@@ -216,7 +216,7 @@ async function loadSpotifyAgeDemog() {
         description: "Pie chart showing Spotify age demographics in 2023.",
         width: 600,
         height: 600,
-        background: "#121212",
+        background: "#FFFFFF",
         data: {
             values:
 
@@ -242,7 +242,7 @@ async function loadSpotifyAgeDemog() {
         },
         encoding: {
             theta: { field: "percentage", type: "quantitative" },
-            color: { field: "age", type: "nominal", legend: { title: "Age Group", titleColor: "white", labelColor: "white" } },
+            color: { field: "age", type: "nominal", legend: { title: "Age Group", titleColor: "black", labelColor: "black" } },
             tooltip: [
                 { field: "age", type: "nominal", title: "Age Group" },
                 { field: "percentage", type: "quantitative", title: "Percentage (%)" }
@@ -276,7 +276,7 @@ async function loadSpotifyAgeDemogHighlighted() {
         description: "Pie chart showing Spotify age demographics in 2023.",
         width: 600,
         height: 600,
-        background: "#121212",
+        background: "#FFFFFF",
         data: {
             values: [
                 { "age": "18-24 (Gen Zs)", "percentage": 26 },
@@ -294,7 +294,7 @@ async function loadSpotifyAgeDemogHighlighted() {
             color: {
                 field: "age",
                 type: "nominal",
-                legend: { title: "Age Group", titleColor: "white", labelColor: "white" },
+                legend: { title: "Age Group", titleColor: "black", labelColor: "black" },
                 scale: { domain: Object.keys(colors), range: Object.values(colors) }
             },
             tooltip: [
@@ -1466,12 +1466,12 @@ async function loadRegionalAppearancesInTop10() {
         "title": {
             "text": "Spotify's Top 10 Song Rankings by Region (2014-2023)",
             "fontsize": 18,
-            "color": "white",
+            "color": "black",
             "align": "right",
         },
         "width": 800,
         "height": 400,
-        "background": "#121212",
+        "background": "#FFFFFF",
         "config": {
             "view": {
                 "padding": 50
@@ -1692,8 +1692,8 @@ async function loadRegionalAppearancesInTop10() {
             "legend": {
                 "title": "Total Appearances",
                 "orient": "bottom",
-                "titleColor": "white",
-                "labelColor": "white"
+                "titleColor": "black",
+                "labelColor": "black"
             }
         },
         "tooltip": [
