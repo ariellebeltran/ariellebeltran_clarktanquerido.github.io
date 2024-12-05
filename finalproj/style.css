@@ -33,10 +33,11 @@ body {
     align-items: center;
     /* Center vertically */
 
-    font-family: "Open Sans", sans-serif;
+    font-family: Helvetica, Sans-Serif;
+    font-size: 18px;
     font-optical-sizing: auto;
     color: white;
-    font-weight: 400;
+    font-weight: 800;
     font-style: normal;
     font-variation-settings:
         "wdth" 100;
@@ -46,7 +47,7 @@ body {
 nav {
     a {
         padding-left: 30px;
-        font-size: 14px;
+        font-size: 16px;
     }
 
     @media only screen and (max-width: 768px) {
@@ -65,7 +66,7 @@ nav {
 }
 
 #nav-nothighlighted {
-    font-family: "Open Sans", sans-serif;
+    font-family: Helvetica, sans-serif;
     font-optical-sizing: auto;
     font-weight: 200;
     font-style: normal;
@@ -75,7 +76,7 @@ nav {
 
 a:hover {
     font-weight: bold;
-    font-size: 16px;
+    font-size: 18px;
     text-transform: uppercase;
     color: #1ed760;
     /* #nav-nothighlighted{
