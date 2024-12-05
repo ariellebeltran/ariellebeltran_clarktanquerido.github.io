@@ -279,7 +279,6 @@ async function loadSpotifyAgeDemogHighlighted() {
         width: 600,
         height: 600,
         background: "#FFFFFF",
-        background: "white",
         data: {
             values: [
                 { "age": "18-24 (Gen Zs)", "percentage": 26 },
@@ -1698,8 +1697,6 @@ async function loadRegionalAppearancesInTop10() {
             "legend": {
                 "title": "Total Appearances",
                 "orient": "bottom",
-                "titleColor": "black",
-                "labelColor": "black"
                 "titleColor": "black",
                 "labelColor": "black"
             }
