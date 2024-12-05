@@ -11,7 +11,7 @@ body {
 }
 
 .container-nav{
-    padding: 40px 40px 20px 40px;
+    padding: 20px 40px 20px 40px;
 }
 
 .container-webtitle{
@@ -25,23 +25,30 @@ body {
 /* NAVIGATION ========================================================================================================== */
 
 .container-nav {
-    display: flex;
+  display: flex;
+  justify-content: space-between; /* Distribute items evenly */
+  align-items: center; /* Vertically align items */
+  padding: 20px 45px; /* Optional: Adjust spacing */
+  font-family: Helvetica, Sans-Serif;
+  font-size: 18px;
+  font-optical-sizing: auto;
+  color: white;
+  font-weight: 800;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
 
-    /* Enables flexbox */
-    justify-content: space-between;
-    /* Distribute items to the edges */
-    align-items: center;
-    /* Center vertically */
+.item-nav1 {
+  display: flex;
+  align-items: center; /* Align logo and text vertically */
+}
 
-    font-family: Helvetica, Sans-Serif;
-    font-size: 18px;
-    font-optical-sizing: auto;
-    color: white;
-    font-weight: 800;
-    font-style: normal;
-    font-variation-settings:
-        "wdth" 100;
+#spotify-logo {
+  margin-right: 10px; /* Add spacing between logo and text */
+}
 
+#sitename-nav {
+  font-size: 20px; /* Adjust font size if necessary */
 }
 
 nav {
@@ -58,7 +65,7 @@ nav {
         padding: 20px;
     }
 
-    background-color: #121212;
+    background-color: #000000;
     position: sticky;
     top: 0;
     z-index: 1000;
