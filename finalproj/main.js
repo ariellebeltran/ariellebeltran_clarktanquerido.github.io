@@ -1431,7 +1431,7 @@ async function loadBillboard100Charts() {
                     },
                     "scale": {
                         "domain": [true, false],  // true = Pop, false = Other Genres
-                        "range": ["#FF6347", "#B0C4DE"] // Pop = bright red, Other Genres = light grayish blue
+                        "range": ["#FF6347", "#D3D3D3"] // Pop = bright red, Other Genres = light grayish blue
                     }
                 },
                 "tooltip": [
