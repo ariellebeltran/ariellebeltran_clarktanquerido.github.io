@@ -6,7 +6,8 @@
 
 body {
     margin: 0px;
-    background-color: #121212;
+    /* background-color: #121212; */
+    background: white;
 }
 
 .container-nav{
@@ -115,7 +116,7 @@ a:visited {
     /* padding: 0px 40px; */
     /* background-color: #1d1d1d;
     color: white; */
-    background-color: #121212;
+    background-color: white;
 }
 
 .container-content {
@@ -133,7 +134,7 @@ h1 {
     text-transform: uppercase;
     line-height: 95%;
     width: 78vw;
-    color: white;
+    color: black;
 }
 
 #title-subheader {
@@ -170,7 +171,7 @@ h4, h5{
     font-family: "Barlow Semi Condensed", serif;
     font-weight: 300;
     font-style: normal;
-    color: white;
+    color: black;
 }
 
 footer{
@@ -196,7 +197,7 @@ li {
     width: 60vw;
     font-family: "Open Sans", sans-serif;
     font-optical-sizing: auto;
-    color: white;
+    color: black;
     font-weight: 400;
     font-style: normal;
     font-variation-settings:
@@ -207,7 +208,7 @@ figcaption {
     font-family: "Barlow Semi Condensed", serif;
     font-weight: 300;
     font-style: normal;
-    color: white;
+    color: black;
 }
 
 #scroll-caption {
