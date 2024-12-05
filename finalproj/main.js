@@ -217,6 +217,7 @@ async function loadSpotifyAgeDemog() {
         width: 600,
         height: 600,
         background: "#FFFFFF",
+        background: "white",
         data: {
             values:
 
@@ -242,6 +243,7 @@ async function loadSpotifyAgeDemog() {
         },
         encoding: {
             theta: { field: "percentage", type: "quantitative" },
+            color: { field: "age", type: "nominal", legend: { title: "Age Group", titleColor: "black", labelColor: "black" } },
             color: { field: "age", type: "nominal", legend: { title: "Age Group", titleColor: "black", labelColor: "black" } },
             tooltip: [
                 { field: "age", type: "nominal", title: "Age Group" },
@@ -277,6 +279,7 @@ async function loadSpotifyAgeDemogHighlighted() {
         width: 600,
         height: 600,
         background: "#FFFFFF",
+        background: "white",
         data: {
             values: [
                 { "age": "18-24 (Gen Zs)", "percentage": 26 },
@@ -294,6 +297,7 @@ async function loadSpotifyAgeDemogHighlighted() {
             color: {
                 field: "age",
                 type: "nominal",
+                legend: { title: "Age Group", titleColor: "black", labelColor: "black" },
                 legend: { title: "Age Group", titleColor: "black", labelColor: "black" },
                 scale: { domain: Object.keys(colors), range: Object.values(colors) }
             },
@@ -1467,11 +1471,13 @@ async function loadRegionalAppearancesInTop10() {
             "text": "Spotify's Top 10 Song Rankings by Region (2014-2023)",
             "fontsize": 18,
             "color": "black",
+            "color": "black",
             "align": "right",
         },
         "width": 800,
         "height": 400,
         "background": "#FFFFFF",
+        "background": "white",
         "config": {
             "view": {
                 "padding": 50
@@ -1692,6 +1698,8 @@ async function loadRegionalAppearancesInTop10() {
             "legend": {
                 "title": "Total Appearances",
                 "orient": "bottom",
+                "titleColor": "black",
+                "labelColor": "black"
                 "titleColor": "black",
                 "labelColor": "black"
             }
