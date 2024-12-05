@@ -313,7 +313,7 @@ async function loadSpotifyAgeDemogHighlighted() {
             ]
         },
         view: { stroke: null },
-        title: "Spotify Age Demographics (2023)"
+        // title: "Spotify Age Demographics (2023)"
     };
 
     // Embed the Vega-Lite chart
