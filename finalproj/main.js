@@ -276,7 +276,7 @@ async function loadSpotifyAgeDemogHighlighted() {
         description: "Pie chart showing Spotify age demographics in 2023.",
         width: 600,
         height: 600,
-        background: "#121212",
+        background: "white",
         data: {
             values: [
                 { "age": "18-24 (Gen Zs)", "percentage": 26 },
@@ -294,7 +294,7 @@ async function loadSpotifyAgeDemogHighlighted() {
             color: {
                 field: "age",
                 type: "nominal",
-                legend: { title: "Age Group", titleColor: "white", labelColor: "white" },
+                legend: { title: "Age Group", titleColor: "black", labelColor: "black" },
                 scale: { domain: Object.keys(colors), range: Object.values(colors) }
             },
             tooltip: [
