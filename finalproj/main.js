@@ -662,7 +662,100 @@ async function loadSpotifyUserGenreChart() {
 }
 
 // Call the function to create the chart
-loadSpotifyUserGenreChart();
+// loadSpotifyUserGenreChart(); /uncomment this
+
+async function loadSpotifyUsersChart() {
+    // Vega-Lite specification
+    const yourVlSpec = {
+        $schema: "https://vega.github.io/schema/vega-lite/v5.json",
+        description: "Grouped bar chart showing Spotify user demographics for 2013 and 2023.",
+        data: {
+            values: [
+                { "Year": 2013, "Age Group": "18-24", "Users in Age Groups (Millions)": 17.5, "Custom Text": "Gen Z" },
+                { "Year": 2013, "Age Group": "25-44", "Users in Age Groups (Millions)": 15, "Custom Text": "Millennials" },
+                { "Year": 2023, "Age Group": "18-24", "Users in Age Groups (Millions)": 150, "Custom Text": "Gen Z" },
+                { "Year": 2023, "Age Group": "25-44", "Users in Age Groups (Millions)": 175, "Custom Text": "Millennials" }
+            ]
+        },
+        width: 690,
+        height: 400,
+        autosize: { type: "fit", contains: "padding" },
+        layer: [
+            {
+                mark: "bar",
+                encoding: {
+                    x: {
+                        field: "Year",
+                        type: "ordinal",
+                        title: "Year",
+                        axis: { labelAngle: 0 },
+                        offset: -30
+                    },
+                    xOffset: { field: "Age Group" },
+                    y: {
+                        field: "Users in Age Groups (Millions)",
+                        type: "quantitative",
+                        title: "Users in Age Groups (Millions)"
+                    },
+                    color: {
+                        field: "Age Group",
+                        type: "nominal",
+                        legend: { 
+                            title: "Age Group",
+                            labelExpr: "datum.label == '18-24' ? 'Gen Zs (18-24)' : datum.label == '25-34' ? 'Millennials (25-44)' : datum.label"
+                        },
+                        scale: {
+                            domain: ["18-24", "25-44"],
+                            range: ["#6082B6", "#1ed760"]
+                        }
+                    },
+                    tooltip: [
+                        { field: "Year", type: "ordinal", title: "Year" },
+                        { field: "Age Group", type: "nominal", title: "Age Group" },
+                        {
+                            field: "Users in Age Groups (Millions)",
+                            type: "quantitative",
+                            title: "Users (Millions)"
+                        }
+                    ]
+                }
+            },
+            {
+                mark: {
+                    type: "text",
+                    align: "center",
+                    baseline: "middle",
+                    dy: -10, // Adjust this value to position the text above the bars
+                    color: "black"
+                },
+                encoding: {
+                    x: {
+                        field: "Year",
+                        type: "ordinal",
+                        title: "Year",
+                        axis: { labelAngle: 0 },
+                        offset: -30
+                    },
+                    xOffset: { field: "Age Group" },
+                    y: {
+                        field: "Users in Age Groups (Millions)",
+                        type: "quantitative",
+                        title: "Users in Age Groups (Millions)"
+                    },
+                    text: { field: "Custom Text", type: "nominal" }
+                }
+            }
+        ]
+    };
+
+    // Embed the Vega-Lite chart
+    vegaEmbed("#spotifyUsersChart", yourVlSpec);
+}
+
+// Call the function to load data and create the chart
+loadSpotifyUsersChart();
+
+
 
 
 async function loadBillboard100LineChart() {
