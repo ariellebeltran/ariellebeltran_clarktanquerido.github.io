@@ -10,45 +10,51 @@ body {
     background: white;
 }
 
-.container-nav{
+.container-nav {
     padding: 20px 40px 20px 40px;
 }
 
-.container-webtitle{
-    padding: 0px 240px;
+.container-webtitle {
+    padding: 0px 330px;
 }
 
-.container-content{
-    padding: 0px 240px;
+.container-content {
+    padding: 0px 330px;
 }
 
 /* NAVIGATION ========================================================================================================== */
 
 .container-nav {
-  display: flex;
-  justify-content: space-between; /* Distribute items evenly */
-  align-items: center; /* Vertically align items */
-  padding: 20px 45px; /* Optional: Adjust spacing */
-  font-family: Helvetica, Sans-Serif;
-  font-size: 18px;
-  font-optical-sizing: auto;
-  color: white;
-  font-weight: 800;
-  font-style: normal;
-  font-variation-settings: "wdth" 100;
+    display: flex;
+    justify-content: space-between;
+    /* Distribute items evenly */
+    align-items: center;
+    /* Vertically align items */
+    padding: 20px 45px;
+    /* Optional: Adjust spacing */
+    font-family: Helvetica, Sans-Serif;
+    font-size: 18px;
+    font-optical-sizing: auto;
+    color: white;
+    font-weight: 800;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
 }
 
 .item-nav1 {
-  display: flex;
-  align-items: center; /* Align logo and text vertically */
+    display: flex;
+    align-items: center;
+    /* Align logo and text vertically */
 }
 
 #spotify-logo {
-  margin-right: 10px; /* Add spacing between logo and text */
+    margin-right: 10px;
+    /* Add spacing between logo and text */
 }
 
 #sitename-nav {
-  font-size: 20px; /* Adjust font size if necessary */
+    font-size: 20px;
+    /* Adjust font size if necessary */
 }
 
 nav {
@@ -88,7 +94,7 @@ a:hover {
     color: #1ed760;
     /* color: #0efff3;
     color: #ff320e; */
-    
+
     /* #nav-nothighlighted{
         color:#000000 !important;
     } */
@@ -102,20 +108,21 @@ a:visited {
 
 /* HOME BANNER */
 
-#home-banner{
+#home-banner {
     /* padding:100px; */
     background-image: url('https://ariellebeltran.github.io/with_clarktanquerido/images/spotify-banner.jpg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    background-size: cover; 
+    background-size: cover;
     background-position: center;
-    
-    width: 100%; /* Make the banner span the full viewport width */
 
-    height: 400px; 
+    width: 100%;
+    /* Make the banner span the full viewport width */
+
+    height: 400px;
     margin: 0 !important;
     padding: 0;
-    
+
 }
 
 
@@ -123,7 +130,7 @@ a:visited {
 
 .container-webtitle {
     /* width: 50vw; */
-    padding: 60px 240px 0px 240px;
+    padding: 50px 330px 0px 330px;
     /* padding: 0px 40px; */
     /* background-color: #1d1d1d;
     color: white; */
@@ -135,35 +142,71 @@ a:visited {
 }
 
 h1 {
-    font-family: "Montserrat", sans-serif;
+    /* font-family: "Montserrat", sans-serif; */
+    font-family: Helvetica, Sans-Serif;
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
     margin-top: 0;
     margin-bottom: 10px;
-    font-size: 68px;
+    font-size: 48px;
     /* text-transform: uppercase; */
-    line-height: 95%;
-    width: 70vw;
+    line-height: 56px;
+    width: auto;
     color: black;
 }
 
 #title-subheader {
-    font-family: Helvetica, serif;
+    font-family: "Ramabhadra", sans-serif;
+
+    /* font-family: Helvetica, serif; */
     font-weight: 600;
     font-style: normal;
-    margin: 0;
-    margin-bottom: 10px;
-    font-size: 24px;
+    margin-bottom: 15px;
+
+    font-size: 16px;
     line-height: 95%;
-    width: 70vw;
+    width: auto;
     text-transform: uppercase;
     color: #1ed760;
 }
 
-#first-header{
-    padding-top: 40px;
+#title-date {
+    margin: 0;
 }
+
+#title-buttons {
+    margin-top: 40px;
+}
+
+.title-button {
+
+    font-family: Helvetica, sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+
+    font-size: 13px;
+    background-color: #ffffff;
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+
+    display: inline-flex; /* Use inline-flex to ensure flexbox behavior on inline elements */
+    flex-direction: row; /* Stack svg and text vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    cursor: pointer;
+    gap: 4px; /* Add spacing between svg and text */
+}
+
+/* #first-header {
+    padding-top: 40px;
+} */
 
 h2 {
 
@@ -181,14 +224,15 @@ h3 {
     color: #000000;
 }
 
-h4, h5{
+h4,
+h5 {
     font-family: "Barlow Semi Condensed", serif;
     font-weight: 300;
     font-style: normal;
     color: black;
 }
 
-footer{
+footer {
     color: #ccc;
     font-family: "Barlow Semi Condensed", serif;
     font-weight: 300;
@@ -200,19 +244,23 @@ footer{
     padding-top: 50px;
 }
 
-#the-space{
-    padding:0px 10px;
+#the-space {
+    padding: 0px 10px;
 }
 
 /* CONTENT =============================================================================================================== */
 
 p,
 li {
-    width: 60vw;
+    width: auto;
     font-family: "Open Sans", sans-serif;
+    /* font-family: Helvetica, Sans-Serif; */
+
     font-optical-sizing: auto;
     color: black;
-    font-weight: 400;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
     font-style: normal;
     font-variation-settings:
         "wdth" 100;
@@ -345,7 +393,7 @@ figcaption {
     /* Prevents overflow when resizing */
 }
 
-.vis1{
+.vis1 {
     padding-bottom: 40px;
 }
 
@@ -403,105 +451,115 @@ figcaption {
 
 /*From W3Schools*/
 
-* {box-sizing:border-box}
+* {
+    box-sizing: border-box
+}
 
 /* Slideshow container */
 .slideshow-container {
-  max-width: 1000px;
-  position: relative;
-  margin: auto;
+    max-width: 1000px;
+    position: relative;
+    margin: auto;
 }
 
 /* Hide the images by default */
 .mySlides {
-  display: none;
+    display: none;
 }
 
 /* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
-  color: rgb(28, 28, 28);
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: rgb(28, 28, 28);
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
 }
 
-.prev{
+.prev {
     margin-left: -65px;
 }
 
-.next{
+.next {
     margin-right: 45px;
 }
 
 /* Position the "next button" to the right */
 .next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+    right: 0;
+    border-radius: 3px 0 0 3px;
 }
 
 /* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(106, 106, 106, 0.8);
+.prev:hover,
+.next:hover {
+    background-color: rgba(106, 106, 106, 0.8);
 }
 
 /* Caption text */
 .text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
+    color: #f2f2f2;
+    font-size: 15px;
+    padding: 8px 12px;
+    position: absolute;
+    bottom: 8px;
+    width: 100%;
+    text-align: center;
 }
 
 /* Number text (1/3 etc) */
 .numbertext {
-  color: #ffffff;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
+    color: #ffffff;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
 }
 
 /* The dots/bullets/indicators */
 .dot {
-  cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #000000;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #000000;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
-  background-color: #717171;
+.active,
+.dot:hover {
+    background-color: #717171;
 }
 
 /* Fading animation */
 .fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
 }
 
 @keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
 }
 
 /* test */
-   /* Style the container */
-   .slideshow-container {
+/* Style the container */
+.slideshow-container {
     position: relative;
     max-width: 100%;
     margin: auto;
@@ -513,7 +571,8 @@ figcaption {
 }
 
 /* Navigation buttons */
-.prev, .next {
+.prev,
+.next {
     cursor: pointer;
     position: absolute;
     top: 50%;
