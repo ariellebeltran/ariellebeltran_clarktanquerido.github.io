@@ -1679,7 +1679,7 @@ async function loadBillboard100Charts() {
     });
 }
 
-// loadBillboard100Charts();
+// loadBillboard100Charts(); //old vis
 
 async function loadBillboard100Charts() {
     const popArtists = [
@@ -1706,12 +1706,7 @@ async function loadBillboard100Charts() {
                 { "rank": 2, "song": "As It Was", "artist": "Harry Styles" },
                 { "rank": 3, "song": "Stay", "artist": "The Kid Laroi, Justin Bieber" },
                 { "rank": 4, "song": "Easy on Me", "artist": "Adele" },
-                { "rank": 5, "song": "Shivers", "artist": "Ed Sheeran" },
-                // { "rank": 6, "song": "First Class", "artist": "Jack Harlow" },
-                // { "rank": 7, "song": "Big Energy", "artist": "Latto" },
-                // { "rank": 8, "song": "Ghost", "artist": "Justin Bieber" },
-                // { "rank": 9, "song": "Super Gremlin", "artist": "Kodak Black" },
-                // { "rank": 10, "song": "Cold Heart (Pnau Remix)", "artist": "Elton John, Dua Lipa" }
+                { "rank": 5, "song": "Shivers", "artist": "Ed Sheeran" }
             ]
         },
         {
@@ -1720,12 +1715,7 @@ async function loadBillboard100Charts() {
                 { "rank": 2, "song": "Save Your Tears", "artist": "The Weeknd, Ariana Grande" },
                 { "rank": 3, "song": "Blinding Lights", "artist": "The Weeknd" },
                 { "rank": 4, "song": "Mood", "artist": "24kGoldn feat. Iann Dior" },
-                { "rank": 5, "song": "Good 4 U", "artist": "Olivia Rodrigo" },
-                // { "rank": 6, "song": "Kiss Me More", "artist": "Doja Cat feat. SZA" },
-                // { "rank": 7, "song": "Leave the Door Open", "artist": "Silk Sonic (Bruno Mars, Anderson .Paak)" },
-                // { "rank": 8, "song": "Drivers License", "artist": "Olivia Rodrigo" },
-                // { "rank": 9, "song": "Montero (Call Me By Your Name)", "artist": "Lil Nas X" },
-                // { "rank": 10, "song": "Peaches", "artist": "Justin Bieber feat. Daniel Caesar, Giveon" }
+                { "rank": 5, "song": "Good 4 U", "artist": "Olivia Rodrigo" }
             ]
         },
         {
@@ -1734,12 +1724,7 @@ async function loadBillboard100Charts() {
                 { "rank": 2, "song": "Circles", "artist": "Post Malone" },
                 { "rank": 3, "song": "The Box", "artist": "Roddy Ricch" },
                 { "rank": 4, "song": "Don't Start Now", "artist": "Dua Lipa" },
-                { "rank": 5, "song": "Rockstar", "artist": "DaBaby feat. Roddy Ricch" },
-                // { "rank": 6, "song": "Adore You", "artist": "Harry Styles" },
-                // { "rank": 7, "song": "Life Is Good", "artist": "Future feat. Drake" },
-                // { "rank": 8, "song": "Memories", "artist": "Maroon 5" },
-                // { "rank": 9, "song": "The Bones", "artist": "Maren Morris" },
-                // { "rank": 10, "song": "Someone You Loved", "artist": "Lewis Capaldi" }
+                { "rank": 5, "song": "Rockstar", "artist": "DaBaby feat. Roddy Ricch" }
             ]
         },
         {
@@ -1748,12 +1733,7 @@ async function loadBillboard100Charts() {
                 { "rank": 2, "song": "Sunflower", "artist": "Post Malone, Swae Lee" },
                 { "rank": 3, "song": "Without Me", "artist": "Halsey" },
                 { "rank": 4, "song": "Bad Guy", "artist": "Billie Eilish" },
-                { "rank": 5, "song": "Wow.", "artist": "Post Malone" },
-                // { "rank": 6, "song": "Happier", "artist": "Marshmello, Bastille" },
-                // { "rank": 7, "song": "7 Rings", "artist": "Ariana Grande" },
-                // { "rank": 8, "song": "Talk", "artist": "Khalid" },
-                // { "rank": 9, "song": "Sicko Mode", "artist": "Travis Scott" },
-                // { "rank": 10, "song": "Sucker", "artist": "Jonas Brothers" }
+                { "rank": 5, "song": "Wow.", "artist": "Post Malone" }
             ]
         },
         {
@@ -1842,7 +1822,7 @@ async function loadBillboard100Charts() {
                     },
                     "scale": {
                         "domain": [true, false],  // true = Pop, false = Other Genres
-                        "range": ["#ff320e", "#D3D3D3"] // Pop = bright red, Other Genres = light gray
+                        "range": ["#ff320e", "#D3D3D3"] // Pop = bright red, Other Genres = light grayish blue
                     }
                 },
                 "tooltip": [
@@ -1883,7 +1863,7 @@ async function loadBillboard100Charts() {
             } else {
                 currentYearIndex++;
             }
-        }, 800); // Change the duration as needed
+        }, 1000); // Change the duration as needed
     }
 
     slider.addEventListener('input', function () {
@@ -1892,7 +1872,16 @@ async function loadBillboard100Charts() {
         showChartForYear(currentYearIndex);
     });
 
-    startAnimation();
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                startAnimation();
+                observer.unobserve(slideshowContainer);
+            }
+        });
+    });
+
+    observer.observe(slideshowContainer);
 }
 
 loadBillboard100Charts();
