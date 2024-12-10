@@ -180,7 +180,7 @@ h1 {
 }
 
 .title-button {
-
+    margin-top: 20px;
     font-family: Helvetica, sans-serif;
     font-optical-sizing: auto;
     font-weight: 600;
@@ -201,7 +201,7 @@ h1 {
     align-items: center; /* Center items horizontally */
     justify-content: center; /* Center items vertically */
     cursor: pointer;
-    gap: 4px; /* Add spacing between svg and text */
+    gap: 7px; /* Add spacing between svg and text */
 }
 
 /* #first-header {
