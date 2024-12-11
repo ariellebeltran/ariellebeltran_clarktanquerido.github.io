@@ -681,7 +681,7 @@ async function loadTopSpotifyGenresChart() {
             "encoding": {
                 "x": {"field": "Year", "type": "ordinal", "axis": {"title": null}},
                 "y": {"field": "Rank", "type": "ordinal", "axis": {"title": null}},
-                "text": {"value": "Rock"},
+                "text": {"value": "rock"},
                 "color": {"value": "D3D3D3"},
                 "size": {"value": 10},
                 "yOffset": {"value": -15}
