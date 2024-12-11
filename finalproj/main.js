@@ -501,7 +501,7 @@ async function loadTopSpotifyGenresChart() {
     const genreColors = {
         "pop": "#ff320e",
         "world/traditional": "#E5E4E2",
-        "hip-hop/rap": "#0efbff",
+        "hip-hop/rap": "#1CDFC8",
         "electronic/dance": "#D3D3D3",
         "r&b/soul": "#E5E4E2",
         "rock": "#D3D3D3"
