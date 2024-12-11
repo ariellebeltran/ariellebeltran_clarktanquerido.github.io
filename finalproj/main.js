@@ -805,7 +805,7 @@ async function loadSpotifyUserGenreChart() {
     // Custom colors
     const colors = {
         "Pop": "#ff320e",
-        "Hip-Hop/Rap": "#0efbff",
+        "Hip-Hop/Rap": "#4A4D7B",
         "R&B": "#f4bcbb",
         "K-Pop/J-Pop": "#c7e2e0",
         "Regional Mexican, Bollywood, Spanish Contemporary": "#b8dcb4",
