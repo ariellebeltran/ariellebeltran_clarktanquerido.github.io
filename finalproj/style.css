@@ -17,17 +17,31 @@ body {
 .container-webtitle {
     padding: 0px 330px;
 
-    @media only screen and (max-width: 768px) {
-        padding: 0px;
-    }
-
-    @media only screen and (max-width: 480px) {
-        padding: 0px;
+    @media only screen and (max-width: 1115px) {
+        padding: 15px;
     }
 }
 
 .container-content {
     padding: 0px 330px;
+
+    @media only screen and (max-width: 1115px) {
+        padding: 15px;
+    }
+
+    /* @media only screen and (max-width: 480px) {
+        padding: 0px;
+    } */
+}
+
+[class^= "vis"]{
+    @media only screen and (max-width: 768px) {
+        padding: 20px;
+    }
+
+    @media only screen and (max-width: 480px) {
+        padding: 20px;
+    }
 }
 
 /* NAVIGATION ========================================================================================================== */
@@ -144,13 +158,13 @@ a:visited {
     color: white; */
     background-color: white;
 
-    @media only screen and (max-width: 768px) {
-        padding: 0px;
+    @media only screen and (max-width: 1115px) {
+        padding: 15px;
     }
 
-    @media only screen and (max-width: 480px) {
+    /* @media only screen and (max-width: 480px) {
         padding: 0px;
-    }
+    } */
 }
 
 .container-content {

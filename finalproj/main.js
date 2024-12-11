@@ -1863,7 +1863,7 @@ async function loadBillboard100Charts() {
             } else {
                 currentYearIndex++;
             }
-        }, 500); // Change the duration as needed
+        }, 300); // Change the duration as needed
     }
 
     slider.addEventListener('input', function () {
