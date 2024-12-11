@@ -440,7 +440,7 @@ async function loadSpotifyUsersChart() {
                     color: {
                         field: "Age Group",
                         type: "nominal",
-                        legend: { 
+                        legend: {
                             title: "Age Group",
                             labelExpr: "datum.label == '18-24' ? 'Gen Zs (18-24)' : datum.label == '25-44' ? 'Millennials (25-44)' : datum.label"
                         },
@@ -844,7 +844,7 @@ async function loadSpotifyUserGenreChart() {
                     }
                 },
                 {
-                    mark: {"type": "point", "filled": true},
+                    mark: { "type": "point", "filled": true, size: 200 },
                     encoding: {
                         y: { field: "Top Music Genres", type: "nominal" },
                         x: { field: "Percentage", type: "quantitative" },
@@ -860,6 +860,29 @@ async function loadSpotifyUserGenreChart() {
                             { field: "Percentage", type: "quantitative", title: "Percentage (%)" }
                         ]
                     }
+                },
+                {
+                    mark: { type: "text", align: "left", dx: 10, dy: -5 }, // Text annotation
+                    encoding: {
+                        y: { field: "Top Music Genres", type: "nominal" },
+                        x: { field: "Percentage", type: "quantitative" },
+                        text: {
+                            condition: [{
+                                test: "datum['Year'] == 2023 && datum['Top Music Genres'] == 'Hip-Hop/Rap' && datum['Age Group'] == 'Millennials'",
+                                value: "Hip-Hop/Rap for Millennials increased by 5% in 2023"
+                            },
+                            {
+                                test: "datum['Year'] == 2023 && datum['Top Music Genres'] == 'Hip-Hop/Rap' && datum['Age Group'] == 'Gen Z'",
+                                value: "Hip-Hop/Rap for Gen Zs is 15% lower in 2023"
+                            }],
+                            value: ""
+                        },
+                        color: {
+                            field: "Top Music Genres",
+                            type: "nominal",
+                            scale: { domain: Object.keys(colors), range: Object.values(colors) }
+                        }
+                    }
                 }
             ]
         },
@@ -873,7 +896,6 @@ async function loadSpotifyUserGenreChart() {
 
 // Call the function to create the chart
 loadSpotifyUserGenreChart();
-
 
 
 // async function loadBillboard100LineChart() {
@@ -1901,158 +1923,158 @@ async function loadTaylorSwiftViz() {
         "height": 400,
         "data": {
             "values": [
-            {"release_date": "2006-10-24", "album_name": "Taylor Swift", "genre": "Country", "sales": 40000},
-            {"release_date": "2008-11-11", "album_name": "Fearless", "genre": "Country Pop", "sales": 592000},
-            {"release_date": "2010-10-25", "album_name": "Speak Now", "genre": "Country Pop", "sales": 1047000},
-            {"release_date": "2012-10-22", "album_name": "Red", "genre": "Country Pop", "sales": 1208000},
-            {"release_date": "2014-10-27", "album_name": "1989", "genre": "Synth-Pop", "sales": 1285000},
-            {"release_date": "2017-11-10", "album_name": "Reputation", "genre": "Pop", "sales": 1216000},
-            {"release_date": "2019-08-23", "album_name": "Lover", "genre": "Pop", "sales": 867000},
-            {"release_date": "2020-07-24", "album_name": "Folklore", "genre": "Indie Folk", "sales": 846000},
-            {"release_date": "2020-12-11", "album_name": "Evermore", "genre": "Indie Folk", "sales": 329000},
-            {"release_date": "2021-04-09", "album_name": "Fearless (Taylor's Version)", "genre": "Country Pop", "sales": 291000},
-            {"release_date": "2021-11-12", "album_name": "Red (Taylor's Version)", "genre": "Country Pop", "sales": 605000},
-            {"release_date": "2022-10-21", "album_name": "Midnights", "genre": "Synth-Pop", "sales": 1220000},
-            {"release_date": "2023-07-07", "album_name": "Speak Now (Taylor's Version)", "genre": "Country Pop", "sales": 716000},
-            {"release_date": "2023-10-27", "album_name": "1989 (Taylor's Version)", "genre": "Synth-Pop", "sales": 1653000},
-            {"release_date": "2024-04-19", "album_name": "The Tortured Poets Department", "genre": "Pop", "sales": 2610000}
+                { "release_date": "2006-10-24", "album_name": "Taylor Swift", "genre": "Country", "sales": 40000 },
+                { "release_date": "2008-11-11", "album_name": "Fearless", "genre": "Country Pop", "sales": 592000 },
+                { "release_date": "2010-10-25", "album_name": "Speak Now", "genre": "Country Pop", "sales": 1047000 },
+                { "release_date": "2012-10-22", "album_name": "Red", "genre": "Country Pop", "sales": 1208000 },
+                { "release_date": "2014-10-27", "album_name": "1989", "genre": "Synth-Pop", "sales": 1285000 },
+                { "release_date": "2017-11-10", "album_name": "Reputation", "genre": "Pop", "sales": 1216000 },
+                { "release_date": "2019-08-23", "album_name": "Lover", "genre": "Pop", "sales": 867000 },
+                { "release_date": "2020-07-24", "album_name": "Folklore", "genre": "Indie Folk", "sales": 846000 },
+                { "release_date": "2020-12-11", "album_name": "Evermore", "genre": "Indie Folk", "sales": 329000 },
+                { "release_date": "2021-04-09", "album_name": "Fearless (Taylor's Version)", "genre": "Country Pop", "sales": 291000 },
+                { "release_date": "2021-11-12", "album_name": "Red (Taylor's Version)", "genre": "Country Pop", "sales": 605000 },
+                { "release_date": "2022-10-21", "album_name": "Midnights", "genre": "Synth-Pop", "sales": 1220000 },
+                { "release_date": "2023-07-07", "album_name": "Speak Now (Taylor's Version)", "genre": "Country Pop", "sales": 716000 },
+                { "release_date": "2023-10-27", "album_name": "1989 (Taylor's Version)", "genre": "Synth-Pop", "sales": 1653000 },
+                { "release_date": "2024-04-19", "album_name": "The Tortured Poets Department", "genre": "Pop", "sales": 2610000 }
             ]
         },
         "layer": [
             {
-            "mark": {
-                "type": "line",
-                "color": "#1DB954"
-            },
-            "encoding": {
-                "x": {
-                "field": "release_date",
-                "type": "temporal",
-                "title": "Release Date"
+                "mark": {
+                    "type": "line",
+                    "color": "#1DB954"
                 },
-                "y": {
-                "field": "sales",
-                "type": "quantitative",
-                "title": "Opening Week Sales"
+                "encoding": {
+                    "x": {
+                        "field": "release_date",
+                        "type": "temporal",
+                        "title": "Release Date"
+                    },
+                    "y": {
+                        "field": "sales",
+                        "type": "quantitative",
+                        "title": "Opening Week Sales"
+                    }
+                }
+            },
+            {
+                "transform": [
+                    { "filter": "datum.album_name === 'Taylor Swift'" }
+                ],
+                "mark": {
+                    "type": "point",
+                    "filled": true,
+                    "tooltip": true,
+                    "size": 100,
+                    "color": "red"
+                },
+                "encoding": {
+                    "x": {
+                        "field": "release_date",
+                        "type": "temporal"
+                    },
+                    "y": {
+                        "field": "sales",
+                        "type": "quantitative"
+                    },
+                    "tooltip": [
+                        { "field": "album_name", "type": "nominal", "title": "Album Name" },
+                        { "field": "release_date", "type": "temporal", "title": "Release Date" },
+                        { "field": "genre", "type": "nominal", "title": "Genre" },
+                        { "field": "sales", "type": "quantitative", "title": "Sales", "format": "," }
+                    ]
+                }
+            },
+            {
+                "transform": [
+                    { "filter": "datum.album_name === 'Fearless'" }
+                ],
+                "mark": {
+                    "type": "point",
+                    "filled": true,
+                    "tooltip": true,
+                    "color": "yellow",
+                    "size": 100
+                },
+                "encoding": {
+                    "x": {
+                        "field": "release_date",
+                        "type": "temporal"
+                    },
+                    "y": {
+                        "field": "sales",
+                        "type": "quantitative"
+                    },
+                    "tooltip": [
+                        { "field": "album_name", "type": "nominal", "title": "Album Name" },
+                        { "field": "release_date", "type": "temporal", "title": "Release Date" },
+                        { "field": "genre", "type": "nominal", "title": "Genre" },
+                        { "field": "sales", "type": "quantitative", "title": "Sales", "format": "," }
+                    ]
+                }
+            },
+            {
+                "transform": [
+                    { "filter": "datum.album_name === '1989'" }
+                ],
+                "mark": {
+                    "type": "point",
+                    "filled": true,
+                    "tooltip": true,
+                    "color": "#1DB954",
+                    "size": 100
+                },
+                "encoding": {
+                    "x": {
+                        "field": "release_date",
+                        "type": "temporal"
+                    },
+                    "y": {
+                        "field": "sales",
+                        "type": "quantitative"
+                    },
+                    "tooltip": [
+                        { "field": "album_name", "type": "nominal", "title": "Album Name" },
+                        { "field": "release_date", "type": "temporal", "title": "Release Date" },
+                        { "field": "genre", "type": "nominal", "title": "Genre" },
+                        { "field": "sales", "type": "quantitative", "title": "Sales", "format": "," }
+                    ]
+                }
+            },
+            {
+                "transform": [
+                    { "filter": "datum.album_name !== 'Taylor Swift' && datum.album_name !== 'Fearless' && datum.album_name !== '1989'" }
+                ],
+                "mark": {
+                    "type": "point",
+                    "filled": true,
+                    "tooltip": true,
+                    "color": "#1DB954"
+                },
+                "encoding": {
+                    "x": {
+                        "field": "release_date",
+                        "type": "temporal"
+                    },
+                    "y": {
+                        "field": "sales",
+                        "type": "quantitative"
+                    },
+                    "tooltip": [
+                        { "field": "album_name", "type": "nominal", "title": "Album Name" },
+                        { "field": "release_date", "type": "temporal", "title": "Release Date" },
+                        { "field": "genre", "type": "nominal", "title": "Genre" },
+                        { "field": "sales", "type": "quantitative", "title": "Sales", "format": "," }
+                    ]
                 }
             }
-            },
-            {
-            "transform": [
-                {"filter": "datum.album_name === 'Taylor Swift'"}
-            ],
-            "mark": {
-                "type": "point",
-                "filled": true,
-                "tooltip": true,
-                "size": 100,
-                "color": "red"
-            },
-            "encoding": {
-                "x": {
-                "field": "release_date",
-                "type": "temporal"
-                },
-                "y": {
-                "field": "sales",
-                "type": "quantitative"
-                },
-                "tooltip": [
-                {"field": "album_name", "type": "nominal", "title": "Album Name"},
-                {"field": "release_date", "type": "temporal", "title": "Release Date"},
-                {"field": "genre", "type": "nominal", "title": "Genre"},
-                {"field": "sales", "type": "quantitative", "title": "Sales", "format": ","}
-                ]
-            }
-            },
-            {
-            "transform": [
-                {"filter": "datum.album_name === 'Fearless'"}
-            ],
-            "mark": {
-                "type": "point",
-                "filled": true,
-                "tooltip": true,
-                "color": "yellow",
-                "size": 100
-            },
-            "encoding": {
-                "x": {
-                "field": "release_date",
-                "type": "temporal"
-                },
-                "y": {
-                "field": "sales",
-                "type": "quantitative"
-                },
-                "tooltip": [
-                {"field": "album_name", "type": "nominal", "title": "Album Name"},
-                {"field": "release_date", "type": "temporal", "title": "Release Date"},
-                {"field": "genre", "type": "nominal", "title": "Genre"},
-                {"field": "sales", "type": "quantitative", "title": "Sales", "format": ","}
-                ]
-            }
-            },
-            {
-            "transform": [
-                {"filter": "datum.album_name === '1989'"}
-            ],
-            "mark": {
-                "type": "point",
-                "filled": true,
-                "tooltip": true,
-                "color": "#1DB954",
-                "size": 100
-            },
-            "encoding": {
-                "x": {
-                "field": "release_date",
-                "type": "temporal"
-                },
-                "y": {
-                "field": "sales",
-                "type": "quantitative"
-                },
-                "tooltip": [
-                {"field": "album_name", "type": "nominal", "title": "Album Name"},
-                {"field": "release_date", "type": "temporal", "title": "Release Date"},
-                {"field": "genre", "type": "nominal", "title": "Genre"},
-                {"field": "sales", "type": "quantitative", "title": "Sales", "format": ","}
-                ]
-            }
-            },
-            {
-            "transform": [
-                {"filter": "datum.album_name !== 'Taylor Swift' && datum.album_name !== 'Fearless' && datum.album_name !== '1989'"}
-            ],
-            "mark": {
-                "type": "point",
-                "filled": true,
-                "tooltip": true,
-                "color": "#1DB954"
-            },
-            "encoding": {
-                "x": {
-                "field": "release_date",
-                "type": "temporal"
-                },
-                "y": {
-                "field": "sales",
-                "type": "quantitative"
-                },
-                "tooltip": [
-                {"field": "album_name", "type": "nominal", "title": "Album Name"},
-                {"field": "release_date", "type": "temporal", "title": "Release Date"},
-                {"field": "genre", "type": "nominal", "title": "Genre"},
-                {"field": "sales", "type": "quantitative", "title": "Sales", "format": ","}
-                ]
-            }
-            }
         ]
-        }
-        // Embed the Vega-Lite chart
-        vegaEmbed('#taylorSwiftViz', vlSpec);
-    };
+    }
+    // Embed the Vega-Lite chart
+    vegaEmbed('#taylorSwiftViz', vlSpec);
+};
 
 loadTaylorSwiftViz();
 
