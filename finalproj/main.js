@@ -865,15 +865,15 @@ async function loadSpotifyUserGenreChart() {
     const colors = {
         "Pop": "#ff320e",
         "Hip-Hop/Rap": "#4A4D7B",
-        "R&B": "#f4bcbb",
-        "K-Pop/J-Pop": "#c7e2e0",
-        "Regional Mexican, Bollywood, Spanish Contemporary": "#b8dcb4",
-        "Other Genres (Latin, EDM, etc.)": "#f8eab1",
-        "Electronic": "#e0c9da",
-        "Indie/Alternative": "#ffd8db",
-        "Rock": "#d8c8be",
-        "Afrobeats": "#e3dfde",
-        "Alternative/Indie": "#ffd9ca"
+        "R&B": "#D3D3D3",
+        "K-Pop/J-Pop": "#E5E4E2",
+        "Regional Mexican, Bollywood, Spanish Contemporary": "#D3D3D3",
+        "Other Genres (Latin, EDM, etc.)": "#E5E4E2",
+        "Electronic": "#D3D3D3",
+        "Indie/Alternative": "#E5E4E2",
+        "Rock": "#D3D3D3",
+        "Afrobeats": "#E5E4E2",
+        "Alternative/Indie": "#D3D3D3"
     };
 
     // Vega-Lite specification for the line chart with small multiples
