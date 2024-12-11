@@ -666,7 +666,7 @@ async function loadTopSpotifyGenresChart() {
                     "range": [
                     "#ff320e",
                     "#E5E4E2",
-                    "#0efbff",
+                    "#4a4d7b",
                     "#D3D3D3",
                     "#E5E4E2",
                     "#D3D3D3"
