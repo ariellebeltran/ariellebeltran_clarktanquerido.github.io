@@ -501,7 +501,7 @@ async function loadTopSpotifyGenresChart() {
     const genreColors = {
         "pop": "#ff320e",
         "world/traditional": "#E5E4E2",
-        "hip-hop/rap": "#4A4D7B",
+        "hip-hop/rap": "#4a4d7b",
         "electronic/dance": "#D3D3D3",
         "r&b/soul": "#E5E4E2",
         "rock": "#D3D3D3"
@@ -589,7 +589,7 @@ async function loadTopSpotifyGenresChart() {
                     "range": [
                     "#ff320e",
                     "#E5E4E2",
-                    "#0efbff",
+                    "#4a4d7b",
                     "#D3D3D3",
                     "#E5E4E2",
                     "#D3D3D3"
@@ -629,7 +629,7 @@ async function loadTopSpotifyGenresChart() {
                     "range": [
                     "#ff320e",
                     "#E5E4E2",
-                    "#0efbff",
+                    "#4a4d7b",
                     "#D3D3D3",
                     "#E5E4E2",
                     "#D3D3D3"
