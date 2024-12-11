@@ -884,8 +884,8 @@ async function loadSpotifyUserGenreChart() {
         height: 200,
         data: { values: data },
         facet: {
-            column: { field: "Year", type: "ordinal", title: "Year" },
-            row: { field: "Age Group", type: "ordinal", title: "Age Group" }
+            column: { field: "Year", type: "ordinal", title: "Year", spacing: 0 },
+            row: { field: "Age Group", type: "ordinal", title: "Age Group", spacing: 0 }
         },
         spec: {
             layer: [
