@@ -15,7 +15,11 @@ body {
 }
 
 .container-webtitle {
-    padding: 0px 330px;
+    padding: 0px 575px; /*For 1920px desktop screen etc.*/
+
+    @media only screen and (max-width: 1432px) { /*For surface pro screen*/
+        padding: 0px 330px;
+    }
 
     @media only screen and (max-width: 1115px) {
         padding: 15px;
@@ -23,7 +27,11 @@ body {
 }
 
 .container-content {
-    padding: 0px 330px;
+    padding: 0px 575px; /*For 1920px desktop screen etc.*/
+
+    @media only screen and (max-width: 1432px) { /*For surface pro screen*/
+        padding: 0px 330px;
+    }
 
     @media only screen and (max-width: 1115px) {
         padding: 15px;
@@ -167,11 +175,15 @@ a:visited {
 
 .container-webtitle {
     /* width: 50vw; */
-    padding: 50px 330px 0px 330px;
+    padding: 50px 575px 0px 575px; /*For 1920px desktop screen etc.*/
     /* padding: 0px 40px; */
     /* background-color: #1d1d1d;
     color: white; */
     background-color: white;
+
+    @media only screen and (max-width: 1432px) { /*For surface pro screen*/
+        padding: 0px 330px;
+    }
 
     @media only screen and (max-width: 1115px) {
         padding: 15px;
