@@ -16,6 +16,14 @@ body {
 
 .container-webtitle {
     padding: 0px 330px;
+
+    @media only screen and (max-width: 768px) {
+        padding: 0px;
+    }
+
+    @media only screen and (max-width: 480px) {
+        padding: 0px;
+    }
 }
 
 .container-content {
@@ -135,6 +143,14 @@ a:visited {
     /* background-color: #1d1d1d;
     color: white; */
     background-color: white;
+
+    @media only screen and (max-width: 768px) {
+        padding: 0px;
+    }
+
+    @media only screen and (max-width: 480px) {
+        padding: 0px;
+    }
 }
 
 .container-content {
