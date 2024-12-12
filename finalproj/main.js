@@ -512,212 +512,212 @@ async function loadTopSpotifyGenresChart() {
         "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
         "data": {
             "values": [
-            {"Year": 2023, "Genre": "pop", "Rank": 1},
-            {"Year": 2023, "Genre": "world/traditional", "Rank": 2},
-            {"Year": 2023, "Genre": "hip-hop/rap", "Rank": 3},
-            {"Year": 2023, "Genre": "electronic/dance", "Rank": 4},
-            {"Year": 2023, "Genre": "r&b/soul", "Rank": 5},
-            {"Year": 2022, "Genre": "pop", "Rank": 1},
-            {"Year": 2022, "Genre": "hip-hop/rap", "Rank": 2},
-            {"Year": 2022, "Genre": "world/traditional", "Rank": 3},
-            {"Year": 2022, "Genre": "electronic/dance", "Rank": 4},
-            {"Year": 2022, "Genre": "r&b/soul", "Rank": 5},
-            {"Year": 2021, "Genre": "pop", "Rank": 1},
-            {"Year": 2021, "Genre": "hip-hop/rap", "Rank": 2},
-            {"Year": 2021, "Genre": "world/traditional", "Rank": 3},
-            {"Year": 2021, "Genre": "electronic/dance", "Rank": 4},
-            {"Year": 2021, "Genre": "rock", "Rank": 5},
-            {"Year": 2020, "Genre": "pop", "Rank": 1},
-            {"Year": 2020, "Genre": "hip-hop/rap", "Rank": 2},
-            {"Year": 2020, "Genre": "world/traditional", "Rank": 3},
-            {"Year": 2020, "Genre": "electronic/dance", "Rank": 4},
-            {"Year": 2020, "Genre": "r&b/soul", "Rank": 5},
-            {"Year": 2019, "Genre": "pop", "Rank": 1},
-            {"Year": 2019, "Genre": "hip-hop/rap", "Rank": 2},
-            {"Year": 2019, "Genre": "world/traditional", "Rank": 3},
-            {"Year": 2019, "Genre": "electronic/dance", "Rank": 4},
-            {"Year": 2019, "Genre": "r&b/soul", "Rank": 5},
-            {"Year": 2018, "Genre": "hip-hop/rap", "Rank": 1},
-            {"Year": 2018, "Genre": "pop", "Rank": 2},
-            {"Year": 2018, "Genre": "world/traditional", "Rank": 3},
-            {"Year": 2018, "Genre": "electronic/dance", "Rank": 4},
-            {"Year": 2018, "Genre": "rock", "Rank": 5},
-            {"Year": 2017, "Genre": "pop", "Rank": 1},
-            {"Year": 2017, "Genre": "hip-hop/rap", "Rank": 2},
-            {"Year": 2017, "Genre": "world/traditional", "Rank": 3},
-            {"Year": 2017, "Genre": "electronic/dance", "Rank": 4},
-            {"Year": 2017, "Genre": "r&b/soul", "Rank": 5},
-            {"Year": 2016, "Genre": "pop", "Rank": 1},
-            {"Year": 2016, "Genre": "hip-hop/rap", "Rank": 2},
-            {"Year": 2016, "Genre": "world/traditional", "Rank": 3},
-            {"Year": 2016, "Genre": "electronic/dance", "Rank": 4},
-            {"Year": 2016, "Genre": "r&b/soul", "Rank": 5},
-            {"Year": 2015, "Genre": "pop", "Rank": 1},
-            {"Year": 2015, "Genre": "hip-hop/rap", "Rank": 2},
-            {"Year": 2015, "Genre": "world/traditional", "Rank": 3},
-            {"Year": 2015, "Genre": "rock", "Rank": 4},
-            {"Year": 2015, "Genre": "electronic/dance", "Rank": 5},
-            {"Year": 2014, "Genre": "pop", "Rank": 1},
-            {"Year": 2014, "Genre": "world/traditional", "Rank": 2},
-            {"Year": 2014, "Genre": "hip-hop/rap", "Rank": 3},
-            {"Year": 2014, "Genre": "electronic/dance", "Rank": 4},
-            {"Year": 2014, "Genre": "rock", "Rank": 5}
+                { "Year": 2023, "Genre": "pop", "Rank": 1 },
+                { "Year": 2023, "Genre": "world/traditional", "Rank": 2 },
+                { "Year": 2023, "Genre": "hip-hop/rap", "Rank": 3 },
+                { "Year": 2023, "Genre": "electronic/dance", "Rank": 4 },
+                { "Year": 2023, "Genre": "r&b/soul", "Rank": 5 },
+                { "Year": 2022, "Genre": "pop", "Rank": 1 },
+                { "Year": 2022, "Genre": "hip-hop/rap", "Rank": 2 },
+                { "Year": 2022, "Genre": "world/traditional", "Rank": 3 },
+                { "Year": 2022, "Genre": "electronic/dance", "Rank": 4 },
+                { "Year": 2022, "Genre": "r&b/soul", "Rank": 5 },
+                { "Year": 2021, "Genre": "pop", "Rank": 1 },
+                { "Year": 2021, "Genre": "hip-hop/rap", "Rank": 2 },
+                { "Year": 2021, "Genre": "world/traditional", "Rank": 3 },
+                { "Year": 2021, "Genre": "electronic/dance", "Rank": 4 },
+                { "Year": 2021, "Genre": "rock", "Rank": 5 },
+                { "Year": 2020, "Genre": "pop", "Rank": 1 },
+                { "Year": 2020, "Genre": "hip-hop/rap", "Rank": 2 },
+                { "Year": 2020, "Genre": "world/traditional", "Rank": 3 },
+                { "Year": 2020, "Genre": "electronic/dance", "Rank": 4 },
+                { "Year": 2020, "Genre": "r&b/soul", "Rank": 5 },
+                { "Year": 2019, "Genre": "pop", "Rank": 1 },
+                { "Year": 2019, "Genre": "hip-hop/rap", "Rank": 2 },
+                { "Year": 2019, "Genre": "world/traditional", "Rank": 3 },
+                { "Year": 2019, "Genre": "electronic/dance", "Rank": 4 },
+                { "Year": 2019, "Genre": "r&b/soul", "Rank": 5 },
+                { "Year": 2018, "Genre": "hip-hop/rap", "Rank": 1 },
+                { "Year": 2018, "Genre": "pop", "Rank": 2 },
+                { "Year": 2018, "Genre": "world/traditional", "Rank": 3 },
+                { "Year": 2018, "Genre": "electronic/dance", "Rank": 4 },
+                { "Year": 2018, "Genre": "rock", "Rank": 5 },
+                { "Year": 2017, "Genre": "pop", "Rank": 1 },
+                { "Year": 2017, "Genre": "hip-hop/rap", "Rank": 2 },
+                { "Year": 2017, "Genre": "world/traditional", "Rank": 3 },
+                { "Year": 2017, "Genre": "electronic/dance", "Rank": 4 },
+                { "Year": 2017, "Genre": "r&b/soul", "Rank": 5 },
+                { "Year": 2016, "Genre": "pop", "Rank": 1 },
+                { "Year": 2016, "Genre": "hip-hop/rap", "Rank": 2 },
+                { "Year": 2016, "Genre": "world/traditional", "Rank": 3 },
+                { "Year": 2016, "Genre": "electronic/dance", "Rank": 4 },
+                { "Year": 2016, "Genre": "r&b/soul", "Rank": 5 },
+                { "Year": 2015, "Genre": "pop", "Rank": 1 },
+                { "Year": 2015, "Genre": "hip-hop/rap", "Rank": 2 },
+                { "Year": 2015, "Genre": "world/traditional", "Rank": 3 },
+                { "Year": 2015, "Genre": "rock", "Rank": 4 },
+                { "Year": 2015, "Genre": "electronic/dance", "Rank": 5 },
+                { "Year": 2014, "Genre": "pop", "Rank": 1 },
+                { "Year": 2014, "Genre": "world/traditional", "Rank": 2 },
+                { "Year": 2014, "Genre": "hip-hop/rap", "Rank": 3 },
+                { "Year": 2014, "Genre": "electronic/dance", "Rank": 4 },
+                { "Year": 2014, "Genre": "rock", "Rank": 5 }
             ]
         },
         "transform": [
             {
-            "impute": "Rank",
-            "key": "Year",
-            "groupby": ["Genre"],
-            "value": null
+                "impute": "Rank",
+                "key": "Year",
+                "groupby": ["Genre"],
+                "value": null
             }
         ],
         "layer": [
             {
-            "mark": "line",
-            "encoding": {
-                "x": {"field": "Year", "type": "ordinal", "title": "Year"},
-                "y": {
-                "field": "Rank",
-                "type": "quantitative",
-                "title": "Rank",
-                "scale": {"domain": [5, 1]}
-                },
-                "color": {
-                "field": "Genre",
-                "type": "nominal",
-                "scale": {
-                    "domain": [
-                    "pop",
-                    "world/traditional",
-                    "hip-hop/rap",
-                    "electronic/dance",
-                    "r&b/soul",
-                    "rock"
-                    ],
-                    "range": [
-                    "#ff320e",
-                    "#E5E4E2",
-                    "#4a4d7b",
-                    "#D3D3D3",
-                    "#E5E4E2",
-                    "#D3D3D3"
-                    ]
-                },
-                "legend": null
+                "mark": "line",
+                "encoding": {
+                    "x": { "field": "Year", "type": "ordinal", "title": "Year" },
+                    "y": {
+                        "field": "Rank",
+                        "type": "quantitative",
+                        "title": "Rank",
+                        "scale": { "domain": [5, 1] }
+                    },
+                    "color": {
+                        "field": "Genre",
+                        "type": "nominal",
+                        "scale": {
+                            "domain": [
+                                "pop",
+                                "world/traditional",
+                                "hip-hop/rap",
+                                "electronic/dance",
+                                "r&b/soul",
+                                "rock"
+                            ],
+                            "range": [
+                                "#ff320e",
+                                "#E5E4E2",
+                                "#4a4d7b",
+                                "#D3D3D3",
+                                "#E5E4E2",
+                                "#D3D3D3"
+                            ]
+                        },
+                        "legend": null
+                    }
                 }
-            }
             },
             {
-            "mark": {"type": "point", "filled": true, "size": 50},
-            "encoding": {
-                "x": {
-                "field": "Year",
-                "type": "ordinal",
-                "axis": {
-                    "labelAngle": 0,
-                    "labelFontSize": 12,
-                    "ticks": true,
-                    "labelPadding": 10,
-                    "labelOffset": 13
-                }
-                },
-                "y": {
-                "field": "Rank",
-                "type": "quantitative",
-                "scale": {"domain": [5, 1]}
-                },
-                "color": {
-                "field": "Genre",
-                "type": "nominal",
-                "scale": {
-                    "domain": [
-                    "pop",
-                    "world/traditional",
-                    "hip-hop/rap",
-                    "electronic/dance",
-                    "r&b/soul",
-                    "rock"
-                    ],
-                    "range": [
-                    "#ff320e",
-                    "#E5E4E2",
-                    "#4a4d7b",
-                    "#D3D3D3",
-                    "#E5E4E2",
-                    "#D3D3D3"
+                "mark": { "type": "point", "filled": true, "size": 50 },
+                "encoding": {
+                    "x": {
+                        "field": "Year",
+                        "type": "ordinal",
+                        "axis": {
+                            "labelAngle": 0,
+                            "labelFontSize": 12,
+                            "ticks": true,
+                            "labelPadding": 10,
+                            "labelOffset": 13
+                        }
+                    },
+                    "y": {
+                        "field": "Rank",
+                        "type": "quantitative",
+                        "scale": { "domain": [5, 1] }
+                    },
+                    "color": {
+                        "field": "Genre",
+                        "type": "nominal",
+                        "scale": {
+                            "domain": [
+                                "pop",
+                                "world/traditional",
+                                "hip-hop/rap",
+                                "electronic/dance",
+                                "r&b/soul",
+                                "rock"
+                            ],
+                            "range": [
+                                "#ff320e",
+                                "#E5E4E2",
+                                "#4a4d7b",
+                                "#D3D3D3",
+                                "#E5E4E2",
+                                "#D3D3D3"
+                            ]
+                        },
+                        "legend": null
+                    },
+                    "tooltip": [
+                        { "field": "Year", "type": "ordinal", "title": "Year" },
+                        { "field": "Genre", "type": "nominal", "title": "Genre" },
+                        { "field": "Rank", "type": "ordinal", "title": "Rank" }
                     ]
+                }
+            },
+            {
+                "mark": { "type": "text", "align": "left", "dx": 10 },
+                "transform": [{ "filter": { "field": "Year", "equal": 2023 } }],
+                "encoding": {
+                    "x": { "field": "Year", "type": "ordinal" },
+                    "y": {
+                        "field": "Rank",
+                        "type": "quantitative",
+                        "scale": { "domain": [5, 1] }
+                    },
+                    "text": { "field": "Genre" },
+                    "color": {
+                        "field": "Genre",
+                        "type": "nominal",
+                        "scale": {
+                            "domain": [
+                                "pop",
+                                "world/traditional",
+                                "hip-hop/rap",
+                                "electronic/dance",
+                                "r&b/soul",
+                                "rock"
+                            ],
+                            "range": [
+                                "#ff320e",
+                                "#E5E4E2",
+                                "#4a4d7b",
+                                "#D3D3D3",
+                                "#E5E4E2",
+                                "#D3D3D3"
+                            ]
+                        },
+                        "legend": null
+                    }
+                }
+            },
+            {
+                "mark": "text",
+                "encoding": {
+                    "x": { "field": "Year", "type": "ordinal", "axis": { "title": null } },
+                    "y": {
+                        "field": "Rank",
+                        "type": "quantitative",
+                        "axis": { "title": null },
+                        "scale": { "domain": [5, 1] }
+                    },
+                    "text": { "value": "rock" },
+                    "color": { "value": "#D3D3D3" },
+                    "size": { "value": 10 },
+                    "yOffset": { "value": -15 }
                 },
-                "legend": null
-                },
-                "tooltip": [
-                {"field": "Year", "type": "ordinal", "title": "Year"},
-                {"field": "Genre", "type": "nominal", "title": "Genre"},
-                {"field": "Rank", "type": "ordinal", "title": "Rank"}
+                "transform": [
+                    {
+                        "filter": {
+                            "and": [
+                                { "field": "Year", "equal": 2021 },
+                                { "field": "Genre", "equal": "rock" }
+                            ]
+                        }
+                    }
                 ]
-            }
-            },
-            {
-            "mark": {"type": "text", "align": "left", "dx": 10},
-            "transform": [{"filter": {"field": "Year", "equal": 2023}}],
-            "encoding": {
-                "x": {"field": "Year", "type": "ordinal"},
-                "y": {
-                "field": "Rank",
-                "type": "quantitative",
-                "scale": {"domain": [5, 1]}
-                },
-                "text": {"field": "Genre"},
-                "color": {
-                "field": "Genre",
-                "type": "nominal",
-                "scale": {
-                    "domain": [
-                    "pop",
-                    "world/traditional",
-                    "hip-hop/rap",
-                    "electronic/dance",
-                    "r&b/soul",
-                    "rock"
-                    ],
-                    "range": [
-                    "#ff320e",
-                    "#E5E4E2",
-                    "#4a4d7b",
-                    "#D3D3D3",
-                    "#E5E4E2",
-                    "#D3D3D3"
-                    ]
-                },
-                "legend": null
-                }
-            }
-            },
-            {
-            "mark": "text",
-            "encoding": {
-                "x": {"field": "Year", "type": "ordinal", "axis": {"title": null}},
-                "y": {
-                "field": "Rank",
-                "type": "quantitative",
-                "axis": {"title": null},
-                "scale": {"domain": [5, 1]}
-                },
-                "text": {"value": "rock"},
-                "color": {"value": "#D3D3D3"},
-                "size": {"value": 10},
-                "yOffset": {"value": -15}
-            },
-            "transform": [
-                {
-                "filter": {
-                    "and": [
-                    {"field": "Year", "equal": 2021},
-                    {"field": "Genre", "equal": "rock"}
-                    ]
-                }
-                }
-            ]
             }
         ],
         "title": {
@@ -726,8 +726,8 @@ async function loadTopSpotifyGenresChart() {
             "fontWeight": "bold"
         },
         "config": {
-            "view": {"width": 600, "height": 350, "stroke": null},
-            "axis": {"labelFontSize": 12, "titleFontSize": 14}
+            "view": { "width": 600, "height": 350, "stroke": null },
+            "axis": { "labelFontSize": 12, "titleFontSize": 14 }
         }
     };
     vegaEmbed("#topSpotifyGenresChart", yourVlSpec);
@@ -926,7 +926,7 @@ loadTopSpotifyGenresChart();
 
 
 //         },
-        
+
 //         spec: {
 //             layer: [
 //                 {
@@ -993,7 +993,7 @@ loadTopSpotifyGenresChart();
 //                 }
 //             ]
 //         },
-      
+
 //         view: { stroke: null }
 //     };
 
@@ -1010,39 +1010,61 @@ async function loadSpotifyUserGenreChart() {
     const vlSpec = {
         "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
         "description": "Line chart showing Spotify top music genres by age group in 2013 and 2023.",
-        
         "data": {
-          "values": [
-            {"Year": "2013", "Age Group": "Millennials", "Top Music Genres": "Pop", "Percentage": 35},
-            {"Year": "2013", "Age Group": "Millennials", "Top Music Genres": "Hip-Hop/Rap", "Percentage": 25},
-            {"Year": "2013", "Age Group": "Gen Z", "Top Music Genres": "Pop", "Percentage": 40},
-            {"Year": "2013", "Age Group": "Gen Z", "Top Music Genres": "Hip-Hop/Rap", "Percentage": 25},
-            {"Year": "2023", "Age Group": "Millennials", "Top Music Genres": "Pop", "Percentage": 40},
-            {"Year": "2023", "Age Group": "Millennials", "Top Music Genres": "Hip-Hop/Rap", "Percentage": 30},
-            {"Year": "2023", "Age Group": "Gen Z", "Top Music Genres": "Pop", "Percentage": 40},
-            {"Year": "2023", "Age Group": "Gen Z", "Top Music Genres": "Hip-Hop/Rap", "Percentage": 10}
-          ]
+            "values": [
+                { "Year": "2013", "Age Group": "Millennials", "Top Music Genres": "Pop", "Percentage": 35 },
+                { "Year": "2013", "Age Group": "Millennials", "Top Music Genres": "Hip-Hop/Rap", "Percentage": 25 },
+                { "Year": "2013", "Age Group": "Gen Z", "Top Music Genres": "Pop", "Percentage": 40 },
+                { "Year": "2013", "Age Group": "Gen Z", "Top Music Genres": "Hip-Hop/Rap", "Percentage": 25 },
+                { "Year": "2023", "Age Group": "Millennials", "Top Music Genres": "Pop", "Percentage": 40 },
+                { "Year": "2023", "Age Group": "Millennials", "Top Music Genres": "Hip-Hop/Rap", "Percentage": 30 },
+                { "Year": "2023", "Age Group": "Gen Z", "Top Music Genres": "Pop", "Percentage": 40 },
+                { "Year": "2023", "Age Group": "Gen Z", "Top Music Genres": "Hip-Hop/Rap", "Percentage": 10 }
+            ]
         },
         "facet": {
-          "row": {
-            "field": "Age Group",
-            "type": "nominal",
-            "title": ""
-          }
+            "row": {
+                "field": "Age Group",
+                "type": "nominal",
+                "title": "Age Group"
+            }
         },
         "spec": {
-          "mark": "line",
-          "width":500,
-          "encoding": {
-            "x": {"field": "Year", "type": "ordinal", "title": "", "axis": {"labelAngle": 0} },
-            "y": {"field": "Percentage", "type": "quantitative", "title": "Percentage (%)"},
-            "color": {"field": "Top Music Genres", "type": "nominal", "title": "Top Music Genres"}
-          }
+            "mark": "line",
+            "width": 500,
+            "encoding": {
+                "x": {
+                    "field": "Year",
+                    "type": "ordinal",
+                    "title": "Year",
+                    "axis": { "labelAngle": 0 }
+                },
+                "y": {
+                    "field": "Percentage",
+                    "type": "quantitative",
+                    "title": "Percentage (%)"
+                },
+                "color": {
+                    "field": "Top Music Genres",
+                    "type": "nominal",
+                    "title": "Top Music Genres",
+                    "scale": {
+                        "domain": ["Pop", "Hip-Hop/Rap"],
+                        "range": ["#FF320E", "#4A4D7B"] // Assign specific colors to genres
+                    }
+                },
+                "tooltip": [
+                    { "field": "Year", "type": "ordinal", "title": "Year" },
+                    { "field": "Age Group", "type": "nominal", "title": "Age Group" },
+                    { "field": "Top Music Genres", "type": "nominal", "title": "Top Music Genres" },
+                    { "field": "Percentage", "type": "quantitative", "title": "Percentage (%)" }
+                ]
+            }
         }
     };
 
     // Embed the Vega-Lite chart
-    vegaEmbed('#spotifyUserGenreChart', vlSpec, {renderer: 'svg'});
+    vegaEmbed('#spotifyUserGenreChart', vlSpec, { renderer: 'svg' });
 }
 
 // Call the function to create the chart
@@ -2195,11 +2217,11 @@ async function loadBillboard100Charts() {
                     "type": "nominal",
                     "legend": {
                         "title": "Song Type",
-                        "values": [true, false], 
+                        "values": [true, false],
                         "labelExpr": "datum.value ? 'Pop' : 'Other Genres'"
                     },
                     "scale": {
-                        "domain": [true, false], 
+                        "domain": [true, false],
                         "range": ["#ff320e", "#D3D3D3"]
                     }
                 },
@@ -2211,12 +2233,12 @@ async function loadBillboard100Charts() {
             }
         };
 
-        vegaEmbed(`#chart-${yearData.year}`, vlSpec, {renderer: 'svg'}).then(() => {
+        vegaEmbed(`#chart-${yearData.year}`, vlSpec, { renderer: 'svg' }).then(() => {
             if (index !== 0) {
                 chartDiv.style.display = 'none';
             }
         }).catch(err => console.error(err));
-        
+
     });
 
     const slider = document.getElementById('yearSlider');
@@ -2242,11 +2264,11 @@ async function loadBillboard100Charts() {
             } else {
                 currentYearIndex++;
             }
-        }, 300); 
+        }, 300);
     }
 
     slider.addEventListener('input', function () {
-        clearInterval(intervalId); 
+        clearInterval(intervalId);
         currentYearIndex = parseInt(this.value);
         showChartForYear(currentYearIndex);
     });
