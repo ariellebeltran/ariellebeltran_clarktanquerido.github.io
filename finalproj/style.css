@@ -671,6 +671,8 @@ figcaption {
     font-family: "Open Sans", sans-serif;
     font-size: 10px;
     text-align: center;
+    color: white;
+    margin: 0;
 }
 
 /* Style the actual slider =========================================*/
