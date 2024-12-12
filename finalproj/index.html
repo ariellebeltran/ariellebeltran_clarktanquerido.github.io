@@ -218,12 +218,17 @@
                 <div class="slideshow-container" id="slideshowContainer">
                     <!-- The Billboard 100 charts will be appended here dynamically -->
                 </div>
-
+                
                 <!-- Slider for selecting the year -->
-                <input type="range" min="0" max="9" value="0" class="slider" id="yearSlider">
-
+                <div class="slider-container">
+                    <input type="range" min="0" max="9" value="0" class="slider" id="yearSlider">
+                    <div class="slider-ticks"></div>
+                </div>
+                
                 <!-- Display the current year -->
-                <p id="currentYear">Year: 2014</p>
+                <p id="currentYear"></p>
+                
+                
 
                 <script src="https://cdn.jsdelivr.net/npm/vega-embed@5.20.0"></script>
                 <!-- code for billboard chart ===================================================-->

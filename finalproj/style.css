@@ -432,26 +432,12 @@ figcaption {
     height: 150vh;
 } */
 
-#spotifyDemographicsChart,
-#spotifyGenresOverTimeChart,
-#barChart2013,
-#barChart2023 {
-    width: 90vw;
-    /* 90% of the viewport width */
-    height: auto;
-    /* Let Vega-Lite determine the height */
-    margin: 0 auto;
-    /* Center the chart */
-    padding: 0px;
-    /* Optional padding for styling */
-    resize: both;
-    /* Allows resizing if needed */
-    overflow: auto;
-    /* Prevents overflow when resizing */
-}
-
-.vis1 {
+.vis1 img{
     padding-bottom: 40px;
+    width: auto !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
 }
 
 /* TEAM MEMBERS ======================================================================================================== */
@@ -649,8 +635,95 @@ figcaption {
     right: 0;
 }
 
-/* Style the slider */
+
+/* Style the slider ======================================================================================================= */
+/* input[type=range] {
+    width: 92%;
+    margin: 20px 0;
+   
+} */
+
+/* Style the slider container */
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
+
+/* Style the slider ticks container */
+.slider-ticks {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 35px; /* Adjust this value if needed */
+    width: 100%;
+}
+
+/* Style the individual slider ticks */
+.slider-tick {
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+    text-align: center;
+}
+
+#currentYear{
+    font-family: "Open Sans", sans-serif;
+    font-size: 10px;
+    text-align: center;
+}
+
+/* Style the actual slider =========================================*/
 input[type=range] {
+    -webkit-appearance: none;
     width: 100%;
     margin: 20px 0;
 }
+
+/* Style the thumb (handle) */
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    margin: -2px;
+    background: #ff320e;  /* Change this to any color you like */
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+/* input[type=range]::-moz-range-thumb {
+    width: 5px;
+    height: 5px;
+    background: #ff320e; 
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+} */
+
+/* Style the track */
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+    cursor: pointer;
+    background: #eeeeee;  
+    border-radius: 5px;
+}
+
+/* input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 8px;
+    cursor: pointer;
+    background: #ddd;  
+    border-radius: 5px;
+} */
+
+/* input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #ccc;  
+}
+
+input[type=range]:focus::-moz-range-track {
+    background: #ccc;  
+} */
+

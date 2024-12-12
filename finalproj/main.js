@@ -1042,7 +1042,7 @@ async function loadSpotifyUserGenreChart() {
     };
 
     // Embed the Vega-Lite chart
-    vegaEmbed('#spotifyUserGenreChart', vlSpec);
+    vegaEmbed('#spotifyUserGenreChart', vlSpec, {renderer: 'svg'});
 }
 
 // Call the function to create the chart
@@ -2057,8 +2057,227 @@ async function loadBillboard100Charts() {
     observer.observe(slideshowContainer);
 }
 
-loadBillboard100Charts();
+// loadBillboard100Charts();
 
+async function loadBillboard100Charts() {
+    const popArtists = [
+        'Miley Cyrus', 'Taylor Swift', 'Taylor Swift feat. Kendrick Lamar', 'Dua Lipa', 'Olivia Rodrigo',
+        'Ariana Grande', 'Ed Sheeran', 'Harry Styles', 'Billie Eilish',
+        'The Weeknd', 'Bruno Mars', 'Camila Cabello', 'Justin Bieber',
+        'Post Malone', 'Mark Ronson', 'Sam Smith', 'Meghan Trainor', 'Adele', 'Post Malone, Swae Lee'
+    ];
+
+    const yearsData = [
+        {
+            year: 2023, data: [
+                { "rank": 1, "song": "Last Night", "artist": "Morgan Wallen" },
+                { "rank": 2, "song": "Flowers", "artist": "Miley Cyrus" },
+                { "rank": 3, "song": "Kill Bill", "artist": "SZA" },
+                { "rank": 4, "song": "Anti-Hero", "artist": "Taylor Swift" },
+                { "rank": 5, "song": "Creepin'", "artist": "Metro Boomin, The Weeknd, 21 Savage" },
+            ]
+
+        },
+        {
+            year: 2022, data: [
+                { "rank": 1, "song": "Heat Waves", "artist": "Glass Animals" },
+                { "rank": 2, "song": "As It Was", "artist": "Harry Styles" },
+                { "rank": 3, "song": "Stay", "artist": "The Kid Laroi, Justin Bieber" },
+                { "rank": 4, "song": "Easy on Me", "artist": "Adele" },
+                { "rank": 5, "song": "Shivers", "artist": "Ed Sheeran" }
+            ]
+        },
+        {
+            year: 2021, data: [
+                { "rank": 1, "song": "Levitating", "artist": "Dua Lipa" },
+                { "rank": 2, "song": "Save Your Tears", "artist": "The Weeknd, Ariana Grande" },
+                { "rank": 3, "song": "Blinding Lights", "artist": "The Weeknd" },
+                { "rank": 4, "song": "Mood", "artist": "24kGoldn feat. Iann Dior" },
+                { "rank": 5, "song": "Good 4 U", "artist": "Olivia Rodrigo" }
+            ]
+        },
+        {
+            year: 2020, data: [
+                { "rank": 1, "song": "Blinding Lights", "artist": "The Weeknd" },
+                { "rank": 2, "song": "Circles", "artist": "Post Malone" },
+                { "rank": 3, "song": "The Box", "artist": "Roddy Ricch" },
+                { "rank": 4, "song": "Don't Start Now", "artist": "Dua Lipa" },
+                { "rank": 5, "song": "Rockstar", "artist": "DaBaby feat. Roddy Ricch" }
+            ]
+        },
+        {
+            year: 2019, data: [
+                { "rank": 1, "song": "Old Town Road", "artist": "Lil Nas X feat. Billy Ray Cyrus" },
+                { "rank": 2, "song": "Sunflower", "artist": "Post Malone, Swae Lee" },
+                { "rank": 3, "song": "Without Me", "artist": "Halsey" },
+                { "rank": 4, "song": "Bad Guy", "artist": "Billie Eilish" },
+                { "rank": 5, "song": "Wow.", "artist": "Post Malone" }
+            ]
+        },
+        {
+            year: 2018, data: [
+                { "rank": 1, "song": "God's Plan", "artist": "Drake" },
+                { "rank": 2, "song": "Perfect", "artist": "Ed Sheeran" },
+                { "rank": 3, "song": "Meant to Be", "artist": "Bebe Rexha, Florida Georgia Line" },
+                { "rank": 4, "song": "Havana", "artist": "Camila Cabello feat. Young Thug" },
+                { "rank": 5, "song": "Rockstar", "artist": "Post Malone feat. 21 Savage" },
+            ]
+        },
+        {
+            year: 2017, data: [
+                { "rank": 1, "song": "Shape of You", "artist": "Ed Sheeran" },
+                { "rank": 2, "song": "Despacito", "artist": "Luis Fonsi, Daddy Yankee feat. Justin Bieber" },
+                { "rank": 3, "song": "That's What I Like", "artist": "Bruno Mars" },
+                { "rank": 4, "song": "Humble", "artist": "Kendrick Lamar" },
+                { "rank": 5, "song": "Something Just Like This", "artist": "The Chainsmokers, Coldplay" }
+            ]
+        },
+        {
+            year: 2016, data: [
+                { "rank": 1, "song": "Love Yourself", "artist": "Justin Bieber" },
+                { "rank": 2, "song": "Sorry", "artist": "Justin Bieber" },
+                { "rank": 3, "song": "One Dance", "artist": "Drake feat. Wizkid, Kyla" },
+                { "rank": 4, "song": "Work", "artist": "Rihanna feat. Drake" },
+                { "rank": 5, "song": "Stressed Out", "artist": "Twenty One Pilots" },
+            ]
+        },
+        {
+            year: 2015, data: [
+                { "rank": 1, "song": "Uptown Funk", "artist": "Mark Ronson feat. Bruno Mars" },
+                { "rank": 2, "song": "Thinking Out Loud", "artist": "Ed Sheeran" },
+                { "rank": 3, "song": "See You Again", "artist": "Wiz Khalifa feat. Charlie Puth" },
+                { "rank": 4, "song": "Can't Feel My Face", "artist": "The Weeknd" },
+                { "rank": 5, "song": "Bad Blood", "artist": "Taylor Swift feat. Kendrick Lamar" },
+            ]
+        },
+        {
+            year: 2014, data: [
+                { "rank": 1, "song": "Happy", "artist": "Pharrell Williams" },
+                { "rank": 2, "song": "All About That Bass", "artist": "Meghan Trainor" },
+                { "rank": 3, "song": "Shake It Off", "artist": "Taylor Swift" },
+                { "rank": 4, "song": "All of Me", "artist": "John Legend" },
+                { "rank": 5, "song": "Stay with Me", "artist": "Sam Smith" }
+            ]
+        }
+        // Add other year data similarly...
+    ];
+
+    const slideshowContainer = document.getElementById('slideshowContainer');
+
+    yearsData.forEach((yearData, index) => {
+        yearData.data.forEach(song => {
+            song.pop = popArtists.includes(song.artist);
+        });
+
+        const chartDiv = document.createElement('div');
+        chartDiv.classList.add('chart');
+        chartDiv.id = `chart-${yearData.year}`;
+        slideshowContainer.appendChild(chartDiv);
+
+        const vlSpec = {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": { "values": yearData.data },
+            "title": `Top 5 Most Streamed Songs on Billboard Hot 100 in ${yearData.year}`,
+            "mark": "bar",
+            width: 600,
+            height: 400,
+            "encoding": {
+                "y": { "field": "song", "type": "nominal", "sort": "x", "title": "Song" },
+                "x": {
+                    "field": "rank",
+                    "type": "quantitative",
+                    "title": "Rank",
+                    "scale": { "domain": [0, 5], "nice": true },
+                    "axis": { "grid": true, "format": "d" }
+                },
+                "color": {
+                    "field": "pop",
+                    "type": "nominal",
+                    "legend": {
+                        "title": "Song Type",
+                        "values": [true, false], 
+                        "labelExpr": "datum.value ? 'Pop' : 'Other Genres'"
+                    },
+                    "scale": {
+                        "domain": [true, false], 
+                        "range": ["#ff320e", "#D3D3D3"]
+                    }
+                },
+                "tooltip": [
+                    { "field": "song", "type": "nominal", "title": "Song" },
+                    { "field": "artist", "type": "nominal", "title": "Artist" },
+                    { "field": "rank", "type": "quantitative", "title": "Rank" }
+                ]
+            }
+        };
+
+        vegaEmbed(`#chart-${yearData.year}`, vlSpec, {renderer: 'svg'}).then(() => {
+            if (index !== 0) {
+                chartDiv.style.display = 'none';
+            }
+        }).catch(err => console.error(err));
+        
+    });
+
+    const slider = document.getElementById('yearSlider');
+    const currentYearDisplay = document.getElementById('currentYear');
+
+    let currentYearIndex = 0;
+    const targetYearIndex = yearsData.findIndex(y => y.year === 2018);
+    let intervalId = null;
+
+    function showChartForYear(yearIndex) {
+        currentYearDisplay.textContent = `Year: ${yearsData[yearIndex].year}`;
+        const allCharts = document.querySelectorAll('.chart');
+        allCharts.forEach(chart => chart.style.display = 'none');
+        document.getElementById(`chart-${yearsData[yearIndex].year}`).style.display = 'block';
+    }
+
+    function startAnimation() {
+        intervalId = setInterval(() => {
+            showChartForYear(currentYearIndex);
+            slider.value = currentYearIndex;
+            if (currentYearIndex >= targetYearIndex) {
+                clearInterval(intervalId);
+            } else {
+                currentYearIndex++;
+            }
+        }, 300); 
+    }
+
+    slider.addEventListener('input', function () {
+        clearInterval(intervalId); 
+        currentYearIndex = parseInt(this.value);
+        showChartForYear(currentYearIndex);
+    });
+
+    slider.setAttribute('min', 0);
+    slider.setAttribute('max', yearsData.length - 1);
+    slider.setAttribute('step', 1);
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                startAnimation();
+                observer.unobserve(slideshowContainer);
+            }
+        });
+    });
+
+    observer.observe(slideshowContainer);
+
+    // Add year ticks to slider
+    const ticksContainer = document.querySelector('.slider-ticks');
+    yearsData.forEach((yearData, index) => {
+        const tick = document.createElement('div');
+        tick.classList.add('slider-tick');
+        tick.style.left = `${(index / (yearsData.length - 1)) * 100}%`;
+        tick.textContent = yearData.year;
+        ticksContainer.appendChild(tick);
+    });
+}
+
+loadBillboard100Charts();
 
 
 // CLARK PUT UR CODE HERE ==================================================================================================
