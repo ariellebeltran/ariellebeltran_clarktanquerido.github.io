@@ -1162,6 +1162,54 @@ async function loadSpotifyUserGenreChart() {
         ]
         },
         {
+            "mark": {
+            "type": "text",
+            "align": "right",
+            "baseline": "bottom",
+            "dx": -125,
+            "dy": -275,
+            "fontSize": 16,
+            "color": "#FF320E",
+            "fontWeight": "bold"
+            },
+            "encoding": {
+            "x": {"datum": "2023", "type": "ordinal"},
+            "y": {"datum": 10, "type": "quantitative"},
+            "text": {
+            "value": "Pop"
+            }
+            },
+            "transform": [
+            {
+            "filter": "datum['Age Group'] === 'Gen Z'"
+            }
+            ]
+        },
+        {
+            "mark": {
+            "type": "text",
+            "align": "right",
+            "baseline": "bottom",
+            "dx": -58,
+            "dy": -148,
+            "fontSize": 16,
+            "color": "#4A4D7B",
+            "fontWeight": "bold"
+            },
+            "encoding": {
+            "x": {"datum": "2023", "type": "ordinal"},
+            "y": {"datum": 10, "type": "quantitative"},
+            "text": {
+            "value": "Hip-Hop/Rap"
+            }
+            },
+            "transform": [
+            {
+            "filter": "datum['Age Group'] === 'Gen Z'"
+            }
+            ]
+        },
+        {
         "mark": {
         "type": "text",
         "align": "right",
