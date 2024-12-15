@@ -658,7 +658,7 @@ async function loadTopSpotifyGenresChart() {
                 }
             },
             {
-                "mark": { "type": "text", "align": "left", "dx": 10 },
+                "mark": { "type": "text", "align": "left", "dx": 35 },
                 "transform": [{ "filter": { "field": "Year", "equal": 2023 } }],
                 "encoding": {
                     "x": { "field": "Year", "type": "ordinal" },
