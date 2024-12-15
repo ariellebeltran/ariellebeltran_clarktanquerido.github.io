@@ -1011,56 +1011,275 @@ async function loadSpotifyUserGenreChart() {
         "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
         "description": "Line chart showing Spotify top music genres by age group in 2013 and 2023.",
         "data": {
-            "values": [
-                { "Year": "2013", "Age Group": "Millennials", "Top Music Genres": "Pop", "Percentage": 35 },
-                { "Year": "2013", "Age Group": "Millennials", "Top Music Genres": "Hip-Hop/Rap", "Percentage": 25 },
-                { "Year": "2013", "Age Group": "Gen Z", "Top Music Genres": "Pop", "Percentage": 40 },
-                { "Year": "2013", "Age Group": "Gen Z", "Top Music Genres": "Hip-Hop/Rap", "Percentage": 25 },
-                { "Year": "2023", "Age Group": "Millennials", "Top Music Genres": "Pop", "Percentage": 40 },
-                { "Year": "2023", "Age Group": "Millennials", "Top Music Genres": "Hip-Hop/Rap", "Percentage": 30 },
-                { "Year": "2023", "Age Group": "Gen Z", "Top Music Genres": "Pop", "Percentage": 40 },
-                { "Year": "2023", "Age Group": "Gen Z", "Top Music Genres": "Hip-Hop/Rap", "Percentage": 10 }
-            ]
+        "values": [
+        {
+        "Year": "2013",
+        "Age Group": "Millennials",
+        "Top Music Genres": "Pop",
+        "Percentage": 35
+        },
+        {
+        "Year": "2013",
+        "Age Group": "Millennials",
+        "Top Music Genres": "Hip-Hop/Rap",
+        "Percentage": 25
+        },
+        {
+        "Year": "2013",
+        "Age Group": "Gen Z",
+        "Top Music Genres": "Pop",
+        "Percentage": 40
+        },
+        {
+        "Year": "2013",
+        "Age Group": "Gen Z",
+        "Top Music Genres": "Hip-Hop/Rap",
+        "Percentage": 25
+        },
+        {
+        "Year": "2023",
+        "Age Group": "Millennials",
+        "Top Music Genres": "Pop",
+        "Percentage": 40
+        },
+        {
+        "Year": "2023",
+        "Age Group": "Millennials",
+        "Top Music Genres": "Hip-Hop/Rap",
+        "Percentage": 30
+        },
+        {
+        "Year": "2023",
+        "Age Group": "Gen Z",
+        "Top Music Genres": "Pop",
+        "Percentage": 40
+        },
+        {
+        "Year": "2023",
+        "Age Group": "Gen Z",
+        "Top Music Genres": "Hip-Hop/Rap",
+        "Percentage": 10
+        }
+        ]
         },
         "facet": {
-            "row": {
-                "field": "Age Group",
-                "type": "nominal",
-                "title": "Age Group"
-            }
+        "column": {"field": "Age Group", "type": "nominal", "title": "Age Group"}
         },
         "spec": {
-            "mark": "line",
-            "width": 500,
-            "encoding": {
-                "x": {
-                    "field": "Year",
-                    "type": "ordinal",
-                    "title": "Year",
-                    "axis": { "labelAngle": 0 }
-                },
-                "y": {
-                    "field": "Percentage",
-                    "type": "quantitative",
-                    "title": "Percentage (%)"
-                },
-                "color": {
-                    "field": "Top Music Genres",
-                    "type": "nominal",
-                    "title": "Top Music Genres",
-                    "scale": {
-                        "domain": ["Pop", "Hip-Hop/Rap"],
-                        "range": ["#FF320E", "#4A4D7B"] // Assign specific colors to genres
-                    }
-                },
-                "tooltip": [
-                    { "field": "Year", "type": "ordinal", "title": "Year" },
-                    { "field": "Age Group", "type": "nominal", "title": "Age Group" },
-                    { "field": "Top Music Genres", "type": "nominal", "title": "Top Music Genres" },
-                    { "field": "Percentage", "type": "quantitative", "title": "Percentage (%)" }
-                ]
-            }
+        "width": 500,
+        "height": 400,
+        "layer": [
+        {
+        "mark": "line",
+        "encoding": {
+        "x": {
+        "field": "Year",
+        "type": "ordinal",
+        "title": "Year",
+        "axis": {"labelAngle": 0}
+        },
+        "y": {
+        "field": "Percentage",
+        "type": "quantitative",
+        "title": "Percentage (%)"
+        },
+        "color": {
+        "field": "Top Music Genres",
+        "type": "nominal",
+        "title": "Top Music Genres",
+        "scale": {
+        "domain": ["Pop", "Hip-Hop/Rap"],
+        "range": ["#FF320E", "#4A4D7B"]
+        },
+        "legend": null
         }
+        }
+        },
+        {
+        "mark": "area",
+        "encoding": {
+        "x": {
+        "field": "Year",
+        "type": "ordinal",
+        "title": "Year"
+        },
+        "y": {
+        "field": "Percentage",
+        "type": "quantitative"
+        },
+        "color": {
+        "field": "Top Music Genres",
+        "type": "nominal",
+        "scale": {
+        "domain": ["Hip-Hop/Rap"],
+        "range": ["#4A4D7B"]
+        },
+        "legend": null
+        },
+        "opacity": {
+        "value": 0.5
+        }
+        },
+        "transform": [
+        {
+        "filter": "datum['Top Music Genres'] === 'Hip-Hop/Rap' && datum['Age Group'] === 'Gen Z'"
+        }
+        ]
+        },
+        {
+        "mark": {"type": "point", "filled": true, "size": 100},
+        "encoding": {
+        "x": {"field": "Year", "type": "ordinal"},
+        "y": {"field": "Percentage", "type": "quantitative"},
+        "color": {"field": "Top Music Genres", "type": "nominal", "legend": null},
+        "tooltip": [
+        {"field": "Year", "type": "ordinal", "title": "Year"},
+        {"field": "Age Group", "type": "nominal", "title": "Age Group"},
+        {"field": "Top Music Genres", "type": "nominal", "title": "Top Music Genres"},
+        {"field": "Percentage", "type": "quantitative", "title": "Percentage (%)"}
+        ]
+        }
+        },
+        {
+        "mark": {
+        "type": "text",
+        "align": "center",
+        "baseline": "bottom",
+        "dy": -10,
+        "fontSize": 12,
+        "color": "#4A4D7B",
+        "fontWeight": "bold"
+        },
+        "encoding": {
+        "x": {"field": "Year", "type": "ordinal"},
+        "y": {"field": "Percentage", "type": "quantitative"},
+        "text": {"field": "Year", "type": "ordinal"}
+        },
+        "transform": [
+        {
+        "filter": "datum['Top Music Genres'] === 'Hip-Hop/Rap' && datum['Age Group'] === 'Gen Z'"
+        }
+        ]
+        },
+        {
+        "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "bottom",
+        "dx": -75,
+        "dy": -125,
+        "fontSize": 12,
+        "color": "#2053DF",
+        "fontWeight": "bold"
+        },
+        "encoding": {
+        "x": {"datum": "2023", "type": "ordinal"},
+        "y": {"datum": 10, "type": "quantitative"},
+        "text": {
+        "value": "15% decrease"
+        }
+        },
+        "transform": [
+        {
+        "filter": "datum['Age Group'] === 'Gen Z'"
+        }
+        ]
+        },
+        {
+        "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "bottom",
+        "dx": 13,
+        "dy": -125,
+        "fontSize": 12,
+        "color": "#2053DF"
+        },
+        "encoding": {
+        "x": {"datum": "2023", "type": "ordinal"},
+        "y": {"datum": 10, "type": "quantitative"},
+        "text": {
+        "value": "in listeners over"
+        }
+        },
+        "transform": [
+        {
+        "filter": "datum['Age Group'] === 'Gen Z'"
+        }
+        ]
+        },
+        {
+        "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "bottom",
+        "dx": 15,
+        "dy": -110,
+        "fontSize": 12,
+        "color": "#2053DF"
+        },
+        "encoding": {
+        "x": {"datum": "2023", "type": "ordinal"},
+        "y": {"datum": 10, "type": "quantitative"},
+        "text": {
+        "value": "the past decade among Gen Zs"
+        }
+        },
+        "transform": [
+        {
+        "filter": "datum['Age Group'] === 'Gen Z'"
+        }
+        ]
+        },
+        {
+        "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "bottom",
+        "dx": 10,
+        "dy": -125,
+        "fontSize": 12,
+        "color": "#A620DF"
+        },
+        "encoding": {
+        "x": {"datum": "2023", "type": "ordinal"},
+        "y": {"datum": 10, "type": "quantitative"},
+        "text": {
+        "value": "Steady increase in popularity for both pop"
+        }
+        },
+        "transform": [
+        {
+        "filter": "datum['Age Group'] === 'Millennials'"
+        }
+        ]
+        },
+        {
+        "mark": {
+        "type": "text",
+        "align": "right",
+        "baseline": "bottom",
+        "dx": 10,
+        "dy": -110,
+        "fontSize": 12,
+        "color": "#A620DF"
+        },
+        "encoding": {
+        "x": {"datum": "2023", "type": "ordinal"},
+        "y": {"datum": 10, "type": "quantitative"},
+        "text": {
+        "value": "and hip-hop/rap genres within Millennials."
+        }
+        },
+        "transform": [
+        {
+        "filter": "datum['Age Group'] === 'Millennials'"
+        }
+        ]
+        }
+        ]
+        }
+
     };
 
     // Embed the Vega-Lite chart
