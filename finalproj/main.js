@@ -217,110 +217,93 @@ const colors = {
 };
 
 // Function to load data and create the chart
-async function loadSpotifyAgeDemog() {
-    // Vega-Lite specification for the pie chart
-    const yourVlSpec = {
-        $schema: "https://vega.github.io/schema/vega-lite/v5.json",
-        description: "Pie chart showing Spotify age demographics in 2023.",
-        // width: 600,
-        // height: 600,
-        background: "#FFFFFF",
-        background: "white",
-        data: {
-            values:
+// async function loadSpotifyAgeDemog() {
 
-                [
-                    { "age": "18-24 (Gen Zs)", "percentage": 26 },
-                    { "age": "25-44 (Millennials)", "percentage": 45 },
-                    { "age": "45-54 (Gen X)", "percentage": 11 },
-                    { "age": "55+ (Majority Baby Boomers)", "percentage": 19 }
-                ]
+//     const yourVlSpec = {
+//         $schema: "https://vega.github.io/schema/vega-lite/v5.json",
+//         description: "Pie chart showing Spotify age demographics in 2023.",
+//         background: "#FFFFFF",
+//         background: "white",
+//         data: {
+//             values:
 
+//                 [
+//                     { "age": "18-24 (Gen Zs)", "percentage": 26 },
+//                     { "age": "25-44 (Millennials)", "percentage": 45 },
+//                     { "age": "45-54 (Gen X)", "percentage": 11 },
+//                     { "age": "55+ (Majority Baby Boomers)", "percentage": 19 }
+//                 ]
+//         },
+//         mark: {
+//             type: "arc",
+//             tooltip: true
+//         },
+//         encoding: {
+//             theta: { field: "percentage", type: "quantitative" },
+//             color: {
+//                 field: "age",
+//                 type: "nominal",
+//                 legend: { title: "Age Group", titleColor: "black", labelColor: "black" },
+//                 scale: {
+//                     domain: ["18-24 (Gen Zs)", "25-44 (Millennials)", "45-54 (Gen X)", "55+ (Majority Baby Boomers)"],
+//                     range: ["#2053df", "#a620df", "#E5E4E2", "#D3D3D3"]
+//                 }
+//             },
+//             tooltip: [
+//                 { field: "age", type: "nominal", title: "Age Group" },
+//                 { field: "percentage", type: "quantitative", title: "Percentage (%)" }
+//             ]
+//         },
+//         view: { stroke: null },
+//         title: "Spotify Age Demographics (2023)"
+//     };
+//     vegaEmbed('#spotifyAgeDemographicsChart', yourVlSpec);
+// }
 
-            // [
-            //     { "age": "18-24", "percentage": 26 },
-            //     { "age": "25-34", "percentage": 29 },
-            //     { "age": "35-44", "percentage": 16 },
-            //     { "age": "45-54", "percentage": 11 },
-            //     { "age": "55+", "percentage": 19 }
-            // ]
-        },
-        mark: {
-            type: "arc",
-            tooltip: true
-        },
-        encoding: {
-            theta: { field: "percentage", type: "quantitative" },
-            color: {
-                field: "age",
-                type: "nominal",
-                legend: { title: "Age Group", titleColor: "black", labelColor: "black" },
-                scale: {
-                    domain: ["18-24 (Gen Zs)", "25-44 (Millennials)", "45-54 (Gen X)", "55+ (Majority Baby Boomers)"],
-                    range: ["#2053df", "#a620df", "#E5E4E2", "#D3D3D3"]
-                }
-            },
-            tooltip: [
-                { field: "age", type: "nominal", title: "Age Group" },
-                { field: "percentage", type: "quantitative", title: "Percentage (%)" }
-            ]
-        },
-        view: { stroke: null },
-        title: "Spotify Age Demographics (2023)"
-    };
-
-    // Embed the Vega-Lite chart
-    vegaEmbed('#spotifyAgeDemographicsChart', yourVlSpec);
-}
-
-// Call the function to create the chart
-loadSpotifyAgeDemog();
+// loadSpotifyAgeDemog();
 
 
 // Function to load data and create the chart
-async function loadSpotifyAgeDemogHighlighted() {
-    // Vega-Lite specification for the pie chart
-    const yourVlSpec = {
-        $schema: "https://vega.github.io/schema/vega-lite/v5.json",
-        description: "Pie chart showing Spotify age demographics in 2023.",
-        // width: 600,
-        // height: 600,
-        background: "#FFFFFF",
-        data: {
-            values: [
-                { "age": "18-24 (Gen Zs)", "percentage": 26 },
-                { "age": "25-44 (Millennials)", "percentage": 45 },
-                { "age": "45-54 (Gen X)", "percentage": 11 },
-                { "age": "55+ (Majority Baby Boomers)", "percentage": 19 }
-            ]
-        },
-        mark: {
-            type: "arc",
-            tooltip: true
-        },
-        encoding: {
-            theta: { field: "percentage", type: "quantitative" },
-            color: {
-                field: "age",
-                type: "nominal",
-                legend: { title: "Age Group", titleColor: "black", labelColor: "black" },
-                scale: { domain: Object.keys(colors), range: Object.values(colors) }
-            },
-            tooltip: [
-                { field: "age", type: "nominal", title: "Age Group" },
-                { field: "percentage", type: "quantitative", title: "Percentage (%)" }
-            ]
-        },
-        view: { stroke: null },
-        // title: "Spotify Age Demographics (2023)"
-    };
+// async function loadSpotifyAgeDemogHighlighted() {
+//     const yourVlSpec = {
+//         $schema: "https://vega.github.io/schema/vega-lite/v5.json",
+//         description: "Pie chart showing Spotify age demographics in 2023.",
+//         // width: 600,
+//         // height: 600,
+//         background: "#FFFFFF",
+//         data: {
+//             values: [
+//                 { "age": "18-24 (Gen Zs)", "percentage": 26 },
+//                 { "age": "25-44 (Millennials)", "percentage": 45 },
+//                 { "age": "45-54 (Gen X)", "percentage": 11 },
+//                 { "age": "55+ (Majority Baby Boomers)", "percentage": 19 }
+//             ]
+//         },
+//         mark: {
+//             type: "arc",
+//             tooltip: true
+//         },
+//         encoding: {
+//             theta: { field: "percentage", type: "quantitative" },
+//             color: {
+//                 field: "age",
+//                 type: "nominal",
+//                 legend: { title: "Age Group", titleColor: "black", labelColor: "black" },
+//                 scale: { domain: Object.keys(colors), range: Object.values(colors) }
+//             },
+//             tooltip: [
+//                 { field: "age", type: "nominal", title: "Age Group" },
+//                 { field: "percentage", type: "quantitative", title: "Percentage (%)" }
+//             ]
+//         },
+//         view: { stroke: null },
+//         // title: "Spotify Age Demographics (2023)"
+//     };
 
-    // Embed the Vega-Lite chart
-    vegaEmbed('#spotifyDemographicsChartHighlighted', yourVlSpec);
-}
+//     vegaEmbed('#spotifyDemographicsChartHighlighted', yourVlSpec);
+// }
 
-// Call the function to create the chart
-loadSpotifyAgeDemogHighlighted();
+// loadSpotifyAgeDemogHighlighted();
 
 
 // async function loadSpotifyUsersChart() {
@@ -404,7 +387,7 @@ loadSpotifyAgeDemogHighlighted();
 // Call the function to load data and create the chart
 // loadSpotifyUsersChart(); //old version
 
-async function loadSpotifyUsersChart() {
+async function loadVis2() {
     // Vega-Lite specification
     const yourVlSpec = {
         $schema: "https://vega.github.io/schema/vega-lite/v5.json",
@@ -494,247 +477,7 @@ async function loadSpotifyUsersChart() {
 }
 
 // Call the function to load data and create the chart
-loadSpotifyUsersChart();
-
-
-async function loadTopSpotifyGenresChart() {
-    // Define custom colors for each genre
-    const genreColors = {
-        "pop": "#ff320e",
-        "world/traditional": "#E5E4E2",
-        "hip-hop/rap": "#4a4d7b",
-        "electronic/dance": "#D3D3D3",
-        "r&b/soul": "#E5E4E2",
-        "rock": "#D3D3D3"
-    };
-
-    const yourVlSpec = {
-        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-        "data": {
-            "values": [
-                { "Year": 2023, "Genre": "pop", "Rank": 1 },
-                { "Year": 2023, "Genre": "world/traditional", "Rank": 2 },
-                { "Year": 2023, "Genre": "hip-hop/rap", "Rank": 3 },
-                { "Year": 2023, "Genre": "electronic/dance", "Rank": 4 },
-                { "Year": 2023, "Genre": "r&b/soul", "Rank": 5 },
-                { "Year": 2022, "Genre": "pop", "Rank": 1 },
-                { "Year": 2022, "Genre": "hip-hop/rap", "Rank": 2 },
-                { "Year": 2022, "Genre": "world/traditional", "Rank": 3 },
-                { "Year": 2022, "Genre": "electronic/dance", "Rank": 4 },
-                { "Year": 2022, "Genre": "r&b/soul", "Rank": 5 },
-                { "Year": 2021, "Genre": "pop", "Rank": 1 },
-                { "Year": 2021, "Genre": "hip-hop/rap", "Rank": 2 },
-                { "Year": 2021, "Genre": "world/traditional", "Rank": 3 },
-                { "Year": 2021, "Genre": "electronic/dance", "Rank": 4 },
-                { "Year": 2021, "Genre": "rock", "Rank": 5 },
-                { "Year": 2020, "Genre": "pop", "Rank": 1 },
-                { "Year": 2020, "Genre": "hip-hop/rap", "Rank": 2 },
-                { "Year": 2020, "Genre": "world/traditional", "Rank": 3 },
-                { "Year": 2020, "Genre": "electronic/dance", "Rank": 4 },
-                { "Year": 2020, "Genre": "r&b/soul", "Rank": 5 },
-                { "Year": 2019, "Genre": "pop", "Rank": 1 },
-                { "Year": 2019, "Genre": "hip-hop/rap", "Rank": 2 },
-                { "Year": 2019, "Genre": "world/traditional", "Rank": 3 },
-                { "Year": 2019, "Genre": "electronic/dance", "Rank": 4 },
-                { "Year": 2019, "Genre": "r&b/soul", "Rank": 5 },
-                { "Year": 2018, "Genre": "hip-hop/rap", "Rank": 1 },
-                { "Year": 2018, "Genre": "pop", "Rank": 2 },
-                { "Year": 2018, "Genre": "world/traditional", "Rank": 3 },
-                { "Year": 2018, "Genre": "electronic/dance", "Rank": 4 },
-                { "Year": 2018, "Genre": "rock", "Rank": 5 },
-                { "Year": 2017, "Genre": "pop", "Rank": 1 },
-                { "Year": 2017, "Genre": "hip-hop/rap", "Rank": 2 },
-                { "Year": 2017, "Genre": "world/traditional", "Rank": 3 },
-                { "Year": 2017, "Genre": "electronic/dance", "Rank": 4 },
-                { "Year": 2017, "Genre": "r&b/soul", "Rank": 5 },
-                { "Year": 2016, "Genre": "pop", "Rank": 1 },
-                { "Year": 2016, "Genre": "hip-hop/rap", "Rank": 2 },
-                { "Year": 2016, "Genre": "world/traditional", "Rank": 3 },
-                { "Year": 2016, "Genre": "electronic/dance", "Rank": 4 },
-                { "Year": 2016, "Genre": "r&b/soul", "Rank": 5 },
-                { "Year": 2015, "Genre": "pop", "Rank": 1 },
-                { "Year": 2015, "Genre": "hip-hop/rap", "Rank": 2 },
-                { "Year": 2015, "Genre": "world/traditional", "Rank": 3 },
-                { "Year": 2015, "Genre": "rock", "Rank": 4 },
-                { "Year": 2015, "Genre": "electronic/dance", "Rank": 5 },
-                { "Year": 2014, "Genre": "pop", "Rank": 1 },
-                { "Year": 2014, "Genre": "world/traditional", "Rank": 2 },
-                { "Year": 2014, "Genre": "hip-hop/rap", "Rank": 3 },
-                { "Year": 2014, "Genre": "electronic/dance", "Rank": 4 },
-                { "Year": 2014, "Genre": "rock", "Rank": 5 }
-            ]
-        },
-        "transform": [
-            {
-                "impute": "Rank",
-                "key": "Year",
-                "groupby": ["Genre"],
-                "value": null
-            }
-        ],
-        "layer": [
-            {
-                "mark": "line",
-                "encoding": {
-                    "x": { "field": "Year", "type": "ordinal", "title": "Year" },
-                    "y": {
-                        "field": "Rank",
-                        "type": "quantitative",
-                        "title": "Rank",
-                        "scale": { "domain": [5, 1] }
-                    },
-                    "color": {
-                        "field": "Genre",
-                        "type": "nominal",
-                        "scale": {
-                            "domain": [
-                                "pop",
-                                "world/traditional",
-                                "hip-hop/rap",
-                                "electronic/dance",
-                                "r&b/soul",
-                                "rock"
-                            ],
-                            "range": [
-                                "#ff320e",
-                                "#E5E4E2",
-                                "#4a4d7b",
-                                "#D3D3D3",
-                                "#E5E4E2",
-                                "#D3D3D3"
-                            ]
-                        },
-                        "legend": null
-                    }
-                }
-            },
-            {
-                "mark": { "type": "point", "filled": true, "size": 50 },
-                "encoding": {
-                    "x": {
-                        "field": "Year",
-                        "type": "ordinal",
-                        "axis": {
-                            "labelAngle": 0,
-                            "labelFontSize": 12,
-                            "ticks": true,
-                            "labelPadding": 10,
-                            "labelOffset": 13
-                        }
-                    },
-                    "y": {
-                        "field": "Rank",
-                        "type": "quantitative",
-                        "scale": { "domain": [5, 1] }
-                    },
-                    "color": {
-                        "field": "Genre",
-                        "type": "nominal",
-                        "scale": {
-                            "domain": [
-                                "pop",
-                                "world/traditional",
-                                "hip-hop/rap",
-                                "electronic/dance",
-                                "r&b/soul",
-                                "rock"
-                            ],
-                            "range": [
-                                "#ff320e",
-                                "#E5E4E2",
-                                "#4a4d7b",
-                                "#D3D3D3",
-                                "#E5E4E2",
-                                "#D3D3D3"
-                            ]
-                        },
-                        "legend": null
-                    },
-                    "tooltip": [
-                        { "field": "Year", "type": "ordinal", "title": "Year" },
-                        { "field": "Genre", "type": "nominal", "title": "Genre" },
-                        { "field": "Rank", "type": "ordinal", "title": "Rank" }
-                    ]
-                }
-            },
-            {
-                "mark": { "type": "text", "align": "left", "dx": 35 },
-                "transform": [{ "filter": { "field": "Year", "equal": 2023 } }],
-                "encoding": {
-                    "x": { "field": "Year", "type": "ordinal" },
-                    "y": {
-                        "field": "Rank",
-                        "type": "quantitative",
-                        "scale": { "domain": [5, 1] }
-                    },
-                    "text": { "field": "Genre" },
-                    "color": {
-                        "field": "Genre",
-                        "type": "nominal",
-                        "scale": {
-                            "domain": [
-                                "pop",
-                                "world/traditional",
-                                "hip-hop/rap",
-                                "electronic/dance",
-                                "r&b/soul",
-                                "rock"
-                            ],
-                            "range": [
-                                "#ff320e",
-                                "#E5E4E2",
-                                "#4a4d7b",
-                                "#D3D3D3",
-                                "#E5E4E2",
-                                "#D3D3D3"
-                            ]
-                        },
-                        "legend": null
-                    }
-                }
-            },
-            {
-                "mark": "text",
-                "encoding": {
-                    "x": { "field": "Year", "type": "ordinal", "axis": { "title": null } },
-                    "y": {
-                        "field": "Rank",
-                        "type": "quantitative",
-                        "axis": { "title": null },
-                        "scale": { "domain": [5, 1] }
-                    },
-                    "text": { "value": "rock" },
-                    "color": { "value": "#D3D3D3" },
-                    "size": { "value": 10 },
-                    "yOffset": { "value": -15 }
-                },
-                "transform": [
-                    {
-                        "filter": {
-                            "and": [
-                                { "field": "Year", "equal": 2021 },
-                                { "field": "Genre", "equal": "rock" }
-                            ]
-                        }
-                    }
-                ]
-            }
-        ],
-        "title": {
-            "text": "Trends of Top 5 Spotify Genres (2014-2023)",
-            "fontSize": 20,
-            "fontWeight": "bold"
-        },
-        "config": {
-            "view": { "width": 600, "height": 350, "stroke": null },
-            "axis": { "labelFontSize": 12, "titleFontSize": 14 }
-        }
-    };
-    vegaEmbed("#topSpotifyGenresChart", yourVlSpec);
-}
-
-loadTopSpotifyGenresChart();
-
+loadVis2();
 
 // colour lightener https://mdigi.tools/lighten-color/#ffa07a
 
@@ -1004,7 +747,7 @@ loadTopSpotifyGenresChart();
 // Call the function to create the chart
 // loadSpotifyUserGenreChart();
 
-async function loadSpotifyUserGenreChart() {
+async function loadVis3() {
 
     // Vega-Lite specification for the line chart with small multiples
     const vlSpec = {
@@ -1335,7 +1078,245 @@ async function loadSpotifyUserGenreChart() {
 }
 
 // Call the function to create the chart
-loadSpotifyUserGenreChart();
+loadVis3();
+
+async function loadVis4() {
+    // Define custom colors for each genre
+    const genreColors = {
+        "pop": "#ff320e",
+        "world/traditional": "#E5E4E2",
+        "hip-hop/rap": "#4a4d7b",
+        "electronic/dance": "#D3D3D3",
+        "r&b/soul": "#E5E4E2",
+        "rock": "#D3D3D3"
+    };
+
+    const yourVlSpec = {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "data": {
+            "values": [
+                { "Year": 2023, "Genre": "pop", "Rank": 1 },
+                { "Year": 2023, "Genre": "world/traditional", "Rank": 2 },
+                { "Year": 2023, "Genre": "hip-hop/rap", "Rank": 3 },
+                { "Year": 2023, "Genre": "electronic/dance", "Rank": 4 },
+                { "Year": 2023, "Genre": "r&b/soul", "Rank": 5 },
+                { "Year": 2022, "Genre": "pop", "Rank": 1 },
+                { "Year": 2022, "Genre": "hip-hop/rap", "Rank": 2 },
+                { "Year": 2022, "Genre": "world/traditional", "Rank": 3 },
+                { "Year": 2022, "Genre": "electronic/dance", "Rank": 4 },
+                { "Year": 2022, "Genre": "r&b/soul", "Rank": 5 },
+                { "Year": 2021, "Genre": "pop", "Rank": 1 },
+                { "Year": 2021, "Genre": "hip-hop/rap", "Rank": 2 },
+                { "Year": 2021, "Genre": "world/traditional", "Rank": 3 },
+                { "Year": 2021, "Genre": "electronic/dance", "Rank": 4 },
+                { "Year": 2021, "Genre": "rock", "Rank": 5 },
+                { "Year": 2020, "Genre": "pop", "Rank": 1 },
+                { "Year": 2020, "Genre": "hip-hop/rap", "Rank": 2 },
+                { "Year": 2020, "Genre": "world/traditional", "Rank": 3 },
+                { "Year": 2020, "Genre": "electronic/dance", "Rank": 4 },
+                { "Year": 2020, "Genre": "r&b/soul", "Rank": 5 },
+                { "Year": 2019, "Genre": "pop", "Rank": 1 },
+                { "Year": 2019, "Genre": "hip-hop/rap", "Rank": 2 },
+                { "Year": 2019, "Genre": "world/traditional", "Rank": 3 },
+                { "Year": 2019, "Genre": "electronic/dance", "Rank": 4 },
+                { "Year": 2019, "Genre": "r&b/soul", "Rank": 5 },
+                { "Year": 2018, "Genre": "hip-hop/rap", "Rank": 1 },
+                { "Year": 2018, "Genre": "pop", "Rank": 2 },
+                { "Year": 2018, "Genre": "world/traditional", "Rank": 3 },
+                { "Year": 2018, "Genre": "electronic/dance", "Rank": 4 },
+                { "Year": 2018, "Genre": "rock", "Rank": 5 },
+                { "Year": 2017, "Genre": "pop", "Rank": 1 },
+                { "Year": 2017, "Genre": "hip-hop/rap", "Rank": 2 },
+                { "Year": 2017, "Genre": "world/traditional", "Rank": 3 },
+                { "Year": 2017, "Genre": "electronic/dance", "Rank": 4 },
+                { "Year": 2017, "Genre": "r&b/soul", "Rank": 5 },
+                { "Year": 2016, "Genre": "pop", "Rank": 1 },
+                { "Year": 2016, "Genre": "hip-hop/rap", "Rank": 2 },
+                { "Year": 2016, "Genre": "world/traditional", "Rank": 3 },
+                { "Year": 2016, "Genre": "electronic/dance", "Rank": 4 },
+                { "Year": 2016, "Genre": "r&b/soul", "Rank": 5 },
+                { "Year": 2015, "Genre": "pop", "Rank": 1 },
+                { "Year": 2015, "Genre": "hip-hop/rap", "Rank": 2 },
+                { "Year": 2015, "Genre": "world/traditional", "Rank": 3 },
+                { "Year": 2015, "Genre": "rock", "Rank": 4 },
+                { "Year": 2015, "Genre": "electronic/dance", "Rank": 5 },
+                { "Year": 2014, "Genre": "pop", "Rank": 1 },
+                { "Year": 2014, "Genre": "world/traditional", "Rank": 2 },
+                { "Year": 2014, "Genre": "hip-hop/rap", "Rank": 3 },
+                { "Year": 2014, "Genre": "electronic/dance", "Rank": 4 },
+                { "Year": 2014, "Genre": "rock", "Rank": 5 }
+            ]
+        },
+        "transform": [
+            {
+                "impute": "Rank",
+                "key": "Year",
+                "groupby": ["Genre"],
+                "value": null
+            }
+        ],
+        "layer": [
+            {
+                "mark": "line",
+                "encoding": {
+                    "x": { "field": "Year", "type": "ordinal", "title": "Year" },
+                    "y": {
+                        "field": "Rank",
+                        "type": "quantitative",
+                        "title": "Rank",
+                        "scale": { "domain": [5, 1] }
+                    },
+                    "color": {
+                        "field": "Genre",
+                        "type": "nominal",
+                        "scale": {
+                            "domain": [
+                                "pop",
+                                "world/traditional",
+                                "hip-hop/rap",
+                                "electronic/dance",
+                                "r&b/soul",
+                                "rock"
+                            ],
+                            "range": [
+                                "#ff320e",
+                                "#E5E4E2",
+                                "#4a4d7b",
+                                "#D3D3D3",
+                                "#E5E4E2",
+                                "#D3D3D3"
+                            ]
+                        },
+                        "legend": null
+                    }
+                }
+            },
+            {
+                "mark": { "type": "point", "filled": true, "size": 50 },
+                "encoding": {
+                    "x": {
+                        "field": "Year",
+                        "type": "ordinal",
+                        "axis": {
+                            "labelAngle": 0,
+                            "labelFontSize": 12,
+                            "ticks": true,
+                            "labelPadding": 10,
+                            "labelOffset": 13
+                        }
+                    },
+                    "y": {
+                        "field": "Rank",
+                        "type": "quantitative",
+                        "scale": { "domain": [5, 1] }
+                    },
+                    "color": {
+                        "field": "Genre",
+                        "type": "nominal",
+                        "scale": {
+                            "domain": [
+                                "pop",
+                                "world/traditional",
+                                "hip-hop/rap",
+                                "electronic/dance",
+                                "r&b/soul",
+                                "rock"
+                            ],
+                            "range": [
+                                "#ff320e",
+                                "#E5E4E2",
+                                "#4a4d7b",
+                                "#D3D3D3",
+                                "#E5E4E2",
+                                "#D3D3D3"
+                            ]
+                        },
+                        "legend": null
+                    },
+                    "tooltip": [
+                        { "field": "Year", "type": "ordinal", "title": "Year" },
+                        { "field": "Genre", "type": "nominal", "title": "Genre" },
+                        { "field": "Rank", "type": "ordinal", "title": "Rank" }
+                    ]
+                }
+            },
+            {
+                "mark": { "type": "text", "align": "left", "dx": 35 },
+                "transform": [{ "filter": { "field": "Year", "equal": 2023 } }],
+                "encoding": {
+                    "x": { "field": "Year", "type": "ordinal" },
+                    "y": {
+                        "field": "Rank",
+                        "type": "quantitative",
+                        "scale": { "domain": [5, 1] }
+                    },
+                    "text": { "field": "Genre" },
+                    "color": {
+                        "field": "Genre",
+                        "type": "nominal",
+                        "scale": {
+                            "domain": [
+                                "pop",
+                                "world/traditional",
+                                "hip-hop/rap",
+                                "electronic/dance",
+                                "r&b/soul",
+                                "rock"
+                            ],
+                            "range": [
+                                "#ff320e",
+                                "#E5E4E2",
+                                "#4a4d7b",
+                                "#D3D3D3",
+                                "#E5E4E2",
+                                "#D3D3D3"
+                            ]
+                        },
+                        "legend": null
+                    }
+                }
+            },
+            {
+                "mark": "text",
+                "encoding": {
+                    "x": { "field": "Year", "type": "ordinal", "axis": { "title": null } },
+                    "y": {
+                        "field": "Rank",
+                        "type": "quantitative",
+                        "axis": { "title": null },
+                        "scale": { "domain": [5, 1] }
+                    },
+                    "text": { "value": "rock" },
+                    "color": { "value": "#D3D3D3" },
+                    "size": { "value": 10 },
+                    "yOffset": { "value": -15 }
+                },
+                "transform": [
+                    {
+                        "filter": {
+                            "and": [
+                                { "field": "Year", "equal": 2021 },
+                                { "field": "Genre", "equal": "rock" }
+                            ]
+                        }
+                    }
+                ]
+            }
+        ],
+        "title": {
+            "text": "Trends of Top 5 Spotify Genres (2014-2023)",
+            "fontSize": 20,
+            "fontWeight": "bold"
+        },
+        "config": {
+            "view": { "width": 600, "height": 350, "stroke": null },
+            "axis": { "labelFontSize": 12, "titleFontSize": 14 }
+        }
+    };
+    vegaEmbed("#topSpotifyGenresChart", yourVlSpec);
+}
+
+loadVis4();
 
 
 // async function loadBillboard100LineChart() {
@@ -2143,212 +2124,212 @@ loadSpotifyUserGenreChart();
 
 // loadBillboard100Charts(); //old vis
 
-async function loadBillboard100Charts() {
-    const popArtists = [
-        'Miley Cyrus', 'Taylor Swift', 'Taylor Swift feat. Kendrick Lamar', 'Dua Lipa', 'Olivia Rodrigo',
-        'Ariana Grande', 'Ed Sheeran', 'Harry Styles', 'Billie Eilish',
-        'The Weeknd', 'Bruno Mars', 'Camila Cabello', 'Justin Bieber',
-        'Post Malone', 'Mark Ronson', 'Sam Smith', 'Meghan Trainor', 'Adele', 'Post Malone, Swae Lee'
-    ];
+// async function loadBillboard100Charts() {
+//     const popArtists = [
+//         'Miley Cyrus', 'Taylor Swift', 'Taylor Swift feat. Kendrick Lamar', 'Dua Lipa', 'Olivia Rodrigo',
+//         'Ariana Grande', 'Ed Sheeran', 'Harry Styles', 'Billie Eilish',
+//         'The Weeknd', 'Bruno Mars', 'Camila Cabello', 'Justin Bieber',
+//         'Post Malone', 'Mark Ronson', 'Sam Smith', 'Meghan Trainor', 'Adele', 'Post Malone, Swae Lee'
+//     ];
 
-    const yearsData = [
-        {
-            year: 2023, data: [
-                { "rank": 1, "song": "Last Night", "artist": "Morgan Wallen" },
-                { "rank": 2, "song": "Flowers", "artist": "Miley Cyrus" },
-                { "rank": 3, "song": "Kill Bill", "artist": "SZA" },
-                { "rank": 4, "song": "Anti-Hero", "artist": "Taylor Swift" },
-                { "rank": 5, "song": "Creepin'", "artist": "Metro Boomin, The Weeknd, 21 Savage" },
-            ]
+//     const yearsData = [
+//         {
+//             year: 2023, data: [
+//                 { "rank": 1, "song": "Last Night", "artist": "Morgan Wallen" },
+//                 { "rank": 2, "song": "Flowers", "artist": "Miley Cyrus" },
+//                 { "rank": 3, "song": "Kill Bill", "artist": "SZA" },
+//                 { "rank": 4, "song": "Anti-Hero", "artist": "Taylor Swift" },
+//                 { "rank": 5, "song": "Creepin'", "artist": "Metro Boomin, The Weeknd, 21 Savage" },
+//             ]
 
-        },
-        {
-            year: 2022, data: [
-                { "rank": 1, "song": "Heat Waves", "artist": "Glass Animals" },
-                { "rank": 2, "song": "As It Was", "artist": "Harry Styles" },
-                { "rank": 3, "song": "Stay", "artist": "The Kid Laroi, Justin Bieber" },
-                { "rank": 4, "song": "Easy on Me", "artist": "Adele" },
-                { "rank": 5, "song": "Shivers", "artist": "Ed Sheeran" }
-            ]
-        },
-        {
-            year: 2021, data: [
-                { "rank": 1, "song": "Levitating", "artist": "Dua Lipa" },
-                { "rank": 2, "song": "Save Your Tears", "artist": "The Weeknd, Ariana Grande" },
-                { "rank": 3, "song": "Blinding Lights", "artist": "The Weeknd" },
-                { "rank": 4, "song": "Mood", "artist": "24kGoldn feat. Iann Dior" },
-                { "rank": 5, "song": "Good 4 U", "artist": "Olivia Rodrigo" }
-            ]
-        },
-        {
-            year: 2020, data: [
-                { "rank": 1, "song": "Blinding Lights", "artist": "The Weeknd" },
-                { "rank": 2, "song": "Circles", "artist": "Post Malone" },
-                { "rank": 3, "song": "The Box", "artist": "Roddy Ricch" },
-                { "rank": 4, "song": "Don't Start Now", "artist": "Dua Lipa" },
-                { "rank": 5, "song": "Rockstar", "artist": "DaBaby feat. Roddy Ricch" }
-            ]
-        },
-        {
-            year: 2019, data: [
-                { "rank": 1, "song": "Old Town Road", "artist": "Lil Nas X feat. Billy Ray Cyrus" },
-                { "rank": 2, "song": "Sunflower", "artist": "Post Malone, Swae Lee" },
-                { "rank": 3, "song": "Without Me", "artist": "Halsey" },
-                { "rank": 4, "song": "Bad Guy", "artist": "Billie Eilish" },
-                { "rank": 5, "song": "Wow.", "artist": "Post Malone" }
-            ]
-        },
-        {
-            year: 2018, data: [
-                { "rank": 1, "song": "God's Plan", "artist": "Drake" },
-                { "rank": 2, "song": "Perfect", "artist": "Ed Sheeran" },
-                { "rank": 3, "song": "Meant to Be", "artist": "Bebe Rexha, Florida Georgia Line" },
-                { "rank": 4, "song": "Havana", "artist": "Camila Cabello feat. Young Thug" },
-                { "rank": 5, "song": "Rockstar", "artist": "Post Malone feat. 21 Savage" },
-            ]
-        },
-        {
-            year: 2017, data: [
-                { "rank": 1, "song": "Shape of You", "artist": "Ed Sheeran" },
-                { "rank": 2, "song": "Despacito", "artist": "Luis Fonsi, Daddy Yankee feat. Justin Bieber" },
-                { "rank": 3, "song": "That's What I Like", "artist": "Bruno Mars" },
-                { "rank": 4, "song": "Humble", "artist": "Kendrick Lamar" },
-                { "rank": 5, "song": "Something Just Like This", "artist": "The Chainsmokers, Coldplay" }
-            ]
-        },
-        {
-            year: 2016, data: [
-                { "rank": 1, "song": "Love Yourself", "artist": "Justin Bieber" },
-                { "rank": 2, "song": "Sorry", "artist": "Justin Bieber" },
-                { "rank": 3, "song": "One Dance", "artist": "Drake feat. Wizkid, Kyla" },
-                { "rank": 4, "song": "Work", "artist": "Rihanna feat. Drake" },
-                { "rank": 5, "song": "Stressed Out", "artist": "Twenty One Pilots" },
-            ]
-        },
-        {
-            year: 2015, data: [
-                { "rank": 1, "song": "Uptown Funk", "artist": "Mark Ronson feat. Bruno Mars" },
-                { "rank": 2, "song": "Thinking Out Loud", "artist": "Ed Sheeran" },
-                { "rank": 3, "song": "See You Again", "artist": "Wiz Khalifa feat. Charlie Puth" },
-                { "rank": 4, "song": "Can't Feel My Face", "artist": "The Weeknd" },
-                { "rank": 5, "song": "Bad Blood", "artist": "Taylor Swift feat. Kendrick Lamar" },
-            ]
-        },
-        {
-            year: 2014, data: [
-                { "rank": 1, "song": "Happy", "artist": "Pharrell Williams" },
-                { "rank": 2, "song": "All About That Bass", "artist": "Meghan Trainor" },
-                { "rank": 3, "song": "Shake It Off", "artist": "Taylor Swift" },
-                { "rank": 4, "song": "All of Me", "artist": "John Legend" },
-                { "rank": 5, "song": "Stay with Me", "artist": "Sam Smith" }
-            ]
-        }
-        // Add other year data similarly...
-    ];
+//         },
+//         {
+//             year: 2022, data: [
+//                 { "rank": 1, "song": "Heat Waves", "artist": "Glass Animals" },
+//                 { "rank": 2, "song": "As It Was", "artist": "Harry Styles" },
+//                 { "rank": 3, "song": "Stay", "artist": "The Kid Laroi, Justin Bieber" },
+//                 { "rank": 4, "song": "Easy on Me", "artist": "Adele" },
+//                 { "rank": 5, "song": "Shivers", "artist": "Ed Sheeran" }
+//             ]
+//         },
+//         {
+//             year: 2021, data: [
+//                 { "rank": 1, "song": "Levitating", "artist": "Dua Lipa" },
+//                 { "rank": 2, "song": "Save Your Tears", "artist": "The Weeknd, Ariana Grande" },
+//                 { "rank": 3, "song": "Blinding Lights", "artist": "The Weeknd" },
+//                 { "rank": 4, "song": "Mood", "artist": "24kGoldn feat. Iann Dior" },
+//                 { "rank": 5, "song": "Good 4 U", "artist": "Olivia Rodrigo" }
+//             ]
+//         },
+//         {
+//             year: 2020, data: [
+//                 { "rank": 1, "song": "Blinding Lights", "artist": "The Weeknd" },
+//                 { "rank": 2, "song": "Circles", "artist": "Post Malone" },
+//                 { "rank": 3, "song": "The Box", "artist": "Roddy Ricch" },
+//                 { "rank": 4, "song": "Don't Start Now", "artist": "Dua Lipa" },
+//                 { "rank": 5, "song": "Rockstar", "artist": "DaBaby feat. Roddy Ricch" }
+//             ]
+//         },
+//         {
+//             year: 2019, data: [
+//                 { "rank": 1, "song": "Old Town Road", "artist": "Lil Nas X feat. Billy Ray Cyrus" },
+//                 { "rank": 2, "song": "Sunflower", "artist": "Post Malone, Swae Lee" },
+//                 { "rank": 3, "song": "Without Me", "artist": "Halsey" },
+//                 { "rank": 4, "song": "Bad Guy", "artist": "Billie Eilish" },
+//                 { "rank": 5, "song": "Wow.", "artist": "Post Malone" }
+//             ]
+//         },
+//         {
+//             year: 2018, data: [
+//                 { "rank": 1, "song": "God's Plan", "artist": "Drake" },
+//                 { "rank": 2, "song": "Perfect", "artist": "Ed Sheeran" },
+//                 { "rank": 3, "song": "Meant to Be", "artist": "Bebe Rexha, Florida Georgia Line" },
+//                 { "rank": 4, "song": "Havana", "artist": "Camila Cabello feat. Young Thug" },
+//                 { "rank": 5, "song": "Rockstar", "artist": "Post Malone feat. 21 Savage" },
+//             ]
+//         },
+//         {
+//             year: 2017, data: [
+//                 { "rank": 1, "song": "Shape of You", "artist": "Ed Sheeran" },
+//                 { "rank": 2, "song": "Despacito", "artist": "Luis Fonsi, Daddy Yankee feat. Justin Bieber" },
+//                 { "rank": 3, "song": "That's What I Like", "artist": "Bruno Mars" },
+//                 { "rank": 4, "song": "Humble", "artist": "Kendrick Lamar" },
+//                 { "rank": 5, "song": "Something Just Like This", "artist": "The Chainsmokers, Coldplay" }
+//             ]
+//         },
+//         {
+//             year: 2016, data: [
+//                 { "rank": 1, "song": "Love Yourself", "artist": "Justin Bieber" },
+//                 { "rank": 2, "song": "Sorry", "artist": "Justin Bieber" },
+//                 { "rank": 3, "song": "One Dance", "artist": "Drake feat. Wizkid, Kyla" },
+//                 { "rank": 4, "song": "Work", "artist": "Rihanna feat. Drake" },
+//                 { "rank": 5, "song": "Stressed Out", "artist": "Twenty One Pilots" },
+//             ]
+//         },
+//         {
+//             year: 2015, data: [
+//                 { "rank": 1, "song": "Uptown Funk", "artist": "Mark Ronson feat. Bruno Mars" },
+//                 { "rank": 2, "song": "Thinking Out Loud", "artist": "Ed Sheeran" },
+//                 { "rank": 3, "song": "See You Again", "artist": "Wiz Khalifa feat. Charlie Puth" },
+//                 { "rank": 4, "song": "Can't Feel My Face", "artist": "The Weeknd" },
+//                 { "rank": 5, "song": "Bad Blood", "artist": "Taylor Swift feat. Kendrick Lamar" },
+//             ]
+//         },
+//         {
+//             year: 2014, data: [
+//                 { "rank": 1, "song": "Happy", "artist": "Pharrell Williams" },
+//                 { "rank": 2, "song": "All About That Bass", "artist": "Meghan Trainor" },
+//                 { "rank": 3, "song": "Shake It Off", "artist": "Taylor Swift" },
+//                 { "rank": 4, "song": "All of Me", "artist": "John Legend" },
+//                 { "rank": 5, "song": "Stay with Me", "artist": "Sam Smith" }
+//             ]
+//         }
+//         // Add other year data similarly...
+//     ];
 
-    const slideshowContainer = document.getElementById('slideshowContainer');
+//     const slideshowContainer = document.getElementById('slideshowContainer');
 
-    yearsData.forEach((yearData, index) => {
-        yearData.data.forEach(song => {
-            song.pop = popArtists.includes(song.artist);
-        });
+//     yearsData.forEach((yearData, index) => {
+//         yearData.data.forEach(song => {
+//             song.pop = popArtists.includes(song.artist);
+//         });
 
-        const chartDiv = document.createElement('div');
-        chartDiv.classList.add('chart');
-        chartDiv.id = `chart-${yearData.year}`;
-        slideshowContainer.appendChild(chartDiv);
+//         const chartDiv = document.createElement('div');
+//         chartDiv.classList.add('chart');
+//         chartDiv.id = `chart-${yearData.year}`;
+//         slideshowContainer.appendChild(chartDiv);
 
-        const vlSpec = {
-            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-            "data": { "values": yearData.data },
-            "title": `Top 5 Most Streamed Songs on Billboard Hot 100 in ${yearData.year}`,
-            "mark": "bar",
-            width: 600,
-            height: 400,
-            "encoding": {
-                "y": { "field": "song", "type": "nominal", "sort": "x", "title": "Song" },
-                "x": {
-                    "field": "rank",
-                    "type": "quantitative",
-                    "title": "Rank",
-                    "scale": { "domain": [0, 5], "nice": true },
-                    "axis": { "grid": true, "format": "d" }
-                },
-                "color": {
-                    "field": "pop",
-                    "type": "nominal",
-                    "legend": {
-                        "title": "Song Type",
-                        "values": [true, false],  // This defines the order and presence of values in the legend
-                        "labelExpr": "datum.value ? 'Pop' : 'Other Genres'" // Custom text for true/false
-                    },
-                    "scale": {
-                        "domain": [true, false],  // true = Pop, false = Other Genres
-                        "range": ["#ff320e", "#D3D3D3"] // Pop = bright red, Other Genres = light grayish blue
-                    }
-                },
-                "tooltip": [
-                    { "field": "song", "type": "nominal", "title": "Song" },
-                    { "field": "artist", "type": "nominal", "title": "Artist" },
-                    { "field": "rank", "type": "quantitative", "title": "Rank" }
-                ]
-            }
-        };
+//         const vlSpec = {
+//             "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+//             "data": { "values": yearData.data },
+//             "title": `Top 5 Most Streamed Songs on Billboard Hot 100 in ${yearData.year}`,
+//             "mark": "bar",
+//             width: 600,
+//             height: 400,
+//             "encoding": {
+//                 "y": { "field": "song", "type": "nominal", "sort": "x", "title": "Song" },
+//                 "x": {
+//                     "field": "rank",
+//                     "type": "quantitative",
+//                     "title": "Rank",
+//                     "scale": { "domain": [0, 5], "nice": true },
+//                     "axis": { "grid": true, "format": "d" }
+//                 },
+//                 "color": {
+//                     "field": "pop",
+//                     "type": "nominal",
+//                     "legend": {
+//                         "title": "Song Type",
+//                         "values": [true, false],  // This defines the order and presence of values in the legend
+//                         "labelExpr": "datum.value ? 'Pop' : 'Other Genres'" // Custom text for true/false
+//                     },
+//                     "scale": {
+//                         "domain": [true, false],  // true = Pop, false = Other Genres
+//                         "range": ["#ff320e", "#D3D3D3"] // Pop = bright red, Other Genres = light grayish blue
+//                     }
+//                 },
+//                 "tooltip": [
+//                     { "field": "song", "type": "nominal", "title": "Song" },
+//                     { "field": "artist", "type": "nominal", "title": "Artist" },
+//                     { "field": "rank", "type": "quantitative", "title": "Rank" }
+//                 ]
+//             }
+//         };
 
-        vegaEmbed(`#chart-${yearData.year}`, vlSpec).then(() => {
-            if (index !== 0) {
-                chartDiv.style.display = 'none';
-            }
-        }).catch(err => console.error(err));
-    });
+//         vegaEmbed(`#chart-${yearData.year}`, vlSpec).then(() => {
+//             if (index !== 0) {
+//                 chartDiv.style.display = 'none';
+//             }
+//         }).catch(err => console.error(err));
+//     });
 
-    const slider = document.getElementById('yearSlider');
-    const currentYearDisplay = document.getElementById('currentYear');
+//     const slider = document.getElementById('yearSlider');
+//     const currentYearDisplay = document.getElementById('currentYear');
 
-    let currentYearIndex = 0;
-    const targetYearIndex = yearsData.findIndex(y => y.year === 2018);
-    let intervalId = null;
+//     let currentYearIndex = 0;
+//     const targetYearIndex = yearsData.findIndex(y => y.year === 2018);
+//     let intervalId = null;
 
-    function showChartForYear(yearIndex) {
-        currentYearDisplay.textContent = `Year: ${yearsData[yearIndex].year}`;
-        const allCharts = document.querySelectorAll('.chart');
-        allCharts.forEach(chart => chart.style.display = 'none');
-        document.getElementById(`chart-${yearsData[yearIndex].year}`).style.display = 'block';
-    }
+//     function showChartForYear(yearIndex) {
+//         currentYearDisplay.textContent = `Year: ${yearsData[yearIndex].year}`;
+//         const allCharts = document.querySelectorAll('.chart');
+//         allCharts.forEach(chart => chart.style.display = 'none');
+//         document.getElementById(`chart-${yearsData[yearIndex].year}`).style.display = 'block';
+//     }
 
-    function startAnimation() {
-        intervalId = setInterval(() => {
-            showChartForYear(currentYearIndex);
-            slider.value = currentYearIndex;
-            if (currentYearIndex >= targetYearIndex) {
-                clearInterval(intervalId);
-            } else {
-                currentYearIndex++;
-            }
-        }, 300); // Change the duration as needed
-    }
+//     function startAnimation() {
+//         intervalId = setInterval(() => {
+//             showChartForYear(currentYearIndex);
+//             slider.value = currentYearIndex;
+//             if (currentYearIndex >= targetYearIndex) {
+//                 clearInterval(intervalId);
+//             } else {
+//                 currentYearIndex++;
+//             }
+//         }, 300); // Change the duration as needed
+//     }
 
-    slider.addEventListener('input', function () {
-        clearInterval(intervalId); // Stop the animation if the slider is used manually
-        currentYearIndex = parseInt(this.value);
-        showChartForYear(currentYearIndex);
-    });
+//     slider.addEventListener('input', function () {
+//         clearInterval(intervalId); // Stop the animation if the slider is used manually
+//         currentYearIndex = parseInt(this.value);
+//         showChartForYear(currentYearIndex);
+//     });
 
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                startAnimation();
-                observer.unobserve(slideshowContainer);
-            }
-        });
-    });
+//     const observer = new IntersectionObserver(entries => {
+//         entries.forEach(entry => {
+//             if (entry.isIntersecting) {
+//                 startAnimation();
+//                 observer.unobserve(slideshowContainer);
+//             }
+//         });
+//     });
 
-    observer.observe(slideshowContainer);
-}
+//     observer.observe(slideshowContainer);
+// }
 
 // loadBillboard100Charts();
 
-async function loadBillboard100Charts() {
+async function loadVis5() {
     const popArtists = [
         'Miley Cyrus', 'Taylor Swift', 'Taylor Swift feat. Kendrick Lamar', 'Dua Lipa', 'Olivia Rodrigo',
         'Ariana Grande', 'Ed Sheeran', 'Harry Styles', 'Billie Eilish',
@@ -2566,20 +2547,439 @@ async function loadBillboard100Charts() {
     });
 }
 
-loadBillboard100Charts();
+loadVis5();
 
 
 // CLARK PUT UR CODE HERE ==================================================================================================
+
 // Function to load data and create the chart
-// Function to load data and create the chart
-async function loadTaylorSwiftViz() {
-    // Vega-Lite specification for the pie chart
+// async function loadTaylorSwiftViz() {
+//     // Vega-Lite specification for the pie chart
+//     const vlSpec = {
+//         "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+//         "description": "Taylor Swift album popularity trends based on opening week sales.",
+//         "title": "Taylor Swift' First Week Sales for Each Album",
+//         // "width": 650,
+//         // "height": 400,
+//         "data": {
+//             "values": [
+//                 { "release_date": "2006-10-24", "album_name": "Taylor Swift", "genre": "Country", "sales": 40000 },
+//                 { "release_date": "2008-11-11", "album_name": "Fearless", "genre": "Country Pop", "sales": 592000 },
+//                 { "release_date": "2010-10-25", "album_name": "Speak Now", "genre": "Country Pop", "sales": 1047000 },
+//                 { "release_date": "2012-10-22", "album_name": "Red", "genre": "Country Pop", "sales": 1208000 },
+//                 { "release_date": "2014-10-27", "album_name": "1989", "genre": "Synth-Pop", "sales": 1285000 },
+//                 { "release_date": "2017-11-10", "album_name": "Reputation", "genre": "Pop", "sales": 1216000 },
+//                 { "release_date": "2019-08-23", "album_name": "Lover", "genre": "Pop", "sales": 867000 },
+//                 { "release_date": "2020-07-24", "album_name": "Folklore", "genre": "Indie Folk", "sales": 846000 },
+//                 { "release_date": "2020-12-11", "album_name": "Evermore", "genre": "Indie Folk", "sales": 329000 },
+//                 { "release_date": "2021-04-09", "album_name": "Fearless (Taylor's Version)", "genre": "Country Pop", "sales": 291000 },
+//                 { "release_date": "2021-11-12", "album_name": "Red (Taylor's Version)", "genre": "Country Pop", "sales": 605000 },
+//                 { "release_date": "2022-10-21", "album_name": "Midnights", "genre": "Synth-Pop", "sales": 1220000 },
+//                 { "release_date": "2023-07-07", "album_name": "Speak Now (Taylor's Version)", "genre": "Country Pop", "sales": 716000 },
+//                 { "release_date": "2023-10-27", "album_name": "1989 (Taylor's Version)", "genre": "Synth-Pop", "sales": 1653000 },
+//                 { "release_date": "2024-04-19", "album_name": "The Tortured Poets Department", "genre": "Pop", "sales": 2610000 }
+//             ]
+//         },
+//         "layer": [
+//             {
+//                 "mark": {
+//                     "type": "line",
+//                     "color": "#1DB954"
+//                 },
+//                 "encoding": {
+//                     "x": {
+//                         "field": "release_date",
+//                         "type": "temporal",
+//                         "title": "Release Date"
+//                     },
+//                     "y": {
+//                         "field": "sales",
+//                         "type": "quantitative",
+//                         "title": "Opening Week Sales"
+//                     }
+//                 }
+//             },
+//             {
+//                 "transform": [
+//                     { "filter": "datum.album_name === 'Taylor Swift'" }
+//                 ],
+//                 "mark": {
+//                     "type": "point",
+//                     "filled": true,
+//                     "tooltip": true,
+//                     "size": 100,
+//                     "color": "red"
+//                 },
+//                 "encoding": {
+//                     "x": {
+//                         "field": "release_date",
+//                         "type": "temporal"
+//                     },
+//                     "y": {
+//                         "field": "sales",
+//                         "type": "quantitative"
+//                     },
+//                     "tooltip": [
+//                         { "field": "album_name", "type": "nominal", "title": "Album Name" },
+//                         { "field": "release_date", "type": "temporal", "title": "Release Date" },
+//                         { "field": "genre", "type": "nominal", "title": "Genre" },
+//                         { "field": "sales", "type": "quantitative", "title": "Sales", "format": "," }
+//                     ]
+//                 }
+//             },
+//             {
+//                 "transform": [
+//                     { "filter": "datum.album_name === 'Fearless'" }
+//                 ],
+//                 "mark": {
+//                     "type": "point",
+//                     "filled": true,
+//                     "tooltip": true,
+//                     "color": "yellow",
+//                     "size": 100
+//                 },
+//                 "encoding": {
+//                     "x": {
+//                         "field": "release_date",
+//                         "type": "temporal"
+//                     },
+//                     "y": {
+//                         "field": "sales",
+//                         "type": "quantitative"
+//                     },
+//                     "tooltip": [
+//                         { "field": "album_name", "type": "nominal", "title": "Album Name" },
+//                         { "field": "release_date", "type": "temporal", "title": "Release Date" },
+//                         { "field": "genre", "type": "nominal", "title": "Genre" },
+//                         { "field": "sales", "type": "quantitative", "title": "Sales", "format": "," }
+//                     ]
+//                 }
+//             },
+//             {
+//                 "transform": [
+//                     { "filter": "datum.album_name === '1989'" }
+//                 ],
+//                 "mark": {
+//                     "type": "point",
+//                     "filled": true,
+//                     "tooltip": true,
+//                     "color": "#1DB954",
+//                     "size": 100
+//                 },
+//                 "encoding": {
+//                     "x": {
+//                         "field": "release_date",
+//                         "type": "temporal"
+//                     },
+//                     "y": {
+//                         "field": "sales",
+//                         "type": "quantitative"
+//                     },
+//                     "tooltip": [
+//                         { "field": "album_name", "type": "nominal", "title": "Album Name" },
+//                         { "field": "release_date", "type": "temporal", "title": "Release Date" },
+//                         { "field": "genre", "type": "nominal", "title": "Genre" },
+//                         { "field": "sales", "type": "quantitative", "title": "Sales", "format": "," }
+//                     ]
+//                 }
+//             },
+//             {
+//                 "transform": [
+//                     { "filter": "datum.album_name !== 'Taylor Swift' && datum.album_name !== 'Fearless' && datum.album_name !== '1989'" }
+//                 ],
+//                 "mark": {
+//                     "type": "point",
+//                     "filled": true,
+//                     "tooltip": true,
+//                     "color": "#1DB954"
+//                 },
+//                 "encoding": {
+//                     "x": {
+//                         "field": "release_date",
+//                         "type": "temporal"
+//                     },
+//                     "y": {
+//                         "field": "sales",
+//                         "type": "quantitative"
+//                     },
+//                     "tooltip": [
+//                         { "field": "album_name", "type": "nominal", "title": "Album Name" },
+//                         { "field": "release_date", "type": "temporal", "title": "Release Date" },
+//                         { "field": "genre", "type": "nominal", "title": "Genre" },
+//                         { "field": "sales", "type": "quantitative", "title": "Sales", "format": "," }
+//                     ]
+//                 }
+//             }
+//         ]
+//     }
+//     // Embed the Vega-Lite chart
+//     vegaEmbed('#taylorSwiftViz', vlSpec);
+// };
+
+// loadTaylorSwiftViz();
+
+// async function loadRegionalAppearancesInTop10() {
+//     // Vega-Lite specification for the pie chart
+//     const vlSpec = {
+//         "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+//         "description": "Accumulated appearances of songs from specific regions in Spotify's top 10 rankings over the past decade.",
+//         "title": {
+//             "text": "Spotify's Top 10 Song Rankings by Region (2014-2023)",
+//             "fontsize": 18,
+//             "color": "black",
+//             "color": "black",
+//             "align": "right",
+//         },
+//         "width": 800,
+//         "height": 400,
+//         "background": "#FFFFFF",
+//         "background": "white",
+//         "config": {
+//             "view": {
+//                 "padding": 50
+//             },
+//             "title": {
+//                 "offset": 30
+//             }
+//         },
+//         "data": {
+//             "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
+//             "format": {
+//                 "type": "topojson",
+//                 "feature": "countries"
+//             }
+//         },
+//         "transform": [
+//             {
+//                 "lookup": "id",
+//                 "from": {
+//                     "data": {
+//                         "values": [
+//                             { "id": 434, "region": "Africa", "total_appearances": 0, "country": "Libya" },
+//                             { "id": 768, "region": "Africa", "total_appearances": 0, "country": "Togo" },
+//                             { "id": 562, "region": "Africa", "total_appearances": 0, "country": "Niger" },
+//                             { "id": 854, "region": "Africa", "total_appearances": 0, "country": "Burkina Faso" },
+//                             { "id": 12, "region": "Africa", "total_appearances": 0, "country": "Algeria" },
+//                             { "id": 24, "region": "Africa", "total_appearances": 0, "country": "Angola" },
+//                             { "id": 12, "region": "Africa", "total_appearances": 0, "country": "Algeria" },
+//                             { "id": 24, "region": "Africa", "total_appearances": 0, "country": "Angola" },
+//                             { "id": 72, "region": "Africa", "total_appearances": 0, "country": "Botswana" },
+//                             { "id": 108, "region": "Africa", "total_appearances": 0, "country": "Burundi" },
+//                             { "id": 120, "region": "Africa", "total_appearances": 0, "country": "Cameroon" },
+//                             { "id": 140, "region": "Africa", "total_appearances": 0, "country": "Central African Republic" },
+//                             { "id": 148, "region": "Africa", "total_appearances": 0, "country": "Chad" },
+//                             { "id": 178, "region": "Africa", "total_appearances": 0, "country": "Republic of the Congo" },
+//                             { "id": 180, "region": "Africa", "total_appearances": 0, "country": "Democratic Republic of the Congo" },
+//                             { "id": 204, "region": "Africa", "total_appearances": 0, "country": "Benin" },
+//                             { "id": 231, "region": "Africa", "total_appearances": 0, "country": "Ethiopia" },
+//                             { "id": 232, "region": "Africa", "total_appearances": 0, "country": "Eritrea" },
+//                             { "id": 262, "region": "Africa", "total_appearances": 0, "country": "Djibouti" },
+//                             { "id": 266, "region": "Africa", "total_appearances": 0, "country": "Gabon" },
+//                             { "id": 270, "region": "Africa", "total_appearances": 0, "country": "Gambia" },
+//                             { "id": 288, "region": "Africa", "total_appearances": 0, "country": "Ghana" },
+//                             { "id": 324, "region": "Africa", "total_appearances": 0, "country": "Guinea" },
+//                             { "id": 384, "region": "Africa", "total_appearances": 0, "country": "Ivory Coast" },
+//                             { "id": 404, "region": "Africa", "total_appearances": 0, "country": "Kenya" },
+//                             { "id": 426, "region": "Africa", "total_appearances": 0, "country": "Lesotho" },
+//                             { "id": 430, "region": "Africa", "total_appearances": 0, "country": "Liberia" },
+//                             { "id": 450, "region": "Africa", "total_appearances": 0, "country": "Madagascar" },
+//                             { "id": 454, "region": "Africa", "total_appearances": 0, "country": "Malawi" },
+//                             { "id": 466, "region": "Africa", "total_appearances": 0, "country": "Mali" },
+//                             { "id": 478, "region": "Africa", "total_appearances": 0, "country": "Mauritania" },
+//                             { "id": 508, "region": "Africa", "total_appearances": 0, "country": "Mozambique" },
+//                             { "id": 516, "region": "Africa", "total_appearances": 0, "country": "Namibia" },
+//                             { "id": 566, "region": "Africa", "total_appearances": 0, "country": "Nigeria" },
+//                             { "id": 646, "region": "Africa", "total_appearances": 0, "country": "Rwanda" },
+//                             { "id": 686, "region": "Africa", "total_appearances": 0, "country": "Senegal" },
+//                             { "id": 694, "region": "Africa", "total_appearances": 0, "country": "Sierra Leone" },
+//                             { "id": 706, "region": "Africa", "total_appearances": 0, "country": "Somalia" },
+//                             { "id": 710, "region": "Africa", "total_appearances": 0, "country": "South Africa" },
+//                             { "id": 716, "region": "Africa", "total_appearances": 0, "country": "Zimbabwe" },
+//                             { "id": 728, "region": "Africa", "total_appearances": 0, "country": "South Sudan" },
+//                             { "id": 729, "region": "Africa", "total_appearances": 0, "country": "Sudan" },
+//                             { "id": 732, "region": "Africa", "total_appearances": 0, "country": "Western Sahara" },
+//                             { "id": 800, "region": "Africa", "total_appearances": 0, "country": "Uganda" },
+//                             { "id": 834, "region": "Africa", "total_appearances": 0, "country": "Tanzania" },
+//                             { "id": 818, "region": "Africa", "total_appearances": 0, "country": "Egypt" },
+//                             { "id": 894, "region": "Africa", "total_appearances": 0, "country": "Zambia" },
+//                             { "id": 204, "region": "Africa", "total_appearances": 0, "country": "Benin" },
+//                             { "id": 840, "region": "North America", "total_appearances": 65, "country": "United States of America" },
+//                             { "id": 250, "region": "Europe", "total_appearances": 22, "country": "Europe" },
+//                             { "id": 156, "region": "Asia", "total_appearances": 2, "country": "Asia" },
+//                             { "id": 36, "region": "Australia", "total_appearances": 3, "country": "Australia" },
+//                             { "id": 124, "region": "North America", "total_appearances": 65, "country": "Canada" },
+//                             { "id": 32, "region": "South America", "total_appearances": 8, "country": "Argentina" },
+//                             { "id": 68, "region": "South America", "total_appearances": 8, "country": "Bolivia" },
+//                             { "id": 76, "region": "South America", "total_appearances": 8, "country": "Brazil" },
+//                             { "id": 152, "region": "South America", "total_appearances": 8, "country": "Chile" },
+//                             { "id": 170, "region": "South America", "total_appearances": 8, "country": "Colombia" },
+//                             { "id": 218, "region": "South America", "total_appearances": 8, "country": "Ecuador" },
+//                             { "id": 328, "region": "South America", "total_appearances": 8, "country": "Guyana" },
+//                             { "id": 600, "region": "South America", "total_appearances": 8, "country": "Paraguay" },
+//                             { "id": 604, "region": "South America", "total_appearances": 8, "country": "Peru" },
+//                             { "id": 740, "region": "South America", "total_appearances": 8, "country": "Suriname" },
+//                             { "id": 858, "region": "South America", "total_appearances": 8, "country": "Uruguay" },
+//                             { "id": 862, "region": "South America", "total_appearances": 8, "country": "Venezuela" },
+//                             { "id": 8, "region": "Europe", "total_appearances": 22, "country": "Albania" },
+//                             { "id": 20, "region": "Europe", "total_appearances": 22, "country": "Andorra" },
+//                             { "id": 51, "region": "Europe", "total_appearances": 22, "country": "Armenia" },
+//                             { "id": 40, "region": "Europe", "total_appearances": 22, "country": "Austria" },
+//                             { "id": 31, "region": "Europe", "total_appearances": 22, "country": "Azerbaijan" },
+//                             { "id": 112, "region": "Europe", "total_appearances": 22, "country": "Belarus" },
+//                             { "id": 56, "region": "Europe", "total_appearances": 22, "country": "Belgium" },
+//                             { "id": 70, "region": "Europe", "total_appearances": 22, "country": "Bosnia and Herzegovina" },
+//                             { "id": 100, "region": "Europe", "total_appearances": 22, "country": "Bulgaria" },
+//                             { "id": 191, "region": "Europe", "total_appearances": 22, "country": "Croatia" },
+//                             { "id": 196, "region": "Europe", "total_appearances": 22, "country": "Cyprus" },
+//                             { "id": 203, "region": "Europe", "total_appearances": 22, "country": "Czech Republic" },
+//                             { "id": 208, "region": "Europe", "total_appearances": 22, "country": "Denmark" },
+//                             { "id": 233, "region": "Europe", "total_appearances": 22, "country": "Estonia" },
+//                             { "id": 246, "region": "Europe", "total_appearances": 22, "country": "Finland" },
+//                             { "id": 250, "region": "Europe", "total_appearances": 22, "country": "France" },
+//                             { "id": 268, "region": "Europe", "total_appearances": 22, "country": "Georgia" },
+//                             { "id": 276, "region": "Europe", "total_appearances": 22, "country": "Germany" },
+//                             { "id": 300, "region": "Europe", "total_appearances": 22, "country": "Greece" },
+//                             { "id": 348, "region": "Europe", "total_appearances": 22, "country": "Hungary" },
+//                             { "id": 352, "region": "Europe", "total_appearances": 22, "country": "Iceland" },
+//                             { "id": 372, "region": "Europe", "total_appearances": 22, "country": "Ireland" },
+//                             { "id": 380, "region": "Europe", "total_appearances": 22, "country": "Italy" },
+//                             { "id": 398, "region": "Europe", "total_appearances": 22, "country": "Kazakhstan" },
+//                             { "id": 383, "region": "Europe", "total_appearances": 22, "country": "Kosovo" },
+//                             { "id": 428, "region": "Europe", "total_appearances": 22, "country": "Latvia" },
+//                             { "id": 440, "region": "Europe", "total_appearances": 22, "country": "Lithuania" },
+//                             { "id": 442, "region": "Europe", "total_appearances": 22, "country": "Luxembourg" },
+//                             { "id": 470, "region": "Europe", "total_appearances": 22, "country": "Malta" },
+//                             { "id": 498, "region": "Europe", "total_appearances": 22, "country": "Moldova" },
+//                             { "id": 492, "region": "Europe", "total_appearances": 22, "country": "Monaco" },
+//                             { "id": 499, "region": "Europe", "total_appearances": 22, "country": "Montenegro" },
+//                             { "id": 528, "region": "Europe", "total_appearances": 22, "country": "Netherlands" },
+//                             { "id": 807, "region": "Europe", "total_appearances": 22, "country": "North Macedonia" },
+//                             { "id": 578, "region": "Europe", "total_appearances": 22, "country": "Norway" },
+//                             { "id": 616, "region": "Europe", "total_appearances": 22, "country": "Poland" },
+//                             { "id": 620, "region": "Europe", "total_appearances": 22, "country": "Portugal" },
+//                             { "id": 642, "region": "Europe", "total_appearances": 22, "country": "Romania" },
+//                             { "id": 643, "region": "Europe", "total_appearances": 22, "country": "Russia" },
+//                             { "id": 674, "region": "Europe", "total_appearances": 22, "country": "San Marino" },
+//                             { "id": 688, "region": "Europe", "total_appearances": 22, "country": "Serbia" },
+//                             { "id": 703, "region": "Europe", "total_appearances": 22, "country": "Slovakia" },
+//                             { "id": 705, "region": "Europe", "total_appearances": 22, "country": "Slovenia" },
+//                             { "id": 724, "region": "Europe", "total_appearances": 22, "country": "Spain" },
+//                             { "id": 752, "region": "Europe", "total_appearances": 22, "country": "Sweden" },
+//                             { "id": 756, "region": "Europe", "total_appearances": 22, "country": "Switzerland" },
+//                             { "id": 792, "region": "Europe", "total_appearances": 22, "country": "Turkey" },
+//                             { "id": 804, "region": "Europe", "total_appearances": 22, "country": "Ukraine" },
+//                             { "id": 826, "region": "Europe", "total_appearances": 22, "country": "" },
+//                             { "id": 208, "region": "Europe", "total_appearances": 22, "country": "Denmark" },
+//                             { "id": 246, "region": "Europe", "total_appearances": 22, "country": "Finland" },
+//                             { "id": 352, "region": "Europe", "total_appearances": 22, "country": "Iceland" },
+//                             { "id": 578, "region": "Europe", "total_appearances": 22, "country": "Norway" },
+//                             { "id": 752, "region": "Europe", "total_appearances": 22, "country": "Sweden" },
+//                             { "id": 304, "region": "Europe", "total_appearances": 22, "country": "Greenland" },
+//                             { "id": 352, "region": "Europe", "total_appearances": 22, "country": "Iceland" },
+//                             { "id": 4, "region": "Asia", "total_appearances": 2, "country": "Afghanistan" },
+//                             { "id": 51, "region": "Asia", "total_appearances": 2, "country": "Armenia" },
+//                             { "id": 31, "region": "Asia", "total_appearances": 2, "country": "Azerbaijan" },
+//                             { "id": 48, "region": "Asia", "total_appearances": 2, "country": "Bahrain" },
+//                             { "id": 50, "region": "Asia", "total_appearances": 2, "country": "Bangladesh" },
+//                             { "id": 64, "region": "Asia", "total_appearances": 2, "country": "Bhutan" },
+//                             { "id": 70, "region": "Asia", "total_appearances": 2, "country": "Brunei" },
+//                             { "id": 116, "region": "Asia", "total_appearances": 2, "country": "Cambodia" },
+//                             { "id": 156, "region": "Asia", "total_appearances": 2, "country": "China" },
+//                             { "id": 196, "region": "Asia", "total_appearances": 2, "country": "Cyprus" },
+//                             { "id": 268, "region": "Asia", "total_appearances": 2, "country": "Georgia" },
+//                             { "id": 356, "region": "Asia", "total_appearances": 2, "country": "India" },
+//                             { "id": 360, "region": "Asia", "total_appearances": 2, "country": "Indonesia" },
+//                             { "id": 364, "region": "Asia", "total_appearances": 2, "country": "Iran" },
+//                             { "id": 368, "region": "Asia", "total_appearances": 2, "country": "Iraq" },
+//                             { "id": 376, "region": "Asia", "total_appearances": 2, "country": "Israel" },
+//                             { "id": 392, "region": "Asia", "total_appearances": 2, "country": "Japan" },
+//                             { "id": 400, "region": "Asia", "total_appearances": 2, "country": "Jordan" },
+//                             { "id": 398, "region": "Asia", "total_appearances": 2, "country": "Kazakhstan" },
+//                             { "id": 414, "region": "Asia", "total_appearances": 2, "country": "Kuwait" },
+//                             { "id": 417, "region": "Asia", "total_appearances": 2, "country": "Kyrgyzstan" },
+//                             { "id": 418, "region": "Asia", "total_appearances": 2, "country": "Laos" },
+//                             { "id": 422, "region": "Asia", "total_appearances": 2, "country": "Lebanon" },
+//                             { "id": 458, "region": "Asia", "total_appearances": 2, "country": "Malaysia" },
+//                             { "id": 462, "region": "Asia", "total_appearances": 2, "country": "Maldives" },
+//                             { "id": 496, "region": "Asia", "total_appearances": 2, "country": "Mongolia" },
+//                             { "id": 104, "region": "Asia", "total_appearances": 2, "country": "Myanmar" },
+//                             { "id": 524, "region": "Asia", "total_appearances": 2, "country": "Nepal" },
+//                             { "id": 408, "region": "Asia", "total_appearances": 2, "country": "North Korea" },
+//                             { "id": 512, "region": "Asia", "total_appearances": 2, "country": "Oman" },
+//                             { "id": 586, "region": "Asia", "total_appearances": 2, "country": "Pakistan" },
+//                             { "id": 275, "region": "Asia", "total_appearances": 2, "country": "Palestine" },
+//                             { "id": 608, "region": "Asia", "total_appearances": 2, "country": "Philippines" },
+//                             { "id": 634, "region": "Asia", "total_appearances": 2, "country": "Qatar" },
+//                             { "id": 643, "region": "Asia", "total_appearances": 2, "country": "Russia" },
+//                             { "id": 682, "region": "Asia", "total_appearances": 2, "country": "Saudi Arabia" },
+//                             { "id": 702, "region": "Asia", "total_appearances": 2, "country": "Singapore" },
+//                             { "id": 410, "region": "Asia", "total_appearances": 2, "country": "South Korea" },
+//                             { "id": 144, "region": "Asia", "total_appearances": 2, "country": "Sri Lanka" },
+//                             { "id": 760, "region": "Asia", "total_appearances": 2, "country": "Syria" },
+//                             { "id": 158, "region": "Asia", "total_appearances": 2, "country": "Taiwan" },
+//                             { "id": 762, "region": "Asia", "total_appearances": 2, "country": "Tajikistan" },
+//                             { "id": 764, "region": "Asia", "total_appearances": 2, "country": "Thailand" },
+//                             { "id": 626, "region": "Asia", "total_appearances": 2, "country": "Timor-este" },
+//                             { "id": 792, "region": "Asia", "total_appearances": 2, "country": "Turkey" },
+//                             { "id": 795, "region": "Asia", "total_appearances": 2, "country": "Turkmenistan" },
+//                             { "id": 784, "region": "Asia", "total_appearances": 2, "country": "United Arab Emirates" },
+//                             { "id": 860, "region": "Asia", "total_appearances": 2, "country": "Uzbekistan" },
+//                             { "id": 704, "region": "Asia", "total_appearances": 2, "country": "Vietnam" },
+//                             { "id": 887, "region": "Asia", "total_appearances": 2, "country": "Yemen" },
+//                             { "id": 554, "region": "Oceania", "total_appearances": 3, "country": "New Zealand" },
+//                             { "id": 598, "region": "Oceania", "total_appearances": 3, "country": "Papua New Guinea" }
+//                         ]
+//                     },
+//                     "key": "id",
+//                     "fields": ["region", "total_appearances", "country"]
+//                 }
+//             }
+//         ],
+//         "projection": {
+//             "type": "mercator"
+//         },
+//         "mark": {
+//             "type": "geoshape",
+//             "stroke": "black",
+//             "strokeWidth": 0.3
+//         },
+//         "encoding": {
+//             "color": {
+//                 "field": "total_appearances",
+//                 "type": "quantitative",
+//                 "scale": {
+//                     "domain": [0, 65],
+//                     "range": ["#fdfdfd", "darkgreen"]
+//                 },
+//                 "legend": {
+//                     "title": "Total Appearances",
+//                     "orient": "bottom",
+//                     "titleColor": "black",
+//                     "labelColor": "black"
+//                 }
+//             },
+//             "tooltip": [
+//                 { "field": "region", "type": "nominal", "title": "Region" },
+//                 { "field": "country", "type": "nominal", "title": "Country" },
+//                 { "field": "total_appearances", "type": "quantitative", "title": "Cummulative Regional Appearances [ 2014 - 2023 ]" }
+//             ]
+//         }
+
+//     };
+//     // Embed the Vega-Lite chart
+//     vegaEmbed('#spotifyRegionalAppearancesInTop10', vlSpec);
+// }
+
+// loadRegionalAppearancesInTop10();
+
+async function loadVis6() {
+
     const vlSpec = {
         "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
         "description": "Taylor Swift album popularity trends based on opening week sales.",
         "title": "Taylor Swift' First Week Sales for Each Album",
-        // "width": 650,
-        // "height": 400,
+        "width": 650,
+        "height": 400,
         "data": {
             "values": [
                 { "release_date": "2006-10-24", "album_name": "Taylor Swift", "genre": "Country", "sales": 40000 },
@@ -2730,268 +3130,13 @@ async function loadTaylorSwiftViz() {
                 }
             }
         ]
-    }
-    // Embed the Vega-Lite chart
-    vegaEmbed('#taylorSwiftViz', vlSpec);
-};
-
-loadTaylorSwiftViz();
-
-async function loadRegionalAppearancesInTop10() {
-    // Vega-Lite specification for the pie chart
-    const vlSpec = {
-        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-        "description": "Accumulated appearances of songs from specific regions in Spotify's top 10 rankings over the past decade.",
-        "title": {
-            "text": "Spotify's Top 10 Song Rankings by Region (2014-2023)",
-            "fontsize": 18,
-            "color": "black",
-            "color": "black",
-            "align": "right",
-        },
-        "width": 800,
-        "height": 400,
-        "background": "#FFFFFF",
-        "background": "white",
-        "config": {
-            "view": {
-                "padding": 50
-            },
-            "title": {
-                "offset": 30
-            }
-        },
-        "data": {
-            "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
-            "format": {
-                "type": "topojson",
-                "feature": "countries"
-            }
-        },
-        "transform": [
-            {
-                "lookup": "id",
-                "from": {
-                    "data": {
-                        "values": [
-                            { "id": 434, "region": "Africa", "total_appearances": 0, "country": "Libya" },
-                            { "id": 768, "region": "Africa", "total_appearances": 0, "country": "Togo" },
-                            { "id": 562, "region": "Africa", "total_appearances": 0, "country": "Niger" },
-                            { "id": 854, "region": "Africa", "total_appearances": 0, "country": "Burkina Faso" },
-                            { "id": 12, "region": "Africa", "total_appearances": 0, "country": "Algeria" },
-                            { "id": 24, "region": "Africa", "total_appearances": 0, "country": "Angola" },
-                            { "id": 12, "region": "Africa", "total_appearances": 0, "country": "Algeria" },
-                            { "id": 24, "region": "Africa", "total_appearances": 0, "country": "Angola" },
-                            { "id": 72, "region": "Africa", "total_appearances": 0, "country": "Botswana" },
-                            { "id": 108, "region": "Africa", "total_appearances": 0, "country": "Burundi" },
-                            { "id": 120, "region": "Africa", "total_appearances": 0, "country": "Cameroon" },
-                            { "id": 140, "region": "Africa", "total_appearances": 0, "country": "Central African Republic" },
-                            { "id": 148, "region": "Africa", "total_appearances": 0, "country": "Chad" },
-                            { "id": 178, "region": "Africa", "total_appearances": 0, "country": "Republic of the Congo" },
-                            { "id": 180, "region": "Africa", "total_appearances": 0, "country": "Democratic Republic of the Congo" },
-                            { "id": 204, "region": "Africa", "total_appearances": 0, "country": "Benin" },
-                            { "id": 231, "region": "Africa", "total_appearances": 0, "country": "Ethiopia" },
-                            { "id": 232, "region": "Africa", "total_appearances": 0, "country": "Eritrea" },
-                            { "id": 262, "region": "Africa", "total_appearances": 0, "country": "Djibouti" },
-                            { "id": 266, "region": "Africa", "total_appearances": 0, "country": "Gabon" },
-                            { "id": 270, "region": "Africa", "total_appearances": 0, "country": "Gambia" },
-                            { "id": 288, "region": "Africa", "total_appearances": 0, "country": "Ghana" },
-                            { "id": 324, "region": "Africa", "total_appearances": 0, "country": "Guinea" },
-                            { "id": 384, "region": "Africa", "total_appearances": 0, "country": "Ivory Coast" },
-                            { "id": 404, "region": "Africa", "total_appearances": 0, "country": "Kenya" },
-                            { "id": 426, "region": "Africa", "total_appearances": 0, "country": "Lesotho" },
-                            { "id": 430, "region": "Africa", "total_appearances": 0, "country": "Liberia" },
-                            { "id": 450, "region": "Africa", "total_appearances": 0, "country": "Madagascar" },
-                            { "id": 454, "region": "Africa", "total_appearances": 0, "country": "Malawi" },
-                            { "id": 466, "region": "Africa", "total_appearances": 0, "country": "Mali" },
-                            { "id": 478, "region": "Africa", "total_appearances": 0, "country": "Mauritania" },
-                            { "id": 508, "region": "Africa", "total_appearances": 0, "country": "Mozambique" },
-                            { "id": 516, "region": "Africa", "total_appearances": 0, "country": "Namibia" },
-                            { "id": 566, "region": "Africa", "total_appearances": 0, "country": "Nigeria" },
-                            { "id": 646, "region": "Africa", "total_appearances": 0, "country": "Rwanda" },
-                            { "id": 686, "region": "Africa", "total_appearances": 0, "country": "Senegal" },
-                            { "id": 694, "region": "Africa", "total_appearances": 0, "country": "Sierra Leone" },
-                            { "id": 706, "region": "Africa", "total_appearances": 0, "country": "Somalia" },
-                            { "id": 710, "region": "Africa", "total_appearances": 0, "country": "South Africa" },
-                            { "id": 716, "region": "Africa", "total_appearances": 0, "country": "Zimbabwe" },
-                            { "id": 728, "region": "Africa", "total_appearances": 0, "country": "South Sudan" },
-                            { "id": 729, "region": "Africa", "total_appearances": 0, "country": "Sudan" },
-                            { "id": 732, "region": "Africa", "total_appearances": 0, "country": "Western Sahara" },
-                            { "id": 800, "region": "Africa", "total_appearances": 0, "country": "Uganda" },
-                            { "id": 834, "region": "Africa", "total_appearances": 0, "country": "Tanzania" },
-                            { "id": 818, "region": "Africa", "total_appearances": 0, "country": "Egypt" },
-                            { "id": 894, "region": "Africa", "total_appearances": 0, "country": "Zambia" },
-                            { "id": 204, "region": "Africa", "total_appearances": 0, "country": "Benin" },
-                            { "id": 840, "region": "North America", "total_appearances": 65, "country": "United States of America" },
-                            { "id": 250, "region": "Europe", "total_appearances": 22, "country": "Europe" },
-                            { "id": 156, "region": "Asia", "total_appearances": 2, "country": "Asia" },
-                            { "id": 36, "region": "Australia", "total_appearances": 3, "country": "Australia" },
-                            { "id": 124, "region": "North America", "total_appearances": 65, "country": "Canada" },
-                            { "id": 32, "region": "South America", "total_appearances": 8, "country": "Argentina" },
-                            { "id": 68, "region": "South America", "total_appearances": 8, "country": "Bolivia" },
-                            { "id": 76, "region": "South America", "total_appearances": 8, "country": "Brazil" },
-                            { "id": 152, "region": "South America", "total_appearances": 8, "country": "Chile" },
-                            { "id": 170, "region": "South America", "total_appearances": 8, "country": "Colombia" },
-                            { "id": 218, "region": "South America", "total_appearances": 8, "country": "Ecuador" },
-                            { "id": 328, "region": "South America", "total_appearances": 8, "country": "Guyana" },
-                            { "id": 600, "region": "South America", "total_appearances": 8, "country": "Paraguay" },
-                            { "id": 604, "region": "South America", "total_appearances": 8, "country": "Peru" },
-                            { "id": 740, "region": "South America", "total_appearances": 8, "country": "Suriname" },
-                            { "id": 858, "region": "South America", "total_appearances": 8, "country": "Uruguay" },
-                            { "id": 862, "region": "South America", "total_appearances": 8, "country": "Venezuela" },
-                            { "id": 8, "region": "Europe", "total_appearances": 22, "country": "Albania" },
-                            { "id": 20, "region": "Europe", "total_appearances": 22, "country": "Andorra" },
-                            { "id": 51, "region": "Europe", "total_appearances": 22, "country": "Armenia" },
-                            { "id": 40, "region": "Europe", "total_appearances": 22, "country": "Austria" },
-                            { "id": 31, "region": "Europe", "total_appearances": 22, "country": "Azerbaijan" },
-                            { "id": 112, "region": "Europe", "total_appearances": 22, "country": "Belarus" },
-                            { "id": 56, "region": "Europe", "total_appearances": 22, "country": "Belgium" },
-                            { "id": 70, "region": "Europe", "total_appearances": 22, "country": "Bosnia and Herzegovina" },
-                            { "id": 100, "region": "Europe", "total_appearances": 22, "country": "Bulgaria" },
-                            { "id": 191, "region": "Europe", "total_appearances": 22, "country": "Croatia" },
-                            { "id": 196, "region": "Europe", "total_appearances": 22, "country": "Cyprus" },
-                            { "id": 203, "region": "Europe", "total_appearances": 22, "country": "Czech Republic" },
-                            { "id": 208, "region": "Europe", "total_appearances": 22, "country": "Denmark" },
-                            { "id": 233, "region": "Europe", "total_appearances": 22, "country": "Estonia" },
-                            { "id": 246, "region": "Europe", "total_appearances": 22, "country": "Finland" },
-                            { "id": 250, "region": "Europe", "total_appearances": 22, "country": "France" },
-                            { "id": 268, "region": "Europe", "total_appearances": 22, "country": "Georgia" },
-                            { "id": 276, "region": "Europe", "total_appearances": 22, "country": "Germany" },
-                            { "id": 300, "region": "Europe", "total_appearances": 22, "country": "Greece" },
-                            { "id": 348, "region": "Europe", "total_appearances": 22, "country": "Hungary" },
-                            { "id": 352, "region": "Europe", "total_appearances": 22, "country": "Iceland" },
-                            { "id": 372, "region": "Europe", "total_appearances": 22, "country": "Ireland" },
-                            { "id": 380, "region": "Europe", "total_appearances": 22, "country": "Italy" },
-                            { "id": 398, "region": "Europe", "total_appearances": 22, "country": "Kazakhstan" },
-                            { "id": 383, "region": "Europe", "total_appearances": 22, "country": "Kosovo" },
-                            { "id": 428, "region": "Europe", "total_appearances": 22, "country": "Latvia" },
-                            { "id": 440, "region": "Europe", "total_appearances": 22, "country": "Lithuania" },
-                            { "id": 442, "region": "Europe", "total_appearances": 22, "country": "Luxembourg" },
-                            { "id": 470, "region": "Europe", "total_appearances": 22, "country": "Malta" },
-                            { "id": 498, "region": "Europe", "total_appearances": 22, "country": "Moldova" },
-                            { "id": 492, "region": "Europe", "total_appearances": 22, "country": "Monaco" },
-                            { "id": 499, "region": "Europe", "total_appearances": 22, "country": "Montenegro" },
-                            { "id": 528, "region": "Europe", "total_appearances": 22, "country": "Netherlands" },
-                            { "id": 807, "region": "Europe", "total_appearances": 22, "country": "North Macedonia" },
-                            { "id": 578, "region": "Europe", "total_appearances": 22, "country": "Norway" },
-                            { "id": 616, "region": "Europe", "total_appearances": 22, "country": "Poland" },
-                            { "id": 620, "region": "Europe", "total_appearances": 22, "country": "Portugal" },
-                            { "id": 642, "region": "Europe", "total_appearances": 22, "country": "Romania" },
-                            { "id": 643, "region": "Europe", "total_appearances": 22, "country": "Russia" },
-                            { "id": 674, "region": "Europe", "total_appearances": 22, "country": "San Marino" },
-                            { "id": 688, "region": "Europe", "total_appearances": 22, "country": "Serbia" },
-                            { "id": 703, "region": "Europe", "total_appearances": 22, "country": "Slovakia" },
-                            { "id": 705, "region": "Europe", "total_appearances": 22, "country": "Slovenia" },
-                            { "id": 724, "region": "Europe", "total_appearances": 22, "country": "Spain" },
-                            { "id": 752, "region": "Europe", "total_appearances": 22, "country": "Sweden" },
-                            { "id": 756, "region": "Europe", "total_appearances": 22, "country": "Switzerland" },
-                            { "id": 792, "region": "Europe", "total_appearances": 22, "country": "Turkey" },
-                            { "id": 804, "region": "Europe", "total_appearances": 22, "country": "Ukraine" },
-                            { "id": 826, "region": "Europe", "total_appearances": 22, "country": "" },
-                            { "id": 208, "region": "Europe", "total_appearances": 22, "country": "Denmark" },
-                            { "id": 246, "region": "Europe", "total_appearances": 22, "country": "Finland" },
-                            { "id": 352, "region": "Europe", "total_appearances": 22, "country": "Iceland" },
-                            { "id": 578, "region": "Europe", "total_appearances": 22, "country": "Norway" },
-                            { "id": 752, "region": "Europe", "total_appearances": 22, "country": "Sweden" },
-                            { "id": 304, "region": "Europe", "total_appearances": 22, "country": "Greenland" },
-                            { "id": 352, "region": "Europe", "total_appearances": 22, "country": "Iceland" },
-                            { "id": 4, "region": "Asia", "total_appearances": 2, "country": "Afghanistan" },
-                            { "id": 51, "region": "Asia", "total_appearances": 2, "country": "Armenia" },
-                            { "id": 31, "region": "Asia", "total_appearances": 2, "country": "Azerbaijan" },
-                            { "id": 48, "region": "Asia", "total_appearances": 2, "country": "Bahrain" },
-                            { "id": 50, "region": "Asia", "total_appearances": 2, "country": "Bangladesh" },
-                            { "id": 64, "region": "Asia", "total_appearances": 2, "country": "Bhutan" },
-                            { "id": 70, "region": "Asia", "total_appearances": 2, "country": "Brunei" },
-                            { "id": 116, "region": "Asia", "total_appearances": 2, "country": "Cambodia" },
-                            { "id": 156, "region": "Asia", "total_appearances": 2, "country": "China" },
-                            { "id": 196, "region": "Asia", "total_appearances": 2, "country": "Cyprus" },
-                            { "id": 268, "region": "Asia", "total_appearances": 2, "country": "Georgia" },
-                            { "id": 356, "region": "Asia", "total_appearances": 2, "country": "India" },
-                            { "id": 360, "region": "Asia", "total_appearances": 2, "country": "Indonesia" },
-                            { "id": 364, "region": "Asia", "total_appearances": 2, "country": "Iran" },
-                            { "id": 368, "region": "Asia", "total_appearances": 2, "country": "Iraq" },
-                            { "id": 376, "region": "Asia", "total_appearances": 2, "country": "Israel" },
-                            { "id": 392, "region": "Asia", "total_appearances": 2, "country": "Japan" },
-                            { "id": 400, "region": "Asia", "total_appearances": 2, "country": "Jordan" },
-                            { "id": 398, "region": "Asia", "total_appearances": 2, "country": "Kazakhstan" },
-                            { "id": 414, "region": "Asia", "total_appearances": 2, "country": "Kuwait" },
-                            { "id": 417, "region": "Asia", "total_appearances": 2, "country": "Kyrgyzstan" },
-                            { "id": 418, "region": "Asia", "total_appearances": 2, "country": "Laos" },
-                            { "id": 422, "region": "Asia", "total_appearances": 2, "country": "Lebanon" },
-                            { "id": 458, "region": "Asia", "total_appearances": 2, "country": "Malaysia" },
-                            { "id": 462, "region": "Asia", "total_appearances": 2, "country": "Maldives" },
-                            { "id": 496, "region": "Asia", "total_appearances": 2, "country": "Mongolia" },
-                            { "id": 104, "region": "Asia", "total_appearances": 2, "country": "Myanmar" },
-                            { "id": 524, "region": "Asia", "total_appearances": 2, "country": "Nepal" },
-                            { "id": 408, "region": "Asia", "total_appearances": 2, "country": "North Korea" },
-                            { "id": 512, "region": "Asia", "total_appearances": 2, "country": "Oman" },
-                            { "id": 586, "region": "Asia", "total_appearances": 2, "country": "Pakistan" },
-                            { "id": 275, "region": "Asia", "total_appearances": 2, "country": "Palestine" },
-                            { "id": 608, "region": "Asia", "total_appearances": 2, "country": "Philippines" },
-                            { "id": 634, "region": "Asia", "total_appearances": 2, "country": "Qatar" },
-                            { "id": 643, "region": "Asia", "total_appearances": 2, "country": "Russia" },
-                            { "id": 682, "region": "Asia", "total_appearances": 2, "country": "Saudi Arabia" },
-                            { "id": 702, "region": "Asia", "total_appearances": 2, "country": "Singapore" },
-                            { "id": 410, "region": "Asia", "total_appearances": 2, "country": "South Korea" },
-                            { "id": 144, "region": "Asia", "total_appearances": 2, "country": "Sri Lanka" },
-                            { "id": 760, "region": "Asia", "total_appearances": 2, "country": "Syria" },
-                            { "id": 158, "region": "Asia", "total_appearances": 2, "country": "Taiwan" },
-                            { "id": 762, "region": "Asia", "total_appearances": 2, "country": "Tajikistan" },
-                            { "id": 764, "region": "Asia", "total_appearances": 2, "country": "Thailand" },
-                            { "id": 626, "region": "Asia", "total_appearances": 2, "country": "Timor-este" },
-                            { "id": 792, "region": "Asia", "total_appearances": 2, "country": "Turkey" },
-                            { "id": 795, "region": "Asia", "total_appearances": 2, "country": "Turkmenistan" },
-                            { "id": 784, "region": "Asia", "total_appearances": 2, "country": "United Arab Emirates" },
-                            { "id": 860, "region": "Asia", "total_appearances": 2, "country": "Uzbekistan" },
-                            { "id": 704, "region": "Asia", "total_appearances": 2, "country": "Vietnam" },
-                            { "id": 887, "region": "Asia", "total_appearances": 2, "country": "Yemen" },
-                            { "id": 554, "region": "Oceania", "total_appearances": 3, "country": "New Zealand" },
-                            { "id": 598, "region": "Oceania", "total_appearances": 3, "country": "Papua New Guinea" }
-                        ]
-                    },
-                    "key": "id",
-                    "fields": ["region", "total_appearances", "country"]
-                }
-            }
-        ],
-        "projection": {
-            "type": "mercator"
-        },
-        "mark": {
-            "type": "geoshape",
-            "stroke": "black",
-            "strokeWidth": 0.3
-        },
-        "encoding": {
-            "color": {
-                "field": "total_appearances",
-                "type": "quantitative",
-                "scale": {
-                    "domain": [0, 65],
-                    "range": ["#fdfdfd", "darkgreen"]
-                },
-                "legend": {
-                    "title": "Total Appearances",
-                    "orient": "bottom",
-                    "titleColor": "black",
-                    "labelColor": "black"
-                }
-            },
-            "tooltip": [
-                { "field": "region", "type": "nominal", "title": "Region" },
-                { "field": "country", "type": "nominal", "title": "Country" },
-                { "field": "total_appearances", "type": "quantitative", "title": "Cummulative Regional Appearances [ 2014 - 2023 ]" }
-            ]
-        }
 
     };
-    // Embed the Vega-Lite chart
-    vegaEmbed('#spotifyRegionalAppearancesInTop10', vlSpec);
+    vegaEmbed('#taylorVis6', vlSpec);
 }
+loadVis6();
 
-loadRegionalAppearancesInTop10();
-
-async function loadVis6() {
+async function loadVis7() {
 
     const vlSpec = {
         "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
@@ -3219,40 +3364,16 @@ async function loadVis6() {
 
 
     };
-    vegaEmbed('#mapVis6', vlSpec);
+    vegaEmbed('#mapVis7', vlSpec);
 }
-loadVis6();
+loadVis7();
 
 // CLARK PUT UR CODE HERE ==================================================================================================
 
 // From W3Schools
 // MY SLIDES CODE ========================================================================================================
 
-let slideIndex = 1;
-showSlides(slideIndex);
 
-// Next/previous controls
-function plusSlides(n) {
-    showSlides(slideIndex += n);
-}
 
-// Thumbnail image controls
-function currentSlide(n) {
-    showSlides(slideIndex = n);
-}
 
-function showSlides(n) {
-    let i;
-    let slides = document.getElementsByClassName("mySlides");
-    let dots = document.getElementsByClassName("dot");
-    if (n > slides.length) { slideIndex = 1 }
-    if (n < 1) { slideIndex = slides.length }
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-    }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-    }
-    slides[slideIndex - 1].style.display = "block";
-    dots[slideIndex - 1].className += " active";
-}
+

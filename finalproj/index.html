@@ -432,7 +432,7 @@
 
     <div class="container-content">
         <h2>How Influential is the Pop Genre in Music Culture?</h2>
-        <div class="vis5">
+        <div class="vis6">
             <h3>Switching from Country to Pop: An Exponential Increase in Popularity for Taylor Swift</h3>
             <!-- <div id="taylorSwiftViz"></div> -->
             <p>Looking at Taylor Swift's career, she had initially started off making country music but switched genres
@@ -442,46 +442,57 @@
                 <strong>(third album '1989', with 1,285,000 sales)</strong> once she had completely transitioned into
                 pop music.
             </p>
-            <!-- insert updated vis here vvv  -->
-            <div><img src="https://ariellebeltran.github.io/with_clarktanquerido/images/vis_ts_SVG.svg"
+
+            <!-- <div><img src="https://ariellebeltran.github.io/with_clarktanquerido/images/vis_ts_SVG.svg"
                     alt="A visualization showing the trends of Taylor Swift's First week album sales throughout her career."
-                    width="100%" height="auto"></div>
+                    width="100%" height="auto"></div> -->
 
-            <!-- <h3>How Pop & Hip-hop Has Dominated Globally</h3>
-            <p>Insert text here...</p>
+            <div class="slideshow-container">
+                <div class="mySlides1 content-vis1">
+                    <div class="numbertext">1 / 2</div>
+                    <div class="vis6">
+                        <img src="https://ariellebeltran.github.io/with_clarktanquerido/images/vis_ts_SVG.svg"
+                            alt="A visualization showing the trends of Taylor Swift's First week album sales throughout her career."
+                            width="100%" height="auto">
+                    </div>
+                </div>
 
-            <div id="">insert vis here</div> -->
+                <div class="mySlides1 content-vis1">
+                    <div class="numbertext">2 / 2</div>
+                    <div id="taylorVis6"></div>
+                    <figcaption>*Hover to view region, country & cumulative regional appearances.</figcaption>
+                </div>
 
+                <a class="prev" onclick="plusSlides1(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides1(1)">&#10095;</a>
+            </div>
+        </div>
+        <div class="vis7">
             <h3>Has Western Music Become the Standard for the World?</h3>
             <p>This map visualizes data from the yearly top 10 songs on Spotify within the past decade. These songs are
                 mapped out to reflect on the map which regions they are produced and the nationalities of their artists.
             </p>
 
-            
             <div class="slideshow-container">
-                <div class="mySlides content-vis1">
-                    <!-- <h2>Visualization: Spotify User Demographics Over Time</h2> -->
-                    <!-- <p>This line chart visualizes Spotify user demographics by age group from 2013 to 2023.</p> -->
+                <div class="mySlides2 content-vis1">
                     <div class="numbertext">1 / 2</div>
-                    <div class="vis6">
-                        <!-- <div id="spotifyAgeDemographicsChart"></div> -->
+                    <div class="vis7">
                         <img src="https://ariellebeltran.github.io/with_clarktanquerido/images/spotify_map_visualization_SVG.svg"
-                        alt="A visualization showing the streaming activities of Spotify's top user-base on a map."
-                        width="100%" height="auto">
-                        <!-- <figcaption>*Hover to view percentages</figcaption> -->
+                            alt="A visualization showing the streaming activities of Spotify's top user-base on a map."
+                            width="100%" height="auto">
                     </div>
                 </div>
-    
-                <div class="mySlides content-vis1">
-                    <div class="numbertext">2 / 2</div>
-                    <div id="mapVis6">
-                    </div>
-                    <figcaption>*Hover to view region, country & cummulative regional appearances.</figcaption>
 
+                <div class="mySlides2 content-vis2">
+                    <div class="numbertext">2 / 2</div>
+                    <div id="mapVis7"></div>
+                    <figcaption>*Hover to view region, country & cumulative regional appearances.</figcaption>
                 </div>
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                <a class="prev" onclick="plusSlides2(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides2(1)">&#10095;</a>
             </div>
+
 
             <p>
                 The data from this visualization gives us insights into where popular music, mostly being pop and
@@ -1230,7 +1241,8 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
     <script src="main.js"></script>
-
+    <script src="slideshow1.js"></script>
+    <script src="slideshow2.js"></script>
     <footer>
         <!-- <h5>Arielle Beltran <span id="the-space"></span> Clark Tanquerido</h5> -->
         <h4>Interactive Arts & Technology <span id="the-space">&#x2022;</span> Fall 2024</h4>
