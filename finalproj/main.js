@@ -1011,321 +1011,321 @@ async function loadSpotifyUserGenreChart() {
         "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
         "description": "Line chart showing Spotify top music genres by age group in 2013 and 2023.",
         "data": {
-        "values": [
-        {
-        "Year": "2013",
-        "Age Group": "Millennials",
-        "Top Music Genres": "Pop",
-        "Percentage": 35
-        },
-        {
-        "Year": "2013",
-        "Age Group": "Millennials",
-        "Top Music Genres": "Hip-Hop/Rap",
-        "Percentage": 25
-        },
-        {
-        "Year": "2013",
-        "Age Group": "Gen Z",
-        "Top Music Genres": "Pop",
-        "Percentage": 40
-        },
-        {
-        "Year": "2013",
-        "Age Group": "Gen Z",
-        "Top Music Genres": "Hip-Hop/Rap",
-        "Percentage": 25
-        },
-        {
-        "Year": "2023",
-        "Age Group": "Millennials",
-        "Top Music Genres": "Pop",
-        "Percentage": 40
-        },
-        {
-        "Year": "2023",
-        "Age Group": "Millennials",
-        "Top Music Genres": "Hip-Hop/Rap",
-        "Percentage": 30
-        },
-        {
-        "Year": "2023",
-        "Age Group": "Gen Z",
-        "Top Music Genres": "Pop",
-        "Percentage": 40
-        },
-        {
-        "Year": "2023",
-        "Age Group": "Gen Z",
-        "Top Music Genres": "Hip-Hop/Rap",
-        "Percentage": 10
-        }
-        ]
+            "values": [
+                {
+                    "Year": "2013",
+                    "Age Group": "Millennials",
+                    "Top Music Genres": "Pop",
+                    "Percentage": 35
+                },
+                {
+                    "Year": "2013",
+                    "Age Group": "Millennials",
+                    "Top Music Genres": "Hip-Hop/Rap",
+                    "Percentage": 25
+                },
+                {
+                    "Year": "2013",
+                    "Age Group": "Gen Z",
+                    "Top Music Genres": "Pop",
+                    "Percentage": 40
+                },
+                {
+                    "Year": "2013",
+                    "Age Group": "Gen Z",
+                    "Top Music Genres": "Hip-Hop/Rap",
+                    "Percentage": 25
+                },
+                {
+                    "Year": "2023",
+                    "Age Group": "Millennials",
+                    "Top Music Genres": "Pop",
+                    "Percentage": 40
+                },
+                {
+                    "Year": "2023",
+                    "Age Group": "Millennials",
+                    "Top Music Genres": "Hip-Hop/Rap",
+                    "Percentage": 30
+                },
+                {
+                    "Year": "2023",
+                    "Age Group": "Gen Z",
+                    "Top Music Genres": "Pop",
+                    "Percentage": 40
+                },
+                {
+                    "Year": "2023",
+                    "Age Group": "Gen Z",
+                    "Top Music Genres": "Hip-Hop/Rap",
+                    "Percentage": 10
+                }
+            ]
         },
         "facet": {
-        "column": {"field": "Age Group", "type": "nominal", "title": "Age Group"}
+            "column": { "field": "Age Group", "type": "nominal", "title": "Age Group" }
         },
         "spec": {
-        "width": 500,
-        "height": 400,
-        "layer": [
-        {
-        "mark": "line",
-        "encoding": {
-        "x": {
-        "field": "Year",
-        "type": "ordinal",
-        "title": "Year",
-        "axis": {"labelAngle": 0}
-        },
-        "y": {
-        "field": "Percentage",
-        "type": "quantitative",
-        "title": "Percentage (%)"
-        },
-        "color": {
-        "field": "Top Music Genres",
-        "type": "nominal",
-        "title": "Top Music Genres",
-        "scale": {
-        "domain": ["Pop", "Hip-Hop/Rap"],
-        "range": ["#FF320E", "#4A4D7B"]
-        },
-        "legend": null
-        }
-        }
-        },
-        {
-        "mark": "area",
-        "encoding": {
-        "x": {
-        "field": "Year",
-        "type": "ordinal",
-        "title": "Year"
-        },
-        "y": {
-        "field": "Percentage",
-        "type": "quantitative"
-        },
-        "color": {
-        "field": "Top Music Genres",
-        "type": "nominal",
-        "scale": {
-        "domain": ["Hip-Hop/Rap"],
-        "range": ["#4A4D7B"]
-        },
-        "legend": null
-        },
-        "opacity": {
-        "value": 0.5
-        }
-        },
-        "transform": [
-        {
-        "filter": "datum['Top Music Genres'] === 'Hip-Hop/Rap' && datum['Age Group'] === 'Gen Z'"
-        }
-        ]
-        },
-        {
-        "mark": {"type": "point", "filled": true, "size": 100},
-        "encoding": {
-        "x": {"field": "Year", "type": "ordinal"},
-        "y": {"field": "Percentage", "type": "quantitative"},
-        "color": {"field": "Top Music Genres", "type": "nominal", "legend": null},
-        "tooltip": [
-        {"field": "Year", "type": "ordinal", "title": "Year"},
-        {"field": "Age Group", "type": "nominal", "title": "Age Group"},
-        {"field": "Top Music Genres", "type": "nominal", "title": "Top Music Genres"},
-        {"field": "Percentage", "type": "quantitative", "title": "Percentage (%)"}
-        ]
-        }
-        },
-        {
-        "mark": {
-        "type": "text",
-        "align": "center",
-        "baseline": "bottom",
-        "dy": -10,
-        "fontSize": 12,
-        "color": "#4A4D7B",
-        "fontWeight": "bold"
-        },
-        "encoding": {
-        "x": {"field": "Year", "type": "ordinal"},
-        "y": {"field": "Percentage", "type": "quantitative"},
-        "text": {"field": "Year", "type": "ordinal"}
-        },
-        "transform": [
-        {
-        "filter": "datum['Top Music Genres'] === 'Hip-Hop/Rap' && datum['Age Group'] === 'Gen Z'"
-        }
-        ]
-        },
-        {
-            "mark": {
-            "type": "text",
-            "align": "right",
-            "baseline": "bottom",
-            "dx": -125,
-            "dy": -275,
-            "fontSize": 16,
-            "color": "#FF320E",
-            "fontWeight": "bold"
-            },
-            "encoding": {
-            "x": {"datum": "2023", "type": "ordinal"},
-            "y": {"datum": 10, "type": "quantitative"},
-            "text": {
-            "value": "Pop"
-            }
-            },
-            "transform": [
-            {
-            "filter": "datum['Age Group'] === 'Gen Z'"
-            }
+            "width": 500,
+            "height": 400,
+            "layer": [
+                {
+                    "mark": "line",
+                    "encoding": {
+                        "x": {
+                            "field": "Year",
+                            "type": "ordinal",
+                            "title": "Year",
+                            "axis": { "labelAngle": 0 }
+                        },
+                        "y": {
+                            "field": "Percentage",
+                            "type": "quantitative",
+                            "title": "Percentage (%)"
+                        },
+                        "color": {
+                            "field": "Top Music Genres",
+                            "type": "nominal",
+                            "title": "Top Music Genres",
+                            "scale": {
+                                "domain": ["Pop", "Hip-Hop/Rap"],
+                                "range": ["#FF320E", "#4A4D7B"]
+                            },
+                            "legend": null
+                        }
+                    }
+                },
+                {
+                    "mark": "area",
+                    "encoding": {
+                        "x": {
+                            "field": "Year",
+                            "type": "ordinal",
+                            "title": "Year"
+                        },
+                        "y": {
+                            "field": "Percentage",
+                            "type": "quantitative"
+                        },
+                        "color": {
+                            "field": "Top Music Genres",
+                            "type": "nominal",
+                            "scale": {
+                                "domain": ["Hip-Hop/Rap"],
+                                "range": ["#4A4D7B"]
+                            },
+                            "legend": null
+                        },
+                        "opacity": {
+                            "value": 0.5
+                        }
+                    },
+                    "transform": [
+                        {
+                            "filter": "datum['Top Music Genres'] === 'Hip-Hop/Rap' && datum['Age Group'] === 'Gen Z'"
+                        }
+                    ]
+                },
+                {
+                    "mark": { "type": "point", "filled": true, "size": 100 },
+                    "encoding": {
+                        "x": { "field": "Year", "type": "ordinal" },
+                        "y": { "field": "Percentage", "type": "quantitative" },
+                        "color": { "field": "Top Music Genres", "type": "nominal", "legend": null },
+                        "tooltip": [
+                            { "field": "Year", "type": "ordinal", "title": "Year" },
+                            { "field": "Age Group", "type": "nominal", "title": "Age Group" },
+                            { "field": "Top Music Genres", "type": "nominal", "title": "Top Music Genres" },
+                            { "field": "Percentage", "type": "quantitative", "title": "Percentage (%)" }
+                        ]
+                    }
+                },
+                {
+                    "mark": {
+                        "type": "text",
+                        "align": "center",
+                        "baseline": "bottom",
+                        "dy": -10,
+                        "fontSize": 12,
+                        "color": "#4A4D7B",
+                        "fontWeight": "bold"
+                    },
+                    "encoding": {
+                        "x": { "field": "Year", "type": "ordinal" },
+                        "y": { "field": "Percentage", "type": "quantitative" },
+                        "text": { "field": "Year", "type": "ordinal" }
+                    },
+                    "transform": [
+                        {
+                            "filter": "datum['Top Music Genres'] === 'Hip-Hop/Rap' && datum['Age Group'] === 'Gen Z'"
+                        }
+                    ]
+                },
+                {
+                    "mark": {
+                        "type": "text",
+                        "align": "right",
+                        "baseline": "bottom",
+                        "dx": -125,
+                        "dy": -275,
+                        "fontSize": 16,
+                        "color": "#FF320E",
+                        "fontWeight": "bold"
+                    },
+                    "encoding": {
+                        "x": { "datum": "2023", "type": "ordinal" },
+                        "y": { "datum": 10, "type": "quantitative" },
+                        "text": {
+                            "value": "Pop"
+                        }
+                    },
+                    "transform": [
+                        {
+                            "filter": "datum['Age Group'] === 'Gen Z'"
+                        }
+                    ]
+                },
+                {
+                    "mark": {
+                        "type": "text",
+                        "align": "right",
+                        "baseline": "bottom",
+                        "dx": -58,
+                        "dy": -148,
+                        "fontSize": 16,
+                        "color": "#4A4D7B",
+                        "fontWeight": "bold"
+                    },
+                    "encoding": {
+                        "x": { "datum": "2023", "type": "ordinal" },
+                        "y": { "datum": 10, "type": "quantitative" },
+                        "text": {
+                            "value": "Hip-Hop/Rap"
+                        }
+                    },
+                    "transform": [
+                        {
+                            "filter": "datum['Age Group'] === 'Gen Z'"
+                        }
+                    ]
+                },
+                {
+                    "mark": {
+                        "type": "text",
+                        "align": "right",
+                        "baseline": "bottom",
+                        "dx": -75,
+                        "dy": -125,
+                        "fontSize": 12,
+                        "color": "#2053DF",
+                        "fontWeight": "bold"
+                    },
+                    "encoding": {
+                        "x": { "datum": "2023", "type": "ordinal" },
+                        "y": { "datum": 10, "type": "quantitative" },
+                        "text": {
+                            "value": "15% decrease"
+                        }
+                    },
+                    "transform": [
+                        {
+                            "filter": "datum['Age Group'] === 'Gen Z'"
+                        }
+                    ]
+                },
+                {
+                    "mark": {
+                        "type": "text",
+                        "align": "right",
+                        "baseline": "bottom",
+                        "dx": 13,
+                        "dy": -125,
+                        "fontSize": 12,
+                        "color": "#2053DF"
+                    },
+                    "encoding": {
+                        "x": { "datum": "2023", "type": "ordinal" },
+                        "y": { "datum": 10, "type": "quantitative" },
+                        "text": {
+                            "value": "in listeners over"
+                        }
+                    },
+                    "transform": [
+                        {
+                            "filter": "datum['Age Group'] === 'Gen Z'"
+                        }
+                    ]
+                },
+                {
+                    "mark": {
+                        "type": "text",
+                        "align": "right",
+                        "baseline": "bottom",
+                        "dx": 15,
+                        "dy": -110,
+                        "fontSize": 12,
+                        "color": "#2053DF"
+                    },
+                    "encoding": {
+                        "x": { "datum": "2023", "type": "ordinal" },
+                        "y": { "datum": 10, "type": "quantitative" },
+                        "text": {
+                            "value": "the past decade among Gen Zs"
+                        }
+                    },
+                    "transform": [
+                        {
+                            "filter": "datum['Age Group'] === 'Gen Z'"
+                        }
+                    ]
+                },
+                {
+                    "mark": {
+                        "type": "text",
+                        "align": "right",
+                        "baseline": "bottom",
+                        "dx": 10,
+                        "dy": -125,
+                        "fontSize": 12,
+                        "color": "#A620DF"
+                    },
+                    "encoding": {
+                        "x": { "datum": "2023", "type": "ordinal" },
+                        "y": { "datum": 10, "type": "quantitative" },
+                        "text": {
+                            "value": "Steady increase in popularity for both pop"
+                        }
+                    },
+                    "transform": [
+                        {
+                            "filter": "datum['Age Group'] === 'Millennials'"
+                        }
+                    ]
+                },
+                {
+                    "mark": {
+                        "type": "text",
+                        "align": "right",
+                        "baseline": "bottom",
+                        "dx": 10,
+                        "dy": -110,
+                        "fontSize": 12,
+                        "color": "#A620DF"
+                    },
+                    "encoding": {
+                        "x": { "datum": "2023", "type": "ordinal" },
+                        "y": { "datum": 10, "type": "quantitative" },
+                        "text": {
+                            "value": "and hip-hop/rap genres within Millennials."
+                        }
+                    },
+                    "transform": [
+                        {
+                            "filter": "datum['Age Group'] === 'Millennials'"
+                        }
+                    ]
+                }
             ]
-        },
-        {
-            "mark": {
-            "type": "text",
-            "align": "right",
-            "baseline": "bottom",
-            "dx": -58,
-            "dy": -148,
-            "fontSize": 16,
-            "color": "#4A4D7B",
-            "fontWeight": "bold"
-            },
-            "encoding": {
-            "x": {"datum": "2023", "type": "ordinal"},
-            "y": {"datum": 10, "type": "quantitative"},
-            "text": {
-            "value": "Hip-Hop/Rap"
-            }
-            },
-            "transform": [
-            {
-            "filter": "datum['Age Group'] === 'Gen Z'"
-            }
-            ]
-        },
-        {
-        "mark": {
-        "type": "text",
-        "align": "right",
-        "baseline": "bottom",
-        "dx": -75,
-        "dy": -125,
-        "fontSize": 12,
-        "color": "#2053DF",
-        "fontWeight": "bold"
-        },
-        "encoding": {
-        "x": {"datum": "2023", "type": "ordinal"},
-        "y": {"datum": 10, "type": "quantitative"},
-        "text": {
-        "value": "15% decrease"
-        }
-        },
-        "transform": [
-        {
-        "filter": "datum['Age Group'] === 'Gen Z'"
-        }
-        ]
-        },
-        {
-        "mark": {
-        "type": "text",
-        "align": "right",
-        "baseline": "bottom",
-        "dx": 13,
-        "dy": -125,
-        "fontSize": 12,
-        "color": "#2053DF"
-        },
-        "encoding": {
-        "x": {"datum": "2023", "type": "ordinal"},
-        "y": {"datum": 10, "type": "quantitative"},
-        "text": {
-        "value": "in listeners over"
-        }
-        },
-        "transform": [
-        {
-        "filter": "datum['Age Group'] === 'Gen Z'"
-        }
-        ]
-        },
-        {
-        "mark": {
-        "type": "text",
-        "align": "right",
-        "baseline": "bottom",
-        "dx": 15,
-        "dy": -110,
-        "fontSize": 12,
-        "color": "#2053DF"
-        },
-        "encoding": {
-        "x": {"datum": "2023", "type": "ordinal"},
-        "y": {"datum": 10, "type": "quantitative"},
-        "text": {
-        "value": "the past decade among Gen Zs"
-        }
-        },
-        "transform": [
-        {
-        "filter": "datum['Age Group'] === 'Gen Z'"
-        }
-        ]
-        },
-        {
-        "mark": {
-        "type": "text",
-        "align": "right",
-        "baseline": "bottom",
-        "dx": 10,
-        "dy": -125,
-        "fontSize": 12,
-        "color": "#A620DF"
-        },
-        "encoding": {
-        "x": {"datum": "2023", "type": "ordinal"},
-        "y": {"datum": 10, "type": "quantitative"},
-        "text": {
-        "value": "Steady increase in popularity for both pop"
-        }
-        },
-        "transform": [
-        {
-        "filter": "datum['Age Group'] === 'Millennials'"
-        }
-        ]
-        },
-        {
-        "mark": {
-        "type": "text",
-        "align": "right",
-        "baseline": "bottom",
-        "dx": 10,
-        "dy": -110,
-        "fontSize": 12,
-        "color": "#A620DF"
-        },
-        "encoding": {
-        "x": {"datum": "2023", "type": "ordinal"},
-        "y": {"datum": 10, "type": "quantitative"},
-        "text": {
-        "value": "and hip-hop/rap genres within Millennials."
-        }
-        },
-        "transform": [
-        {
-        "filter": "datum['Age Group'] === 'Millennials'"
-        }
-        ]
-        }
-        ]
         }
 
     };
@@ -2990,6 +2990,239 @@ async function loadRegionalAppearancesInTop10() {
 }
 
 loadRegionalAppearancesInTop10();
+
+async function loadVis6() {
+
+    const vlSpec = {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "description": "Accumulated appearances of songs from specific regions in Spotify's top 10 rankings over the past decade.",
+        "width": 800,
+        "height": 400,
+        "background": "white",
+        "data": {
+            "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
+            "format": {
+                "type": "topojson",
+                "feature": "countries"
+            }
+        },
+        "transform": [
+            {
+                "lookup": "id",
+                "from": {
+                    "data": {
+                        "values": [
+                            { "id": 434, "region": "Africa", "total_appearances": 0, "country": "Libya" },
+                            { "id": 768, "region": "Africa", "total_appearances": 0, "country": "Togo" },
+                            { "id": 562, "region": "Africa", "total_appearances": 0, "country": "Niger" },
+                            { "id": 854, "region": "Africa", "total_appearances": 0, "country": "Burkina Faso" },
+                            { "id": 12, "region": "Africa", "total_appearances": 0, "country": "Algeria" },
+                            { "id": 24, "region": "Africa", "total_appearances": 0, "country": "Angola" },
+                            { "id": 12, "region": "Africa", "total_appearances": 0, "country": "Algeria" },
+                            { "id": 24, "region": "Africa", "total_appearances": 0, "country": "Angola" },
+                            { "id": 72, "region": "Africa", "total_appearances": 0, "country": "Botswana" },
+                            { "id": 108, "region": "Africa", "total_appearances": 0, "country": "Burundi" },
+                            { "id": 120, "region": "Africa", "total_appearances": 0, "country": "Cameroon" },
+                            { "id": 140, "region": "Africa", "total_appearances": 0, "country": "Central African Republic" },
+                            { "id": 148, "region": "Africa", "total_appearances": 0, "country": "Chad" },
+                            { "id": 178, "region": "Africa", "total_appearances": 0, "country": "Republic of the Congo" },
+                            { "id": 180, "region": "Africa", "total_appearances": 0, "country": "Democratic Republic of the Congo" },
+                            { "id": 204, "region": "Africa", "total_appearances": 0, "country": "Benin" },
+                            { "id": 231, "region": "Africa", "total_appearances": 0, "country": "Ethiopia" },
+                            { "id": 232, "region": "Africa", "total_appearances": 0, "country": "Eritrea" },
+                            { "id": 262, "region": "Africa", "total_appearances": 0, "country": "Djibouti" },
+                            { "id": 266, "region": "Africa", "total_appearances": 0, "country": "Gabon" },
+                            { "id": 270, "region": "Africa", "total_appearances": 0, "country": "Gambia" },
+                            { "id": 288, "region": "Africa", "total_appearances": 0, "country": "Ghana" },
+                            { "id": 324, "region": "Africa", "total_appearances": 0, "country": "Guinea" },
+                            { "id": 384, "region": "Africa", "total_appearances": 0, "country": "Ivory Coast" },
+                            { "id": 404, "region": "Africa", "total_appearances": 0, "country": "Kenya" },
+                            { "id": 426, "region": "Africa", "total_appearances": 0, "country": "Lesotho" },
+                            { "id": 430, "region": "Africa", "total_appearances": 0, "country": "Liberia" },
+                            { "id": 450, "region": "Africa", "total_appearances": 0, "country": "Madagascar" },
+                            { "id": 454, "region": "Africa", "total_appearances": 0, "country": "Malawi" },
+                            { "id": 466, "region": "Africa", "total_appearances": 0, "country": "Mali" },
+                            { "id": 478, "region": "Africa", "total_appearances": 0, "country": "Mauritania" },
+                            { "id": 508, "region": "Africa", "total_appearances": 0, "country": "Mozambique" },
+                            { "id": 516, "region": "Africa", "total_appearances": 0, "country": "Namibia" },
+                            { "id": 566, "region": "Africa", "total_appearances": 0, "country": "Nigeria" },
+                            { "id": 646, "region": "Africa", "total_appearances": 0, "country": "Rwanda" },
+                            { "id": 686, "region": "Africa", "total_appearances": 0, "country": "Senegal" },
+                            { "id": 694, "region": "Africa", "total_appearances": 0, "country": "Sierra Leone" },
+                            { "id": 706, "region": "Africa", "total_appearances": 0, "country": "Somalia" },
+                            { "id": 710, "region": "Africa", "total_appearances": 0, "country": "South Africa" },
+                            { "id": 716, "region": "Africa", "total_appearances": 0, "country": "Zimbabwe" },
+                            { "id": 728, "region": "Africa", "total_appearances": 0, "country": "South Sudan" },
+                            { "id": 729, "region": "Africa", "total_appearances": 0, "country": "Sudan" },
+                            { "id": 732, "region": "Africa", "total_appearances": 0, "country": "Western Sahara" },
+                            { "id": 800, "region": "Africa", "total_appearances": 0, "country": "Uganda" },
+                            { "id": 834, "region": "Africa", "total_appearances": 0, "country": "Tanzania" },
+                            { "id": 818, "region": "Africa", "total_appearances": 0, "country": "Egypt" },
+                            { "id": 894, "region": "Africa", "total_appearances": 0, "country": "Zambia" },
+                            { "id": 204, "region": "Africa", "total_appearances": 0, "country": "Benin" },
+                            { "id": 840, "region": "North America", "total_appearances": 65, "country": "United States of America" },
+                            { "id": 250, "region": "Europe", "total_appearances": 22, "country": "Europe" },
+                            { "id": 156, "region": "Asia", "total_appearances": 2, "country": "Asia" },
+                            { "id": 36, "region": "Australia", "total_appearances": 3, "country": "Australia" },
+                            { "id": 124, "region": "North America", "total_appearances": 65, "country": "Canada" },
+                            { "id": 32, "region": "South America", "total_appearances": 8, "country": "Argentina" },
+                            { "id": 68, "region": "South America", "total_appearances": 8, "country": "Bolivia" },
+                            { "id": 76, "region": "South America", "total_appearances": 8, "country": "Brazil" },
+                            { "id": 152, "region": "South America", "total_appearances": 8, "country": "Chile" },
+                            { "id": 170, "region": "South America", "total_appearances": 8, "country": "Colombia" },
+                            { "id": 218, "region": "South America", "total_appearances": 8, "country": "Ecuador" },
+                            { "id": 328, "region": "South America", "total_appearances": 8, "country": "Guyana" },
+                            { "id": 600, "region": "South America", "total_appearances": 8, "country": "Paraguay" },
+                            { "id": 604, "region": "South America", "total_appearances": 8, "country": "Peru" },
+                            { "id": 740, "region": "South America", "total_appearances": 8, "country": "Suriname" },
+                            { "id": 858, "region": "South America", "total_appearances": 8, "country": "Uruguay" },
+                            { "id": 862, "region": "South America", "total_appearances": 8, "country": "Venezuela" },
+                            { "id": 8, "region": "Europe", "total_appearances": 22, "country": "Albania" },
+                            { "id": 20, "region": "Europe", "total_appearances": 22, "country": "Andorra" },
+                            { "id": 51, "region": "Europe", "total_appearances": 22, "country": "Armenia" },
+                            { "id": 40, "region": "Europe", "total_appearances": 22, "country": "Austria" },
+                            { "id": 31, "region": "Europe", "total_appearances": 22, "country": "Azerbaijan" },
+                            { "id": 112, "region": "Europe", "total_appearances": 22, "country": "Belarus" },
+                            { "id": 56, "region": "Europe", "total_appearances": 22, "country": "Belgium" },
+                            { "id": 70, "region": "Europe", "total_appearances": 22, "country": "Bosnia and Herzegovina" },
+                            { "id": 100, "region": "Europe", "total_appearances": 22, "country": "Bulgaria" },
+                            { "id": 191, "region": "Europe", "total_appearances": 22, "country": "Croatia" },
+                            { "id": 196, "region": "Europe", "total_appearances": 22, "country": "Cyprus" },
+                            { "id": 203, "region": "Europe", "total_appearances": 22, "country": "Czech Republic" },
+                            { "id": 208, "region": "Europe", "total_appearances": 22, "country": "Denmark" },
+                            { "id": 233, "region": "Europe", "total_appearances": 22, "country": "Estonia" },
+                            { "id": 246, "region": "Europe", "total_appearances": 22, "country": "Finland" },
+                            { "id": 250, "region": "Europe", "total_appearances": 22, "country": "France" },
+                            { "id": 268, "region": "Europe", "total_appearances": 22, "country": "Georgia" },
+                            { "id": 276, "region": "Europe", "total_appearances": 22, "country": "Germany" },
+                            { "id": 300, "region": "Europe", "total_appearances": 22, "country": "Greece" },
+                            { "id": 348, "region": "Europe", "total_appearances": 22, "country": "Hungary" },
+                            { "id": 352, "region": "Europe", "total_appearances": 22, "country": "Iceland" },
+                            { "id": 372, "region": "Europe", "total_appearances": 22, "country": "Ireland" },
+                            { "id": 380, "region": "Europe", "total_appearances": 22, "country": "Italy" },
+                            { "id": 398, "region": "Europe", "total_appearances": 22, "country": "Kazakhstan" },
+                            { "id": 383, "region": "Europe", "total_appearances": 22, "country": "Kosovo" },
+                            { "id": 428, "region": "Europe", "total_appearances": 22, "country": "Latvia" },
+                            { "id": 440, "region": "Europe", "total_appearances": 22, "country": "Lithuania" },
+                            { "id": 442, "region": "Europe", "total_appearances": 22, "country": "Luxembourg" },
+                            { "id": 470, "region": "Europe", "total_appearances": 22, "country": "Malta" },
+                            { "id": 498, "region": "Europe", "total_appearances": 22, "country": "Moldova" },
+                            { "id": 492, "region": "Europe", "total_appearances": 22, "country": "Monaco" },
+                            { "id": 499, "region": "Europe", "total_appearances": 22, "country": "Montenegro" },
+                            { "id": 528, "region": "Europe", "total_appearances": 22, "country": "Netherlands" },
+                            { "id": 807, "region": "Europe", "total_appearances": 22, "country": "North Macedonia" },
+                            { "id": 578, "region": "Europe", "total_appearances": 22, "country": "Norway" },
+                            { "id": 616, "region": "Europe", "total_appearances": 22, "country": "Poland" },
+                            { "id": 620, "region": "Europe", "total_appearances": 22, "country": "Portugal" },
+                            { "id": 642, "region": "Europe", "total_appearances": 22, "country": "Romania" },
+                            { "id": 643, "region": "Europe", "total_appearances": 22, "country": "Russia" },
+                            { "id": 674, "region": "Europe", "total_appearances": 22, "country": "San Marino" },
+                            { "id": 688, "region": "Europe", "total_appearances": 22, "country": "Serbia" },
+                            { "id": 703, "region": "Europe", "total_appearances": 22, "country": "Slovakia" },
+                            { "id": 705, "region": "Europe", "total_appearances": 22, "country": "Slovenia" },
+                            { "id": 724, "region": "Europe", "total_appearances": 22, "country": "Spain" },
+                            { "id": 752, "region": "Europe", "total_appearances": 22, "country": "Sweden" },
+                            { "id": 756, "region": "Europe", "total_appearances": 22, "country": "Switzerland" },
+                            { "id": 792, "region": "Europe", "total_appearances": 22, "country": "Turkey" },
+                            { "id": 804, "region": "Europe", "total_appearances": 22, "country": "Ukraine" },
+                            { "id": 826, "region": "Europe", "total_appearances": 22, "country": "" },
+                            { "id": 208, "region": "Europe", "total_appearances": 22, "country": "Denmark" },
+                            { "id": 246, "region": "Europe", "total_appearances": 22, "country": "Finland" },
+                            { "id": 352, "region": "Europe", "total_appearances": 22, "country": "Iceland" },
+                            { "id": 578, "region": "Europe", "total_appearances": 22, "country": "Norway" },
+                            { "id": 752, "region": "Europe", "total_appearances": 22, "country": "Sweden" },
+                            { "id": 304, "region": "Europe", "total_appearances": 22, "country": "Greenland" },
+                            { "id": 352, "region": "Europe", "total_appearances": 22, "country": "Iceland" },
+                            { "id": 4, "region": "Asia", "total_appearances": 2, "country": "Afghanistan" },
+                            { "id": 51, "region": "Asia", "total_appearances": 2, "country": "Armenia" },
+                            { "id": 31, "region": "Asia", "total_appearances": 2, "country": "Azerbaijan" },
+                            { "id": 48, "region": "Asia", "total_appearances": 2, "country": "Bahrain" },
+                            { "id": 50, "region": "Asia", "total_appearances": 2, "country": "Bangladesh" },
+                            { "id": 64, "region": "Asia", "total_appearances": 2, "country": "Bhutan" },
+                            { "id": 70, "region": "Asia", "total_appearances": 2, "country": "Brunei" },
+                            { "id": 116, "region": "Asia", "total_appearances": 2, "country": "Cambodia" },
+                            { "id": 156, "region": "Asia", "total_appearances": 2, "country": "China" },
+                            { "id": 196, "region": "Asia", "total_appearances": 2, "country": "Cyprus" },
+                            { "id": 268, "region": "Asia", "total_appearances": 2, "country": "Georgia" },
+                            { "id": 356, "region": "Asia", "total_appearances": 2, "country": "India" },
+                            { "id": 360, "region": "Asia", "total_appearances": 2, "country": "Indonesia" },
+                            { "id": 364, "region": "Asia", "total_appearances": 2, "country": "Iran" },
+                            { "id": 368, "region": "Asia", "total_appearances": 2, "country": "Iraq" },
+                            { "id": 376, "region": "Asia", "total_appearances": 2, "country": "Israel" },
+                            { "id": 392, "region": "Asia", "total_appearances": 2, "country": "Japan" },
+                            { "id": 400, "region": "Asia", "total_appearances": 2, "country": "Jordan" },
+                            { "id": 398, "region": "Asia", "total_appearances": 2, "country": "Kazakhstan" },
+                            { "id": 414, "region": "Asia", "total_appearances": 2, "country": "Kuwait" },
+                            { "id": 417, "region": "Asia", "total_appearances": 2, "country": "Kyrgyzstan" },
+                            { "id": 418, "region": "Asia", "total_appearances": 2, "country": "Laos" },
+                            { "id": 422, "region": "Asia", "total_appearances": 2, "country": "Lebanon" },
+                            { "id": 458, "region": "Asia", "total_appearances": 2, "country": "Malaysia" },
+                            { "id": 462, "region": "Asia", "total_appearances": 2, "country": "Maldives" },
+                            { "id": 496, "region": "Asia", "total_appearances": 2, "country": "Mongolia" },
+                            { "id": 104, "region": "Asia", "total_appearances": 2, "country": "Myanmar" },
+                            { "id": 524, "region": "Asia", "total_appearances": 2, "country": "Nepal" },
+                            { "id": 408, "region": "Asia", "total_appearances": 2, "country": "North Korea" },
+                            { "id": 512, "region": "Asia", "total_appearances": 2, "country": "Oman" },
+                            { "id": 586, "region": "Asia", "total_appearances": 2, "country": "Pakistan" },
+                            { "id": 275, "region": "Asia", "total_appearances": 2, "country": "Palestine" },
+                            { "id": 608, "region": "Asia", "total_appearances": 2, "country": "Philippines" },
+                            { "id": 634, "region": "Asia", "total_appearances": 2, "country": "Qatar" },
+                            { "id": 643, "region": "Asia", "total_appearances": 2, "country": "Russia" },
+                            { "id": 682, "region": "Asia", "total_appearances": 2, "country": "Saudi Arabia" },
+                            { "id": 702, "region": "Asia", "total_appearances": 2, "country": "Singapore" },
+                            { "id": 410, "region": "Asia", "total_appearances": 2, "country": "South Korea" },
+                            { "id": 144, "region": "Asia", "total_appearances": 2, "country": "Sri Lanka" },
+                            { "id": 760, "region": "Asia", "total_appearances": 2, "country": "Syria" },
+                            { "id": 158, "region": "Asia", "total_appearances": 2, "country": "Taiwan" },
+                            { "id": 762, "region": "Asia", "total_appearances": 2, "country": "Tajikistan" },
+                            { "id": 764, "region": "Asia", "total_appearances": 2, "country": "Thailand" },
+                            { "id": 626, "region": "Asia", "total_appearances": 2, "country": "Timor-este" },
+                            { "id": 792, "region": "Asia", "total_appearances": 2, "country": "Turkey" },
+                            { "id": 795, "region": "Asia", "total_appearances": 2, "country": "Turkmenistan" },
+                            { "id": 784, "region": "Asia", "total_appearances": 2, "country": "United Arab Emirates" },
+                            { "id": 860, "region": "Asia", "total_appearances": 2, "country": "Uzbekistan" },
+                            { "id": 704, "region": "Asia", "total_appearances": 2, "country": "Vietnam" },
+                            { "id": 887, "region": "Asia", "total_appearances": 2, "country": "Yemen" },
+                            { "id": 554, "region": "Oceania", "total_appearances": 3, "country": "New Zealand" },
+                            { "id": 598, "region": "Oceania", "total_appearances": 3, "country": "Papua New Guinea" }
+                        ]
+                    },
+                    "key": "id",
+                    "fields": ["region", "total_appearances", "country"]
+                }
+            }
+        ],
+        "projection": {
+            "type": "mercator"
+        },
+        "mark": {
+            "type": "geoshape",
+            "stroke": "black",
+            "strokeWidth": 0.3
+        },
+        "encoding": {
+            "color": {
+                "field": "total_appearances",
+                "type": "quantitative",
+                "scale": {
+                    "scheme": "greens"
+                },
+                "title": "Total Appearances"
+            },
+            "tooltip": [
+                { "field": "region", "type": "nominal", "title": "Region" },
+                { "field": "country", "type": "nominal", "title": "Country" },
+                { "field": "total_appearances", "type": "quantitative", "title": "Cummulative Regional Appearances [ 2014 - 2023 ]" }
+            ]
+        }
+
+
+
+    };
+    vegaEmbed('#mapVis6', vlSpec);
+}
+loadVis6();
+
 // CLARK PUT UR CODE HERE ==================================================================================================
 
 // From W3Schools
