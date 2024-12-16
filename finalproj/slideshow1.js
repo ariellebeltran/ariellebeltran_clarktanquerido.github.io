@@ -15,7 +15,7 @@ function currentSlide1(n) {
 function showSlides1(n) {
     let i;
     let slides1 = document.getElementsByClassName("mySlides1");
-    let dots1 = document.getElementsByClassName("dot1");
+    let dots1 = document.getElementsByClassName("arrow1Vis6");
     if (n > slides1.length) { slideIndex1 = 1 }
     if (n < 1) { slideIndex1 = slides1.length }
     for (i = 0; i < slides1.length; i++) {
