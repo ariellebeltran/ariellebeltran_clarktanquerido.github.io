@@ -388,11 +388,11 @@ figcaption {
     grid-row-start: 2;
     width: 100%;
     /* Set container width */
-    height: 300px;
+    height: 400px;
     /* Set container height */
     overflow: auto;
     /* Allow scrollbars to appear if needed */
-    border: 1px solid #3d3d3d;
+    /* border: 1px solid #3d3d3d; */
     /* Optional: Add a border */
     /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  */
 }
@@ -405,7 +405,7 @@ figcaption {
 
 /* Ensure the image respects the container size */
 .scroll-container img {
-    width: 38vw;
+    width: 100%;
     /* Keep the natural width */
     height: auto;
     /* Keep the natural height */
