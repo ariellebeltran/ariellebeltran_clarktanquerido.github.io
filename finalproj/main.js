@@ -3026,17 +3026,19 @@ async function loadVis6() {
                     "type": "point",
                     "filled": true,
                     "tooltip": true,
-                    "size": 200,
+                    "size": 150,
                     "color": "red"
                 },
                 "encoding": {
                     "x": {
                         "field": "release_date",
-                        "type": "temporal"
+                        "type": "temporal",
+                        "offset": 0
                     },
                     "y": {
                         "field": "sales",
-                        "type": "quantitative"
+                        "type": "quantitative",
+                        "offset": 0
                     },
                     "tooltip": [
                         { "field": "album_name", "type": "nominal", "title": "Album Name" },
@@ -3055,16 +3057,18 @@ async function loadVis6() {
                     "filled": true,
                     "tooltip": true,
                     "color": "yellow",
-                    "size": 200
+                    "size": 150
                 },
                 "encoding": {
                     "x": {
                         "field": "release_date",
-                        "type": "temporal"
+                        "type": "temporal",
+                        "offset": 0
                     },
                     "y": {
                         "field": "sales",
-                        "type": "quantitative"
+                        "type": "quantitative",
+                        "offset": 0
                     },
                     "tooltip": [
                         { "field": "album_name", "type": "nominal", "title": "Album Name" },
@@ -3083,16 +3087,18 @@ async function loadVis6() {
                     "filled": true,
                     "tooltip": true,
                     "color": "#1DB954",
-                    "size": 200
+                    "size": 150
                 },
                 "encoding": {
                     "x": {
                         "field": "release_date",
-                        "type": "temporal"
+                        "type": "temporal",
+                        "offset": 0
                     },
                     "y": {
                         "field": "sales",
-                        "type": "quantitative"
+                        "type": "quantitative",
+                        "offset": 0
                     },
                     "tooltip": [
                         { "field": "album_name", "type": "nominal", "title": "Album Name" },
