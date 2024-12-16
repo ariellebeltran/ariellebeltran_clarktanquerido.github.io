@@ -3026,7 +3026,7 @@ async function loadVis6() {
                     "type": "point",
                     "filled": true,
                     "tooltip": true,
-                    "size": 100,
+                    "size": 200,
                     "color": "red"
                 },
                 "encoding": {
@@ -3055,7 +3055,7 @@ async function loadVis6() {
                     "filled": true,
                     "tooltip": true,
                     "color": "yellow",
-                    "size": 100
+                    "size": 200
                 },
                 "encoding": {
                     "x": {
@@ -3083,7 +3083,7 @@ async function loadVis6() {
                     "filled": true,
                     "tooltip": true,
                     "color": "#1DB954",
-                    "size": 100
+                    "size": 200
                 },
                 "encoding": {
                     "x": {
