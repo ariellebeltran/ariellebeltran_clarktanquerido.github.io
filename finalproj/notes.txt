@@ -22,6 +22,12 @@
             <li><a href="mailto:?subject=YOUR_SUBJECT&body=YOUR_BODY" target="_blank">
                 <!-- Email SVG -->
                 </a></li>
+            <li><a href="#" class="copy-link" onclick="copyLink()">
+                <!-- Copy Link SVG -->
+                <span>Copy Link</span>
+                </a>
+                <input type="text" value="YOUR_URL" id="copy-input" style="position: absolute; left: -9999px;">
+            </li>
         </ul>
     </div>
 </div>
