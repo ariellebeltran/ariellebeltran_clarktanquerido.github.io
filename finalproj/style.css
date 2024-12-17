@@ -686,7 +686,7 @@ figcaption {
 
 div#mapVis7.vega-embed.has-actions,
 div#taylorVis6.vega-embed.has-actions {
-    padding-right: 0px !important;
+    padding-right: none !important;
 }
 
 
