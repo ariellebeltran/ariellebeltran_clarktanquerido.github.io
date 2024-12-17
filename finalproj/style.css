@@ -64,12 +64,22 @@ body {
     height: 100%;
   } */
 
+/* influences canvas size of vegalite  */
+
 canvas,
 svg.marks {
     /* width: 100% !important;
     height: 100% !important; */
+    height: auto !important;
     max-width: 100% !important;
     max-height: 100% !important;
+}
+
+/* prevents warped vegalite canvas*/
+
+canvas.marks{
+    /* width: auto !important; */
+    height: auto !important;
 }
 
 /* NAVIGATION ========================================================================================================== */
@@ -235,6 +245,7 @@ h1 {
     /* font-family: Helvetica, serif; */
     font-weight: 600;
     font-style: normal;
+    margin-top:50px;
     margin-bottom: 15px;
 
     font-size: 16px;
@@ -455,7 +466,7 @@ figcaption {
 } */
 
 .vis1 img {
-    padding-bottom: 40px;
+    /* padding-bottom: 40px; */
     width: auto !important;
     height: 100% !important;
     max-width: 100% !important;
@@ -770,3 +781,25 @@ input[type=range]::-webkit-slider-runnable-track {
 input[type=range]:focus::-moz-range-track {
     background: #ccc;  
 } */
+
+
+/* doing this cuz im petty, im adding the css for the share button */
+#share-dropdown {
+    display: none; /* Hide by default */
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
+}
+
+#title-buttons {
+    position: relative;
+}
+
+.title-button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}

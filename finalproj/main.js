@@ -3003,7 +3003,7 @@ async function loadVis6() {
             {
                 "mark": {
                     "type": "line",
-                    "color": "#1DB954"
+                    "color": "black"
                 },
                 "encoding": {
                     "x": {
@@ -3025,9 +3025,10 @@ async function loadVis6() {
                 "mark": {
                     "type": "point",
                     "filled": true,
+                    "opacity": 1,
                     "tooltip": true,
                     "size": 150,
-                    "color": "red"
+                    "color": "orange"
                 },
                 "encoding": {
                     "x": {
@@ -3055,6 +3056,7 @@ async function loadVis6() {
                 "mark": {
                     "type": "point",
                     "filled": true,
+                    "opacity": 1,
                     "tooltip": true,
                     "color": "yellow",
                     "size": 150
@@ -3085,8 +3087,9 @@ async function loadVis6() {
                 "mark": {
                     "type": "point",
                     "filled": true,
+                    "opacity": 1,
                     "tooltip": true,
-                    "color": "#1DB954",
+                    "color": "red",
                     "size": 150
                 },
                 "encoding": {
@@ -3116,7 +3119,7 @@ async function loadVis6() {
                     "type": "point",
                     "filled": true,
                     "tooltip": true,
-                    "color": "#1DB954"
+                    "color": "black"
                 },
                 "encoding": {
                     "x": {
@@ -3378,8 +3381,22 @@ loadVis7();
 
 // From W3Schools
 // MY SLIDES CODE ========================================================================================================
+//moved them to their own js files
 
+document.getElementById('share-button').addEventListener('click', function () {
+    var dropdown = document.getElementById('share-dropdown');
+    if (dropdown.style.display === 'none' || dropdown.style.display === '') {
+        dropdown.style.display = 'block';
+    } else {
+        dropdown.style.display = 'none';
+    }
+});
 
-
-
+// Close the dropdown if the user clicks outside of it
+window.addEventListener('click', function(event) {
+    var dropdown = document.getElementById('share-dropdown');
+    if (!event.target.closest('#share-button') && !event.target.closest('#share-dropdown')) {
+        dropdown.style.display = 'none';
+    }
+});
 
