@@ -784,15 +784,6 @@ input[type=range]:focus::-moz-range-track {
 
 
 /* doing this cuz im petty, im adding the css for the share button */
-#share-dropdown {
-    display: none; /* Hide by default */
-    position: absolute;
-    background-color: white;
-    border: 1px solid #ccc;
-    padding: 0px;
-    border-radius: 5px;
-    z-index: 1000;
-}
 
 #title-buttons {
     position: relative;
@@ -818,5 +809,30 @@ input[type=range]:focus::-moz-range-track {
 
 .menu.horizontal.social-share li {
     display: inline-block; /* Display list items in a row */
-    margin-right: 10px; /* Space between list items */
+    margin-right: 0px; /* Space between list items */
+}
+
+#share-dropdown {
+    display: none; /* Hide by default */
+    position: absolute;
+    background: #fff;
+    background-image: url('https://newsroom.spotify.com/wp-content/themes/ftr/assets/images/icons/share-bg.svg');
+    background-repeat: no-repeat;
+    width: 222px;
+    border: 0;
+    height: 64px;
+    padding: 0;
+    z-index: 1000;
+    top: -40px; /* Position below the button */
+    left: 0; /* Align with the button */
+}
+
+.menu.horizontal.social-share {
+    list-style: none; /* Remove list-style decorations */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    display: flex; /* Display list items in a row */
+    gap: 0px; /* Space between list items */
+    /*height: 100%;*/ /* Match the height of the dropdown */
+    align-items: center; /* Center the items vertically */
 }

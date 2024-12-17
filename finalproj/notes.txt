@@ -1,0 +1,27 @@
+<div id="title-buttons">
+    <button class="title-button" id="share-button" title="Share this page">
+        <svg width="12" height="16" viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M5.05263 3.22526L2.02947 6.24L0.842102 5.05263L5.89473 0L10.9474 5.05263L9.76 6.24L6.73684 3.22526L6.73684 12.6316H5.05263L5.05263 3.22526ZM11.7895 14.3158V16H0V14.3158H11.7895Z"
+                fill="black"></path>
+        </svg>
+        <span id="title-button-text">Share</span>
+    </button>
+    <div class="dropdown-pane top share has-position-top has-alignment-left" id="share-dropdown">
+        <ul class="menu horizontal social-share">
+            <li class="title"><span>Share</span></li>
+            <li><a href="https://www.facebook.com/sharer/sharer.php?u=YOUR_URL" target="_blank">
+                <!-- Facebook SVG -->
+                </a></li>
+            <li><a href="https://twitter.com/intent/tweet?url=YOUR_URL&text=YOUR_TEXT" target="_blank">
+                <!-- Twitter SVG -->
+                </a></li>
+            <li><a href="https://www.linkedin.com/shareArticle?mini=true&url=YOUR_URL&title=YOUR_TITLE&summary=YOUR_SUMMARY" target="_blank">
+                <!-- LinkedIn SVG -->
+                </a></li>
+            <li><a href="mailto:?subject=YOUR_SUBJECT&body=YOUR_BODY" target="_blank">
+                <!-- Email SVG -->
+                </a></li>
+        </ul>
+    </div>
+</div>
