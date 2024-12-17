@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Visualizations</title>
-    <link rel="icon" type="image/spotify-black-icon" href="https://ariellebeltran.github.io/with_clarktanquerido/images/spotify-black-icon.png">
+    <link rel="icon" type="image/spotify-black-icon"
+        href="https://ariellebeltran.github.io/with_clarktanquerido/images/spotify-black-icon.png">
 
     <link rel="stylesheet" href="style.css">
 
@@ -120,8 +121,9 @@
                                     fill="black"></path>
                             </svg>
                         </a></li>
-                  
-                    <li><a href="https://ariellebeltran.github.io/with_clarktanquerido/finalproj/index.html" class="copy-link" onclick="copyLink()">
+
+                    <li><a href="https://ariellebeltran.github.io/with_clarktanquerido/finalproj/index.html"
+                            class="copy-link" onclick="copyLink()">
                             <svg width="44" height="44" viewBox="0 0 44 44" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -130,7 +132,9 @@
                             </svg>
                             <!-- <span>Copy Link</span> -->
                         </a>
-                        <input type="text" value="https://ariellebeltran.github.io/with_clarktanquerido/finalproj/index.html" id="copy-input" style="position: absolute; left: -9999px;">
+                        <input type="text"
+                            value="https://ariellebeltran.github.io/with_clarktanquerido/finalproj/index.html"
+                            id="copy-input" style="position: absolute; left: -9999px;">
                     </li>
                 </ul>
             </div>
@@ -182,7 +186,9 @@
             <b>72%</b> of users
             are happy with the <b>huge music library and easy access</b>. It's clear that streaming has changed the way
             we
-            listen to and enjoy music. Source and visualization (below) was taken from <i>Miquido</i>, click the image or this <a href="https://www.miquido.com/blog/how-streaming-changed-the-music-industry/" target="_blank"><u>link</u></a> to learn more.
+            listen to and enjoy music. Source and visualization (below) was taken from <i>Miquido</i>, click the image
+            or this <a href="https://www.miquido.com/blog/how-streaming-changed-the-music-industry/"
+                target="_blank"><u>link</u></a> to learn more.
 
         </p>
 
@@ -192,8 +198,9 @@
                     alt="Infographic: Streaming Drives Global Music Industry to New Highs | Statista" width="100%"
                     height="auto"
                     style="width: 100%; height: auto !important; max-width:960px;-ms-interpolation-mode: bicubic;" />
-                </a>
-                <figcaption>*This visualization was edited to fit the styling of our site, but the data was from Miquido.</figcaption>
+            </a>
+            <figcaption>*This visualization was edited to fit the styling of our site, but the data was from Miquido.
+            </figcaption>
         </div>
 
         <div class="content-vis2">
@@ -243,16 +250,47 @@
 
             <!-- <h3>Pop & Hip-hop Popularity In The Past Decade</h3> -->
             <p>Pop & Hip-Hop has maintained it's popularity in the past decade.
-                With Pop being the <b>most popular genre</b> being listended to between <b>Millennials and Gen Zs</b> at <b>40%</b> in <b>2023</b>
-                and Hip-Hop/Rap at 30% from Millennials. There is <b>however</b> a <b>dip in Hip-Hop/Rap popularity</b> for Gen Zs
+                With Pop being the <b>most popular genre</b> being listended to between <b>Millennials and Gen Zs</b> at
+                <b>40%</b> in <b>2023</b>
+                and Hip-Hop/Rap at 30% from Millennials. There is <b>however</b> a <b>dip in Hip-Hop/Rap popularity</b>
+                for Gen Zs
                 as it is at 10% in <b>2023</b> compared to 2013 where it was at 25% alongside with Millennials.
             </p>
 
-            <div class="vis3">
-                <!-- insert updated vis here vvv  -->
+            <!-- <div class="vis3">
                 <div id="spotifyUserGenreChart"></div>
                 <figcaption>*Hover to view age groups, percentages, and music genres.</figcaption>
-                <!-- <div id="spotify2013GenreChart">insert vis here</div> -->
+            </div> -->
+
+            <div class="slideshow-container">
+                <div class="mySlides0 content-vis1">
+
+                    <div id="spotifyUserGenreChart"></div>
+                    <figcaption>*Hover to view age groups, percentages, and music genres. Click next to view all genres.</figcaption>
+
+                    <div class="numbertext">1 / 2</div>
+                </div>
+
+                <div class="mySlides0 content-vis1">
+
+                    <div id="vis3AllGenres"></div>
+                    <figcaption>*Hover to view age groups, percentages, and music genres.</figcaption>
+                    <div class="numbertext">2 / 2</div>
+                </div>
+
+                <!-- <a class="prev" onclick="plusSlides1(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides1(1)">&#10095;</a> -->
+
+                <br>
+
+                <div style="text-align:center">
+                    <!-- <span class="dot1" onclick="currentSlide1(1)"></span>
+                    <span class="dot1" onclick="currentSlide1(2)"></span> -->
+
+                    <span class="arrow arrow1Vis3" onclick="currentSlide0(1)">&#10094;</span>
+                    <span class="arrow arrow1Vis3" onclick="currentSlide0(2)">&#10095;</span>
+
+                </div>
             </div>
 
             <p>
@@ -1338,6 +1376,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
 
     <script src="main.js"></script>
+    <script src="slideshow0.js"></script>
     <script src="slideshow1.js"></script>
     <script src="slideshow2.js"></script>
     <footer>

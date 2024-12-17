@@ -554,7 +554,7 @@ figcaption {
 }
 
 /* Hide the images by default */
-.mySlides1,
+.mySlides0, .mySlides1,
 .mySlides2 {
     display: none;
 }
@@ -621,7 +621,7 @@ figcaption {
 }
 
 /* The dots/bullets/indicators */
-.arrow1Vis6,
+.arrow1Vis3, .arrow1Vis6,
 .arrow1Vis7 {
     cursor: pointer;
     height: 23px;
@@ -633,7 +633,7 @@ figcaption {
     transition: background-color 0.6s ease;
 }
 
-.active.arrow1Vis6 {
+.active.arrow1Vis3, .active.arrow1Vis6 {
     color: #999999;
     height: 23px;
     width: 15px;
@@ -645,7 +645,7 @@ figcaption {
     width: 15px;
 }
 
-.arrow1Vis6:hover,
+.arrow1Vis3:hover, .arrow1Vis6:hover,
 .arrow1Vis7:hover {
     background-color: #8e8e8e;
 }
