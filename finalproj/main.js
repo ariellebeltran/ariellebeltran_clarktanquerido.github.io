@@ -3376,9 +3376,25 @@ async function loadVis7() {
     const vlSpec = {
         "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
         "description": "Accumulated appearances of songs from specific regions in Spotify's top 10 rankings over the past decade.",
+        "title": {
+            "text": "Western Influence on Current Music Consumption",
+            "fontsize": 18,
+            "color": "black",
+            "color": "black",
+            "align": "right"
+        },
         "width": 800,
         "height": 400,
+        "background": "#FFFFFF",
         "background": "white",
+        "config": {
+            "view": {
+                "padding": 50
+            },
+            "title": {
+                "offset": 30
+            }
+        },
         "data": {
             "url": "https://vega.github.io/vega-datasets/data/world-110m.json",
             "format": {
@@ -3564,7 +3580,23 @@ async function loadVis7() {
                             { "id": 704, "region": "Asia", "total_appearances": 2, "country": "Vietnam" },
                             { "id": 887, "region": "Asia", "total_appearances": 2, "country": "Yemen" },
                             { "id": 554, "region": "Oceania", "total_appearances": 3, "country": "New Zealand" },
-                            { "id": 598, "region": "Oceania", "total_appearances": 3, "country": "Papua New Guinea" }
+                            { "id": 598, "region": "Oceania", "total_appearances": 3, "country": "Papua New Guinea" },
+                            { "id": 484, "region": "South America", "total_appearances": 8, "country": "Mexico" },
+                            { "id": 48, "region": "Caribbean", "total_appearances": 8, "country": "Cuba" },
+                            { "id": 132, "region": "Caribbean", "total_appearances": 8, "country": "Jamaica" },
+                            { "id": 362, "region": "Caribbean", "total_appearances": 8, "country": "Haiti" },
+                            { "id": 214, "region": "Caribbean", "total_appearances": 8, "country": "Dominican Republic" },
+                            { "id": 660, "region": "Caribbean", "total_appearances": 8, "country": "Trinidad and Tobago" },
+                            { "id": 740, "region": "Caribbean", "total_appearances": 8, "country": "Barbados" },
+                            { "id": 254, "region": "Caribbean", "total_appearances": 8, "country": "Saint Lucia" },
+                            { "id": 736, "region": "Caribbean", "total_appearances": 8, "country": "Saint Vincent and the Grenadines" },
+                            { "id": 332, "region": "Caribbean", "total_appearances": 8, "country": "Saint Kitts and Nevis" },
+                            { "id": 320, "region": "North America", "total_appearances": 8, "country": "Guatemala" },
+                            { "id": 290, "region": "North America", "total_appearances": 8, "country": "El Salvador" },
+                            { "id": 191, "region": "North America", "total_appearances": 8, "country": "Nicaragua" },
+                            { "id": 188, "region": "North America", "total_appearances": 8, "country": "Costa Rica" },
+                            { "id": 310, "region": "North America", "total_appearances": 8, "country": "Panama" },
+                            { "id": 295, "region": "North America", "total_appearances": 8, "country": "Honduras" }
                         ]
                     },
                     "key": "id",
@@ -3585,9 +3617,15 @@ async function loadVis7() {
                 "field": "total_appearances",
                 "type": "quantitative",
                 "scale": {
-                    "scheme": "greens"
+                    "domain": [0, 65],
+                    "range": ["#fdfdfd", "darkgreen"]
                 },
-                "title": "Total Appearances"
+                "legend": {
+                    "title": "Total Appearances",
+                    "orient": "bottom",
+                    "titleColor": "black",
+                    "labelColor": "black"
+                }
             },
             "tooltip": [
                 { "field": "region", "type": "nominal", "title": "Region" },
