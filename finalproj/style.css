@@ -686,7 +686,12 @@ figcaption {
 
 div#mapVis7.vega-embed.has-actions,
 div#taylorVis6.vega-embed.has-actions {
-    padding-right: none !important;
+    padding-right: 0 !important;
+}
+
+
+div#taylorVis6.vega-embed.has-actions canvas.marks {
+    width: auto !important;
 }
 
 
@@ -859,7 +864,8 @@ input[type=range]:focus::-moz-range-track {
 
 /* tooltip */
 /* Apply to all except #mapVis7 */
-:not(#mapVis7) canvas, :not(#mapVis7) svg.marks {
+:not(#mapVis7) canvas,
+:not(#mapVis7) svg.marks {
     height: auto !important;
     max-width: 100% !important;
     max-height: 100% !important;
@@ -867,7 +873,8 @@ input[type=range]:focus::-moz-range-track {
 }
 
 /* Ensure max-width is none for #mapVis7 */
-#mapVis7 canvas, #mapVis7 svg.marks {
+#mapVis7 canvas,
+#mapVis7 svg.marks {
     max-width: none !important;
     height: auto !important;
 }
