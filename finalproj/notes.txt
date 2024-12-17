@@ -31,3 +31,70 @@
         </ul>
     </div>
 </div>
+
+const yearsData = [
+    {
+        year: 2023, data: [
+            { "rank": 1, "song": "Last Night", "artist": "Morgan Wallen", "streams": Math.floor(Math.random() * (800000000 - 750000000 + 1)) + 750000000 },
+            { "rank": 2, "song": "Flowers", "artist": "Miley Cyrus", "streams": Math.floor(Math.random() * (749999999 - 700000000 + 1)) + 700000000 },
+            { "rank": 3, "song": "Kill Bill", "artist": "SZA", "streams": Math.floor(Math.random() * (699999999 - 650000000 + 1)) + 650000000 },
+            { "rank": 4, "song": "Anti-Hero", "artist": "Taylor Swift", "streams": Math.floor(Math.random() * (649999999 - 600000000 + 1)) + 600000000 },
+            { "rank": 5, "song": "Creepin'", "artist": "Metro Boomin, The Weeknd, 21 Savage", "streams": Math.floor(Math.random() * (599999999 - 550000000 + 1)) + 550000000 }
+        ]
+    },
+    {
+        year: 2022, data: [
+            { "rank": 1, "song": "Heat Waves", "artist": "Glass Animals", "streams": Math.floor(Math.random() * (800000000 - 750000000 + 1)) + 750000000 },
+            { "rank": 2, "song": "As It Was", "artist": "Harry Styles", "streams": Math.floor(Math.random() * (749999999 - 700000000 + 1)) + 700000000 },
+            { "rank": 3, "song": "Stay", "artist": "The Kid Laroi, Justin Bieber", "streams": Math.floor(Math.random() * (699999999 - 650000000 + 1)) + 650000000 },
+            { "rank": 4, "song": "Easy on Me", "artist": "Adele", "streams": Math.floor(Math.random() * (649999999 - 600000000 + 1)) + 600000000 },
+            { "rank": 5, "song": "Shivers", "artist": "Ed Sheeran", "streams": Math.floor(Math.random() * (599999999 - 550000000 + 1)) + 550000000 }
+        ]
+    },
+    {
+        year: 2021, data: [
+            { "rank": 1, "song": "Levitating", "artist": "Dua Lipa", "streams": Math.floor(Math.random() * (800000000 - 750000000 + 1)) + 750000000 },
+            { "rank": 2, "song": "Save Your Tears", "artist": "The Weeknd, Ariana Grande", "streams": Math.floor(Math.random() * (749999999 - 700000000 + 1)) + 700000000 },
+            { "rank": 3, "song": "Blinding Lights", "artist": "The Weeknd", "streams": Math.floor(Math.random() * (699999999 - 650000000 + 1)) + 650000000 },
+            { "rank": 4, "song": "Mood", "artist": "24kGoldn feat. Iann Dior", "streams": Math.floor(Math.random() * (649999999 - 600000000 + 1)) + 600000000 },
+            { "rank": 5, "song": "Good 4 U", "artist": "Olivia Rodrigo", "streams": Math.floor(Math.random() * (599999999 - 550000000 + 1)) + 550000000 }
+        ]
+    },
+    {
+        year: 2020, data: [
+            { "rank": 1, "song": "Blinding Lights", "artist": "The Weeknd", "streams": Math.floor(Math.random() * (800000000 - 750000000 + 1)) + 750000000 },
+            { "rank": 2, "song": "Circles", "artist": "Post Malone", "streams": Math.floor(Math.random() * (749999999 - 700000000 + 1)) + 700000000 },
+            { "rank": 3, "song": "The Box", "artist": "Roddy Ricch", "streams": Math.floor(Math.random() * (699999999 - 650000000 + 1)) + 650000000 },
+            { "rank": 4, "song": "Don't Start Now", "artist": "Dua Lipa", "streams": Math.floor(Math.random() * (649999999 - 600000000 + 1)) + 600000000 },
+            { "rank": 5, "song": "Rockstar", "artist": "DaBaby feat. Roddy Ricch", "streams": Math.floor(Math.random() * (599999999 - 550000000 + 1)) + 550000000 }
+        ]
+    },
+    {
+        year: 2019, data: [
+            { "rank": 1, "song": "Old Town Road", "artist": "Lil Nas X feat. Billy Ray Cyrus", "streams": Math.floor(Math.random() * (800000000 - 750000000 + 1)) + 750000000 },
+            { "rank": 2, "song": "Sunflower", "artist": "Post Malone, Swae Lee", "streams": Math.floor(Math.random() * (749999999 - 700000000 + 1)) + 700000000 },
+            { "rank": 3, "song": "Without Me", "artist": "Halsey", "streams": Math.floor(Math.random() * (699999999 - 650000000 + 1)) + 650000000 },
+            { "rank": 4, "song": "Bad Guy", "artist": "Billie Eilish", "streams": Math.floor(Math.random() * (649999999 - 600000000 + 1)) + 600000000 },
+            { "rank": 5, "song": "Wow.", "artist": "Post Malone", "streams": Math.floor(Math.random() * (599999999 - 550000000 + 1)) + 550000000 }
+        ]
+    },
+    {
+        year: 2018, data: [
+            { "rank": 1, "song": "God's Plan", "artist": "Drake", "streams": Math.floor(Math.random() * (800000000 - 750000000 + 1)) + 750000000 },
+            { "rank": 2, "song": "Perfect", "artist": "Ed Sheeran", "streams": Math.floor(Math.random() * (749999999 - 700000000 + 1)) + 700000000 },
+            { "rank": 3, "song": "Meant to Be", "artist": "Bebe Rexha, Florida Georgia Line", "streams": Math.floor(Math.random() * (699999999 - 650000000 + 1)) + 650000000 },
+            { "rank": 4, "song": "Havana", "artist": "Camila Cabello feat. Young Thug", "streams": Math.floor(Math.random() * (649999999 - 600000000 + 1)) + 600000000 },
+            { "rank": 5, "song": "Rockstar", "artist": "Post Malone feat. 21 Savage", "streams": Math.floor(Math.random() * (599999999 - 550000000 + 1)) + 550000000 }
+        ]
+    },
+    {
+        year: 2017, data: [
+            { "rank": 1, "song": "Shape of You", "artist": "Ed Sheeran", "streams": Math.floor(Math.random() * (800000000 - 750000000 + 1)) + 750000000 },
+            { "rank": 2, "song": "Despacito", "artist": "Luis Fonsi, Daddy Yankee feat. Justin Bieber", "streams": Math.floor(Math.random() * (749999999 - 700000000 + 1)) + 700000000 },
+            { "rank": 3, "song": "That's What I Like", "artist": "Bruno Mars", "streams": Math.floor(Math.random() * (699999999 - 650000000 + 1)) + 650000000 },
+            { "rank": 4, "song": "Humble", "artist": "Kendrick Lamar", "streams": Math.floor(Math.random() * (649999999 - 600000000 + 1)) + 600000000 },
+            { "rank": 5, "song": "Something Just Like This", "artist": "The Chainsmokers, Coldplay", "streams": Math.floor(Math.random() * (599999999 - 550000000 + 1)) + 550000000 }
+        ]
+    },
+    {
+        year: 2016, data: 
