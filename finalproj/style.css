@@ -296,16 +296,27 @@ h1 {
 } */
 
 h2 {
-
+    padding-top:15px;
     font-family: "Ramabhadra", sans-serif;
     font-weight: 300;
     font-style: normal;
     line-height: 30px;
     /* text-transform: uppercase; */
     color: #000000;
+
+ 
+    @media only screen and (max-width: 1820px) {
+        padding-top: 5px !important;
+    }
+
+    @media only screen and (max-width: 1115px) {
+        padding-top: 5px !important;
+    }
 }
 
 h3 {
+    padding-top:10px;
+    margin-bottom: 0px;
     font-family: "Barlow Semi Condensed", serif;
     font-weight: 500;
     font-style: normal;
@@ -884,6 +895,6 @@ div#taylorVis6.vega-embed.has-actions {
 }
 
 
-div#taylorVis6.vega-embed.has-actions canvas.marks {
+div#taylorVis6.vega-embed.has-actions canvas.marks, div#spotifyUsersChart.vega-embed.has-actions canvas.marks {
     width: auto !important;
 }
