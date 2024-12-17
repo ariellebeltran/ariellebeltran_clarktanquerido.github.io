@@ -1283,7 +1283,7 @@ async function loadVis4() {
             }
             },
             {
-            "mark": {"type": "text", "fontSize": 12, "fontWeight": "bold", "align": "left", "dx": -370, "dy": -40},
+            "mark": {"type": "text", "fontSize": 12, "align": "left", "dx": -370, "dy": -40},
             "encoding": {
                 "x": {"datum": 2023, "type": "ordinal"},
                 "y": {"datum": 3, "type": "quantitative"},
@@ -1292,7 +1292,7 @@ async function loadVis4() {
             }
             },
             {
-            "mark": {"type": "text", "fontSize": 12, "fontWeight": "bold", "align": "left", "dx": -370, "dy": -25},
+            "mark": {"type": "text", "fontSize": 12, "align": "left", "dx": -370, "dy": -25},
             "encoding": {
                 "x": {"datum": 2023, "type": "ordinal"},
                 "y": {"datum": 3, "type": "quantitative"},
