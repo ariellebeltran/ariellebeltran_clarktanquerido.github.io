@@ -2672,7 +2672,7 @@ async function loadVis5() {
         const vlSpec = {
             "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
             "data": { "values": yearData.data },
-            // "title": `Top 5 Most Streamed Songs on Billboard Hot 100 in ${yearData.year}`,
+            "title": `Top 5 Most Streamed Songs on Billboard Hot 100 in ${yearData.year}`,
             "mark": "bar",
             width: 600,
             height: 400,
@@ -3633,4 +3633,30 @@ function copyLink() {
     navigator.clipboard.writeText(copyText.value);
     alert("Copied the text: " + copyText.value);
 }
+
+// slides code ============================================================================================================
+
+const mapVis7 = document.getElementById('mapVis7');
+const tooltip = document.querySelector('.tooltip');
+
+mapVis7.addEventListener('mousemove', function(event) {
+    // Get mouse position
+    const mouseX = event.clientX;
+    const mouseY = event.clientY;
+    
+    // Calculate the position of the tooltip within the container
+    const containerRect = mapVis7.getBoundingClientRect();
+    const tooltipWidth = tooltip.offsetWidth;
+    
+    let tooltipX = mouseX - containerRect.left;
+    let tooltipY = mouseY - containerRect.top;
+    
+    // Ensure the tooltip doesn't exceed the container's width
+    if (tooltipX + tooltipWidth > containerRect.width) {
+        tooltipX = containerRect.width - tooltipWidth;
+    }
+    
+    tooltip.style.left = `${tooltipX}px`;
+    tooltip.style.top = `${tooltipY}px`;
+});
 

@@ -66,18 +66,16 @@ body {
 
 /* influences canvas size of vegalite  */
 
-canvas,
+/* canvas,
 svg.marks {
-    /* width: 100% !important;
-    height: 100% !important; */
     height: auto !important;
     max-width: 100% !important;
     max-height: 100% !important;
-}
+} */
 
 /* prevents warped vegalite canvas*/
 
-canvas.marks{
+canvas.marks {
     /* width: auto !important; */
     height: auto !important;
 }
@@ -245,7 +243,7 @@ h1 {
     /* font-family: Helvetica, serif; */
     font-weight: 600;
     font-style: normal;
-    margin-top:50px;
+    margin-top: 50px;
     margin-bottom: 15px;
 
     font-size: 16px;
@@ -539,7 +537,8 @@ figcaption {
 }
 
 /* Hide the images by default */
-.mySlides1, .mySlides2 {
+.mySlides1,
+.mySlides2 {
     display: none;
 }
 
@@ -597,7 +596,7 @@ figcaption {
     color: #000000;
     font-size: 12px;
     padding: 15px 12px 8px 12px;
-    margin-bottom:-45px;
+    margin-bottom: -45px;
     /* position: absolute;
     top: 0; */
 
@@ -605,7 +604,8 @@ figcaption {
 }
 
 /* The dots/bullets/indicators */
-.arrow1Vis6, .arrow1Vis7 {
+.arrow1Vis6,
+.arrow1Vis7 {
     cursor: pointer;
     height: 23px;
     width: 15px;
@@ -628,7 +628,8 @@ figcaption {
     width: 15px;
 }
 
-.arrow1Vis6:hover, .arrow1Vis7:hover {
+.arrow1Vis6:hover,
+.arrow1Vis7:hover {
     background-color: #8e8e8e;
 }
 
@@ -642,6 +643,7 @@ figcaption {
     from {
         opacity: .4
     }
+
     to {
         opacity: 1
     }
@@ -682,7 +684,8 @@ figcaption {
 }
 
 
-div#mapVis7.vega-embed.has-actions, div#taylorVis6.vega-embed.has-actions{
+div#mapVis7.vega-embed.has-actions,
+div#taylorVis6.vega-embed.has-actions {
     padding-right: 0px !important;
 }
 
@@ -788,8 +791,10 @@ input[type=range]:focus::-moz-range-track {
 #title-buttons {
     position: relative;
     display: flex;
-    flex-direction: row; /* Arrange buttons in a row */
-    gap: 10px; /* Space between buttons */
+    flex-direction: row;
+    /* Arrange buttons in a row */
+    gap: 10px;
+    /* Space between buttons */
 }
 
 .title-button {
@@ -802,18 +807,24 @@ input[type=range]:focus::-moz-range-track {
 }
 
 .menu.horizontal.social-share {
-    list-style: none; /* Remove list-style decorations */
-    padding: 0; /* Remove default padding */
-    margin: 0; /* Remove default margin */
+    list-style: none;
+    /* Remove list-style decorations */
+    padding: 0;
+    /* Remove default padding */
+    margin: 0;
+    /* Remove default margin */
 }
 
 .menu.horizontal.social-share li {
-    display: inline-block; /* Display list items in a row */
-    margin-right: 0px; /* Space between list items */
+    display: inline-block;
+    /* Display list items in a row */
+    margin-right: 0px;
+    /* Space between list items */
 }
 
 #share-dropdown {
-    display: none; /* Hide by default */
+    display: none;
+    /* Hide by default */
     position: absolute;
     background: #fff;
     background-image: url('https://newsroom.spotify.com/wp-content/themes/ftr/assets/images/icons/share-bg.svg');
@@ -823,16 +834,40 @@ input[type=range]:focus::-moz-range-track {
     height: 64px;
     padding: 0;
     z-index: 1000;
-    top: -40px; /* Position below the button */
-    left: 0; /* Align with the button */
+    top: -40px;
+    /* Position below the button */
+    left: 0;
+    /* Align with the button */
 }
 
 .menu.horizontal.social-share {
-    list-style: none; /* Remove list-style decorations */
-    padding: 0; /* Remove default padding */
-    margin: 0; /* Remove default margin */
-    display: flex; /* Display list items in a row */
-    gap: 0px; /* Space between list items */
-    /*height: 100%;*/ /* Match the height of the dropdown */
-    align-items: center; /* Center the items vertically */
+    list-style: none;
+    /* Remove list-style decorations */
+    padding: 0;
+    /* Remove default padding */
+    margin: 0;
+    /* Remove default margin */
+    display: flex;
+    /* Display list items in a row */
+    gap: 0px;
+    /* Space between list items */
+    /*height: 100%;*/
+    /* Match the height of the dropdown */
+    align-items: center;
+    /* Center the items vertically */
+}
+
+/* tooltip */
+/* Apply to all except #mapVis7 */
+:not(#mapVis7) canvas, :not(#mapVis7) svg.marks {
+    height: auto !important;
+    max-width: 100% !important;
+    max-height: 100% !important;
+    /* other styles */
+}
+
+/* Ensure max-width is none for #mapVis7 */
+#mapVis7 canvas, #mapVis7 svg.marks {
+    max-width: none !important;
+    height: auto !important;
 }
