@@ -296,7 +296,7 @@ h1 {
 } */
 
 h2 {
-    padding-top:15px;
+    padding-top: 15px;
     font-family: "Ramabhadra", sans-serif;
     font-weight: 300;
     font-style: normal;
@@ -304,7 +304,7 @@ h2 {
     /* text-transform: uppercase; */
     color: #000000;
 
- 
+
     @media only screen and (max-width: 1820px) {
         padding-top: 5px !important;
     }
@@ -315,7 +315,7 @@ h2 {
 }
 
 h3 {
-    padding-top:10px;
+    padding-top: 10px;
     margin-bottom: 0px;
     font-family: "Barlow Semi Condensed", serif;
     font-weight: 500;
@@ -417,8 +417,8 @@ figcaption {
     /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  */
 }
 
-.scroll-container.item-vis3{
-    height:300px;
+.scroll-container.item-vis3 {
+    height: 300px;
 }
 
 /* Dataset4 positioning */
@@ -488,7 +488,7 @@ figcaption {
 
 /* IMAGES */
 
-.container-content img{
+.container-content img {
     width: 100%;
 }
 
@@ -558,8 +558,10 @@ figcaption {
 }
 
 /* Hide the images by default */
-.mySlides0, .mySlides1,
-.mySlides2, .myslides_pvis3 {
+.mySlides0,
+.mySlides1,
+.mySlides2,
+.myslides_pvis3 {
     display: none;
 }
 
@@ -625,8 +627,9 @@ figcaption {
 }
 
 /* The dots/bullets/indicators */
-.arrow1Vis3, .arrow1Vis6,
-.arrow1Vis7, .arrow_pvis3 {
+.arrow1Vis3,
+.arrow1Vis6,
+.arrow1Vis7 {
     cursor: pointer;
     height: 23px;
     width: 15px;
@@ -637,7 +640,24 @@ figcaption {
     transition: background-color 0.6s ease;
 }
 
-.active.arrow1Vis3, .active.arrow1Vis6, .active.arrow_pvis3 {
+.arrow_pvis3{
+    cursor: pointer;
+    position:absolute !important;
+    top: 25% !important;
+    width: auto !important;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.active.arrow1Vis3,
+.active.arrow1Vis6,
+.active.arrow_pvis3 {
     color: #999999;
     height: 23px;
     width: 15px;
@@ -649,8 +669,10 @@ figcaption {
     width: 15px;
 }
 
-.arrow1Vis3:hover, .arrow1Vis6:hover,
-.arrow1Vis7:hover, .arrow_pvis3:hover {
+.arrow1Vis3:hover,
+.arrow1Vis6:hover,
+.arrow1Vis7:hover,
+.arrow_pvis3:hover {
     background-color: #8e8e8e;
 }
 
@@ -899,6 +921,7 @@ div#taylorVis6.vega-embed.has-actions {
 }
 
 
-div#taylorVis6.vega-embed.has-actions canvas.marks, div#spotifyUsersChart.vega-embed.has-actions canvas.marks {
+div#taylorVis6.vega-embed.has-actions canvas.marks,
+div#spotifyUsersChart.vega-embed.has-actions canvas.marks {
     width: auto !important;
 }

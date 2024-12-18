@@ -131,3 +131,111 @@ console.log(filteredData);
     </pre>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slideshow Example</title>
+    <style>
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+        }
+        .mySlides_pvis3 {
+            display: none;
+        }
+        .content-pvis3 img {
+            width: 100%;
+        }
+        .numbertext {
+            position: absolute;
+            top: 0;
+            padding: 8px;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+        .arrow {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+        .arrow_pvis3 {
+            position: absolute;
+        }
+        .arrow:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+
+<div class="slideshow-container">
+    <div class="mySlides_pvis3 content-pvis3">
+        <div><img src="https://ariellebeltran.github.io/with_clarktanquerido/images/observable_vis3.png" alt=""></div>
+        <div class="numbertext">1 / 4</div>
+    </div>
+    <div class="mySlides_pvis3 content-pvis3">
+        <div><img src="https://ariellebeltran.github.io/with_clarktanquerido/images/observable2_vis3.png" alt=""></div>
+        <div class="numbertext">2 / 4</div>
+    </div>
+    <div class="mySlides_pvis3 content-pvis3">
+        <div><img src="https://ariellebeltran.github.io/with_clarktanquerido/images/vegalite1_vis3.png" alt=""></div>
+        <div class="numbertext">3 / 4</div>
+    </div>
+    <div class="mySlides_pvis3 content-pvis3">
+        <div><img src="https://ariellebeltran.github.io/with_clarktanquerido/images/vegalite2_vis3.png" alt=""></div>
+        <div class="numbertext">4 / 4</div>
+    </div>
+    <a class="prev arrow_pvis3" onclick="plusSlides_pvis3(-1)">&#10094;</a>
+    <a class="next arrow_pvis3" onclick="plusSlides_pvis3(1)">&#10095;</a>
+</div>
+<br>
+<div style="text-align:center">
+    <span class="dot_pvis3" onclick="currentSlide_pvis3(1)"></span>
+    <span class="dot_pvis3" onclick="currentSlide_pvis3(2)"></span>
+    <span class="dot_pvis3" onclick="currentSlide_pvis3(3)"></span>
+    <span class="dot_pvis3" onclick="currentSlide_pvis3(4)"></span>
+</div>
+
+<script>
+let slideIndex_pvis3 = 1;
+showSlides_pvis3(slideIndex_pvis3);
+
+function plusSlides_pvis3(n) {
+    showSlides_pvis3(slideIndex_pvis3 += n);
+}
+
+function currentSlide_pvis3(n) {
+    showSlides_pvis3(slideIndex_pvis3 = n);
+}
+
+function showSlides_pvis3(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides_pvis3");
+    let dots = document.getElementsByClassName("dot_pvis3");
+    if (n > slides.length) {slideIndex_pvis3 = 1}
+    if (n < 1) {slideIndex_pvis3 = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex_pvis3-1].style.display = "block";
+    dots[slideIndex_pvis3-1].className += " active";
+}
+</script>
+
+</body>
+</html>

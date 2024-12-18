@@ -21,9 +21,9 @@ function showSlides_pvis3(n) {
     for (i = 0; i < slides_pvis3.length; i++) {
         slides_pvis3[i].style.display = "none";
     }
-    for (i = 0; i < dots_pvis3.length; i++) {
-        dots_pvis3[i].className = dots_pvis3[i].className.replace(" active", "");
-    }
+    // for (i = 0; i < dots_pvis3.length; i++) {
+    //     dots_pvis3[i].className = dots_pvis3[i].className.replace(" active", "");
+    // }
     slides_pvis3[slideIndex_pvis3 - 1].style.display = "block";
-    dots_pvis3[slideIndex_pvis3 - 1].className += " active";
+    // dots_pvis3[slideIndex_pvis3 - 1].className += " active";
 }
