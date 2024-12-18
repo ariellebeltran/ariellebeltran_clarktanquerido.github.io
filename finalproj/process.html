@@ -247,15 +247,40 @@ const filteredData = [
 
         <p>Please note that adding these images were a last minute decision for the presentation (if shown), they will
             be put in a slideshow soon.</p>
-        <div><img src="https://ariellebeltran.github.io/with_clarktanquerido/images/observable_vis3.png"
-                alt=""></div>
         <!-- <figcaption>A pie chart with colours but some are muted.</figcaption> -->
-        <div><img src="https://ariellebeltran.github.io/with_clarktanquerido/images/observable2_vis3.png"
-                alt=""></div>
-        <div><img src="https://ariellebeltran.github.io/with_clarktanquerido/images/vegalite1_vis3.png"
-                alt=""></div>
-        <div><img src="https://ariellebeltran.github.io/with_clarktanquerido/images/vegalite2_vis3.png"
-                alt=""></div>
+
+        <div class="slideshow-container">
+            <div class="mySlides_pvis3 content-pvis3">
+                <div><img src="https://ariellebeltran.github.io/with_clarktanquerido/images/observable_vis3.png" alt=""></div>
+                <div class="numbertext">1 / 4</div>
+            </div>
+
+            <div class="mySlides_pvis3 content-pvis3">
+                 <div><img src="https://ariellebeltran.github.io/with_clarktanquerido/images/observable2_vis3.png" alt=""></div>
+                <div class="numbertext">2 / 4</div>
+            </div>
+
+            <div class="mySlides_pvis3 content-pvis3">
+                <div><img src="https://ariellebeltran.github.io/with_clarktanquerido/images/vegalite1_vis3.png" alt=""></div>
+                <div class="numbertext">3 / 4</div>
+            </div>
+
+            <div class="mySlides_pvis3 content-pvis3">
+                <div><img src="https://ariellebeltran.github.io/with_clarktanquerido/images/vegalite2_vis3.png" alt=""></div>
+                <div class="numbertext">4 / 4</div>
+            </div>
+
+            <!-- <a class="prev" onclick="plusSlides2(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides2(1)">&#10095;</a> -->
+            <br>
+            <div style="text-align:center">
+                <!-- <span class="dot1" onclick="currentSlide1(1)"></span>
+                        <span class="dot1" onclick="currentSlide1(2)"></span> -->
+
+                <span class="arrow arrow_pvis3" onclick="currentSlide_pvis3(1)">&#10094;</span>
+                <span class="arrow arrow_pvis3" onclick="currentSlide_pvis3(2)">&#10095;</span>
+            </div>
+        </div>
 
     </div>
 
@@ -283,6 +308,7 @@ const filteredData = [
         </p>
     </div>
 
+    <script src="slideshow_vis3process.js"></script>
     <footer>
         <!-- <h5>Arielle Beltran <span id="the-space"></span> Clark Tanquerido</h5> -->
         <h4>Interactive Arts & Technology <span id="the-space">&#x2022;</span> Fall 2024</h4>
