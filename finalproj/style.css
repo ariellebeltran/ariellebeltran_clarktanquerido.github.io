@@ -417,6 +417,10 @@ figcaption {
     /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);  */
 }
 
+.scroll-container.item-vis3{
+    height:300px;
+}
+
 /* Dataset4 positioning */
 .item-dataset4 {
     grid-column-start: 2;

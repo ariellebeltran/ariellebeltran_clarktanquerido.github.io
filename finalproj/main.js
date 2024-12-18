@@ -605,29 +605,29 @@ loadVis2();
 
 // async function loadSpotifyUserGenreChart() {
 //     // Data for 2013 and 2023 combined
-//     const data = [
-//         { "Year": "2013", "Age Group": "Millennials", "Top Music Genres": "Pop", "Percentage": 35 },
-//         { "Year": "2013", "Age Group": "Millennials", "Top Music Genres": "Hip-Hop/Rap", "Percentage": 25 },
-//         { "Year": "2013", "Age Group": "Millennials", "Top Music Genres": "R&B", "Percentage": 20 },
-//         { "Year": "2013", "Age Group": "Millennials", "Top Music Genres": "K-Pop/J-Pop", "Percentage": 5 },
-//         { "Year": "2013", "Age Group": "Millennials", "Top Music Genres": "Regional Mexican, Bollywood, Spanish Contemporary", "Percentage": 10 },
-//         { "Year": "2013", "Age Group": "Millennials", "Top Music Genres": "Other Genres (Latin, EDM, etc.)", "Percentage": 5 },
-//         { "Year": "2013", "Age Group": "Gen Z", "Top Music Genres": "Pop", "Percentage": 40 },
-//         { "Year": "2013", "Age Group": "Gen Z", "Top Music Genres": "Hip-Hop/Rap", "Percentage": 25 },
-//         { "Year": "2013", "Age Group": "Gen Z", "Top Music Genres": "Electronic", "Percentage": 10 },
-//         { "Year": "2013", "Age Group": "Gen Z", "Top Music Genres": "Indie/Alternative", "Percentage": 15 },
-//         { "Year": "2013", "Age Group": "Gen Z", "Top Music Genres": "Other genres (Latin, EDM, etc.)", "Percentage": 10 },
-//         { "Year": "2023", "Age Group": "Millennials", "Top Music Genres": "Pop", "Percentage": 40 },
-//         { "Year": "2023", "Age Group": "Millennials", "Top Music Genres": "Hip-Hop/Rap", "Percentage": 30 },
-//         { "Year": "2023", "Age Group": "Millennials", "Top Music Genres": "Rock", "Percentage": 15 },
-//         { "Year": "2023", "Age Group": "Millennials", "Top Music Genres": "Indie/Alternative", "Percentage": 10 },
-//         { "Year": "2023", "Age Group": "Millennials", "Top Music Genres": "Other genres (Latin, EDM, etc.)", "Percentage": 5 },
-//         { "Year": "2023", "Age Group": "Gen Z", "Top Music Genres": "Pop", "Percentage": 40 },
-//         { "Year": "2023", "Age Group": "Gen Z", "Top Music Genres": "Afrobeats", "Percentage": 25 },
-//         { "Year": "2023", "Age Group": "Gen Z", "Top Music Genres": "Alternative/Indie", "Percentage": 20 },
-//         { "Year": "2023", "Age Group": "Gen Z", "Top Music Genres": "Hip-Hop/Rap", "Percentage": 10 },
-//         { "Year": "2023", "Age Group": "Gen Z", "Top Music Genres": "Other genres (Latin, EDM, etc.)", "Percentage": 5 }
-//     ];
+    // const data = [
+    //     { "Year": "2013", "Age Group": "Millennials", "Top Music Genres": "Pop", "Percentage": 35 },
+    //     { "Year": "2013", "Age Group": "Millennials", "Top Music Genres": "Hip-Hop/Rap", "Percentage": 25 },
+    //     { "Year": "2013", "Age Group": "Millennials", "Top Music Genres": "R&B", "Percentage": 20 },
+    //     { "Year": "2013", "Age Group": "Millennials", "Top Music Genres": "K-Pop/J-Pop", "Percentage": 5 },
+    //     { "Year": "2013", "Age Group": "Millennials", "Top Music Genres": "Regional Mexican, Bollywood, Spanish Contemporary", "Percentage": 10 },
+    //     { "Year": "2013", "Age Group": "Millennials", "Top Music Genres": "Other Genres (Latin, EDM, etc.)", "Percentage": 5 },
+    //     { "Year": "2013", "Age Group": "Gen Z", "Top Music Genres": "Pop", "Percentage": 40 },
+    //     { "Year": "2013", "Age Group": "Gen Z", "Top Music Genres": "Hip-Hop/Rap", "Percentage": 25 },
+    //     { "Year": "2013", "Age Group": "Gen Z", "Top Music Genres": "Electronic", "Percentage": 10 },
+    //     { "Year": "2013", "Age Group": "Gen Z", "Top Music Genres": "Indie/Alternative", "Percentage": 15 },
+    //     { "Year": "2013", "Age Group": "Gen Z", "Top Music Genres": "Other genres (Latin, EDM, etc.)", "Percentage": 10 },
+    //     { "Year": "2023", "Age Group": "Millennials", "Top Music Genres": "Pop", "Percentage": 40 },
+    //     { "Year": "2023", "Age Group": "Millennials", "Top Music Genres": "Hip-Hop/Rap", "Percentage": 30 },
+    //     { "Year": "2023", "Age Group": "Millennials", "Top Music Genres": "Rock", "Percentage": 15 },
+    //     { "Year": "2023", "Age Group": "Millennials", "Top Music Genres": "Indie/Alternative", "Percentage": 10 },
+    //     { "Year": "2023", "Age Group": "Millennials", "Top Music Genres": "Other genres (Latin, EDM, etc.)", "Percentage": 5 },
+    //     { "Year": "2023", "Age Group": "Gen Z", "Top Music Genres": "Pop", "Percentage": 40 },
+    //     { "Year": "2023", "Age Group": "Gen Z", "Top Music Genres": "Afrobeats", "Percentage": 25 },
+    //     { "Year": "2023", "Age Group": "Gen Z", "Top Music Genres": "Alternative/Indie", "Percentage": 20 },
+    //     { "Year": "2023", "Age Group": "Gen Z", "Top Music Genres": "Hip-Hop/Rap", "Percentage": 10 },
+    //     { "Year": "2023", "Age Group": "Gen Z", "Top Music Genres": "Other genres (Latin, EDM, etc.)", "Percentage": 5 }
+    // ];
 
 //     // Custom colors
 //     const colors = {
